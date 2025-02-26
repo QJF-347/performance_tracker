@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Student Tracker - Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77); /* Deeper dark blue gradient */
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1.5px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            line-height: 1.6;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 60px 20px;
+        }
+
+        .feature {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 30px;
+            width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature h3 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            letter-spacing: 1px;
+        }
+
+        .feature p {
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .cta a {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 20px 40px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta a:hover {
+            background-color: #26C6DA;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: auto;
+            opacity: 0.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .feature li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .feature li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00BCD4;
+        }
+
+        header::before, header::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #00BCD4, transparent);
+            left: 0;
+        }
+
+        header::before {
+            top: 0;
+        }
+
+        header::after {
+            bottom: 0;
+        }
+
+        .essence {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .essence h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .essence p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AI Powered Student Performance Tracker</h1>
+        <p>Transform your learning journey with intelligent insights, personalized guidance, and real-time progress tracking.</p>
+    </header>
+
+    <div class="cta">
+        <a href="dashboard.html">Get Started Now and Unlock Your Potential</a>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h3>Personalized Performance Insights</h3>
+            <p>Dive deep into your academic data with detailed analyses and tailored reports.</p>
+            <ul>
+                <li>Identify strengths and weaknesses</li>
+                <li>Track progress over time</li>
+                <li>Receive customized feedback</li>
+            </ul>
+        </div>
+        <div class="feature">
+            <h3>AI-Driven Recommendations</h3>
+            <p>Leverage the power of AI for smart study suggestions and targeted improvements.</p>
+            <ul>
+                <li>Personalized study plans</li>
+                <li>Focus on high-impact areas</li>
+                <li>Optimize learning strategies</li>
+            </ul>
+        </div>
+        <div class="feature">
+            <h3>Real-Time Progress Tracking</h3>
+            <p>Stay updated with instant data and visual reports across all subjects and assignments.</p>
+            <ul>
+                <li>Monitor assignment completion</li>
+                <li>Visualize subject performance</li>
+                <li>Track overall academic growth</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="essence">
+        <h2>The Essence of AI Student Tracker</h2>
+        <p>Our platform is designed to empower students with the tools and insights they need to excel academically. By combining advanced AI with intuitive design, we provide a seamless experience that guides you towards achieving your educational goals. We believe that every student has the potential to succeed, and our mission is to unlock that potential through personalized learning and intelligent tracking.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 AI Student Tracker. Crafted with intelligence and care.</p>
+    </footer>
+
+</body>
+</html>

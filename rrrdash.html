@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .dashboard {
+            width: 80%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        nav {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #4F46E5;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #3730A3;
+        }
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+            animation: slideIn 0.5s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #E0E7FF;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-section">
+            <div class="profile-picture"></div>
+            <h2 id="profileName">[Student Name]</h2>
+            <p class="badge" id="profileLevel">Level 5</p>
+        </div>
+        <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Assignments</a></li>
+            <li><a href="#">Grades</a></li>
+            <li><a href="#">Recommendations</a></li>
+            <li><a href="#">Study Groups</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><button class="logout-button">Logout</button></li>
+        </ul>
+    </div>
+
+    <div class="dashboard-container">
+        <h1>Welcome, <span id="studentName">[Student Name]</span>!</h1>
+        <h2>Performance Overview</h2>
+        <div class="performance-grid">
+            <div class="performance-item">
+                <h3>Overall Performance</h3>
+                <div class="progress-bar"><div class="progress-bar-fill" id="overallProgress"></div></div>
+                <p id="overallProgressText">75% Completion</p>
+            </div>
+        </div>
+
+        <h2>AI Recommendations</h2>
+        <ul id="recommendationList"></ul>
+    </div>
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
