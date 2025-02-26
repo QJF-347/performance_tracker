@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title></head>
+<body>
+    <div class="container">
+        <h2>Profile</h2>
+        <p id="profileInfo"></p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        async function loadProfile() {
+            let token = localStorage.getItem('access_token');
+            if (!token) {
+                window.location.href = "{% url 'login' %}";
+                return;
+            }
+
+            let response = await fetch("http://127.0.0.1:8000/api/profile/", {
+                method: 'GET',
+                headers: { 'Authorization': 'Bearer ' + token }
+            });
+
+            let data = await response.json();
+            if (response.ok) {
+                document.getElementById('profileInfo').innerText = `Username: ${data.username}, Role: ${data.role}`;
+            } else {
+                localStorage.removeItem('access_token');
+                window.location.href = "{% url 'login' %}";
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('access_token');
+            window.location.href = "{% url 'login' %}";
+        }
+
+        loadProfile();
+    </script>
+</body>
+</html>
