@@ -1,0 +1,21 @@
+[0;1;32m●[0m snapd.service - Snap Daemon
+     Loaded: loaded (]8;;file://kali/usr/lib/systemd/system/snapd.service\/usr/lib/systemd/system/snapd.service]8;;\; [0;1;32menabled[0m; preset: [0;1;38:5:185mdisabled[0m)
+     Active: [0;1;32mactive (running)[0m since Thu 2025-02-27 00:23:01 EAT; 8h ago
+ Invocation: c5e5b3cfdce941ddb186346fcbcf570b
+TriggeredBy: [0;1;32m●[0m snapd.socket
+   Main PID: 115604 (snapd)
+      Tasks: 11[0;38;5;245m (limit: 18802)[0m
+     Memory: 14.2M (peak: 17.4M)
+        CPU: 1.367s
+     CGroup: /system.slice/snapd.service
+             └─[0;38;5;245m115604 /usr/lib/snapd/snapd[0m
+
+Feb 27 00:23:01 kali systemd[1]: Starting snapd.service - Snap Daemon...
+Feb 27 00:23:01 kali snapd[115604]: overlord.go:274: Acquiring state lock file
+Feb 27 00:23:01 kali snapd[115604]: overlord.go:279: Acquired state lock file
+Feb 27 00:23:01 kali snapd[115604]: daemon.go:250: started snapd/2.67-1 (series 16; classic; devmode) kali/2025.1 (amd64) linux/6.12.13-amd64.
+Feb 27 00:23:01 kali snapd[115604]: daemon.go:353: adjusting startup timeout by 45s (pessimistic estimate of 30s plus 5s per snap)
+Feb 27 00:23:01 kali snapd[115604]: backends.go:58: AppArmor status: apparmor is enabled but some kernel features are missing: dbus, network
+Feb 27 00:23:01 kali systemd[1]: Started snapd.service - Snap Daemon.
+Feb 27 00:33:01 kali snapd[115604]: devicemgr.go:2566: no NTP sync after 10m0s, trying auto-refresh anyway
+Feb 27 00:33:02 kali snapd[115604]: storehelpers.go:954: cannot refresh: snap has no updates available: "core18", "postman", "snapd"

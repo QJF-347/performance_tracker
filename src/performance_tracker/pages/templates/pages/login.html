@@ -3,21 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>AI Student Tracker - Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .login-container h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: calc(100% - 22px); /* Adjusted for padding and border */
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .login-button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .login-button:hover {
+            background-color: #26C6DA;
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            display: block;
+            color: #00BCD4;
+            text-decoration: none;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h2>Login</h2>
-    <form id="loginForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" required><br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" required><br>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <a href="{% url 'register'%}" class="signup-link">Don't have an account? Sign up</a>
+    </div>
 
-        <button type="submit">Login</button>
-    </form>
-    <p id="loginError"></p>
-    
+
     <script>
         async function loginUser(event) {
             event.preventDefault(); // Prevent form from submitting normally
@@ -38,15 +128,15 @@
                         password: password
                     })
                 });
-
-                console.log("Response status:", response.status);
-
+                
                 const data = await response.json();
-                console.log("Response data:", data);
-
                 if (response.ok) {
+                    localStorage.clear();
                     localStorage.setItem("access_token", data.access);
                     localStorage.setItem("refresh_token", data.refresh);
+                    localStorage.setItem("username", data.user.username);
+                    localStorage.setItem("role", data.user.role);
+        
                     window.location.href = "/pages/profile/";
                 } else {
                     document.getElementById("loginError").textContent = data.error || "Invalid credentials";
@@ -59,5 +149,6 @@
 
         document.getElementById("loginForm").addEventListener("submit", loginUser);
     </script>
+
 </body>
 </html>

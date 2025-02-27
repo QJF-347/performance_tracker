@@ -3,42 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title></head>
+    <title>Profile</title>
+</head>
 <body>
-    <div class="container">
-        <h2>Profile</h2>
-        <p id="profileInfo"></p>
-        <button onclick="logout()">Logout</button>
-    </div>
-
+    <h1>Welcome to your profile, <span id="username-display"></span>!</h1>
+    <p>Your role is: <span id="role-display"></span></p>
+    <button id="logoutButton">Logout</button>
     <script>
-        async function loadProfile() {
-            let token = localStorage.getItem('access_token');
-            if (!token) {
-                window.location.href = "{% url 'login' %}";
-                return;
-            }
+        document.getElementById('username-display').textContent = localStorage.getItem('username');
+        document.getElementById('role-display').textContent = localStorage.getItem('role');
 
-            let response = await fetch("http://127.0.0.1:8000/api/profile/", {
-                method: 'GET',
-                headers: { 'Authorization': 'Bearer ' + token }
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            const refreshToken = localStorage.getItem('refresh_token');
+            const accessToken = localStorage.getItem('access_token');
+
+            fetch('/users/api/logout/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${accessToken}`
+                },
+                body: JSON.stringify({ refresh: refreshToken })
+            })
+            .then(response => {
+                if (response.ok) {
+                    localStorage.clear();
+                    window.location.href = '/pages/login/';
+                } else {
+                    console.error('Logout failed');
+                }
             });
-
-            let data = await response.json();
-            if (response.ok) {
-                document.getElementById('profileInfo').innerText = `Username: ${data.username}, Role: ${data.role}`;
-            } else {
-                localStorage.removeItem('access_token');
-                window.location.href = "{% url 'login' %}";
-            }
-        }
-
-        function logout() {
-            localStorage.removeItem('access_token');
-            window.location.href = "{% url 'login' %}";
-        }
-
-        loadProfile();
+        });
     </script>
 </body>
 </html>

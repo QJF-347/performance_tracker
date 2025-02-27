@@ -3,7 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>AI Student Tracker - Registration</title>
+    <style>
+        /* For WebKit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* For entire page */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .registration-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 40px;
+            width: 400px;
+            text-align: left;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .registration-container h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .register-button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .register-button:hover {
+            background-color: #26C6DA;
+        }
+
+        .login-link {
+            margin-top: 20px;
+            display: block;
+            color: #00BCD4;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Improved Select Styling */
+        .form-group select {
+            appearance: none; /* Remove default arrow */
+            background-image: linear-gradient(45deg, transparent 50%, #e0e0e0 50%), linear-gradient(135deg, #e0e0e0 50%, transparent 50%);
+            background-position: calc(100% - 15px) calc(1em + 2px), calc(100% - 10px) calc(1em + 2px);
+            background-size: 5px 5px, 5px 5px;
+            background-repeat: no-repeat;
+            padding-right: 30px; /* Space for the custom arrow */
+        }
+
+        .form-group select option {
+            background-color: #333; /* Darker background for options */
+            color: #e0e0e0;
+        }
+
+        /* Improved Student Fields Styling */
+        #studentFields {
+            padding: 15px;
+            margin-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #studentFields label {
+            margin-top: 10px;
+        }
+
+        #studentFields select[multiple] {
+            height: 150px; /* Adjust height for multiple select */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password2">Confirm Password:</label>
+                <input type="password" id="password2" name="password2" required>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <select id="role" name="role" >
+                    <option value="">Select Role</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="parent">Parent</option>
+                </select>
+            </div>
+
+
+            <button type="submit" class="register-button">Register</button>
+        </form>
+        <a href="{% url 'login'%}" class="login-link">Already have an account? Login</a>
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("registerForm").addEventListener("submit", async function (event) {
@@ -40,68 +219,6 @@
             return document.cookie.split('; ')
                 .find(row => row.startsWith('csrftoken='))
                 ?.split('=')[1];
-        }
-    </script>
-</head>
-<body>
-    <h2>Register</h2>
-    <form id="registerForm">
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" required>
-    
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" required>
-    
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-    
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-    
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-    
-        <label for="password2">Confirm Password:</label>
-        <input type="password" id="password2" name="password2" required>
-    
-        <label for="role">Role:</label>
-        <select id="role" name="role" required onchange="toggleStudentFields()">
-            <option value="">Select Role</option>
-            <option value="student">Student</option>
-            <option value="teacher">Teacher</option>
-            <option value="parent">Parent</option>
-        </select>
-    
-        <!-- Student-specific fields (Initially Hidden) -->
-        <div id="studentFields" style="display: none;">
-            <label for="year_of_study">Year of Study:</label>
-            <input type="text" id="year_of_study" name="year_of_study">
-    
-            <label for="subjects">Select Subjects:</label>
-            <select id="subjects" name="subjects" multiple>
-                <option value="Mathematics">Mathematics</option>
-                <option value="English">English</option>
-                <option value="Science">Science</option>
-                <option value="History">History</option>
-                <option value="Geography">Geography</option>
-                <option value="Computer Science">Computer Science</option>
-            </select>
-        </div>
-    
-        <button type="submit">Register</button>
-    </form>
-    <p id="registerError" style="color: red;"></p>
-
-    <script>
-        function toggleStudentFields() {
-            let role = document.getElementById("role").value;
-            let studentFields = document.getElementById("studentFields");
-            
-            if (role === "student") {
-                studentFields.style.display = "block";
-            } else {
-                studentFields.style.display = "none";
-            }
         }
     </script>
 </body>

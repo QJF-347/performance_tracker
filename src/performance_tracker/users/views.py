@@ -9,7 +9,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.views import APIView
 
 
-from .serializers import RegisterSerializer, UserProfileSerializer
+from .serializers import RegisterSerializer
 
 
 User = get_user_model()
@@ -80,11 +80,3 @@ class LogoutView(APIView):
             return Response({"message": "Logged out."}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": "Invalid Token"}, status=status.HTTP_400_BAD_REQUEST)
-
-
-class UserProfileView(generics.RetrieveUpdateAPIView):
-    serializer_class = UserProfileSerializer
-    permission_classes = [IsAuthenticated]
-
-    def get_object(self):
-        return self.request.user

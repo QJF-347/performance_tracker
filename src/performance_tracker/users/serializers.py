@@ -23,17 +23,3 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 
-class UserProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ["id", "username", "email", "first_name", "last_name", "role", "profile_picture", "bio"]
-        read_only_fields = ["id", "username", "email", "role"]  # Prevent users from modifying these
-    
-    def update(self, instance, validated_data):
-        if "profile_picture" in validated_data:
-            instance.profile_picture = validated_data["profile_picture"]
-        instance.first_name = validated_data.get("first_name", instance.first_name)
-        instance.last_name = validated_data.get("last_name", instance.last_name)
-        instance.bio = validated_data.get("bio", instance.bio)
-        instance.save()
-        return instance
