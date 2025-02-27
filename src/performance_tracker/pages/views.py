@@ -33,3 +33,6 @@ def register_page(request):
 
 def profile_page(request):
     return render(request, 'pages/profile.html')
+
+def subject_page(request):
+    return render(request, 'pages/subjects.html')

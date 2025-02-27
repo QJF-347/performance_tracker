@@ -17,3 +17,8 @@ class PerformanceRecordSerializer(serializers.Serializer):
     class Meta:
         model = PerformanceRecord
         fields = ['id', 'student', 'subject', 'score', 'date_recorded']
+        
+class CourseEnrollmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CourseEnrollment
+        fields = ('id', 'student', 'subject', 'enrollment_date')

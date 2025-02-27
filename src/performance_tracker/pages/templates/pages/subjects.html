@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Student Tracker - Subjects</title>
+    <style>
+        /* ... (Your existing styles) ... */
+
+        .subject-list-container {
+            max-height: 400px; /* Adjust as needed */
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .subject-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* For WebKit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* For entire page */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 40px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+
+        .container h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #26C6DA;
+        }
+
+        .subject-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .subject-list li {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+
+        .subject-list li:last-child {
+            border-bottom: none;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .subject-label {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .subject-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .subject-actions {
+            display: flex;
+        }
+
+        .subject-actions button {
+            background: none;
+            border: none;
+            color: #00BCD4;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .subject-actions button:hover {
+            text-decoration: underline;
+        }
+        .modal-container { /* New container */
+            position: relative;
+            width: 100%;
+        }
+
+        .modal {
+            display: none;
+            position: absolute; /* Changed to absolute */
+            z-index: 1;
+            top: 40px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 400px;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+            padding: 30px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e0e0; /* Light text color */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+        }
+
+        .modal-content h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .modal-content input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .modal-content input[type="text"]:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .modal-content button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-content button:hover {
+            background-color: #26C6DA;
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+        }
+
+        #confirmDelete{
+            background-color: #f11c1c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Subjects</h2>
+        <form id="subjectForm">
+            <div class="form-group">
+                <label for="subjectName">Subject Name</label>
+                <input type="text" id="subjectName" name="subjectName" placeholder="Enter subject name" required>
+            </div>
+            <button type="submit" class="button">Add Subject</button>
+        </form>
+        <div id="errorMessage" class="error-message"></div>
+        <br>
+        <label class="subject-label">Available Subjects</label>
+        <div class="subject-list-container">
+            <ul class="subject-list" id="subjectList">
+            </ul>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal", style="display: none;" >
+        <div class="modal-content">
+            <span class="close" id="closeEditModal">&times;</span>
+            <h2>Edit Subject</h2>
+            <input type="text" id="editSubjectName" placeholder="Enter new subject name">
+            <button id="saveEdit">Save</button>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal" style="display: none;" >
+        <div class="modal-content">
+            <span class="close" id="closeDeleteModal">&times;</span>
+            <h2>Confirm Delete</h2>
+            <p>Are you sure you want to delete this subject?</p>
+            <button id="confirmDelete">Yes, Delete</button>
+        </div>
+    </div>
+
+    <script>
+        const subjectList = document.getElementById('subjectList');
+        const errorMessage = document.getElementById('errorMessage');
+    
+        async function fetchSubjects() {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/students/subjects/', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to fetch subjects');
+                }
+                const subjects = await response.json();
+                subjectList.innerHTML = ''; // Clear existing list
+                subjects.forEach(subject => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <span>${subject.name}</span>
+                        <div class="subject-actions">
+                            <button onclick="openEditModal(${subject.id}, '${subject.name}')">Edit</button>
+                            <button onclick="openDeleteModal(${subject.id})">Delete</button>
+                        </div>
+                    `;
+                    subjectList.appendChild(listItem);
+                });
+            } catch (error) {
+                errorMessage.textContent = error.message;
+            }
+        }
+    
+        async function addSubject(event) {
+            event.preventDefault();
+            const subjectName = document.getElementById('subjectName').value;
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/students/subjects/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                    },
+                    body: JSON.stringify({ name: subjectName })
+                });
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.name ? errorData.name[0] : 'Failed to add subject');
+                }
+                document.getElementById('subjectName').value = ''; // Clear input
+                fetchSubjects(); // Refresh the subject list
+            } catch (error) {
+                errorMessage.textContent = error.message;
+            }
+        }
+    
+        let currentSubjectId;
+    
+        function openEditModal(id, currentName) {
+            currentSubjectId = id;
+            document.getElementById('editSubjectName').value = currentName;
+            document.getElementById('editModal').style.display = "block";
+        }
+    
+        function openDeleteModal(id) {
+            currentSubjectId = id;
+            document.getElementById('deleteModal').style.display = "block";
+        }
+    
+        async function editSubject() {
+            const newName = document.getElementById('editSubjectName').value;
+            if (newName) {
+                try {
+                    const response = await fetch(`http://127.0.0.1:8000/api/students/subjects/${currentSubjectId}/`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                        },
+                        body: JSON.stringify({ name: newName })
+                    });
+                    if (!response.ok) {
+                        throw new Error('Failed to update subject');
+                    }
+                    fetchSubjects();
+                    closeEditModal();
+                } catch (error) {
+                    errorMessage.textContent = error.message;
+                }
+            }
+        }
+    
+        async function deleteSubject() {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/api/students/subjects/${currentSubjectId}/`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to delete subject');
+                }
+                fetchSubjects();
+                closeDeleteModal();
+            } catch (error) {
+                errorMessage.textContent = error.message;
+            }
+        }
+    
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = "none";
+        }
+    
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = "none";
+        }
+    
+        document.getElementById('closeEditModal').onclick = closeEditModal;
+        document.getElementById('closeDeleteModal').onclick = closeDeleteModal;
+        document.getElementById('saveEdit').onclick = editSubject;
+        document.getElementById('confirmDelete').onclick = deleteSubject;
+    
+        document.getElementById('subjectForm').addEventListener('submit', addSubject);
+        fetchSubjects(); // Load subjects on page load
+    </script>
+
+</body>
+</html>
