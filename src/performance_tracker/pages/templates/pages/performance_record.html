@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance Records</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1, h2 {
+            color: #00BCD4;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        th, td {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: rgba(0, 188, 212, 0.3);
+            color: #e0e0e0;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #26C6DA;
+        }
+        #addRecordModal, #editRecordModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding-top: 60px;
+            justify-content: center;
+            align-items: center;
+        }
+        #addRecordModal form, #editRecordModal form {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        input[type="number"], input[type="date"], select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+        input[type="number"]:focus, input[type="date"]:focus, select:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Performance Records</h1>
+
+    <div id="studentInfo"></div>
+
+    <div id="performanceRecordsContainer"></div>
+
+    <button id="addRecordButton">Add Record</button>
+
+    <div id="addRecordModal" style="display: none;">
+        <h2>Add Performance Record</h2>
+        <form id="addRecordForm">
+            <label for="subject">Subject:</label>
+            <select id="subject"></select><br>
+
+            <label for="assessmentComponent">Assessment Component:</label>
+            <select id="assessmentComponent"></select><br>
+
+            <label for="score">Score:</label>
+            <input type="number" id="score" /><br>
+
+            <label for="date">Date Recorded:</label>
+            <input type="date" id="date" /><br>
+
+            <button type="submit">Save</button>
+            <button type="button" id="cancelAdd">Cancel</button>
+        </form>
+    </div>
+
+    <div id="editRecordModal" style="display: none;">
+        <h2>Edit Performance Record</h2>
+        <form id="editRecordForm">
+            <label for="editSubject">Subject:</label>
+            <select id="editSubject"></select><br>
+
+            <label for="editAssessmentComponent">Assessment Component:</label>
+            <select id="editAssessmentComponent"></select><br>
+
+            <label for="editScore">Score:</label>
+            <input type="number" id="editScore" /><br>
+
+            <label for="editDate">Date Recorded:</label>
+            <input type="date" id="editDate" /><br>
+
+            <button type="submit">Save</button>
+            <button type="button" id="cancelEdit">Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        function getStudentIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('studentId');
+        }
+
+        //const studentId = getStudentIdFromUrl();
+        const studentId = 3;
+
+        if (!studentId) {
+            console.error("Student ID not found in URL.");
+            // Optionally, display an error message to the user
+        }
+
+        let performanceRecords = [];
+        let subjects = [];
+        let currentRecordId = null;
+
+        const performanceRecordsList = document.getElementById('performanceRecordsList');
+        const addRecordButton = document.getElementById('addRecordButton');
+        const addRecordModal = document.getElementById('addRecordModal');
+        const addRecordForm = document.getElementById('addRecordForm');
+        const cancelAddButton = document.getElementById('cancelAdd');
+
+        const editRecordModal = document.getElementById('editRecordModal');
+        const editRecordForm = document.getElementById('editRecordForm');
+        const cancelEditButton = document.getElementById('cancelEdit');
+        const studentInfoDiv = document.getElementById('studentInfo');
+
+
+        function populateSubjectDropdowns() {
+            const subjectSelects = [document.getElementById('subject'), document.getElementById('editSubject')];
+    
+            subjectSelects.forEach(select => {
+                subjects.forEach(subject => {
+                    const option = document.createElement('option');
+                    option.value = subject.id;
+                    option.textContent = subject.name;
+                    select.appendChild(option);
+                });
+            });
+        }
+    
+        function displayPerformanceRecords() {
+            let html = '<table><thead><tr><th>Subject</th><th>Score</th><th>Date</th><th>Actions</th></tr></thead><tbody>';
+            performanceRecords.forEach(record => {
+                const subject = subjects.find(s => s.id === record.subject);
+                html += `<tr><td>${subject ? subject.name : 'Unknown'}</td><td>${record.score}</td><td>${record.date_recorded}</td><td><button onclick="editRecord(${record.id})">Edit</button><button onclick="deleteRecord(${record.id})">Delete</button></td></tr>`;
+            });
+            html += '</tbody></table>';
+            performanceRecordsList.innerHTML = html;
+        }
+
+        async function fetchStudentInfo() {
+            try {
+                const accessToken = localStorage.getItem('access_token');
+                const response = await fetch(`http://127.0.0.1:8000/api/students/students/${studentId}/`, {
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+                const student = await response.json();
+                studentInfoDiv.innerHTML = `<p>Name: ${student.user.first_name} ${student.user.last_name}</p><p>Year of Study: ${student.year_of_study}</p>`;
+            } catch (error) {
+                console.error("Error fetching student info:", error);
+            }
+        }
+    
+        async function fetchSubjects() {
+            try {
+                const accessToken = localStorage.getItem('access_token');
+                const response = await fetch('http://127.0.0.1:8000/api/students/subjects/', {
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+                subjects = await response.json();
+                populateSubjectDropdowns();
+            } catch (error) {
+                console.error("Error fetching subjects:", error);
+            }
+        }
+    
+        async function fetchPerformanceRecords() {
+            try {
+                const accessToken = localStorage.getItem('access_token');
+                const response = await fetch(`http://127.0.0.1:8000/api/students/performance-records/?student=${studentId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+                performanceRecords = await response.json();
+                displayPerformanceRecords();
+            } catch (error) {
+                console.error("Error fetching performance records:", error);
+            }
+        }
+    
+        async function addRecord(event) {
+            event.preventDefault();
+    
+            const subject = document.getElementById('subject').value;
+            const score = document.getElementById('score').value;
+            const date = document.getElementById('date').value;
+    
+            try {
+                const accessToken = localStorage.getItem('access_token');
+                await fetch('http://127.0.0.1:8000/api/students/performance-records/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${accessToken}`
+                    },
+                    body: JSON.stringify({
+                        student: studentId,
+                        subject: subject,
+                        score: score,
+                        date_recorded: date,
+                    }),
+                });
+                addRecordModal.style.display = 'none';
+                fetchPerformanceRecords();
+            } catch (error) {
+                console.error("Error adding performance record:", error);
+            }
+        }
+    
+        async function updateRecord(event) {
+            event.preventDefault();
+    
+            const subject = document.getElementById('editSubject').value;
+            const score = document.getElementById('editScore').value;
+            const date = document.getElementById('editDate').value;
+    
+            try {
+                const accessToken = localStorage.getItem('access_token');
+                await fetch(`http://127.0.0.1:8000/api/students/performance-records/${currentRecordId}/`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${accessToken}`
+                    },
+                    body: JSON.stringify({
+                        student: studentId,
+                        subject: subject,
+                        score: score,
+                        date_recorded: date,
+                    }),
+                });
+                editRecordModal.style.display = 'none';
+                fetchPerformanceRecords();
+            } catch (error) {
+                console.error("Error updating performance record:", error);
+            }
+        }
+    
+        async function deleteRecord(recordId) {
+            try {
+                const accessToken = localStorage.getItem('access_token');
+                await fetch(`http://127.0.0.1:8000/api/students/performance-records/${recordId}/`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+                fetchPerformanceRecords();
+            } catch (error) {
+                console.error("Error deleting performance record:", error);
+            }
+        }
+
+        addRecordButton.addEventListener('click', () => {
+            addRecordModal.style.display = 'block';
+        });
+
+        cancelAddButton.addEventListener('click', () => {
+            addRecordModal.style.display = 'none';
+        });
+
+        addRecordForm.addEventListener('submit', addRecord);
+
+        cancelEditButton.addEventListener('click', () => {
+            editRecordModal.style.display = 'none';
+        });
+
+        editRecordForm.addEventListener('submit', updateRecord);
+
+        if (studentId) {
+            fetchStudentInfo();
+            fetchSubjects();
+            fetchPerformanceRecords();
+        }
+
+    </script>
+</body>
+</html>
