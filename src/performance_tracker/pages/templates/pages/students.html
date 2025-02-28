@@ -340,14 +340,6 @@
                         <input type="text" id="editLastName" name="editLastName" placeholder="Enter last name" required>
                     </div>
                     <div class="form-group">
-                        <label for="editUsername">Username</label>
-                        <input type="text" id="editUsername" name="editUsername" placeholder="Enter username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="editEmail">Email</label>
-                        <input type="email" id="editEmail" name="editEmail" placeholder="Enter email" required>
-                    </div>
-                    <div class="form-group">
                         <label for="editYearOfStudy">Year of Study</label>
                         <input type="text" id="editYearOfStudy" name="editYearOfStudy" placeholder="Enter year of study" required>
                     </div>
@@ -429,7 +421,7 @@
                 data.results.forEach(student => {
                     const listItem = document.createElement('li');
                     listItem.innerHTML = `
-                        <span>${student.user.username} - ${student.year_of_study}</span>
+                        <span>${student.user.first_name} ${student.user.first_name} - ${student.year_of_study}</span>
                         <div class="student-actions">
                             <button onclick="openEditModal(${student.id})">Edit</button>
                             <button onclick="openDeleteModal(${student.id})">Delete</button>
@@ -559,20 +551,12 @@
             const student = await response.json();
 
             if (student.user) {
-                console.log(student.user.first_name)
-                console.log(student.user.last_name)
-                console.log(student.user.email)
-                console.log(student.user.username)
 
                 document.getElementById('editFirstName').value = student.user.first_name || '';
                 document.getElementById('editLastName').value = student.user.last_name || '';
-                document.getElementById('editUsername').value = student.user.username || '';
-                document.getElementById('editEmail').value = student.user.email || '';
             } else {
                 document.getElementById('editFirstName').value = '';
                 document.getElementById('editLastName').value = '';
-                document.getElementById('editUsername').value = '';
-                document.getElementById('editEmail').value = '';
                 console.warn("Student user data is missing for student ID:", id);
             }
     
@@ -595,8 +579,6 @@
     async function editStudent() {
         const firstName = document.getElementById('editFirstName').value;
         const lastName = document.getElementById('editLastName').value;
-        const username = document.getElementById('editUsername').value;
-        const email = document.getElementById('editEmail').value;
         const yearOfStudy = document.getElementById('editYearOfStudy').value;
         const subjects = Array.from(editSubjectsSelect.selectedOptions).map(option => parseInt(option.value));
     
@@ -611,8 +593,6 @@
                     user: {
                         first_name: firstName,
                         last_name: lastName,
-                        username: username,
-                        email: email
                     },
                     year_of_study: yearOfStudy,
                     subjects: subjects
@@ -631,6 +611,7 @@
             errorMessage.textContent = error.message;
         }
     }
+    
 
     async function deleteStudent() {
         try {

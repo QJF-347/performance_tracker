@@ -26,10 +26,27 @@ class RegisterSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'first_name', 'last_name', 'email']
+        fields = ['id','first_name', 'last_name']
 
-    def update(self, instance, validated_data):
-        print("--- UserSerializer update() ---")
-        print("User Instance:", instance)
-        print("User Validated Data:", validated_data)
-        return super().update(instance, validated_data)
+    def validate_username(self, value):
+        """Ensure username is unique except for the current user."""
+        request = self.context.get("request")
+        user_id = self.instance.id if self.instance else None
+
+        if User.objects.filter(username=value).exclude(id=user_id).exists():
+            raise serializers.ValidationError("A user with that username already exists.")
+        return value
+
+    def validate_email(self, value):
+        """Ensure email is unique except for the current user."""
+        request = self.context.get("request")
+        user_id = self.instance.id if self.instance else None
+
+        if User.objects.filter(email=value).exclude(id=user_id).exists():
+            raise serializers.ValidationError("A user with that email already exists.")
+        return value
+
+
+
+
+

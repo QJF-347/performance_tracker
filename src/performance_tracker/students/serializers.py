@@ -18,21 +18,18 @@ class StudentSerializer(serializers.ModelSerializer):
         fields = ('id', 'user', 'year_of_study', 'subjects')
 
     def update(self, instance, validated_data):
-        print("--- StudentSerializer update() ---")
-        print("Instance:", instance)
-        print("Validated Data:", validated_data)
+        user_data = validated_data.pop('user', None)
 
-        user_data = validated_data.pop('user')
-        user_serializer = UserSerializer(instance.user, data=user_data, partial=True)
-        if user_serializer.is_valid(raise_exception=True):
-            user_serializer.save()
-
+        if user_data:
+            user = instance.user
+            user.first_name = user_data.get('first_name', user.first_name)
+            user.last_name = user_data.get('last_name', user.last_name)
+            user.save()
+            
         instance.year_of_study = validated_data.get('year_of_study', instance.year_of_study)
         instance.subjects.set(validated_data.get('subjects', instance.subjects.all()))
 
         instance.save()
-        print("Updated Instance:", instance)
-        print("--- End of update() ---")
         return instance
         
 class PerformanceRecordSerializer(serializers.Serializer):
