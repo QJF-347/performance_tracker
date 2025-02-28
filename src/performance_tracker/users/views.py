@@ -2,14 +2,14 @@ from django.shortcuts import render
 from django.contrib.auth import get_user_model, authenticate
 
 from rest_framework import generics, status
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.views import APIView
 
 
-from .serializers import RegisterSerializer
+from .serializers import RegisterSerializer, UserSerializer
 
 
 User = get_user_model()
@@ -26,7 +26,7 @@ class RegisterUserView(generics.CreateAPIView):
         if serializer.is_valid():
             user = serializer.save()
             return Response(
-                {"message":"Registration successfull"}, 
+                {"message":"Registration successfull", "id":user.id}, 
                 status=status.HTTP_201_CREATED
             )
         return Response(
@@ -80,3 +80,9 @@ class LogoutView(APIView):
             return Response({"message": "Logged out."}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": "Invalid Token"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserListView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]

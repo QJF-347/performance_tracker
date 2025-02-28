@@ -36,3 +36,6 @@ def profile_page(request):
 
 def subject_page(request):
     return render(request, 'pages/subjects.html')
+
+def students_management(request):
+    return render(request, 'pages/students.html')

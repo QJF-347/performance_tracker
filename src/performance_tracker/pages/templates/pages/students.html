@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Student Tracker - Students</title>
+    <style>
+
+        /* For WebKit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* For entire page */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 40px;
+            width: 70%;
+            max-width: 750px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+
+        .container h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .form-group select, .modal select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+            
+        }
+
+        .form-group select:focus, .modal select:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .form-group select option, .modal select option {
+            background-color: #1B263B; /* Darker option background */
+            color: #e0e0e0; /* Light text */
+            padding: 8px; /* Add padding for better spacing */
+        }
+
+        /* Style the selected option */
+        .form-group select option:checked, .modal select option:checked{
+            background-color: #415A77;
+        }
+
+        /* Style the option on hover */
+        .form-group select option:hover, .modal select option:hover{
+            background-color: #415A77;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+        
+        .form-group select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+            appearance: auto; /* Ensure default appearance */
+            -webkit-appearance: auto;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #26C6DA;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Student Specific Styles */
+        .student-label {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .student-list-container {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .student-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .student-list li {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .student-list li:last-child {
+            border-bottom: none;
+        }
+
+        .student-actions {
+            display: flex;
+        }
+
+        .student-actions button {
+            background: none;
+            border: none;
+            color: #00BCD4;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .student-actions button:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal Styles */
+        .modal-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%; /* Center vertically */
+            right: 20px; /* Position on the right */
+            transform: translateY(-50%); /* Adjust for vertical centering */
+            z-index: 1;
+            width: 80%;
+            max-width: 400px;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+        .modal-content {
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+        }
+
+        .modal h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .modal input[type="text"], .modal select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .modal input[type="text"]:focus, .modal select:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .modal button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal button:hover {
+            background-color: #26C6DA;
+        }
+
+        .modal p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Students Management</h2>
+
+        <form id="studentForm">
+        
+            <div id="newUserFields">
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="Enter first name">
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" placeholder="Enter last name">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email">
+                </div>
+                
+            </div>
+        
+            <div class="form-group">
+                <label for="yearOfStudy">Year of Study</label>
+                <input type="text" id="yearOfStudy" name="yearOfStudy" placeholder="Enter year of study" required>
+            </div>
+            <div class="form-group">
+                <label for="subjects">Subjects</label>
+                <select id="subjects" name="subjects" multiple required></select>
+            </div>
+            <button type="submit" class="button">Add Student</button>
+        </form>
+        
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <label class="student-label">List Of  Students</label>
+        <div class="student-list-container">
+            <ul class="student-list" id="studentList">
+            </ul>
+        </div>
+
+        <div class="modal-container">
+            <div id="editModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close" id="closeEditModal">&times;</span>
+                    <h2>Edit Student</h2>
+                    <div class="form-group">
+                        <label for="editFirstName">First Name</label>
+                        <input type="text" id="editFirstName" name="editFirstName" placeholder="Enter first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editLastName">Last Name</label>
+                        <input type="text" id="editLastName" name="editLastName" placeholder="Enter last name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editUsername">Username</label>
+                        <input type="text" id="editUsername" name="editUsername" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editEmail">Email</label>
+                        <input type="email" id="editEmail" name="editEmail" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editYearOfStudy">Year of Study</label>
+                        <input type="text" id="editYearOfStudy" name="editYearOfStudy" placeholder="Enter year of study" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editSubjects">Subjects</label>
+                        <select id="editSubjects" name="editSubjects" multiple required></select>
+                    </div>
+                    <button id="saveEdit" class="button">Save</button>
+                </div>
+            </div>
+
+            <div id="deleteModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close" id="closeDeleteModal">&times;</span>
+                    <h2>Confirm Delete</h2>
+                    <p>Are you sure you want to delete this student?</p>
+                    <button id="confirmDelete" class="button">Yes, Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    const studentList = document.getElementById('studentList');
+    const errorMessage = document.getElementById('errorMessage');
+    const userSelect = document.getElementById('user');
+    const subjectsSelect = document.getElementById('subjects');
+    const editUserSelect = document.getElementById('editUser');
+    const editSubjectsSelect = document.getElementById('editSubjects');
+
+
+    async function fetchAllSubjects() {
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/students/subjects/', {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`Failed to fetch subjects: ${response.statusText}`);
+            }
+
+            const subjects = await response.json();
+            subjectsSelect.innerHTML = '';
+            editSubjectsSelect.innerHTML = '';
+
+            subjects.forEach(subject => {
+                const option = document.createElement('option');
+                option.value = subject.id;
+                option.textContent = subject.name;
+                subjectsSelect.appendChild(option);
+                editSubjectsSelect.appendChild(option.cloneNode(true));
+            });
+        } catch (error) {
+            console.error("Error fetching subjects:", error);
+            errorMessage.textContent = error.message;
+        }
+    }
+
+    async function fetchStudents() {
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/students/students/', {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                }
+            });
+    
+            if (!response.ok) {
+                throw new Error(`Failed to fetch students: ${response.statusText}`);
+            }
+    
+            const data = await response.json();
+    
+            studentList.innerHTML = '';
+    
+            if (data.results && Array.isArray(data.results)) {
+                data.results.forEach(student => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <span>${student.user.username} - ${student.year_of_study}</span>
+                        <div class="student-actions">
+                            <button onclick="openEditModal(${student.id})">Edit</button>
+                            <button onclick="openDeleteModal(${student.id})">Delete</button>
+                        </div>
+                    `;
+                    studentList.appendChild(listItem);
+                });
+            } else {
+                console.error("Invalid student data format:", data);
+                errorMessage.textContent = "Failed to fetch students. Invalid data format.";
+            }
+        } catch (error) {
+            console.error("Error fetching students:", error);
+            errorMessage.textContent = error.message;
+        }
+    }
+
+    async function addStudent(event) {
+        event.preventDefault();
+        const yearOfStudy = document.getElementById('yearOfStudy').value.trim();
+        const subjects = Array.from(subjectsSelect.selectedOptions).map(option => parseInt(option.value));
+    
+        let userId;
+    
+        if (userSelect.selectedIndex === 0) { 
+            userId = await createNewUser();
+            if (!userId) return; 
+
+        } else { 
+            userId = parseInt(userSelect.value);
+        }
+    
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/students/students/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                },
+                body: JSON.stringify({ user: userId, year_of_study: yearOfStudy, subjects })
+            });
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.detail || `Failed to add student: ${response.statusText}`);
+            }
+    
+            document.getElementById('yearOfStudy').value = '';
+            subjectsSelect.value = [];
+            fetchStudents();
+        } catch (error) {
+            console.error("Error adding student:", error);
+            errorMessage.textContent = error.message;
+        }
+    }
+    
+    async function createNewUser() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const email = document.getElementById('email').value;
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+    
+        try {
+            const userResponse = await fetch('http://127.0.0.1:8000/users/api/register/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCSRFToken() 
+                },
+                body: JSON.stringify({
+                     first_name: firstName, 
+                     last_name: lastName, 
+                     username: username, 
+                     email: email, 
+                     password: password,
+                     password2: password,  
+                    role: "student"})
+            });
+    
+            if (!userResponse.ok) {
+                const errorData = await userResponse.json();
+                // Improved error handling
+                if (errorData && errorData.detail) {
+                    errorMessage.textContent = errorData.detail;
+                } else if (errorData && errorData.error) {
+                    errorMessage.textContent = errorData.error;
+                } else if (errorData) {
+                    let errorMessages = Object.values(errorData).flat().join(", ");
+                    errorMessage.textContent = errorMessages;
+                } else {
+                    errorMessage.textContent = "User creation failed!";
+                }
+                return null;
+            }
+    
+            const userData = await userResponse.json();
+            return userData.id;
+
+        } catch (userError) {
+            console.error("Error creating user:", userError);
+            errorMessage.textContent = userError.message;
+            return null;
+        }
+    }
+
+    function getCSRFToken() {
+        return document.cookie.split('; ')
+            .find(row => row.startsWith('csrftoken='))
+            ?.split('=')[1];
+    }
+
+    async function openEditModal(id) {
+        currentStudentId = id;
+    
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/api/students/students/${id}/`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                }
+            });
+    
+            if (!response.ok) {
+                throw new Error(`Failed to fetch student details: ${response.statusText}`);
+            }
+    
+            const student = await response.json();
+
+            if (student.user) {
+                console.log(student.user.first_name)
+                console.log(student.user.last_name)
+                console.log(student.user.email)
+                console.log(student.user.username)
+
+                document.getElementById('editFirstName').value = student.user.first_name || '';
+                document.getElementById('editLastName').value = student.user.last_name || '';
+                document.getElementById('editUsername').value = student.user.username || '';
+                document.getElementById('editEmail').value = student.user.email || '';
+            } else {
+                document.getElementById('editFirstName').value = '';
+                document.getElementById('editLastName').value = '';
+                document.getElementById('editUsername').value = '';
+                document.getElementById('editEmail').value = '';
+                console.warn("Student user data is missing for student ID:", id);
+            }
+    
+            document.getElementById('editYearOfStudy').value = student.year_of_study;
+            Array.from(editSubjectsSelect.options).forEach(option => {
+                option.selected = student.subjects.includes(parseInt(option.value));
+            });
+            document.getElementById('editModal').style.display = "block";
+        } catch (error) {
+            console.error("Error opening edit modal:", error);
+            errorMessage.textContent = error.message;
+        }
+    }
+
+    function openDeleteModal(id) {
+        currentStudentId = id;
+        document.getElementById('deleteModal').style.display = "block";
+    }
+
+    async function editStudent() {
+        const firstName = document.getElementById('editFirstName').value;
+        const lastName = document.getElementById('editLastName').value;
+        const username = document.getElementById('editUsername').value;
+        const email = document.getElementById('editEmail').value;
+        const yearOfStudy = document.getElementById('editYearOfStudy').value;
+        const subjects = Array.from(editSubjectsSelect.selectedOptions).map(option => parseInt(option.value));
+    
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/api/students/students/${currentStudentId}/`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                },
+                body: JSON.stringify({
+                    user: {
+                        first_name: firstName,
+                        last_name: lastName,
+                        username: username,
+                        email: email
+                    },
+                    year_of_study: yearOfStudy,
+                    subjects: subjects
+                })
+            });
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.detail || `Failed to update student: ${response.statusText}`);
+            }
+    
+            fetchStudents();
+            closeEditModal();
+        } catch (error) {
+            console.error("Error editing student:", error);
+            errorMessage.textContent = error.message;
+        }
+    }
+
+    async function deleteStudent() {
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/api/students/students/${currentStudentId}/`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`Failed to delete student: ${response.statusText}`);
+            }
+
+            fetchStudents();
+            closeDeleteModal();
+        } catch (error) {
+            console.error("Error deleting student:", error);
+            errorMessage.textContent = error.message;
+        }
+    }
+
+    function closeEditModal() {
+        document.getElementById('editModal').style.display = "none";
+    }
+
+    function closeDeleteModal() {
+        document.getElementById('deleteModal').style.display = "none";
+    }
+
+
+    document.getElementById('closeEditModal').onclick = closeEditModal;
+    document.getElementById('closeDeleteModal').onclick = closeDeleteModal;
+    document.getElementById('saveEdit').onclick = editStudent;
+    document.getElementById('confirmDelete').onclick = deleteStudent;
+    document.getElementById('studentForm').addEventListener('submit', addStudent);
+
+    fetchAllSubjects();
+    fetchStudents();
+</script>
+
+
+</body>
+</html>

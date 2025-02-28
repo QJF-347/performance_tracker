@@ -1,10 +1,11 @@
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenRefreshView
 
-from .views import RegisterUserView, CustomTokenObtainPairView, LogoutView
+from .views import UserListView, RegisterUserView, CustomTokenObtainPairView, LogoutView
 
 urlpatterns = [
     path('auth/', include('dj_rest_auth.urls')),
+    path('api/', UserListView.as_view(), name='user-list'),
     path('auth/registration/', include('dj_rest_auth.registration.urls')),
     path('auth/google/', include('allauth.socialaccount.urls')),
     path('api/register/', RegisterUserView.as_view(), name='register'),

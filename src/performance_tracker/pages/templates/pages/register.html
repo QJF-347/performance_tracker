@@ -203,7 +203,14 @@
                         "Content-Type": "application/json",
                         "X-CSRFToken": csrftoken
                     },
-                    body: JSON.stringify({ first_name, last_name, username, email, password, password2, role })
+                    body: JSON.stringify({ 
+                        first_name, 
+                        last_name, 
+                        username, 
+                        email, 
+                        password, 
+                        password2, 
+                        role })
                 });
 
                 let data = await response.json();

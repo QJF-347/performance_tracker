@@ -23,3 +23,13 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'first_name', 'last_name', 'email']
+
+    def update(self, instance, validated_data):
+        print("--- UserSerializer update() ---")
+        print("User Instance:", instance)
+        print("User Validated Data:", validated_data)
+        return super().update(instance, validated_data)

@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from .serializers import SubjectSerializer, StudentSerializer, PerformanceRecordSerializer, CourseEnrollmentSerializer
 from .permissions import IsAdminOrTeacher
 from django.shortcuts import get_object_or_404
+from users.models import User
 
 # subject views
 class SubjectListCreateView(generics.ListCreateAPIView):
@@ -31,7 +32,7 @@ class SubjectRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
 # student views
 class CustomPagination(PageNumberPagination):
     page_size = 10
-    page_size_query_param = page_size
+    page_size_query_param = 'page_size'
     max_page_size = 100
     
     
@@ -44,11 +45,20 @@ class StudentListCreateView(generics.ListCreateAPIView):
     ordering_fields = ['user__username', 'year_of_study']
     pagination_class = CustomPagination
 
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class StudentRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
     permission_classes = [IsAuthenticated, IsAdminOrTeacher]
+    
+    def put(self, request, *args, **kwargs):
+        return super().put(request, *args, **kwargs)
 
 
 # Performance Record Views
