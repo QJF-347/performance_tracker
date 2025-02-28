@@ -1,0 +1,308 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Student Dashboard</title>
+      <link rel="stylesheet" href="index.css" />
+      <script src="https://kit.fontawesome.com/4d99246f7d.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+      <div class="default_container">
+        <div class="sidebar" id="sidebar">
+          <div class="profile-picture" id="profilePicture"></div>
+          <div class="navs">
+            <a href="#" class="nav-link">Dashboard</a>
+            <a href="#" class="nav-link dash">My Info</a>
+            <a href="#" class="nav-link dash">Performance analysis</a>
+            <a href="#" class="nav-link dash">Recommendations</a>
+            <a href="#" class="nav-link">Assignments</a>
+            <a href="#" class="nav-link">Study Groups</a>
+            <a href="#" class="nav-link">Resources</a>
+            <a href="#" class="nav-link">Settings</a>
+            <a href="#" class="nav-link">Support</a>
+            <button class="logout-button" id="logoutButton">Logout</button>
+          </div>
+        </div>
+
+        <div class="bot_icon">
+          <i class="fa-solid fa-comment"></i>
+        </div>
+
+        <div class="dashboard-container" id="dashboardContainer">
+          <div class="student_info">
+            <div class="info_header">
+              <h1>Student Dashboard</h1>
+              <p>Welcome Again</p>
+            </div>
+            <form action="#">
+              <div class="divs1">
+                <div class="input_box">
+                  <label for="student_fname">First Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="student_fname"
+                    readonly
+                    value="Denis"
+                  />
+                </div>
+                <div class="input_box">
+                  <label for="student_lname">Other Names</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="student_lname"
+                    readonly
+                    value="Felix Mugambi"
+                  />
+                </div>
+              </div>
+              <div class="divs1">
+                <div class="input_box">
+                  <label for="student_email">E-mail</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="student_email"
+                    readonly
+                    value="felix.denis23@students.dkut.ac.ke"
+                  />
+                </div>
+                <div class="input_box">
+                  <label for="student_adm">Adm/Reg No.</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="student_adm"
+                    readonly
+                    value="C026-01-2098/2023"
+                  />
+                </div>
+              </div>
+              <div class="divs1">
+                <div class="input_box">
+                  <label for="student_course">Program/Course</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="student_course"
+                    readonly
+                    value="Computer Science"
+                  />
+                </div>
+                <div class="input_box">
+                  <label for="student_form">Form/Year of Study</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="student_form"
+                    readonly
+                    value="Year 2"
+                  />
+                </div>
+              </div>
+
+              <div class="divs1">
+                <div class="input_box">
+                  <label for="student_fee">Fee Balance</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="student_fee"
+                    readonly
+                    value="0.00"
+                  />
+                </div>
+                <div class="input_box">
+                  <label for="student_class">Class</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="student_class"
+                    readonly
+                    value="Computer Science"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="performance_analysis">
+            <div class="analysis_header">
+              <h1>Performance Analysis</h1>
+              <p>
+                Here you will get the the analysis of how you have been performing
+                the whole time you have been in school.
+              </p>
+            </div>
+            <div class="links_performance">
+              <div class="links_boxes">
+                <h1>Courses</h1>
+                <label for="courses">All courses</label>
+                <select id="courses" name="courses">
+                  <option value="mathematics">Mathematics</option>
+                  <option value="english">English</option>
+                  <option value="kiswahili">Kiswahili</option>
+                  <option value="geography">Geography</option>
+                  <option value="history">History</option>
+                  <option value="science">Science</option>
+                  <option value="cre">CRE</option>
+                </select>
+              </div>
+              <div class="links_boxes">
+                <h1>Results</h1>
+                <label for="results">All results</label>
+                <select id="results" name="results">
+                  <option value="">Select Form/Year</option>
+                  <option value="year_1">Form/Year 1</option>
+                  <option value="year_2">Form/Year 2</option>
+                  <option value="year_3">Form/Year 3</option>
+                  <option value="year_4">Form/Year 4</option>
+                </select>
+              
+                <select id="term_year_1" name="term_year_1" style="display: none;">
+                  <option value="term1">Term 1</option>
+                  <option value="term2">Term 2</option>
+                  <option value="term3">Term 3</option>
+                </select>
+              
+                <select id="term_year_2" name="term_year_2" style="display: none;">
+                  <option value="term1">Term 1</option>
+                  <option value="term2">Term 2</option>
+                  <option value="term3">Term 3</option>
+                </select>
+              
+                <select id="term_year_3" name="term_year_3" style="display: none;">
+                  <option value="term1">Term 1</option>
+                  <option value="term2">Term 2</option>
+                  <option value="term3">Term 3</option>
+                </select>
+              
+                <select id="term_year_4" name="term_year_4" style="display: none;">
+                  <option value="term1">Term 1</option>
+                  <option value="term2">Term 2</option>
+                  <option value="term3">Term 3</option>
+                </select>
+              </div>
+              <div class="links_boxes">
+                <h1>Current Term Analysis</h1>
+                <label for="current_results">Current Units Progress</label>
+                <select id="current_results" name="current_results">
+                  <option value="mathematics">Mathematics</option>
+                  <option value="english">English</option>
+                  <option value="kiswahili">Kiswahili</option>
+                  <option value="geography">Geography</option>
+                  <option value="history">History</option>
+                  <option value="science">Science</option>
+                  <option value="cre">CRE</option>
+                </select>
+              </div>
+            </div>
+             
+            <div class="progress_graphs">
+              <div class="progress_header">
+                <h2>My Progress Analysis</h2>
+              </div>
+              <div class="d1">
+                <div class="d2">
+                  <div class="graphs">
+                    <div class="h2">
+                      <h2>Sciences</h2>
+                    </div>
+
+                    <div class="main_graph"></div>
+                  </div>
+                  <div class="graphs">
+                    <div class="h2">
+                      <h2>Languages</h2>
+                    </div>
+
+                    <div class="main_graph"></div>
+                  </div>
+                </div>
+                <div class="d2">
+                  <div class="graphs">
+                    <div class="h2">
+                      <h2>Humanities</h2>
+                    </div>
+
+                    <div class="main_graph"></div>
+                  </div>
+                  <div class="graphs">
+                    <div class="h2">
+                      <h2>Overall Performance</h2>
+                    </div>
+
+                    <div class="main_graph"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="recommendations">
+            <div class="rec_header">
+              <h2>Recommendations</h2>
+            </div>
+            <div class="flex">
+              <div class="teacher-remarks">
+                <h2>Teacher Remarks</h2>
+                <div class="remarks-list">
+                  <ul>
+                    <li>"Denis, you've shown improvement in your participation."</li>
+                    <li>"Remember to submit assignments on time."</li>
+                    <li>"Practice more on complex math problems."</li>
+                    <li>"Your essay writing is improving, keep it up!"</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ai-insights">
+                <h2>AI Insights</h2>
+                <div class="insights-list">
+                  <ul>
+                    <li>"Based on your recent scores, focus on improving your understanding of algorithms."</li>
+                    <li>"Your study patterns suggest you learn best in the morning. Schedule more study time then."</li>
+                    <li>"Consider joining a study group for collaborative learning in physics."</li>
+                    <li>"Your progress in history indicates a need for more comprehensive note-taking."</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="chat_box">
+          <div class="heading_chat">
+            <p>Chat Bot</p>
+            <a href="#" id="bot_close">&times</a>
+          </div>
+          <div class="person_question">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui harum
+              asperiores sequi perferendis aperiam quae, fugiat error et!
+              Temporibus distinctio magni numquam atque soluta nulla totam esse
+              illum fugit praesentium.
+            </p>
+          </div>
+          <div class="chat_bot_text">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae,
+              fugiat. Cum aperiam nisi porro consequatur exercitationem
+              perspiciatis aspernatur, ipsa alias eius, laborum voluptatum atque
+              voluptas. Dicta aliquid odio tenetur maxime.
+            </p>
+          </div>
+          <div class="text_input">
+            <input
+              type="text"
+              id="person_text"
+              name="text_area"
+              placeholder="Search here....."
+            />
+          </div>
+        </div>
+      </div>
+      <script src="index.js"></script>
+    </body>
+  </html>
