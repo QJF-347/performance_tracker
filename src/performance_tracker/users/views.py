@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import get_user_model, authenticate
 
-from rest_framework import generics, status
+from rest_framework import generics, status, exceptions
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
@@ -22,45 +22,63 @@ class RegisterUserView(generics.CreateAPIView):
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
-        
-        if serializer.is_valid():
+
+        try:
+            serializer.is_valid(raise_exception=True)
             user = serializer.save()
             return Response(
-                {"message":"Registration successfull", "id":user.id}, 
+                {"message": "Registration successful", "user": UserSerializer(user).data},
                 status=status.HTTP_201_CREATED
             )
-        return Response(
-            serializer.errors, 
-            status=status.HTTP_400_BAD_REQUEST
-        )
+        except exceptions.ValidationError as e:
+            return Response(
+                {"error": e.detail},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        except Exception as e:
+            # Log the error here
+            print(f"An unexpected error occurred: {e}")
+            return Response(
+                {"error": "An internal server error occurred."},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
     
 
 class CustomTokenObtainPairView(TokenObtainPairView):
-    permission_classes = [AllowAny, ]
-    
     def post(self, request, *args, **kwargs):
         username = request.data.get("username")
         password = request.data.get("password")
-        
-        user = authenticate(username=username, password=password)
-        
-        if user is not None:
-            refresh = RefreshToken.for_user(user)
-            return Response({
-                "refresh":str(refresh), 
-                "access":str(refresh.access_token), 
-                "user":{
-                    "id":user.id, 
-                    "username":user.username, 
-                    "email":user.email, 
-                    "role":user.role
-                }
-            })
-        else:
+
+        try:
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                refresh = RefreshToken.for_user(user)
+                return Response({
+                    "refresh": str(refresh),
+                    "access": str(refresh.access_token),
+                    "user": {
+                        "id": user.id,
+                        "username": user.username,
+                        "email": user.email,
+                        "role": user.role
+                    }
+                })
+            else:
+                raise exceptions.AuthenticationFailed("Invalid credentials")
+
+        except exceptions.AuthenticationFailed as e:
             return Response(
-                {"error":"Invalid credentials"}, 
+                {"error": str(e)},
                 status=status.HTTP_401_UNAUTHORIZED
-                )
+            )
+        except Exception as e:
+            # Log the error here
+            print(f"An unexpected error occurred: {e}")
+            return Response(
+                {"error": "An internal server error occurred."},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 class LogoutView(APIView):
     permission_classes =[IsAuthenticated]
@@ -93,11 +111,11 @@ class UserUpdateView(generics.UpdateAPIView):
     permission_classes = [IsAuthenticated]
 
     def update(self, request, *args, **kwargs):
-        partial = kwargs.pop('partial', True)  # Allow partial updates
+        partial = True  
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         self.perform_update(serializer)
         return Response(serializer.data, status=status.HTTP_200_OK)
-
-
+    
+    

@@ -12,7 +12,7 @@ class User(AbstractUser):
         ('teacher', 'teacher'), 
     )
     
-    role = models.CharField(max_length=10, choices=ROLE_CHOICES)
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default="student")
     email = models.EmailField(max_length=254, unique=True)
     profile_picture = models.ImageField(upload_to="profile_pics/", null=True, blank=True)
     bio = models.TextField(blank=True, null=True)

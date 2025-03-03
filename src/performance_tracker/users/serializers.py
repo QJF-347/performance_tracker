@@ -26,7 +26,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id','first_name', 'last_name']
+        fields = ['id',  'first_name', 'last_name', 'username']
 
     def validate_username(self, value):
         """Ensure username is unique except for the current user."""
