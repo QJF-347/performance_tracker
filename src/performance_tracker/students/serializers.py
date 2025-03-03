@@ -1,8 +1,9 @@
 from rest_framework import serializers
-from users.serializers import RegisterSerializer
-from .models import Student, Subject, PerformanceRecord, CourseEnrollment
-from users.models import User
+from .models import Subject, Student, AssessmentComponent, PerformanceRecord, Event, Message
+from django.contrib.auth import get_user_model
 from users.serializers import UserSerializer
+
+User = get_user_model()
 
 class SubjectSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,34 +11,51 @@ class SubjectSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class StudentSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
-    subjects = serializers.PrimaryKeyRelatedField(many=True, queryset=Subject.objects.all())
+    user = UserSerializer(read_only=True) # Read-only nested serializer
+    user_id = serializers.PrimaryKeyRelatedField(
+        queryset=User.objects.all(), write_only=True
+    )  # Write-only pk field
+    subjects = serializers.PrimaryKeyRelatedField(queryset=Subject.objects.all(), many=True)
+    parent = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
 
     class Meta:
         model = Student
-        fields = ('id', 'user', 'year_of_study', 'subjects')
+        fields = ('id', 'user', 'user_id', 'year_of_study', 'subjects', 'parent')
+
+    def create(self, validated_data):
+        user_id = validated_data.pop('user_id')
+        subjects_data = validated_data.pop('subjects') # Get the subjects data
+        validated_data['user'] = user_id
+        student = Student.objects.create(**validated_data)
+        student.subjects.set(subjects_data) # Use .set() to assign subjects
+        return student
 
     def update(self, instance, validated_data):
-        user_data = validated_data.pop('user', None)
-
-        if user_data:
-            user = instance.user
-            user.first_name = user_data.get('first_name', user.first_name)
-            user.last_name = user_data.get('last_name', user.last_name)
-            user.save()
-            
+        user_id = validated_data.pop('user_id', None)
+        if user_id is not None:
+            instance.user = user_id
         instance.year_of_study = validated_data.get('year_of_study', instance.year_of_study)
         instance.subjects.set(validated_data.get('subjects', instance.subjects.all()))
-
+        instance.parent = validated_data.get('parent', instance.parent)
         instance.save()
         return instance
-        
-class PerformanceRecordSerializer(serializers.Serializer):
+
+class AssessmentComponentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AssessmentComponent
+        fields = '__all__'
+
+class PerformanceRecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = PerformanceRecord
-        fields = ['id', 'student', 'subject', 'score', 'date_recorded']
-        
-class CourseEnrollmentSerializer(serializers.ModelSerializer):
+        fields = '__all__'
+
+class EventSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CourseEnrollment
-        fields = ('id', 'student', 'subject', 'enrollment_date')
+        model = Event
+        fields = '__all__'
+
+class MessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        fields = '__all__'

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Student Tracker - Students</title>
-    <style>
+    <title>Student Management</title>
+</head>
+<style>
 
         /* For WebKit browsers (Chrome, Safari) */
         ::-webkit-scrollbar {
@@ -16,643 +15,690 @@
             scrollbar-width: none; /* Firefox */
             -ms-overflow-style: none; /* Internet Explorer and Edge */
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
-            color: #e0e0e0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+        color: #e0e0e0;
+        padding: 20px;
+    }
+    
+    h1, h2, h3 {
+        color: #e0e0e0;
+        text-align: center;
+    }
+    
+    button {
+        background-color: #00BCD4;
+        color: #0D1B2A;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin: 10px 0;
+    }
+    
+    button:hover {
+        background-color: #26C6DA;
+    }
+    
+    #add-student-form {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 12px;
+        padding: 20px;
+        margin: 20px auto; /* Center horizontally */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 700px; /* Set a maximum width */
+    }
+    
+    #add-student-form input,
+    #add-student-form select {
+        width: calc(100% - 22px);
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #e0e0e0;
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    
+    #add-student-form input:focus,
+    #add-student-form select:focus {
+        outline: none;
+        border-color: #00BCD4;
+        box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+    }
+    
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    li {
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .edit-btn,
+    .delete-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+    
+    .delete-btn {
+        background-color: #f44336;
+    }
+    
+    .edit-btn:hover,
+    .delete-btn:hover {
+        opacity: 0.8;
+    }
 
-        .container {
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 12px;
-            padding: 40px;
-            width: 70%;
-            max-width: 750px;
-            text-align: center;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 20px;
-        }
+    select:hover {
+        background-color: #333333; /* Darker background on hover */
+    }
+    
+    /* Optional: Add a custom dropdown arrow */
+    select::-ms-expand {
+        display: none; /* Hide default arrow in IE */
+    }
+    
+    select {
+        background-color: #222222; 
+        color: #ffffff; 
+        border: 1px solid #333333; 
+        padding: 10px;
+        margin-bottom: 15px; /* Increased margin-bottom for spacing */
+        cursor: pointer;
+        appearance: none; 
+        -webkit-appearance: none; 
+        -moz-appearance: none;
+        overflow: hidden;
+    }
+    #edit-student-form {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 12px;
+        padding: 20px;
+        margin: 20px auto; /* Center horizontally */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 700px; /* Set a maximum width */
+    }
+    
+    #edit-student-form input,
+    #edit-student-form select {
+        width: calc(100% - 22px);
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #e0e0e0;
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    
+    #edit-student-form input:focus,
+    #edit-student-form select:focus {
+        outline: none;
+        border-color: #00BCD4;
+        box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+    }
+    
+    /* Styles for the select elements */
+    #edit-student-form select {
+        background-color: #222222;
+        color: #ffffff;
+        border: 1px solid #333333;
+        padding: 10px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        overflow: hidden;
+    }
+    
+    #edit-student-form select:hover {
+        background-color: #333333; /* Darker background on hover */
+    }
 
-        .container h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .form-group select, .modal select {
-            width: calc(100% - 22px);
-            padding: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #e0e0e0;
-            font-size: 1em;
-            
-        }
-
-        .form-group select:focus, .modal select:focus {
-            outline: none;
-            border-color: #00BCD4;
-            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
-        }
-
-        .form-group select option, .modal select option {
-            background-color: #1B263B; /* Darker option background */
-            color: #e0e0e0; /* Light text */
-            padding: 8px; /* Add padding for better spacing */
-        }
-
-        /* Style the selected option */
-        .form-group select option:checked, .modal select option:checked{
-            background-color: #415A77;
-        }
-
-        /* Style the option on hover */
-        .form-group select option:hover, .modal select option:hover{
-            background-color: #415A77;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .form-group input {
-            width: calc(100% - 22px);
-            padding: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #e0e0e0;
-            font-size: 1em;
-        }
-        
-        .form-group select {
-            width: calc(100% - 22px);
-            padding: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #e0e0e0;
-            font-size: 1em;
-            appearance: auto; /* Ensure default appearance */
-            -webkit-appearance: auto;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: #00BCD4;
-            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
-        }
-
-        .button {
-            background-color: #00BCD4;
-            color: #0D1B2A;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width: 100%;
-        }
-
-        .button:hover {
-            background-color: #26C6DA;
-        }
-
-        .error-message {
-            color: red;
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        /* Student Specific Styles */
-        .student-label {
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .student-list-container {
-            max-height: 400px;
-            overflow-y: auto;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            margin-top: 10px;
-            padding: 10px;
-        }
-
-        .student-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .student-list li {
-            padding: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .student-list li:last-child {
-            border-bottom: none;
-        }
-
-        .student-actions {
-            display: flex;
-        }
-
-        .student-actions button {
-            background: none;
-            border: none;
-            color: #00BCD4;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-
-        .student-actions button:hover {
-            text-decoration: underline;
-        }
-
-        /* Modal Styles */
-        .modal-container {
-            position: relative;
-            width: 100%;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%; /* Center vertically */
-            right: 20px; /* Position on the right */
-            transform: translateY(-50%); /* Adjust for vertical centering */
-            z-index: 1;
-            width: 80%;
-            max-width: 400px;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #e0e0e0;
-        }
-        .modal-content {
-            text-align: center;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #fff;
-        }
-
-        .modal h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .modal input[type="text"], .modal select {
-            width: calc(100% - 22px);
-            padding: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #e0e0e0;
-            font-size: 1em;
-            margin-bottom: 20px;
-        }
-
-        .modal input[type="text"]:focus, .modal select:focus {
-            outline: none;
-            border-color: #00BCD4;
-            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
-        }
-
-        .modal button {
-            background-color: #00BCD4;
-            color: #0D1B2A;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .modal button:hover {
-            background-color: #26C6DA;
-        }
-
-        .modal p {
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
+</style>
 <body>
+    <h1>Student Management</h1>
 
-    <div class="container">
-        <h2>Students Management</h2>
+    <button id="add-student-btn">Add Student</button>
 
-        <form id="studentForm">
-        
-            <div id="newUserFields">
-                <div class="form-group">
-                    <label for="first_name">First Name</label>
-                    <input type="text" id="first_name" name="first_name" placeholder="Enter first name">
-                </div>
-                <div class="form-group">
-                    <label for="last_name">Last Name</label>
-                    <input type="text" id="last_name" name="last_name" placeholder="Enter last name">
-                </div>
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter password">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter email">
-                </div>
-                
+    <div id="add-student-form" style="display: none;">
+        <h2>Add New Student</h2>
+        <form id="student-form">
+            <input type="text" id="first-name" name="first-name" placeholder="First Name"><br>
+            <input type="text" id="last-name" name="last-name" placeholder="Last Name"><br>
+            <input type="text" id="username" name="username" placeholder="Username"><br>
+            <input type="email" id="email" name="email" placeholder="Email"><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <input type="text" id="year-of-study" name="year-of-study" placeholder="Year of Study"><br>
+            <div id="subject-selection">
+                <h3>Select Subjects:</h3>
+                <select id="subjects-select" name="subjects-select" multiple></select>
             </div>
-        
-            <div class="form-group">
-                <label for="yearOfStudy">Year of Study</label>
-                <input type="text" id="yearOfStudy" name="yearOfStudy" placeholder="Enter year of study" required>
+            <div id="parent-selection">
+                <h3>Select Parents:</h3>
+                <select id="parents-select" name="parents-select" multiple></select>
             </div>
-            <div class="form-group">
-                <label for="subjects">Subjects</label>
-                <select id="subjects" name="subjects" multiple required></select>
-            </div>
-            <button type="submit" class="button">Add Student</button>
+            <button id="save-student-btn" type="submit">Save Student</button>
+            <button id="cancel-student-btn" type="button">Cancel</button>
         </form>
-        
-
-        <div id="errorMessage" class="error-message"></div>
-
-        <label class="student-label">List Of  Students</label>
-        <div class="student-list-container">
-            <ul class="student-list" id="studentList">
-            </ul>
-        </div>
-
-        <div class="modal-container">
-            <div id="editModal" class="modal" style="display: none;">
-                <div class="modal-content">
-                    <span class="close" id="closeEditModal">&times;</span>
-                    <h2>Edit Student</h2>
-                    <div class="form-group">
-                        <label for="editFirstName">First Name</label>
-                        <input type="text" id="editFirstName" name="editFirstName" placeholder="Enter first name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="editLastName">Last Name</label>
-                        <input type="text" id="editLastName" name="editLastName" placeholder="Enter last name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="editYearOfStudy">Year of Study</label>
-                        <input type="text" id="editYearOfStudy" name="editYearOfStudy" placeholder="Enter year of study" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="editSubjects">Subjects</label>
-                        <select id="editSubjects" name="editSubjects" multiple required></select>
-                    </div>
-                    <button id="saveEdit" class="button">Save</button>
-                </div>
-            </div>
-
-            <div id="deleteModal" class="modal" style="display: none;">
-                <div class="modal-content">
-                    <span class="close" id="closeDeleteModal">&times;</span>
-                    <h2>Confirm Delete</h2>
-                    <p>Are you sure you want to delete this student?</p>
-                    <button id="confirmDelete" class="button">Yes, Delete</button>
-                </div>
-            </div>
-        </div>
     </div>
 
+    <div id="edit-student-form" style="display: none;">
+        <h2>Edit Student</h2>
+        <form id="edit-student-details-form">
+            <input type="text" id="edit-first-name" name="first-name" placeholder="First Name"><br>
+            <input type="text" id="edit-last-name" name="last-name" placeholder="Last Name"><br>
+            <input type="text" id="edit-year-of-study" name="year-of-study" placeholder="Year of Study"><br>
+            <div id="edit-subject-selection">
+                <h3>Select Subjects:</h3>
+                <select id="edit-subjects-select" name="subjects-select" multiple></select>
+            </div>
+            <div id="edit-parent-selection">
+                <h3>Select Parents:</h3>
+                <select id="edit-parents-select" name="parents-select" multiple></select>
+            </div>
+            <button id="update-student-btn" type="submit">Update Student</button>
+            <button id="cancel-edit-btn" type="button">Cancel</button>
+        </form>
+    </div>
 
-<script>
-    const studentList = document.getElementById('studentList');
-    const errorMessage = document.getElementById('errorMessage');
-    const userSelect = document.getElementById('user');
-    const subjectsSelect = document.getElementById('subjects');
-    const editUserSelect = document.getElementById('editUser');
-    const editSubjectsSelect = document.getElementById('editSubjects');
+    <div id="student-list-container">
+        <ul id="student-list"></ul>
+    </div>
 
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+            const studentList = document.getElementById('student-list');
+            const addStudentBtn = document.getElementById('add-student-btn');
+            const addStudentForm = document.getElementById('add-student-form');
+            const saveStudentBtn = document.getElementById('save-student-btn');
+            const cancelStudentBtn = document.getElementById('cancel-student-btn');
+            const subjectSelect = document.getElementById('subjects-select');
+            const parentSelect = document.getElementById('parents-select');
+            const editStudentForm = document.getElementById('edit-student-form');
+            const editFirstNameInput = document.getElementById('edit-first-name');
+            const updateStudentBtn = document.getElementById('update-student-btn');
+            const cancelEditBtn = document.getElementById('cancel-edit-btn');
+            const editSubjectSelect = document.getElementById('edit-subjects-select');
+            const editParentSelect = document.getElementById('edit-parents-select');
+        
+            let students = [];
+            let subjects = [];
+            let users = [];
+        
+            function fetchStudents() {
+                const token = localStorage.getItem('access_token');
 
-    async function fetchAllSubjects() {
-        try {
-            const response = await fetch('http://127.0.0.1:8000/api/students/subjects/', {
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                if (!token){
+                    console.error('No access token found.');
+                    return;
                 }
-            });
 
-            if (!response.ok) {
-                throw new Error(`Failed to fetch subjects: ${response.statusText}`);
+                fetch('http://127.0.0.1:8000/students/api/students/', 
+                        {
+                            headers:{
+                                'Authorization': `Bearer ${token}`
+                            }
+                        }
+                    )
+
+                    .then(response =>
+                        {
+                            if (!response.ok){
+                                throw new Error(`HTTP error! status: ${reponse.status}`);
+                            }
+                            return response.json();
+                        }
+                    )
+
+                    .then(data=>
+                        {
+                            students = data;
+                            renderStudents();
+                        }
+                    )
+
+                    .catch(error=>
+                        console.error('Error fetching students:', error)
+                    );
+            }
+        
+            function fetchSubjects() {
+                const token = localStorage.getItem('access_token');
+
+                if (!token){
+                    console.error('No access token found.');
+                    return;
+                }
+
+                fetch('http://127.0.0.1:8000/students/api/subjects/', 
+                        {
+                            headers:{
+                                'Authorization': `Bearer ${token}`
+                            }
+                        }
+                    )
+
+                    .then(response =>
+                        {
+                            if (!response.ok){
+                                throw new Error(`HTTP error! status: ${reponse.status}`);
+                            }
+                            return response.json();
+                        }
+                    )
+
+                    .then(data=>
+                        {
+                            subjects = data;
+                            renderSubjects();
+                        }
+                    )
+
+                    .catch(error=>
+                        console.error('Error fetching subjects:', error)
+                    );
+            }
+        
+            function fetchUsers() {
+                
+                const token = localStorage.getItem('access_token');
+
+                if (!token){
+                    console.error('No access token found.');
+                    return;
+                }
+
+                fetch('http://127.0.0.1:8000/users/api/', 
+                        {
+                            headers:{
+                                'Authorization': `Bearer ${token}`
+                            }
+                        }
+                    )
+
+                    .then(response =>
+                        {
+                            if (!response.ok){
+                                throw new Error(`HTTP error! status: ${reponse.status}`);
+                            }
+                            return response.json();
+                        }
+                    )
+
+                    .then(data=>
+                        {
+                            users = data;
+                            renderUsers();
+                        }
+                    )
+
+                    .catch(error=>
+                        console.error('Error fetching users:', error)
+                    );
             }
 
-            const subjects = await response.json();
-            subjectsSelect.innerHTML = '';
-            editSubjectsSelect.innerHTML = '';
-
-            subjects.forEach(subject => {
-                const option = document.createElement('option');
-                option.value = subject.id;
-                option.textContent = subject.name;
-                subjectsSelect.appendChild(option);
-                editSubjectsSelect.appendChild(option.cloneNode(true));
-            });
-        } catch (error) {
-            console.error("Error fetching subjects:", error);
-            errorMessage.textContent = error.message;
-        }
-    }
-
-    async function fetchStudents() {
-        try {
-            const response = await fetch('http://127.0.0.1:8000/api/students/students/', {
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+            function renderStudents() {
+                studentList.innerHTML = ''; 
+        
+                if (students.length === 0) {
+                    const message = document.createElement('li');
+                    message.textContent = 'No students found.';
+                    studentList.appendChild(message);
+                    return;
                 }
-            });
-    
-            if (!response.ok) {
-                throw new Error(`Failed to fetch students: ${response.statusText}`);
-            }
-    
-            const data = await response.json();
-    
-            studentList.innerHTML = '';
-    
-            if (data.results && Array.isArray(data.results)) {
-                data.results.forEach(student => {
+        
+                students.forEach(student => {
                     const listItem = document.createElement('li');
-                    listItem.innerHTML = `
-                        <span>${student.user.first_name} ${student.user.first_name} - ${student.year_of_study}</span>
-                        <div class="student-actions">
-                            <button onclick="openEditModal(${student.id})">Edit</button>
-                            <button onclick="openDeleteModal(${student.id})">Delete</button>
-                        </div>
-                    `;
+                    const infoContainer = document.createElement('div');
+        
+                    const nameSpan = document.createElement('span');
+                    nameSpan.textContent = `${student.user.first_name} ${student.user.last_name}`;
+                    infoContainer.appendChild(nameSpan);
+        
+                    const yearSpan = document.createElement('span');
+                    yearSpan.textContent = `   Year ${student.year_of_study}`;
+                    infoContainer.appendChild(yearSpan);
+                    listItem.appendChild(infoContainer);
+        
+                    const editButton = document.createElement('button');
+                    editButton.textContent = 'Edit';
+                    editButton.classList.add('edit-btn');
+                    editButton.dataset.id = student.id;
+                    editButton.addEventListener('click', () => editStudent(student.id));
+                    listItem.appendChild(editButton);
+        
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.classList.add('delete-btn');
+                    deleteButton.dataset.id = student.id;
+                    deleteButton.addEventListener('click', () => deleteStudent(student.id));
+                    listItem.appendChild(deleteButton);
+        
                     studentList.appendChild(listItem);
                 });
-            } else {
-                console.error("Invalid student data format:", data);
-                errorMessage.textContent = "Failed to fetch students. Invalid data format.";
             }
-        } catch (error) {
-            console.error("Error fetching students:", error);
-            errorMessage.textContent = error.message;
-        }
-    }
-
-    async function addStudent(event) {
-        event.preventDefault();
-        const yearOfStudy = document.getElementById('yearOfStudy').value.trim();
-        const subjects = Array.from(subjectsSelect.selectedOptions).map(option => parseInt(option.value));
-    
-        let userId;
-    
-        if (userSelect.selectedIndex === 0) { 
-            userId = await createNewUser();
-            if (!userId) return; 
-
-        } else { 
-            userId = parseInt(userSelect.value);
-        }
-    
-        try {
-            const response = await fetch('http://127.0.0.1:8000/api/students/students/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
-                },
-                body: JSON.stringify({ user: userId, year_of_study: yearOfStudy, subjects })
-            });
-    
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.detail || `Failed to add student: ${response.statusText}`);
+        
+            function renderSubjects() {
+                subjectSelect.innerHTML = '';
+                subjects.forEach(subject => {
+                    const option = document.createElement('option');
+                    option.value = subject.id;
+                    option.textContent = subject.name;
+                    subjectSelect.appendChild(option);
+                });
             }
-    
-            document.getElementById('yearOfStudy').value = '';
-            subjectsSelect.value = [];
-            fetchStudents();
-        } catch (error) {
-            console.error("Error adding student:", error);
-            errorMessage.textContent = error.message;
-        }
-    }
-    
-    async function createNewUser() {
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        const email = document.getElementById('email').value;
-        const firstName = document.getElementById('first_name').value;
-        const lastName = document.getElementById('last_name').value;
-    
-        try {
-            const userResponse = await fetch('http://127.0.0.1:8000/users/api/register/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': getCSRFToken() 
-                },
-                body: JSON.stringify({
-                     first_name: firstName, 
-                     last_name: lastName, 
-                     username: username, 
-                     email: email, 
-                     password: password,
-                     password2: password,  
-                    role: "student"})
-            });
-    
-            if (!userResponse.ok) {
-                const errorData = await userResponse.json();
-                // Improved error handling
-                if (errorData && errorData.detail) {
-                    errorMessage.textContent = errorData.detail;
-                } else if (errorData && errorData.error) {
-                    errorMessage.textContent = errorData.error;
-                } else if (errorData) {
-                    let errorMessages = Object.values(errorData).flat().join(", ");
-                    errorMessage.textContent = errorMessages;
-                } else {
-                    errorMessage.textContent = "User creation failed!";
+        
+            function renderUsers() {
+                parentSelect.innerHTML = ''; 
+                users.forEach(user => {
+                    const option = document.createElement('option');
+                    option.value = user.id;
+                    option.textContent = `${user.first_name} ${user.last_name} - ${user.username}`;
+                    parentSelect.appendChild(option);
+                    
+                });
+            }
+            
+            async function handleStudentFormSubmit(event) {
+                event.preventDefault();
+            
+                const firstName = document.getElementById('first-name').value;
+                const lastName = document.getElementById('last-name').value;
+                const username = document.getElementById('username').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const yearOfStudy = document.getElementById('year-of-study').value;
+                const subjectSelect = document.getElementById('subjects-select'); 
+                const parentSelect = document.getElementById('parents-select');
+                const subjects = Array.from(subjectSelect.selectedOptions).map(option => parseInt(option.value));
+                const parent = parseInt(parentSelect.value);
+            
+                const token = localStorage.getItem('access_token');
+                if (!token) {
+                    console.error('No access token found.');
+                    return;
                 }
-                return null;
-            }
-    
-            const userData = await userResponse.json();
-            return userData.id;
-
-        } catch (userError) {
-            console.error("Error creating user:", userError);
-            errorMessage.textContent = userError.message;
-            return null;
-        }
-    }
-
-    function getCSRFToken() {
-        return document.cookie.split('; ')
-            .find(row => row.startsWith('csrftoken='))
-            ?.split('=')[1];
-    }
-
-    async function openEditModal(id) {
-        currentStudentId = id;
-    
-        try {
-            const response = await fetch(`http://127.0.0.1:8000/api/students/students/${id}/`, {
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
-                }
-            });
-    
-            if (!response.ok) {
-                throw new Error(`Failed to fetch student details: ${response.statusText}`);
-            }
-    
-            const student = await response.json();
-
-            if (student.user) {
-
-                document.getElementById('editFirstName').value = student.user.first_name || '';
-                document.getElementById('editLastName').value = student.user.last_name || '';
-            } else {
-                document.getElementById('editFirstName').value = '';
-                document.getElementById('editLastName').value = '';
-                console.warn("Student user data is missing for student ID:", id);
-            }
-    
-            document.getElementById('editYearOfStudy').value = student.year_of_study;
-            Array.from(editSubjectsSelect.options).forEach(option => {
-                option.selected = student.subjects.includes(parseInt(option.value));
-            });
-            document.getElementById('editModal').style.display = "block";
-        } catch (error) {
-            console.error("Error opening edit modal:", error);
-            errorMessage.textContent = error.message;
-        }
-    }
-
-    function openDeleteModal(id) {
-        currentStudentId = id;
-        document.getElementById('deleteModal').style.display = "block";
-    }
-
-    async function editStudent() {
-        const firstName = document.getElementById('editFirstName').value;
-        const lastName = document.getElementById('editLastName').value;
-        const yearOfStudy = document.getElementById('editYearOfStudy').value;
-        const subjects = Array.from(editSubjectsSelect.selectedOptions).map(option => parseInt(option.value));
-    
-        try {
-            const response = await fetch(`http://127.0.0.1:8000/api/students/students/${currentStudentId}/`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
-                },
-                body: JSON.stringify({
-                    user: {
+            
+                try {
+                    // Create User
+                    const userData = {
                         first_name: firstName,
                         last_name: lastName,
-                    },
-                    year_of_study: yearOfStudy,
-                    subjects: subjects
-                })
-            });
-    
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.detail || `Failed to update student: ${response.statusText}`);
-            }
-    
-            fetchStudents();
-            closeEditModal();
-        } catch (error) {
-            console.error("Error editing student:", error);
-            errorMessage.textContent = error.message;
-        }
-    }
-    
-
-    async function deleteStudent() {
-        try {
-            const response = await fetch(`http://127.0.0.1:8000/api/students/students/${currentStudentId}/`, {
-                method: 'DELETE',
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                        username: username,
+                        email: email,
+                        password: password,
+                        password2:password, 
+                    };
+                    const createdUser = await createUser(userData);
+                    // Create Student
+                    const studentData = {
+                        user_id: createdUser.user.id,
+                        year_of_study: yearOfStudy,
+                        subjects: subjects,
+                        parent: parent,
+                    };
+                    const createdStudent = await createStudent(studentData, token);
+                    
+                    fetchStudents();
+                    addStudentForm.style.display = 'none';
+                } catch (error) {
+                    alert('Failed to add student. Please try again.');
                 }
-            });
+            }
+            
+            document.getElementById('student-form').addEventListener('submit', handleStudentFormSubmit);
 
-            if (!response.ok) {
-                throw new Error(`Failed to delete student: ${response.statusText}`);
+            async function createUser(userData) {
+                try {
+                    
+                    const response = await fetch('http://127.0.0.1:8000/users/api/register/', { // Adjust endpoint as needed
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(userData),
+                    });
+            
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+            
+                    return await response.json();
+                } catch (error) {
+                    console.error('Error creating user:', error);
+                    throw error; 
+                }
             }
 
+            async function createStudent(studentData, token) {
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/students/api/students/', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(studentData),
+                    });
+            
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+            
+                    return await response.json();
+                } catch (error) {
+                    console.error('Error adding student:', error);
+                    throw error; // Re-throw to handle in the main function
+                }
+            }
+            
+            addStudentBtn.addEventListener('click', () => {
+                addStudentForm.style.display = 'block';
+                fetchUsers();
+                fetchSubjects();
+            });
+        
+            cancelStudentBtn.addEventListener('click', () => {
+                addStudentForm.style.display = 'none';
+            });
+        
+            function deleteStudent(id) {
+                const token = localStorage.getItem('access_token');
+
+                if (!token) {
+                    console.error('No access token found.');
+                    return;
+                }
+
+                fetch(`http://127.0.0.1:8000/students/api/students/${id}/`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    console.log('Student deleted:', id);
+                    fetchStudents(); // Refresh student list
+                })
+                .catch(error => {
+                    console.error('Error deleting student:', error);
+                });
+            }
+            
+            function renderEditSubjects(subjects) { 
+                editSubjectSelect.innerHTML = '';
+                console.log("renderEditSubjects called");
+                subjects.forEach(subject => {
+                    const option = document.createElement('option');
+                    option.value = subject.id;
+                    option.textContent = subject.name;
+                    editSubjectSelect.appendChild(option);
+                });
+                console.log("Subjects dropdown populated:", editSubjectSelect);
+            }
+            
+            function renderEditUsers(users) { 
+                editParentSelect.innerHTML = '';
+                console.log("renderEditUsers called");
+                users.forEach(user => {
+                    const option = document.createElement('option');
+                    option.value = user.id;
+                    option.textContent = `${user.first_name} ${user.last_name} - ${user.username}`;
+                    editParentSelect.appendChild(option);
+                });
+                console.log("Users dropdown populated:", editParentSelect);
+            }      
+            
+            async function editStudent(id) {
+                const token = localStorage.getItem('access_token');
+            
+                if (!token) {
+                    console.error('No access token found.');
+                    alert('Authentication error. Please log in.');
+                    return;
+                }
+            
+                try {
+                    const response = await fetch(`http://127.0.0.1:8000/students/api/students/${id}/`, {
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+            
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+            
+                    const studentData = await response.json();
+            
+                    // Fetch subjects and users, and pass them directly
+                    const subjectsResponse = await fetch('http://127.0.0.1:8000/students/api/subjects/', {
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    const subjectsData = await subjectsResponse.json();
+            
+                    const usersResponse = await fetch('http://127.0.0.1:8000/users/api/', {
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    const usersData = await usersResponse.json();
+        
+                    renderEditSubjects(subjectsData); 
+                    renderEditUsers(usersData); 
+            
+                    document.getElementById('edit-first-name').value = studentData.user.first_name;
+                    document.getElementById('edit-last-name').value = studentData.user.last_name;
+                    document.getElementById('edit-year-of-study').value = studentData.year_of_study;
+            
+                    Array.from(editSubjectSelect.options).forEach(option => {
+                        option.selected = studentData.subjects.includes(parseInt(option.value));
+                    });
+            
+                    if (studentData.parent) {
+                        Array.from(editParentSelect.options).forEach(option => {
+                            option.selected = parseInt(option.value) === studentData.parent;
+                        });
+                    } else {
+                        console.warn("studentData.parent is undefined or null:", studentData.parent);
+                    }
+                    
+                    editStudentForm.dataset.studentId = id;
+                    editStudentForm.style.display = 'block';
+            
+                } catch (error) {
+                    console.error('Error fetching student data:', error);
+                    alert('Failed to fetch student data. Please try again.');
+                }
+            }
+            
+            async function updateStudent(id) {
+                const token = localStorage.getItem('access_token');
+            
+                if (!token) {
+                    console.error('No access token found.');
+                    return;
+                }
+            
+                try {
+                    const updatedData = {
+                        first_name: document.getElementById('edit-first-name').value,
+                        last_name: document.getElementById('edit-last-name').value,
+                        year_of_study: document.getElementById('edit-year-of-study').value,
+                        subjects: Array.from(editSubjectSelect.selectedOptions).map(option => parseInt(option.value)),
+                        parent: parseInt(editParentSelect.value),
+                    };
+            
+                    const response = await fetch(`http://127.0.0.1:8000/students/api/students/${id}/`, {
+                        method: 'PATCH',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(updatedData),
+                    });
+            
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+            
+                    const data = await response.json();
+            
+                    console.log('Student updated:', data);
+                    fetchStudents();
+                    editStudentForm.style.display = 'none';
+            
+                } catch (error) {
+                    console.error('Error updating student:', error);
+                    alert('Failed to update student. Please try again.');
+                }
+            }
+            
+            updateStudentBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                const studentId = document.getElementById('edit-student-form').dataset.studentId;
+                if (studentId) {
+                    updateStudent(studentId);
+                } else {
+                    console.error("studentId is undefined. Cannot update student.");
+                    alert('An unexpected error has occurred. Please refresh the page and try again.');
+                }
+            })
+        
             fetchStudents();
-            closeDeleteModal();
-        } catch (error) {
-            console.error("Error deleting student:", error);
-            errorMessage.textContent = error.message;
-        }
-    }
-
-    function closeEditModal() {
-        document.getElementById('editModal').style.display = "none";
-    }
-
-    function closeDeleteModal() {
-        document.getElementById('deleteModal').style.display = "none";
-    }
-
-
-    document.getElementById('closeEditModal').onclick = closeEditModal;
-    document.getElementById('closeDeleteModal').onclick = closeDeleteModal;
-    document.getElementById('saveEdit').onclick = editStudent;
-    document.getElementById('confirmDelete').onclick = deleteStudent;
-    document.getElementById('studentForm').addEventListener('submit', addStudent);
-
-    fetchAllSubjects();
-    fetchStudents();
-</script>
-
-
+        });
+    </script>
 </body>
 </html>

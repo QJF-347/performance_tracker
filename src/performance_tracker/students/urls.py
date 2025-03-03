@@ -1,25 +1,17 @@
-from django.urls import path
-from .views import (
-    SubjectListCreateView, SubjectRetrieveUpdateDestroyView,
-    StudentListCreateView, StudentRetrieveUpdateDestroyView,
-    PerformanceRecordListCreateView, PerformanceRecordRetrieveUpdateDestroyView,
-    CourseEnrollmentListCreateView, CourseEnrollmentRetrieveUpdateDestroyView,
-)
+from django.contrib import admin
+from django.urls import path, include
+from rest_framework import routers
+from students import views
+
+router = routers.DefaultRouter()
+router.register(r'subjects', views.SubjectViewSet)
+router.register(r'students', views.StudentViewSet)
+router.register(r'assessment-components', views.AssessmentComponentViewSet)
+router.register(r'performance-records', views.PerformanceRecordViewSet)
+router.register(r'events', views.EventViewSet)
+router.register(r'messages', views.MessageViewSet)
 
 urlpatterns = [
-    # Subjects
-    path('subjects/', SubjectListCreateView.as_view(), name='subject-list-create'),
-    path('subjects/<int:pk>/', SubjectRetrieveUpdateDestroyView.as_view(), name='subject-retrieve-update-destroy'),
-
-    # Students
-    path('students/', StudentListCreateView.as_view(), name='student-list-create'),
-    path('students/<int:pk>/', StudentRetrieveUpdateDestroyView.as_view(), name='student-retrieve-update-destroy'),
-
-    # Performance Records
-    path('performance-records/', PerformanceRecordListCreateView.as_view(), name='performance-record-list-create'),
-    path('performance-records/<int:pk>/', PerformanceRecordRetrieveUpdateDestroyView.as_view(), name='performance-record-retrieve-update-destroy'),
-
-    # Course Enrollments
-    path('course-enrollments/', CourseEnrollmentListCreateView.as_view(), name='course-enrollment-list-create'),
-    path('course-enrollments/<int:pk>/', CourseEnrollmentRetrieveUpdateDestroyView.as_view(), name='course-enrollment-retrieve-update-destroy'),
+    path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
 ]
