@@ -291,7 +291,7 @@
     
         async function fetchSubjects() {
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/students/subjects/', {
+                const response = await fetch('http://127.0.0.1:8000/students/api/subjects/', {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('access_token')}`
                     }
@@ -321,7 +321,7 @@
             event.preventDefault();
             const subjectName = document.getElementById('subjectName').value;
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/students/subjects/', {
+                const response = await fetch('http://127.0.0.1:8000/students/api/subjects/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
