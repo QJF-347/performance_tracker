@@ -5,15 +5,14 @@
 </head>
 <style>
 
-        /* For WebKit browsers (Chrome, Safari) */
-        ::-webkit-scrollbar {
-            display: none;
-        }
+    ::-webkit-scrollbar {
+        display: none;
+    }
 
-        /* For entire page */
-        html, body {
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer and Edge */
+
+    html, body {
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
         }
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -45,15 +44,85 @@
     button:hover {
         background-color: #26C6DA;
     }
+
+    #registered-students-label {
+        display: block; 
+        text-align: center; 
+        font-size: 1.5em; 
+        font-weight: bold; 
+        margin-bottom: 10px; 
+        color: #e0e0e0;
+        position: sticky;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.2); /* Match container background */
+        z-index: 1; /* Ensure it's above the list items */
+        padding-top: 10px; /* Add some padding */
+    }
+    
+    
+    #student-list-container {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        border-radius: 8px;
+        width: 800px; 
+        height: 700px; 
+        margin: 20px auto;
+        overflow-y: auto; 
+        position: relative;
+    }
+    
+    #student-list-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    #student-list-container {
+        scrollbar-width: none;
+    }
+
+    #student-list-container {
+        -ms-overflow-style: none;
+    }
+
+    #student-list li {
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 10px 15px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Vertically align items */
+        max-height: 25px;
+    }
+    
+    #student-list li .button-container {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+    .delete-btn{
+        margin-left: 10px;
+    }
+    
+    #student-list li .button-container button {
+        margin-left: 5px; /* Add spacing between buttons */
+    }
     
     #add-student-form {
-        background-color: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        top: 50px;
+        right: 0;
+        width: 400px;
+        height: calc(100vh - 100px);
+        background-color: rgba(0, 0, 0, 0.9);
         border-radius: 12px;
         padding: 20px;
-        margin: 20px auto; /* Center horizontally */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        max-width: 700px; /* Set a maximum width */
+        z-index: 1000;
+        overflow-y: auto;
+        margin: 0; /* Remove any margins that might be affecting positioning */
     }
     
     #add-student-form input,
@@ -108,9 +177,14 @@
         background-color: #f44336;
     }
     
-    .edit-btn:hover,
+    .edit-btn:hover{
+        opacity: 0.8;
+        background-color: #00ff00;
+    }
+
     .delete-btn:hover {
         opacity: 0.8;
+        background-color: #e70a0a;
     }
 
     select:hover {
@@ -134,14 +208,29 @@
         -moz-appearance: none;
         overflow: hidden;
     }
-    #edit-student-form {
-        background-color: rgba(0, 0, 0, 0.6);
+    #edit-student-modal {
+        position: fixed;
+        top: 50px; /* Adjust top position as needed */
+        right: 0;
+        width: 400px; /* Adjust width as needed */
+        height: calc(100vh - 100px); /* adjust height as needed */
+        background-color: rgba(0, 0, 0, 0.8); /* Use your existing background color */
         border-radius: 12px;
-        padding: 20px;
-        margin: 20px auto; /* Center horizontally */
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        max-width: 700px; /* Set a maximum width */
+        z-index: 1001; /* Ensure it's on top */
+        overflow-y: auto;
+        display: none; /* Initially hide the modal */
+    }
+
+
+    #edit-student-form {
+        background-color: transparent; /* Use transparent background */
+        border: none; /* Remove border */
+        box-shadow: none; /* Remove box-shadow */
+        max-width: none; /* remove max width */
+        width: 100%;
+        padding: 20px;
     }
     
     #edit-student-form input,
@@ -181,6 +270,127 @@
         background-color: #333333; /* Darker background on hover */
     }
 
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1001;
+    }
+    
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 700px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    #student-list-controls {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        position: sticky;
+        top: 50px; /* Adjust as needed based on label height */
+        background-color: rgba(0, 0, 0, 0.2); /* Match container background */
+        z-index: 1; /* Ensure it's above the list items */
+        padding-top: 10px; /* Add some padding */
+    }
+    
+    #student-search, #student-sort {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+        width: 48%; /* Adjust width as needed */
+        background-color: #222222;
+        color: #ffffff;
+    }
+    
+    #student-search:focus, #student-sort:focus {
+        outline: none;
+        border-color: #00BCD4;
+    }
+
+    .search-container {
+        position: relative; /* Needed for absolute positioning of the icon */
+        display: inline-block; /* Allows the container to wrap the content */
+    }
+    
+
+    
+    #student-search {
+        padding-right: 35px; /* Add padding to prevent text overlap with the icon */
+        width: 300px; /* adjust as needed */
+    }
+    
+    .delete-confirmation-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1002;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #e0e0e0;
+    }
+    
+    .delete-modal-content {
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* Red glowing shadow */
+        text-align: center;
+        width: 400px;
+        max-width: 90%;
+        border: 2px solid rgba(255, 0, 0, 0.5); /* Red border */
+    }
+
+    .delete-modal-buttons {
+        margin-top: 25px;
+    }
+    
+    .delete-modal-buttons button {
+        padding: 12px 25px;
+        margin: 0 15px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1em;
+        transition: background-color 0.3s ease;
+    }
+    
+    #confirm-delete-btn {
+        background-color: #f44336;
+        color: #0D1B2A;
+    }
+    
+    #cancel-delete-btn {
+        background-color: #04a711; /* Darker blue */
+        color: #0D1B2A;
+    }
+    
+    #confirm-delete-btn:hover {
+        background-color: #d32f2f;
+    }
+    
+    #cancel-delete-btn:hover {
+        background-color: #006064; /* Even darker blue */
+    }
 </style>
 <body>
     <h1>Student Management</h1>
@@ -189,6 +399,7 @@
 
     <div id="add-student-form" style="display: none;">
         <h2>Add New Student</h2>
+
         <form id="student-form">
             <input type="text" id="first-name" name="first-name" placeholder="First Name"><br>
             <input type="text" id="last-name" name="last-name" placeholder="Last Name"><br>
@@ -209,8 +420,9 @@
         </form>
     </div>
 
-    <div id="edit-student-form" style="display: none;">
-        <h2>Edit Student</h2>
+    <div id="edit-student-modal" style="display: none;"> <div id="edit-student-form">
+        
+        <h2 id="edit-student-title">Edit Student Details</h2>
         <form id="edit-student-details-form">
             <input type="text" id="edit-first-name" name="first-name" placeholder="First Name"><br>
             <input type="text" id="edit-last-name" name="last-name" placeholder="Last Name"><br>
@@ -228,7 +440,38 @@
         </form>
     </div>
 
+    </div>
+    </body>
+
     <div id="student-list-container">
+    <label id="registered-students-label">Registered Students</label>
+
+    <div id="student-list-controls">
+        <div class="search-container">
+            <input type="text" id="student-search" placeholder="Search first name, last name, username">
+            
+        </div>
+        <select id="student-sort">
+            <option value="">Sort By</option>
+            <option value="year-asc">Year of Study (Asc)</option>
+            <option value="year-desc">Year of Study (Desc)</option>
+            <option value="firstname-asc">First Name (Asc)</option>
+            <option value="firstname-desc">First Name (Desc)</option>
+            <option value="username-asc">Username (Asc)</option>
+            <option value="username-desc">Username (Desc)</option>
+        </select>
+    </div>
+
+    <div id="delete-confirmation-modal" class="delete-confirmation-modal" style="display: none;">
+        <div class="delete-modal-content">
+            <p>Are you sure you want to delete this student?</p>
+            <div class="delete-modal-buttons">
+                <button id="confirm-delete-btn">Yes, Delete</button>
+                <button id="cancel-delete-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
         <ul id="student-list"></ul>
     </div>
 
@@ -252,7 +495,12 @@
             let subjects = [];
             let users = [];
         
+
+            const studentSearch = document.getElementById('student-search');
+            const studentSort = document.getElementById('student-sort');
+
             function fetchStudents() {
+
                 const token = localStorage.getItem('access_token');
 
                 if (!token){
@@ -364,47 +612,108 @@
                     );
             }
 
-            function renderStudents() {
-                studentList.innerHTML = ''; 
-        
-                if (students.length === 0) {
+            function renderStudents(studentsToRender = students) { // Corrected function
+                console.log('Rendering students:', studentsToRender);
+    
+                studentList.innerHTML = '';
+    
+                if (studentsToRender.length === 0) {
                     const message = document.createElement('li');
                     message.textContent = 'No students found.';
                     studentList.appendChild(message);
                     return;
                 }
-        
-                students.forEach(student => {
+    
+                studentsToRender.forEach(student => {
                     const listItem = document.createElement('li');
                     const infoContainer = document.createElement('div');
-        
+    
                     const nameSpan = document.createElement('span');
                     nameSpan.textContent = `${student.user.first_name} ${student.user.last_name}`;
                     infoContainer.appendChild(nameSpan);
-        
+    
                     const yearSpan = document.createElement('span');
                     yearSpan.textContent = `   Year ${student.year_of_study}`;
                     infoContainer.appendChild(yearSpan);
                     listItem.appendChild(infoContainer);
-        
+    
+                    const buttonContainer = document.createElement('div');
+                    buttonContainer.classList.add('button-container');
+    
                     const editButton = document.createElement('button');
                     editButton.textContent = 'Edit';
                     editButton.classList.add('edit-btn');
                     editButton.dataset.id = student.id;
                     editButton.addEventListener('click', () => editStudent(student.id));
-                    listItem.appendChild(editButton);
-        
+                    buttonContainer.appendChild(editButton);
+    
                     const deleteButton = document.createElement('button');
                     deleteButton.textContent = 'Delete';
                     deleteButton.classList.add('delete-btn');
                     deleteButton.dataset.id = student.id;
                     deleteButton.addEventListener('click', () => deleteStudent(student.id));
-                    listItem.appendChild(deleteButton);
-        
+                    buttonContainer.appendChild(deleteButton);
+    
+                    listItem.appendChild(buttonContainer);
                     studentList.appendChild(listItem);
                 });
             }
+    
         
+            function sortStudents(sortType) {
+                if (!sortType) return;
+        
+                students.sort((a, b) => {
+                    switch (sortType) {
+                        case 'year-asc':
+                            return a.year_of_study - b.year_of_study;
+                        case 'year-desc':
+                            return b.year_of_study - a.year_of_study;
+                        case 'firstname-asc':
+                            return a.user.first_name.localeCompare(b.user.first_name);
+                        case 'firstname-desc':
+                            return b.user.first_name.localeCompare(a.user.first_name);
+                        case 'username-asc':
+                            return a.user.username.localeCompare(b.user.username);
+                        case 'username-desc':
+                            return b.user.username.localeCompare(a.user.username);
+                        default:
+                            return 0;
+                    }
+                });
+        
+                renderStudents();
+            }
+        
+            function searchStudents(searchTerm) {
+                console.log('Search term:', searchTerm);
+    
+                const lowerSearchTerm = searchTerm.toLowerCase();
+    
+                const filteredStudents = students.filter(student => {
+                    const fullName = `${student.user.first_name} ${student.user.last_name}`.toLowerCase();
+                    const username = student.user.username.toLowerCase();
+                    return fullName.includes(lowerSearchTerm) || username.includes(lowerSearchTerm);
+                });
+    
+                console.log('Filtered students:', filteredStudents);
+    
+                console.log('Rendering filtered students');
+                renderStudents(filteredStudents); // Call with the filtered array
+            }
+            
+
+            console.log('Search listener attached');
+            studentSearch.addEventListener('input', () => {
+                searchStudents(studentSearch.value);
+            });
+        
+            studentSort.addEventListener('change', () => {
+                sortStudents(studentSort.value);
+            });
+        
+        
+
             function renderSubjects() {
                 subjectSelect.innerHTML = '';
                 subjects.forEach(subject => {
@@ -519,40 +828,64 @@
                 }
             }
             
+
             addStudentBtn.addEventListener('click', () => {
                 addStudentForm.style.display = 'block';
                 fetchUsers();
                 fetchSubjects();
             });
-        
+            
+            cancelEditBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                const editStudentModal = document.getElementById('edit-student-modal');
+                editStudentModal.style.display = 'none'; // Hide the modal
+                editStudentForm.style.display = 'none';
+            });
+
             cancelStudentBtn.addEventListener('click', () => {
                 addStudentForm.style.display = 'none';
             });
         
             function deleteStudent(id) {
-                const token = localStorage.getItem('access_token');
 
-                if (!token) {
-                    console.error('No access token found.');
-                    return;
-                }
+                const confirmationModal = document.getElementById('delete-confirmation-modal');
+                const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
+                const cancelDeleteBtn = document.getElementById('cancel-delete-btn');
 
-                fetch(`http://127.0.0.1:8000/students/api/students/${id}/`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Authorization': `Bearer ${token}`
+                confirmationModal.style.display = 'flex';
+
+                confirmDeleteBtn.onclick = () => {
+                    const token = localStorage.getItem('access_token');
+            
+                    if (!token) {
+                        console.error('No access token found.');
+                        return;
                     }
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    console.log('Student deleted:', id);
-                    fetchStudents(); // Refresh student list
-                })
-                .catch(error => {
-                    console.error('Error deleting student:', error);
-                });
+            
+                    fetch(`http://127.0.0.1:8000/students/api/students/${id}/`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        console.log('Student deleted:', id);
+                        fetchStudents();
+                    })
+                    .catch(error => {
+                        console.error('Error deleting student:', error);
+                    });
+            
+                    confirmationModal.style.display = 'none';
+                };
+            
+                cancelDeleteBtn.onclick = () => {
+                    confirmationModal.style.display = 'none';
+                    console.log("Deletion cancelled by user.");
+                };
             }
             
             function renderEditSubjects(subjects) { 
@@ -580,6 +913,13 @@
             }      
             
             async function editStudent(id) {
+
+                const editStudentModal = document.getElementById('edit-student-modal');
+                const editStudentForm = document.getElementById('edit-student-form');
+                const editStudentTitle = document.getElementById('edit-student-title');
+                editStudentModal.style.display = 'block'; 
+                editStudentForm.style.display = 'block';
+                
                 const token = localStorage.getItem('access_token');
             
                 if (!token) {
@@ -600,8 +940,9 @@
                     }
             
                     const studentData = await response.json();
-            
-                    // Fetch subjects and users, and pass them directly
+                    
+                    editStudentTitle.textContent = `Edit ${studentData.user.last_name}'s Details`;
+
                     const subjectsResponse = await fetch('http://127.0.0.1:8000/students/api/subjects/', {
                         headers: {
                             'Authorization': `Bearer ${token}`
@@ -696,7 +1037,13 @@
                     alert('An unexpected error has occurred. Please refresh the page and try again.');
                 }
             })
-        
+
+            function performSearch() {
+                searchStudents(studentSearch.value);
+            }
+
+            studentSearch.addEventListener('input', performSearch);
+
             fetchStudents();
         });
     </script>
