@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Calendar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* For entire page */
+html, body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0; /* Changed from 20px to 0 */
+    background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+    color: #e0e0e0;
+    display: flex;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker sidebar */
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: rgba(0, 188, 212, 0.2); /* Light blue highlight */
+}
+
+.nav-link i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column; /* Added column for heading */
+    flex-grow: 1;
+    padding: 20px; /* added some padding */
+}
+
+#page-heading {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#events-container {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column; /* Add this line */
+}
+#add-event-btn{
+    width: 300px;
+}
+#upcoming-events {
+    background-color: rgba(0, 0, 0, 0.6); /* Card background */
+    padding: 15px;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: 80vh;
+    margin-top: 10px;
+    width: 25%; /* Same as events-container width */
+    margin-right: 20px;
+}
+
+.upcoming-event-item {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker event items */
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#event-calendar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.6); /* Card background */
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1003;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.95); /* Darker modal */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px #007bff;
+    border: 1px solid #007bff;
+    text-align: left;
+    color: #e0e0e0;
+    width: 500px;
+    max-width: 90%;
+}
+
+#add-event-form input,
+#add-event-form textarea {
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 1em;
+    resize: vertical;
+}
+
+#add-event-form input:focus,
+#add-event-form textarea:focus {
+    outline: none;
+    border-color: #00BCD4;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+}
+
+#add-event-form button,
+button {
+    background-color: #00BCD4; /* Primary button color */
+    color: #0D1B2A; /* Button text color */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 5px;
+}
+
+#add-event-form button:hover,
+button:hover {
+    background-color: #26C6DA;
+}
+
+#close-event-modal {
+    margin-top: 20px;
+}
+.modal-content button:nth-child(3) { /* Edit button */
+    background-color: green;
+    color: white;
+}
+
+.modal-content button:nth-child(4) { /* Delete button */
+    background-color: red;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <nav class="admin-nav">
+            <a href="#" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#" class="nav-link active"><i class="fas fa-users"></i> Teacher Overview</a>
+            <a href="#" class="nav-link"><i class="fas fa-graduation-cap"></i> Student Overview</a>
+            <a href="#" class="nav-link"><i class="fas fa-comments"></i> Communication</a>
+            <a href="#" class="nav-link"><i class="fas fa-calendar-alt"></i> Event Management</a>
+            <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </div>
+
+    <div id="main-content">
+        <div id="events-container">
+            <button id="add-event-btn">Add Event</button>
+            <div id="upcoming-events">
+                <h2>Upcoming Events</h2>
+                <div id="upcoming-events-list">
+                    </div>
+            </div>
+        </div>
+
+        <div id="event-calendar"></div>
+    </div>
+
+    <div id="event-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 id="event-modal-title"></h2>
+            <p id="event-modal-date"></p>
+            <p id="event-modal-location"></p>
+            <p id="event-modal-description"></p>
+            <button id="close-event-modal">Close</button>
+        </div>
+    </div>
+
+    <div id="add-event-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2> Event</h2>
+            <form id="add-event-form">
+                <input type="hidden" id="event-id" value="">
+                <input type="text" id="event-title" placeholder="Title" required><br>
+                <textarea id="event-description" placeholder="Description"></textarea><br>
+                <input type="datetime-local" id="event-date" required><br>
+                <input type="text" id="event-location" placeholder="Location"><br>
+                <button type="submit">Save Event</button>
+                <button id="cancel-add-event">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const calendarEl = document.getElementById('event-calendar');
+            const eventModal = document.getElementById('event-modal');
+            const eventModalTitle = document.getElementById('event-modal-title');
+            const eventModalDate = document.getElementById('event-modal-date');
+            const eventModalLocation = document.getElementById('event-modal-location');
+            const eventModalDescription = document.getElementById('event-modal-description');
+            const closeEventModal = document.getElementById('close-event-modal');
+            const addEventBtn = document.getElementById('add-event-btn');
+            const addEventModal = document.getElementById('add-event-modal');
+            const addEventForm = document.getElementById('add-event-form');
+            const cancelAddEvent = document.getElementById('cancel-add-event');
+            const upcomingEventsList = document.getElementById('upcoming-events-list');
+    
+            function displayUpcomingEvents(events) {
+                upcomingEventsList.innerHTML = '';
+                const now = new Date();
+                const upcoming = events.filter(event => new Date(event.date) > now).sort((a, b) => new Date(a.date) - new Date(b.date)).slice(0, 7);
+    
+                upcoming.forEach(event => {
+                    const eventItem = document.createElement('div');
+                    eventItem.classList.add('upcoming-event-item');
+                    eventItem.innerHTML = `
+                        <strong>${event.title}</strong><br>
+                        ${new Date(event.date).toLocaleString()}
+                    `;
+                    eventItem.addEventListener('click', () => {
+                        openEventModal(event);
+                    });
+                    upcomingEventsList.appendChild(eventItem);
+                });
+            }
+    
+            let calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                events: [],
+                eventClick: function(info) {
+                    openEventModal(info.event.extendedProps);
+                },
+            });
+    
+            calendar.render();
+    
+            function fetchEvents() {
+                const token = localStorage.getItem('access_token');
+                if (!token) return;
+    
+                fetch('http://127.0.0.1:8000/students/api/events/', { // Replace with your API URL
+                    headers: { 'Authorization': `Bearer ${token}` }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    calendar.removeAllEvents();
+                    data.forEach(event => {
+                        calendar.addEvent({
+                            title: event.title,
+                            start: event.date,
+                            extendedProps: event
+                        });
+                    });
+    
+                    displayUpcomingEvents(data);
+                })
+                .catch(error => console.error('Error fetching events:', error));
+            }
+    
+            fetchEvents();
+    
+            closeEventModal.addEventListener('click', () => {
+                eventModal.style.display = 'none';
+            });
+            
+            function clearAddEventModal() { // Move this function up
+                document.getElementById("event-title").value = '';
+                document.getElementById("event-description").value = '';
+                document.getElementById("event-date").value = '';
+                document.getElementById("event-location").value = '';
+                document.getElementById("event-id").value = '';
+            }
+            
+            addEventBtn.addEventListener('click', () => {
+                clearAddEventModal();
+                addEventModal.style.display = 'flex';
+            });
+    
+            cancelAddEvent.addEventListener('click', () => {
+                addEventModal.style.display = 'none';
+            });
+    
+            addEventForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const title = document.getElementById('event-title').value;
+                const description = document.getElementById('event-description').value;
+                const date = document.getElementById('event-date').value;
+                const location = document.getElementById('event-location').value;
+                const eventId = document.getElementById('event-id').value;
+    
+                const token = localStorage.getItem('access_token');
+                if (!token) return;
+    
+                const method = eventId ? 'PATCH' : 'POST'; 
+                const url = eventId ? `http://127.0.0.1:8000/students/api/events/${eventId}/` : 'http://127.0.0.1:8000/students/api/events/';
+    
+                fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ title, description, date, location })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    fetchEvents();
+                    addEventModal.style.display = 'none';
+                })
+                .catch(error => console.error('Error adding/editing event:', error));
+            });
+    
+            function openEventModal(event) {
+                eventModalTitle.textContent = event.title;
+                eventModalDate.textContent = new Date(event.date).toLocaleString();
+                eventModalLocation.textContent = event.location || '';
+                eventModalDescription.textContent = event.description || '';
+    
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.addEventListener('click', () => {
+                    editEvent(event);
+                });
+    
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', () => {
+                    deleteEvent(event);
+                });
+    
+                const modalContent = eventModal.querySelector('.modal-content');
+                const existingButtons = modalContent.querySelectorAll('button');
+                existingButtons.forEach(button => {
+                    if (button.id !== 'close-event-modal') {
+                        button.remove();
+                    }
+                });
+    
+                modalContent.appendChild(editButton);
+                modalContent.appendChild(deleteButton);
+                eventModal.style.display = 'flex';
+            }
+    
+            function editEvent(event) {
+                document.getElementById("event-title").value = event.title;
+                document.getElementById("event-description").value = event.description;
+                document.getElementById("event-date").value = event.date.slice(0, 16);
+                document.getElementById("event-location").value = event.location;
+                document.getElementById("event-id").value = event.id; // Set the event ID
+                addEventModal.style.display = 'flex';
+            }
+    
+            function deleteEvent(event) {
+                const token = localStorage.getItem('access_token');
+                if (!token) return;
+    
+                fetch(`http://127.0.0.1:8000/students/api/events/${event.id}/`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    fetchEvents();
+                    eventModal.style.display = 'none';
+                })
+                .catch(error => console.error('Error deleting event:', error));
+            }
+        });
+    </script>
+</body>
+</html>

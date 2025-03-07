@@ -4,100 +4,90 @@ from django.contrib.auth import get_user_model, authenticate
 from rest_framework import generics, status, exceptions
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.views import APIView
 
 
 from .serializers import RegisterSerializer, UserSerializer
 
-
 User = get_user_model()
 
-
-class RegisterUserView(generics.CreateAPIView):
-    queryset=User.objects.all()
-    serializer_class = RegisterSerializer
-    permission_classes = [AllowAny, ]
     
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
+from django.contrib.auth import authenticate
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status
 
+from django.contrib.auth import authenticate, login, logout
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+
+@csrf_exempt
+def user_login(request):
+    if request.method == "POST":
         try:
-            serializer.is_valid(raise_exception=True)
-            user = serializer.save()
-            return Response(
-                {"message": "Registration successful", "user": UserSerializer(user).data},
-                status=status.HTTP_201_CREATED
-            )
-        except exceptions.ValidationError as e:
-            return Response(
-                {"error": e.detail},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        except Exception as e:
-            # Log the error here
-            print(f"An unexpected error occurred: {e}")
-            return Response(
-                {"error": "An internal server error occurred."},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
-    
+            data = json.loads(request.body)  # Parse JSON data
+            username = data.get("username")
+            password = data.get("password")
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
 
-class CustomTokenObtainPairView(TokenObtainPairView):
-    def post(self, request, *args, **kwargs):
-        username = request.data.get("username")
-        password = request.data.get("password")
-
-        try:
-            user = authenticate(username=username, password=password)
-
-            if user is not None:
-                refresh = RefreshToken.for_user(user)
-                return Response({
-                    "refresh": str(refresh),
-                    "access": str(refresh.access_token),
-                    "user": {
-                        "id": user.id,
-                        "username": user.username,
-                        "email": user.email,
-                        "role": user.role
-                    }
-                })
+        user = authenticate(request, username=username, password=password)
+        if user:
+            login(request, user)
+            if user.role == "teacher":
+                return JsonResponse({"message": "Login successful", "redirect_url": "/pages/teacherdash/"})
+            elif user.role == "student": 
+                return JsonResponse({"message": "Login successful", "redirect_url": "/pages/studentdash/"})
+            elif user.role == "admin":
+                return JsonResponse({"message": "Login successful", "redirect_url": "/pages/admindash/"})
             else:
-                raise exceptions.AuthenticationFailed("Invalid credentials")
+                return JsonResponse({"message": "Login successful", "redirect_url": "/pages/parentdash/"})
+                
+        else:
+            return JsonResponse({"error": "Invalid credentials"}, status=400)
 
-        except exceptions.AuthenticationFailed as e:
-            return Response(
-                {"error": str(e)},
-                status=status.HTTP_401_UNAUTHORIZED
-            )
-        except Exception as e:
-            # Log the error here
-            print(f"An unexpected error occurred: {e}")
-            return Response(
-                {"error": "An internal server error occurred."},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+    return JsonResponse({"error": "Invalid request method"}, status=405)
 
-class LogoutView(APIView):
-    permission_classes =[IsAuthenticated]
-    
-    def post(self, request):
+def user_logout(request):
+    logout(request)
+    return JsonResponse({"message": "Logged out successfully", "redirect_url": "/pages/login/"})
+
+@csrf_exempt  
+def user_register(request):
+    if request.method == "POST":
         try:
-            refresh_token = request.data.get("refresh")  # Use `.get()` to avoid KeyError
-            if not refresh_token:
-                return Response(
-                    {"error": "Refresh token is required"},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-            
-            token = RefreshToken(refresh_token)
-            token.blacklist()  # Blacklist the refresh token
-            
-            return Response({"message": "Logged out."}, status=status.HTTP_200_OK)
-        except Exception as e:
-            return Response({"error": "Invalid Token"}, status=status.HTTP_400_BAD_REQUEST)
+            data = json.loads(request.body)
+            first_name = data.get("first_name")
+            last_name = data.get("last_name")
+            username = data.get("username")
+            email = data.get("email")
+            password = data.get("password")
+            password2 = data.get("password2")
+            role = data.get("role")
+
+            if password != password2:
+                return JsonResponse({"error": "Passwords do not match"}, status=400)
+
+            if User.objects.filter(username=username).exists():
+                return JsonResponse({"error": "Username already exists"}, status=400)
+
+            if User.objects.filter(email=email).exists():
+                return JsonResponse({"error": "Email already registered"}, status=400)
+
+            user = User.objects.create_user(
+                username=username, email=email, password=password,
+                first_name=first_name, last_name=last_name
+            )
+            user.save()
+
+            return JsonResponse({"message": "Registration successful", "redirect_url": "/pages/login/"})
+
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON data"}, status=400)
+
+    return JsonResponse({"error": "Invalid request method"}, status=405)
 
 
 class UserListView(generics.ListAPIView):

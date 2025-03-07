@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<style>
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
+    html, body {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+        color: #e0e0e0;
+        display: flex;
+    }
+    
+    .dashboard-wrapper {
+        display: flex;
+        width: 100%;
+    }
+    
+    /* Sidebar Styles */
+    .sidebar {
+        width: 250px;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        height: 100vh;
+        overflow-y: auto;
+        position: sticky;
+        top: 0;
+    }
+    
+    .admin-nav {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #e0e0e0;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .nav-link i {
+        margin-right: 10px;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+        background-color: rgba(0, 188, 212, 0.2);
+    }
+    
+    /* Dashboard Content Styles */
+    .dashboard-content {
+        flex-grow: 1;
+        padding: 20px;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+    }
+    
+    .dashboard-content-wrapper {
+        width: 90%; /* Increase width */
+        max-width: 1200px; /* Optional: Set max width */
+    }
+    
+    .overview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); /* Adjusted minmax to fit 2 per row */
+        gap: 20px;
+    }
+    
+    .overview-container {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 12px;
+        padding: 20px;
+        flex-grow: 1; /* Allow containers to grow to fill available space */
+        display: flex; /* Make the container a flex container */
+        flex-direction: column; /* Stack children vertically */
+    }
+    
+    /* Specific Container Styles */
+    #teacher-stats,
+    #student-stats,
+    #event-list,
+    #activity-log,
+    #quick-links-list,
+    #performance-summary-data {
+        padding: 10px;
+    }
+    
+    #event-list ul,
+    #activity-log ul,
+    #quick-links-list ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    #quick-links-list a {
+        color: #e0e0e0;
+        text-decoration: none;
+        display: block;
+        padding: 5px 0;
+    }
+    
+    #quick-links-list a:hover {
+        text-decoration: underline;
+    }
+    
+    #event-list li,
+    #activity-log li {
+        margin-bottom: 8px;
+    }
+    .overview-link {
+        text-decoration: none;
+        color: inherit; /* Inherit color from parent */
+        display: block;
+        transition: transform 0.3s ease; /* Add transform animation */
+    }
+    
+    .overview-link:hover {
+        transform: translateY(-5px); /* Slight lift on hover */
+    }
+</style>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <nav class="admin-nav">
+                <a href="{% url 'admindash' %}" class="nav-link active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="{% url 'teachers' %}" class="nav-link"><i class="fas fa-users"></i> Teacher Overview</a>
+                <a href="{% url 'students' %}" class="nav-link"><i class="fas fa-graduation-cap"></i> Student Overview</a>
+                <a href="#" class="nav-link"><i class="fas fa-comments"></i> Communication</a>
+                <a href="{% url 'events' %}"class="nav-link"><i class="fas fa-calendar-alt"></i> Event Management</a>
+                <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+                <a href="{% url 'login' %}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="dashboard-content">
+            <div class="dashboard-content-wrapper">
+                <h1>Admin Dashboard</h1>
+                <div class="overview-grid">
+                    <a href="{% url 'teachers' %}" class="overview-link">
+                        <div class="overview-container teacher-overview">
+                            <h2>Teacher Overview</h2>
+                            <div id="teacher-stats">
+                                <p>Total Teachers: 50</p>
+                                <p>Average Attendance: 92%</p>
+                                <p>Average Student Satisfaction: 55%</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'students' %}" class="overview-link">
+                        <div class="overview-container student-overview">
+                            <h2>Student Overview</h2>
+                            <div id="student-stats">
+                                <p>Total Students: 500</p>
+                                <p>Active Students: 480</p>
+                                <p>Average Attendance: 90%</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'events' %}" class="overview-link">
+                        <div class="overview-container upcoming-events">
+                            <h2>Upcoming Events</h2>
+                            <div id="event-list">
+                                <ul>
+                                    <li>Parent-Teacher Meeting - Oct 25th</li>
+                                    <li>Science Fair - Nov 10th</li>
+                                    <li>School Holiday - Dec 20th</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/activity" class="overview-link">
+                        <div class="overview-container recent-activity">
+                            <h2>Recent Activity</h2>
+                            <div id="activity-log">
+                                <ul>
+                                    <li>Teacher John Doe added new lesson plan.</li>
+                                    <li>Student Jane Smith submitted assignment.</li>
+                                    <li>Admin updated school calendar.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/performance" class="overview-link">
+                        <div class="overview-container performance-summary">
+                            <h2>Performance Summary</h2>
+                            <div id="performance-summary-data">
+                                <p>Average Student Performance: 88%</p>
+                                <p>Teacher Performance Rating: 4.5/5</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/communications" class="overview-link">
+                        <div class="overview-container communications">
+                            <h2>Communications</h2>
+                            <div id="communications-list">
+                                <ul>
+                                    <li><strong>New Message:</strong> Parent Inquiry - Oct 20th</li>
+                                    <li><strong>Announcement:</strong> School Closure - Oct 18th</li>
+                                    <li><strong>Reminder:</strong> Upcoming Exam - Oct 15th</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

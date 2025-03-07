@@ -10,8 +10,12 @@ router.register(r'assessment-components', views.AssessmentComponentViewSet)
 router.register(r'performance-records', views.PerformanceRecordViewSet)
 router.register(r'events', views.EventViewSet)
 router.register(r'messages', views.MessageViewSet)
+router.register(r'classrooms', views.ClassroomViewSet)
+router.register(r'attendance-records', views.AttendanceRecordViewSet)
+router.register(r'participation-records', views.ParticipationRecordViewSet)
+router.register(r'student-performance', views.StudentPerformanceViewSet,  basename='student-performance')
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]

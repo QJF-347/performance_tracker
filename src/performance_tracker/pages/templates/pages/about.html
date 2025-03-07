@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <style>
+
+        /* For WebKit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* For entire page */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+        }
+        /* General Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: #00BCD4; /* Cyan accent color */
+        }
+
+        p {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Image Styling */
+        .section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Team Member Styling */
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .team-member h3 {
+            margin: 0;
+        }
+
+        .team-member p {
+            margin: 5px 0 0;
+        }
+        .about-label {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00BCD4; /* Cyan accent color */
+        }
+
+        /* Social Icons */
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 20px;
+            color: #e0e0e0;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #00BCD4; /* Cyan accent color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="about-label">About Us</div>
+
+        <section class="section">
+            <h2>The Story</h2>
+            <p>
+                Hey there! I'm Octopus—yes, despite the name, I do not have eight hands (yet). 
+                I started this platform after noticing something troubling: 
+                students start off strong, but over time, their performance can take a nosedive. 
+                By the time anyone realizes, the damage is already done.  
+            </p>
+            <p>
+                So, I thought, "What if I had an all-seeing eye?"—and since becoming Sauron wasn't an option, 
+                I built this platform instead. 
+                This platform helps students, parents, teachers, and admins track performance in real-time, 
+                offering insights before things spiral out of control.   
+            </p>
+            <p>
+                Using AI, we don’t just track progress—we predict struggles, suggest improvements, and even give friendly nudges 
+                (read: virtual judgment stares) to keep students on track. No more last-minute panic before exams. 
+                No more wondering where things went wrong. Just smart, proactive learning support.  
+            </p>
+            <p>
+                So here we are—a one-person, octopus-run operation, making education smarter one step at a time. And now, for those who love spoilers...  
+            </p>
+
+            <details>
+                <summary><strong>⚠️ SPOILER ALERT: EDUCATION JUST LEVELED UP! ⚠️</strong> <small>click for spoilers</small></summary>
+            <p>
+                AI steps in, grades stop tanking, and students actually *get* what’s going wrong before it’s too late. 
+                Teachers unlock next-level insights. 
+                Parents go from "Wait, what?!" to "Finally, some clarity!" 
+                Admins get reports so detailed, they’ll think they’re running a top-secret intelligence agency.  
+            </p>
+            <p>
+                And me? I’ll still be here, fine-tuning everything while running purely on caffeine and the occasional existential crisis.  
+            </p>
+
+            </details>
+        </section>
+
+        <section class="section">
+            <h2>The Mission </h2>
+            <p>
+                To revolutionize student success with AI-powered insights, personalized learning strategies, 
+                and a proactive support system that ensures no student falls through the cracks. 
+                Also, to prove that one determined octopus can change the world.  
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Meet the Team (spoilers: It's just me!)</h2>
+            <div class="team-member">
+                <img src="octopus.jpg" alt="Octopus"> 
+                <div>
+                    <h3>Octopus</h3>
+                    <p>Founder, Developer, AI Whisperer, Bug Fixer, and Chief Coffee Consumer</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

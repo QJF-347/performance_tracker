@@ -24,7 +24,29 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            position: relative;
         }
+        .top-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+        }
+        .top-buttons a {
+            background-color: rgba(0, 0, 0, 0.6); /* Consistent with feature boxes */
+            color: #e0e0e0;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-left: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .top-buttons a:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
 
         header {
             text-align: center;
@@ -60,7 +82,7 @@
             width: 350px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            box-shadow: 10px 26px 12px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -94,7 +116,7 @@
             font-size: 1.3em;
             font-weight: 600;
             transition: background-color 0.3s ease, color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 25px 8px rgba(0, 0, 0, 0.3);
         }
 
         .cta a:hover {
@@ -126,7 +148,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #00BCD4;
+            color: #20d819a9;
         }
 
         header::before, header::after {
@@ -134,7 +156,6 @@
             position: absolute;
             width: 100%;
             height: 2px;
-            background: linear-gradient(to right, transparent, #00BCD4, transparent);
             left: 0;
         }
 
@@ -167,13 +188,19 @@
 </head>
 <body>
 
+    <div class="top-buttons">
+        <a href="{%url 'login'%}">Sign In</a>
+        <a href="{%url 'about'%}">About</a>
+        <a href="{%url 'contact'%}">Contact Us</a>
+    </div>
     <header>
-        <h1>AI Powered Student Performance Tracker</h1>
+        <b><h1>SupotCo</h1></b>
+        <h2>AI Powered Student Performance Tracker</h2>
         <p>Transform your learning journey with intelligent insights, personalized guidance, and real-time progress tracking.</p>
     </header>
 
     <div class="cta">
-        <a href="dashboard.html">Get Started Now and Unlock Your Potential</a>
+        <a href="{%url 'login'%}">Get Started Now and Safeguard Your Potential</a>
     </div>
 
     <div class="features">
@@ -212,7 +239,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2023 AI Student Tracker. Crafted with intelligence and care.</p>
+        <p>&copy; 2025 supotco. Crafted with intelligence and care.</p>
     </footer>
 
 </body>

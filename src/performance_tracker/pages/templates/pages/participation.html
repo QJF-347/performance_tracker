@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participation Records</title>
+    <script src="https://kit.fontawesome.com/4d99246f7d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        
+        /* For WebKit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        /* For entire page */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            color: #00BCD4;
+        }
+
+        /* Student Overview */
+        .student-overview {
+            margin-bottom: 20px;
+        }
+
+        .student-overview p {
+            margin: 5px 0;
+        }
+
+        /* Filters */
+        .filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .filters select, .filters input {
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+
+        .filters button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .filters button:hover {
+            background-color: #26C6DA;
+        }
+
+        /* Participation Table */
+        .participation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .participation-table th, .participation-table td {
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: left;
+        }
+
+        .participation-table th {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #00BCD4;
+        }
+
+        .participation-table tr:hover {
+            background-color: rgba(0, 188, 212, 0.1);
+        }
+
+        /* Charts */
+        .charts {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        /* Average Participation Score */
+        .average-score {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .average-score h3 {
+            color: #00BCD4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Student Overview -->
+        <div class="student-overview">
+            <h1>Participation Records</h1>
+            <p><strong>Student:</strong> <span id="student-name">{{student.user.first_name}} {{student.user.lastname}}</span></p>
+            <p><strong>Year of Study:</strong> <span id="student-class">{{student.year_of_study}}</span></p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <select id="classroom-filter">
+                <option value="">All Classrooms</option>
+            </select>
+            <input type="date" id="start-date" placeholder="Start Date">
+            <input type="date" id="end-date" placeholder="End Date">
+            <button onclick="applyFilters()">Apply Filters</button>
+        </div>
+
+        <!-- Participation Table -->
+        <table class="participation-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Classroom</th>
+                    <th>Score (out of 5)</th>
+                </tr>
+            </thead>
+            <tbody id="participation-table-body"></tbody>
+        </table>
+
+        <!-- Charts -->
+        <div class="charts">
+            <div class="chart-container">
+                <h3>Average Participation Scores</h3>
+                <canvas id="participation-bar-chart"></canvas>
+            </div>
+        </div>
+        <p>Average Score: <b><span id="average-score">0/5</span></b></p>
+
+    </div>
+
+    <script>
+        let participationBarChart = null;
+        const studentId = window.location.pathname.split('/')[2]; 
+        let participationRecords = [];
+
+
+        async function fetchParticipationRecords() {
+            try {
+                const response = await fetch(`/students/api/participation-records/?student=${studentId}`);
+                const data = await response.json();
+                console.log("Participation Records:", data); // Debugging
+                participationRecords = data;
+                renderTable(data);
+                renderCharts(data);
+                populateFilters(data);
+                calculateAverageScore(data);
+            } catch (error) {
+                console.error('Error fetching participation records:', error);
+            }
+        }
+
+        function renderTable(data) {
+            const tableBody = document.getElementById('participation-table-body');
+            tableBody.innerHTML = '';
+            console.log(data)
+            data.forEach(record => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${record.date}</td>
+                    <td>${record.classroom_name}</td>
+                    <td>${record.score}/5</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function renderCharts(data) {
+            const classroomScores = {};
+            data.forEach(record => {
+                if (!classroomScores[record.classroom_name]) {
+                    classroomScores[record.classroom_name] = { total: 0, count: 0 };
+                }
+                classroomScores[record.classroom_name].total += record.score;
+                classroomScores[record.classroom_name].count += 1;
+            });
+
+            const labels = Object.keys(classroomScores);
+            const averages = labels.map(classroom => (classroomScores[classroom].total / classroomScores[classroom].count).toFixed(2));
+
+            if (participationBarChart) {
+                participationBarChart.destroy();
+            }
+
+            participationBarChart = new Chart(document.getElementById('participation-bar-chart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Average Score',
+                        data: averages,
+                        backgroundColor: '#00BCD4',
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 5,
+                        }
+                    }
+                }
+            });
+        }
+
+        function populateFilters(data) {
+            const classrooms = [...new Set(data.map(record => record.classroom_name))];
+            const classroomFilter = document.getElementById('classroom-filter');
+            classroomFilter.innerHTML = '<option value="">All Classrooms</option>';
+            classrooms.forEach(classroom => {
+                const option = document.createElement('option');
+                option.value = classroom;
+                option.textContent = classroom;
+                classroomFilter.appendChild(option);
+            });
+        }
+
+        function applyFilters() {
+            const classroom = document.getElementById('classroom-filter').value;
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+
+            let filteredData = participationRecords;
+
+            if (classroom) {
+                filteredData = filteredData.filter(record => record.classroom_name === classroom);
+            }
+            if (startDate) {
+                filteredData = filteredData.filter(record => record.date >= startDate);
+            }
+            if (endDate) {
+                filteredData = filteredData.filter(record => record.date <= endDate);
+            }
+
+            renderTable(filteredData);
+            renderCharts(filteredData);
+            calculateAverageScore(filteredData);
+        }
+
+        function calculateAverageScore(data) {
+            const totalScore = data.reduce((sum, record) => sum + record.score, 0);
+            const averageScore = data.length > 0 ? (totalScore / data.length).toFixed(2) : 0;
+            document.getElementById('average-score').textContent = `${averageScore}/5`;
+        }
+        fetchParticipationRecords();
+    </script>
+</body>

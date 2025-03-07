@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classroom Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<style>
+    /* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+    color: #e0e0e0;
+    display: flex; /* Flexbox to align sidebar and content */
+}
+
+h1, h2, h3 {
+    color: #e0e0e0;
+    text-align: center;
+}
+
+button {
+    background-color: #00BCD4;
+    color: #0D1B2A;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 5px;
+}
+
+button:hover {
+    background-color: #26C6DA;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.admin-nav a {
+    display: block;
+    padding: 10px;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.admin-nav a i {
+    margin-right: 10px;
+}
+
+.admin-nav a:hover,
+.admin-nav a.active {
+    background-color: rgba(0, 188, 212, 0.2);
+}
+
+/* Main Content Styles */
+#classroom-list-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 500px 20px auto; /* Adjust margin-left for sidebar width */
+    max-width: 800px;
+    width: calc(100% - 310px); /* Adjust width for sidebar and margins */
+}
+
+#classroom-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#classroom-list li {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Modal Styles */
+#add-classroom-modal, #edit-classroom-modal {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 400px;
+    height: calc(100vh - 100px);
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    overflow-y: auto;
+    margin: 0;
+}
+
+#add-classroom-form, #edit-classroom-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-classroom-form label, #edit-classroom-form label {
+    margin-bottom: 5px;
+}
+
+#add-classroom-form input, #add-classroom-form textarea,
+#add-classroom-form select, #edit-classroom-form input,
+#edit-classroom-form textarea, #edit-classroom-form select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+#add-classroom-form input:focus, #add-classroom-form textarea:focus,
+#add-classroom-form select:focus, #edit-classroom-form input:focus,
+#edit-classroom-form textarea:focus, #edit-classroom-form select:focus {
+    outline: none;
+    border-color: #00BCD4;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+}
+
+select {
+    background-color: #222222;
+    color: #ffffff;
+    border: 1px solid #333333;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    overflow: hidden;
+}
+
+select:hover {
+    background-color: #333333;
+}
+
+/* Delete Modal */
+#delete-confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
+}
+
+.delete-modal-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    border: 2px solid rgba(255, 0, 0, 0.5);
+}
+
+.delete-modal-buttons {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.delete-modal-buttons button {
+    padding: 12px 25px;
+    margin: 0 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#confirm-delete-btn {
+    background-color: #f44336;
+    color: #0D1B2A;
+}
+
+#cancel-delete-btn {
+    background-color: #04a711;
+    color: #0D1B2A;
+}
+
+#confirm-delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+#cancel-delete-btn:hover {
+    background-color: #006064;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+@media (max-width: 768px) {
+    #sidebar {
+        width: 200px; /* Reduce sidebar width */
+    }
+
+    #classroom-list-container {
+        margin: 20px 220px 20px auto; /* Adjust margin for smaller sidebar */
+        width: calc(100% - 260px); /* Adjust width for smaller sidebar and margins */
+    }
+
+    #add-classroom-modal, #edit-classroom-modal {
+        left: 210px; /* adjust modals left position */
+    }
+}
+
+@media (max-width: 600px) {
+    #sidebar {
+        position: fixed; /* Make sidebar fixed */
+        left: -200px; /* Hide sidebar off-screen */
+        transition: left 0.3s ease; /* Smooth transition */
+        z-index: 1001; /* Ensure it's above other content */
+    }
+
+    #sidebar.show {
+        left: 0; /* Show sidebar when .show class is added */
+    }
+
+    #classroom-list-container {
+        margin: 20px 20px 20px 20px; /* Reduce all margins */
+        width: calc(100% - 40px); /* reduce width */
+    }
+    #add-classroom-modal, #edit-classroom-modal {
+        left: 10px;
+        width: calc(100% - 20px);
+    }
+
+    body{
+        padding: 0;
+    }
+    #classroom-list-container h1{
+        font-size: 1.2rem;
+    }
+    #classroom-list-container h2{
+        font-size: 1.1rem;
+    }
+
+    button{
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+}
+</style>
+<body>
+    <div id="sidebar">
+        <nav class="admin-nav">
+            <a href="#" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#" class="nav-link active"><i class="fas fa-users"></i> Teacher Overview</a>
+            <a href="#" class="nav-link"><i class="fas fa-graduation-cap"></i> Student Overview</a>
+            <a href="#" class="nav-link"><i class="fas fa-comments"></i> Communication</a>
+            <a href="#" class="nav-link"><i class="fas fa-calendar-alt"></i> Event Management</a>
+            <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </div>
+
+    <div id="classroom-list-container">
+        <h1>Classroom Management</h1>
+        <h2>Classrooms</h2>
+        <button id="add-classroom-btn">Add Classroom</button>
+        <ul id="classroom-list"></ul>
+    </div>
+
+    <div id="add-classroom-modal" style="display: none;">
+        <h2>Add Classroom</h2>
+        <form id="add-classroom-form">
+            <label for="add-name">Name:</label>
+            <input type="text" id="add-name" name="name" required>
+
+            <label for="add-description">Description:</label>
+            <textarea id="add-description" name="description"></textarea>
+
+            <label for="add-teachers">Teachers:</label>
+            <select id="add-teachers" name="teachers" multiple></select>
+
+            <label for="add-students">Students:</label>
+            <select id="add-students" name="students" multiple></select>
+
+            <label for="add-subjects">Subjects:</label>
+            <select id="add-subjects" name="subjects" multiple></select>
+
+            <button type="submit">Add</button>
+            <button type="button" id="cancel-add-classroom">Cancel</button>
+        </form>
+    </div>
+
+    <div id="edit-classroom-modal" style="display: none;">
+        <h2>Edit Classroom</h2>
+        <form id="edit-classroom-form">
+            <label for="edit-name">Name:</label>
+            <input type="text" id="edit-name" name="name" required>
+
+            <label for="edit-description">Description:</label>
+            <textarea id="edit-description" name="description"></textarea>
+
+            <label for="edit-teachers">Teachers:</label>
+            <select id="edit-teachers" name="teachers" multiple></select>
+
+            <label for="edit-students">Students:</label>
+            <select id="edit-students" name="students" multiple></select>
+
+            <label for="edit-subjects">Subjects:</label>
+            <select id="edit-subjects" name="subjects" multiple></select>
+
+            <button type="submit">Update</button>
+            <button type="button" id="cancel-edit-classroom">Cancel</button>
+        </form>
+    </div>
+
+    <div id="delete-confirmation-modal" style="display: none;">
+        <div class="delete-modal-content">
+            <p>Are you sure you want to delete this classroom?</p>
+            <div class="delete-modal-buttons">
+                <button id="confirm-delete-btn">Yes</button>
+                <button id="cancel-delete-btn">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const classroomList = document.getElementById('classroom-list');
+            const addClassroomModal = document.getElementById('add-classroom-modal');
+            const editClassroomModal = document.getElementById('edit-classroom-modal');
+            const deleteConfirmationModal = document.getElementById('delete-confirmation-modal');
+        
+            const addClassroomForm = document.getElementById('add-classroom-form');
+            const editClassroomForm = document.getElementById('edit-classroom-form');
+        
+            const addTeachersSelect = document.getElementById('add-teachers');
+            const addStudentsSelect = document.getElementById('add-students');
+            const addSubjectsSelect = document.getElementById('add-subjects');
+        
+            const editTeachersSelect = document.getElementById('edit-teachers');
+            const editStudentsSelect = document.getElementById('edit-students');
+            const editSubjectsSelect = document.getElementById('edit-subjects');
+        
+            let currentClassroomId = null;
+        
+            // Fetch Data functions (Teachers, Students, Subjects, Classrooms)
+            async function fetchTeachers() {
+                const token = localStorage.getItem('access_token');
+                if (!token) return console.error('No token');
+                try {
+                    const res = await fetch('http://127.0.0.1:8000/teachers/api/teachers/', { headers: { 'Authorization': `Bearer ${token}` } });
+                    const data = await res.json();
+                    addTeachersSelect.innerHTML = '';
+                    editTeachersSelect.innerHTML = '';
+                    data.forEach(teacher => {
+                        const option1 = document.createElement('option');
+                        option1.value = teacher.id;
+                        option1.textContent = `${teacher.user.first_name} ${teacher.user.last_name}`;
+                        addTeachersSelect.appendChild(option1);
+        
+                        const option2 = document.createElement('option');
+                        option2.value = teacher.id;
+                        option2.textContent = `${teacher.user.first_name} ${teacher.user.last_name}`;
+                        editTeachersSelect.appendChild(option2);
+                    });
+                } catch (err) { console.error('Error fetching teachers:', err); }
+            }
+        
+            async function fetchStudents() {
+                const token = localStorage.getItem('access_token');
+                if (!token) return console.error('No token');
+                try {
+                    const res = await fetch('http://127.0.0.1:8000/students/api/students/', { headers: { 'Authorization': `Bearer ${token}` } });
+                    const data = await res.json();
+                    addStudentsSelect.innerHTML = '';
+                    editStudentsSelect.innerHTML = '';
+                    data.forEach(student => {
+                        const option1 = document.createElement('option');
+                        option1.value = student.id;
+                        option1.textContent = `${student.user.first_name} ${student.user.last_name}`;
+                        addStudentsSelect.appendChild(option1);
+        
+                        const option2 = document.createElement('option');
+                        option2.value = student.id;
+                        option2.textContent = `${student.user.first_name} ${student.user.last_name}`;
+                        editStudentsSelect.appendChild(option2);
+                    });
+                } catch (err) { console.error('Error fetching students:', err); }
+            }
+        
+            async function fetchSubjects() {
+                const token = localStorage.getItem('access_token');
+                if (!token) return console.error('No token');
+                try {
+                    const res = await fetch('http://127.0.0.1:8000/students/api/subjects/', { headers: { 'Authorization': `Bearer ${token}` } });
+                    const data = await res.json();
+                    addSubjectsSelect.innerHTML = '';
+                    editSubjectsSelect.innerHTML = '';
+                    data.forEach(subject => {
+                        const option1 = document.createElement('option');
+                        option1.value = subject.id;
+                        option1.textContent = subject.name;
+                        addSubjectsSelect.appendChild(option1);
+        
+                        const option2 = document.createElement('option');
+                        option2.value = subject.id;
+                        option2.textContent = subject.name;
+                        editSubjectsSelect.appendChild(option2);
+                    });
+                } catch (err) { console.error('Error fetching subjects:', err); }
+            }
+        
+            async function fetchClassrooms() {
+                const token = localStorage.getItem('access_token');
+                if (!token) return console.error('No token');
+                try {
+                    const res = await fetch('http://127.0.0.1:8000/students/api/classrooms/', { headers: { 'Authorization': `Bearer ${token}` } });
+                    const data = await res.json();
+                    classroomList.innerHTML = '';
+                    data.forEach(classroom => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = classroom.name;
+                        const editButton = document.createElement('button');
+                        editButton.textContent = 'Edit';
+                        editButton.addEventListener('click', () => openEditModal(classroom.id));
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.addEventListener('click', () => openDeleteModal(classroom.id));
+                        listItem.appendChild(editButton);
+                        listItem.appendChild(deleteButton);
+                        classroomList.appendChild(listItem);
+                    });
+                } catch (err) { console.error('Error fetching classrooms:', err); }
+            }
+        
+            // Add Classroom
+            async function addClassroom() {
+                const token = localStorage.getItem('access_token');
+                if (!token) return console.error('No token');
+                try {
+                    const res = await fetch('http://127.0.0.1:8000/students/api/classrooms/', {
+                        method: 'POST',
+                        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: document.getElementById('add-name').value,
+                            description: document.getElementById('add-description').value,
+                            teachers: Array.from(addTeachersSelect.selectedOptions).map(option => parseInt(option.value)),
+                            students: Array.from(addStudentsSelect.selectedOptions).map(option => parseInt(option.value)),
+                            subjects: Array.from(addSubjectsSelect.selectedOptions).map(option => parseInt(option.value))
+                        })
+                    });
+                    if (res.ok) {
+                        closeAddModal();
+                        fetchClassrooms();
+                    } else {
+                        console.error('Failed to add classroom:', await res.json());
+                    }
+                } catch (err) { console.error('Error adding classroom:', err); }
+            }
+        
+            // Edit Classroom
+            async function editClassroom(id) {
+                const token = localStorage.getItem('access_token');
+                if (!token) return console.error('No token');
+                try {
+                    const res = await fetch(`http://127.0.0.1:8000/students/api/classrooms/${id}/`, { headers: { 'Authorization': `Bearer ${token}` } });
+                    const classroom = await res.json();
+                    document.getElementById('edit-name').value = classroom.name;
+                    document.getElementById('edit-description').value = classroom.description;
+        
+                    // Select teachers
+                    Array.from(editTeachersSelect.options).forEach(option => {
+                        option.selected = classroom.teachers.includes(parseInt(option.value));
+                    });
+        
+                    // Select students
+                    Array.from(editStudentsSelect.options).forEach(option => {
+                        option.selected = classroom.students.includes(parseInt(option.value));
+                    });
+        
+                    // Select subjects
+                    Array.from(editSubjectsSelect.options).forEach(option => {
+                        option.selected = classroom.subjects.includes(parseInt(option.value));
+                    });
+        
+                    currentClassroomId = id;
+                } catch (err) { console.error('Error editing classroom:', err); }
+            }
+        
+            async function updateClassroom() {
+                const token = localStorage.getItem('access_token');
+                if (!token) return console.error('No token');
+                try {
+                    const res = await fetch(`http://127.0.0.1:8000/students/api/classrooms/${currentClassroomId}/`, {
+                        method: 'PATCH',
+                        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: document.getElementById('edit-name').value,
+                            description: document.getElementById('edit-description').value,
+                            teachers: Array.from(editTeachersSelect.selectedOptions).map(option => parseInt(option.value)),
+                            students: Array.from(editStudentsSelect.selectedOptions).map(option => parseInt(option.value)),
+                            subjects: Array.from(editSubjectsSelect.selectedOptions).map(option => parseInt(option.value))
+                        })
+                    });
+                    if (res.ok) {
+                        closeEditModal();
+                        fetchClassrooms();
+                    } else {
+                        console.error('Failed to update classroom:', await res.json());
+                    }
+                } catch (err) { console.error('Error updating classroom:', err); }
+            }
+        
+            // Delete Classroom
+            async function deleteClassroom(id) {
+                const token = localStorage.getItem('access_token');
+                if (!token) return console.error('No token');
+                try {
+                    const res = await fetch(`http://127.0.0.1:8000/students/api/classrooms/${id}/`, {
+                        method: 'DELETE',
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    if (res.ok) {
+                        closeDeleteModal();
+                        fetchClassrooms();
+                    } else {
+                        console.error('Failed to delete classroom:', await res.json());
+                    }
+                } catch (err) { console.error('Error deleting classroom:', err); }
+            }
+        
+            // Modal functions
+            function openAddModal() {
+                addClassroomModal.style.display = 'block';
+            }
+        
+            function closeAddModal() {
+                addClassroomModal.style.display = 'none';
+                addClassroomForm.reset();
+            }
+        
+            function openEditModal(id) {
+                editClassroomModal.style.display = 'block';
+                editClassroom(id);
+            }
+        
+            function closeEditModal() {
+                editClassroomModal.style.display = 'none';
+            }
+        
+            function openDeleteModal(id) {
+                currentClassroomId = id;
+                deleteConfirmationModal.style.display = 'flex';
+            }
+        
+            function closeDeleteModal() {
+                deleteConfirmationModal.style.display = 'none';
+                currentClassroomId = null;
+            }
+        
+            // Event Listeners
+            document.getElementById('add-classroom-btn').addEventListener('click', openAddModal);
+            document.getElementById('cancel-add-classroom').addEventListener('click', closeAddModal);
+            document.getElementById('cancel-edit-classroom').addEventListener('click', closeEditModal);
+            addClassroomForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                addClassroom();
+            });
+            editClassroomForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                updateClassroom();
+            });
+            document.getElementById('confirm-delete-btn').addEventListener('click', () => {
+                deleteClassroom(currentClassroomId);
+            });
+            document.getElementById('cancel-delete-btn').addEventListener('click', closeDeleteModal);
+        
+            // Initial data fetch
+            fetchTeachers();
+            fetchStudents();
+            fetchSubjects();
+            fetchClassrooms();
+        });
+    </script>
+</body>
+</html>

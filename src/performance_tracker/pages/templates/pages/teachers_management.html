@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+    <title>Teacher Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        html, body {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+            display: flex;
+        }
+        #mm{
+            margin-left: 100px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+            top: 0;
+        }
+        
+        .admin-nav {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #e0e0e0;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-link i {
+            margin-right: 10px;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: rgba(0, 188, 212, 0.2);
+        }
+        
+        
+        h1, h2, h3 {
+            color: #e0e0e0;
+            text-align: center;
+        }
+        
+        button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px 0;
+        }
+        
+        button:hover {
+            background-color: #26C6DA;
+        }
+        
+        #registered-teachers-label {
+            display: block;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            padding-top: 10px;
+        }
+        
+        #teacher-list-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            width: 800px;
+            height: 700px;
+            margin: 20px auto;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        #teacher-list-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        #teacher-list-container {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        #teacher-list li {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-height: 25px;
+        }
+        
+        #teacher-list li .button-container {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+        
+        .delete-btn {
+            margin-left: 10px;
+        }
+        
+        #teacher-list li .button-container button {
+            margin-left: 5px;
+        }
+        
+        #add-teacher-form {
+            position: fixed;
+            top: 50px;
+            right: 0;
+            width: 400px;
+            height: calc(100vh - 100px);
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            overflow-y: auto;
+            margin: 0;
+        }
+        
+        #add-teacher-form input,
+        #add-teacher-form select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        
+        #add-teacher-form input:focus,
+        #add-teacher-form select:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .edit-btn,
+        .delete-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        
+        .delete-btn {
+            background-color: #f44336;
+        }
+        
+        .edit-btn:hover {
+            opacity: 0.8;
+            background-color: #00ff00;
+        }
+        
+        .delete-btn:hover {
+            opacity: 0.8;
+            background-color: #e70a0a;
+        }
+        
+        select:hover {
+            background-color: #333333;
+        }
+        
+        select::-ms-expand {
+            display: none;
+        }
+        
+        select {
+            background-color: #222222;
+            color: #ffffff;
+            border: 1px solid #333333;
+            padding: 10px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            overflow: hidden;
+        }
+        
+        #edit-teacher-modal {
+            position: fixed;
+            top: 50px;
+            right: 0;
+            width: 400px;
+            height: calc(100vh - 100px);
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1001;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        #edit-teacher-form {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            max-width: none;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        #edit-teacher-form input,
+        #edit-teacher-form select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+            margin-bottom: 10px;
+        
+        }
+        
+        
+        #edit-teacher-form input:focus,
+        #edit-teacher-form select:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+        
+        #edit-teacher-form select {
+            background-color: #222222;
+            color: #ffffff;
+            border: 1px solid #333333;
+            padding: 10px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            overflow: hidden;
+        }
+        
+        #edit-teacher-form select:hover {
+            background-color: #333333;
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+        }
+        
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 700px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        #teacher-list-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            position: sticky;
+            top: 50px;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            padding-top: 10px;
+        }
+        
+        #teacher-search, #teacher-sort {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            width: 48%;
+            background-color: #222222;
+            color: #ffffff;
+        }
+        
+        #teacher-search:focus, #teacher-sort:focus {
+            outline: none;
+            border-color: #00BCD4;
+        }
+        
+        .search-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        #teacher-search {
+            padding-right: 35px;
+            width: 300px;
+        }
+        
+        .delete-confirmation-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1002;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
+        }
+        
+        .delete-modal-content {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+            text-align: center;
+            width: 400px;
+            max-width: 90%;
+            border: 2px solid rgba(255, 0, 0, 0.5);
+        }
+        
+        .delete-modal-buttons {
+            margin-top: 25px;
+        }
+        
+        .delete-modal-buttons button {
+            padding: 12px 25px;
+            margin: 0 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        
+        #confirm-delete-btn {
+            background-color: #f44336;
+            color: #0D1B2A;
+        }
+        
+        #cancel-delete-btn {
+            background-color: #04a711;
+            color: #0D1B2A;
+        }
+        
+        #confirm-delete-btn:hover {
+            background-color: #d32f2f;
+        }
+        
+        #cancel-delete-btn:hover {
+            background-color: #006064;
+        }    
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <nav class="admin-nav">
+            <a href="{% url 'admindash' %}" class="nav-link active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="{% url 'teachers' %}" class="nav-link"><i class="fas fa-users"></i> Teacher Overview</a>
+            <a href="{% url 'students' %}" class="nav-link"><i class="fas fa-graduation-cap"></i> Student Overview</a>
+            <a href="#" class="nav-link"><i class="fas fa-comments"></i> Communication</a>
+            <a href="{% url 'events' %}" class="nav-link"><i class="fas fa-calendar-alt"></i> Event Management</a>
+            <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            <a href="{% url 'logout' %}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </aside>
+
+    <div id="mm">
+        <h1>Teacher Management</h1>
+
+        <div id="add-teacher-form" style="display: none;">
+            <h2>Add New Teacher</h2>
+            <form id="teacher-form" method="post">
+                {% csrf_token %}
+                <input type="text" id="first-name" name="first-name" placeholder="First Name"><br>
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name"><br>
+                <input type="text" id="username" name="username" placeholder="Username"><br>
+                <input type="email" id="email" name="email" placeholder="Email"><br>
+                <input type="password" id="password" name="password" placeholder="Password"><br>
+                <input type="text" id="department" name="department" placeholder="Department"><br>
+                <div id="subject-selection">
+                    <h3>Select Subjects:</h3>
+                    <select id="subjects-select" name="subjects-select" multiple></select>
+                </div>
+                <button id="save-teacher-btn" type="submit">Save Teacher</button>
+                <button id="cancel-teacher-btn" type="button">Cancel</button>
+            </form>
+        </div>
+
+        <div id="edit-teacher-modal" style="display: none;">
+            <div id="edit-teacher-form">
+                <h2 id="edit-teacher-title">Edit Teacher Details</h2>
+                <form id="edit-teacher-details-form" method="post">
+                    {% csrf_token %}
+                    <input type="text" id="edit-first-name" name="first-name" placeholder="First Name"><br>
+                    <input type="text" id="edit-last-name" name="last-name" placeholder="Last Name"><br>
+                    <input type="text" id="edit-department" name="department" placeholder="Department"><br>
+                    <div id="edit-subject-selection">
+                        <h3>Select Subjects:</h3>
+                        <select id="edit-subjects-select" name="subjects-select" multiple></select>
+                    </div>
+                    <button id="update-teacher-btn" type="submit">Update Teacher</button>
+                    <button id="cancel-edit-btn" type="button">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="teacher-list-container">
+            <button id="add-teacher-btn">Add Teacher</button>
+            <label id="registered-teachers-label">Registered Teachers</label>
+
+            <div id="teacher-list-controls">
+                <div class="search-container">
+                    <input type="text" id="teacher-search" placeholder="Search first name, last name, username">
+                </div>
+                <select id="teacher-sort">
+                    <option value="">Sort By</option>
+                    <option value="firstname-asc">First Name (Asc)</option>
+                    <option value="firstname-desc">First Name (Desc)</option>
+                    <option value="username-asc">Username (Asc)</option>
+                    <option value="username-desc">Username (Desc)</option>
+                </select>
+            </div>
+
+            <div id="delete-confirmation-modal" class="delete-confirmation-modal" style="display: none;">
+                <div class="delete-modal-content">
+                    <p>Are you sure you want to delete this teacher?</p>
+                    <div class="delete-modal-buttons">
+                        <button id="confirm-delete-btn">Yes, Delete</button>
+                        <button id="cancel-delete-btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <ul id="teacher-list"></ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const teacherList = document.getElementById('teacher-list');
+            const addTeacherBtn = document.getElementById('add-teacher-btn');
+            const addTeacherForm = document.getElementById('add-teacher-form');
+            const saveTeacherBtn = document.getElementById('save-teacher-btn');
+            const cancelTeacherBtn = document.getElementById('cancel-teacher-btn');
+            const subjectSelect = document.getElementById('subjects-select');
+            const editTeacherForm = document.getElementById('edit-teacher-form');
+            const editFirstNameInput = document.getElementById('edit-first-name');
+            const updateTeacherBtn = document.getElementById('update-teacher-btn');
+            const cancelEditBtn = document.getElementById('cancel-edit-btn');
+            const editSubjectSelect = document.getElementById('edit-subjects-select');
+            const teacherSearch = document.getElementById('teacher-search');
+            const teacherSort = document.getElementById('teacher-sort');
+
+            let teachers = [];
+            let subjects = [];
+
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            const csrftoken = getCookie('csrftoken');
+
+
+            function fetchTeachers() {
+                fetch('http://127.0.0.1:8000/teachers/api/teachers/', {
+                    headers: {
+                        'X-CSRFToken': csrftoken, // Include CSRF token
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    teachers = data;
+                    renderTeachers();
+                })
+                .catch(error => console.error('Error fetching teachers:', error));
+            }
+
+            function fetchSubjects() {
+                fetch('http://127.0.0.1:8000/students/api/subjects/', {
+                    headers: {
+                        'X-CSRFToken': csrftoken, // Include CSRF token
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    subjects = data;
+                    renderSubjects();
+                })
+                .catch(error => console.error('Error fetching subjects:', error));
+            }
+
+            function renderTeachers(teachersToRender = teachers) {
+                const teacherList = document.getElementById('teacher-list');
+                teacherList.innerHTML = ''; // Clear the list before rendering
+            
+                if (teachersToRender.length === 0) {
+                    const message = document.createElement('li');
+                    message.textContent = 'No teachers found.';
+                    teacherList.appendChild(message);
+                    return;
+                }
+            
+                teachersToRender.forEach(teacher => {
+                    const listItem = document.createElement('li');
+                    const infoContainer = document.createElement('div');
+            
+                    // Teacher's Name
+                    const nameSpan = document.createElement('span');
+                    nameSpan.textContent = `${teacher.user.first_name} ${teacher.user.last_name}`;
+                    infoContainer.appendChild(nameSpan);
+            
+                    // Teacher's Department (if available)
+                    if (teacher.department) {
+                        const departmentSpan = document.createElement('span');
+                        departmentSpan.textContent = ` - ${teacher.department}`;
+                        infoContainer.appendChild(departmentSpan);
+                    } else {
+                        const departmentSpan = document.createElement('span');
+                        departmentSpan.textContent = ` - No Department`;
+                        infoContainer.appendChild(departmentSpan);
+                    }
+            
+                    listItem.appendChild(infoContainer);
+            
+                    // Buttons Container
+                    const buttonContainer = document.createElement('div');
+                    buttonContainer.classList.add('button-container');
+            
+                    // View Button
+                    const viewButton = document.createElement('button');
+                    viewButton.textContent = 'View Details';
+                    viewButton.style.backgroundColor = '#007bff'; // Blue color
+                    viewButton.style.color = 'white';
+                    viewButton.style.border = 'none';
+                    viewButton.style.padding = '8px 12px';
+                    viewButton.style.borderRadius = '5px';
+                    viewButton.style.cursor = 'pointer';
+                    viewButton.style.marginRight = '5px';
+                    viewButton.addEventListener('click', () => {
+                        window.location.href = `http://127.0.0.1:8000/pages/teachers/${teacher.id}/`;
+                    });
+                    buttonContainer.appendChild(viewButton);
+            
+                    // Edit Button
+                    const editButton = document.createElement('button');
+                    editButton.textContent = 'Edit';
+                    editButton.classList.add('edit-btn');
+                    editButton.dataset.id = teacher.id;
+                    editButton.addEventListener('click', () => editTeacher(teacher.id));
+                    buttonContainer.appendChild(editButton);
+            
+                    // Delete Button
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.classList.add('delete-btn');
+                    deleteButton.dataset.id = teacher.id;
+                    deleteButton.addEventListener('click', () => deleteTeacher(teacher.id));
+                    buttonContainer.appendChild(deleteButton);
+            
+                    listItem.appendChild(buttonContainer);
+                    teacherList.appendChild(listItem);
+                });
+            }
+
+            function searchTeachers(searchTerm) {
+    if (!searchTerm.trim()) {
+        renderTeachers(teachers); // Reset to full list if search term is empty
+        return;
+    }
+
+    const lowerSearchTerm = searchTerm.toLowerCase();
+    const filteredTeachers = teachers.filter(teacher => {
+        const fullName = `${teacher.user.first_name} ${teacher.user.last_name}`.toLowerCase();
+        const username = teacher.user.username.toLowerCase();
+        return fullName.includes(lowerSearchTerm) || username.includes(lowerSearchTerm);
+    });
+
+    if (filteredTeachers.length === 0) {
+        alert('No teachers found matching your search.');
+    }
+
+    renderTeachers(filteredTeachers);
+}
+
+function sortTeachers(sortType) {
+    if (!sortType) {
+        renderTeachers(teachers); // Reset to original order if no sort type is selected
+        return;
+    }
+
+    const sortedTeachers = [...teachers].sort((a, b) => {
+        switch (sortType) {
+            case 'firstname-asc':
+                return a.user.first_name.localeCompare(b.user.first_name);
+            case 'firstname-desc':
+                return b.user.first_name.localeCompare(a.user.first_name);
+            case 'username-asc':
+                return a.user.username.localeCompare(b.user.username);
+            case 'username-desc':
+                return b.user.username.localeCompare(a.user.username);
+            default:
+                return 0;
+        }
+    });
+
+    renderTeachers(sortedTeachers);
+}
+            teacherSearch.addEventListener('input', () => {
+                searchTeachers(teacherSearch.value);
+            });
+
+            teacherSort.addEventListener('change', () => {
+                sortTeachers(teacherSort.value);
+            });
+
+            function renderSubjects() {
+                subjectSelect.innerHTML = '';
+                editSubjectSelect.innerHTML = '';
+                subjects.forEach(subject => {
+                    const option = document.createElement('option');
+                    option.value = subject.id;
+                    option.textContent = subject.name;
+                    subjectSelect.appendChild(option);
+
+                    const editOption = document.createElement('option');
+                    editOption.value = subject.id;
+                    editOption.textContent = subject.name;
+                    editSubjectSelect.appendChild(editOption);
+                });
+            }
+
+            async function handleTeacherFormSubmit(event) {
+                event.preventDefault();
+                const firstName = document.getElementById('first-name').value;
+                const lastName = document.getElementById('last-name').value;
+                const username = document.getElementById('username').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const department = document.getElementById('department').value;
+                const subjectSelect = document.getElementById('subjects-select');
+                const subjects = Array.from(subjectSelect.selectedOptions).map(option => parseInt(option.value));
+
+                const token = localStorage.getItem('access_token');
+                if (!token) {
+                    console.error('No access token found.');
+                    return;
+                }
+
+                try {
+                    const userData = {
+                        first_name: firstName,
+                        last_name: lastName,
+                        username: username,
+                        email: email,
+                        password: password,
+                        password2: password,
+                        role:"teacher"
+                    };
+                    const createdUser = await createUser(userData);
+
+                    const teacherData = {
+                        user_id: createdUser.user.id,
+                        department: department,
+                        subjects_taught: subjects,
+                    };
+                    const createdTeacher = await createTeacher(teacherData, token);
+
+                    fetchTeachers();
+                    addTeacherForm.style.display = 'none';
+                } catch (error) {
+                    alert('Failed to add teacher. Please try again.');
+                }
+            }
+
+            document.getElementById('teacher-form').addEventListener('submit', handleTeacherFormSubmit);
+
+            async function createUser(userData) {
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/users/api/register/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrftoken, // Add CSRF token
+                        },
+                        body: JSON.stringify(userData),
+                    });
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return await response.json();
+                } catch (error) {
+                    console.error('Error creating user:', error);
+                    throw error;
+                }
+            }
+            
+            async function createTeacher(teacherData) {
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/teachers/api/teachers/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrftoken,
+                        },
+                        body: JSON.stringify(teacherData),
+                    });
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        console.error('Error adding teacher:', errorData);
+                        throw new Error(`HTTP error! status: ${response.status}, details: ${JSON.stringify(errorData)}`);
+                    }
+                    return await response.json();
+                } catch (error) {
+                    console.error('Error adding teacher:', error);
+                    throw error;
+                }
+            }
+
+            addTeacherBtn.addEventListener('click', () => {
+                addTeacherForm.style.display = 'block';
+                fetchSubjects();
+            });
+
+            cancelEditBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                const editTeacherModal = document.getElementById('edit-teacher-modal');
+                editTeacherModal.style.display = 'none';
+                editTeacherForm.style.display = 'none';
+            });
+
+            cancelTeacherBtn.addEventListener('click', () => {
+                addTeacherForm.style.display = 'none';
+            });
+
+            function deleteTeacher(id) {
+                const confirmationModal = document.getElementById('delete-confirmation-modal');
+                const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
+                const cancelDeleteBtn = document.getElementById('cancel-delete-btn');
+            
+                confirmationModal.style.display = 'flex';
+            
+                confirmDeleteBtn.onclick = async () => {
+                    try {
+                        const response = await fetch(`http://127.0.0.1:8000/teachers/api/teachers/${id}/`, {
+                            method: 'DELETE',
+                            headers: {
+                                'X-CSRFToken': csrftoken, // Add CSRF token
+                            },
+                        });
+            
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+            
+                        console.log('Teacher deleted:', id);
+                        fetchTeachers();
+                    } catch (error) {
+                        console.error('Error deleting teacher:', error);
+                        alert('Failed to delete teacher. Please try again.');
+                    } finally {
+                        confirmationModal.style.display = 'none';
+                    }
+                };
+            
+                cancelDeleteBtn.onclick = () => {
+                    confirmationModal.style.display = 'none';
+                    console.log("Deletion cancelled by user.");
+                };
+            }
+
+            async function editTeacher(id) {
+                const editTeacherModal = document.getElementById('edit-teacher-modal');
+                const editTeacherForm = document.getElementById('edit-teacher-form');
+                const editTeacherTitle = document.getElementById('edit-teacher-title');
+                editTeacherModal.style.display = 'block';
+                editTeacherForm.style.display = 'block';
+            
+                const token = localStorage.getItem('access_token');
+                if (!token) {
+                    console.error('No access token found.');
+                    alert('Authentication error. Please log in.');
+                    return;
+                }
+            
+                try {
+                    // Fetch teacher data
+                    const response = await fetch(`http://127.0.0.1:8000/teachers/api/teachers/${id}/`, {
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'X-CSRFToken': csrftoken,
+                        }
+                    });
+            
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+            
+                    const teacherData = await response.json();
+            
+                    // Update modal title
+                    editTeacherTitle.textContent = `Edit ${teacherData.user.last_name}'s Details`;
+            
+                    // Populate form fields
+                    document.getElementById('edit-first-name').value = teacherData.user.first_name;
+                    document.getElementById('edit-last-name').value = teacherData.user.last_name;
+                    document.getElementById('edit-department').value = teacherData.department;
+            
+                    // Fetch subjects and populate select
+                    const subjectsResponse = await fetch('http://127.0.0.1:8000/students/api/subjects/', {
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'X-CSRFToken': csrftoken,
+
+                        }
+                    });
+            
+                    if (!subjectsResponse.ok) {
+                        throw new Error(`HTTP error! status: ${subjectsResponse.status}`);
+                    }
+            
+                    const subjectsData = await subjectsResponse.json();
+            
+                    // Clear existing options
+                    editSubjectSelect.innerHTML = '';
+            
+                    // Populate subject select with fetched data
+                    subjectsData.forEach(subject => {
+                        const option = document.createElement('option');
+                        option.value = subject.id;
+                        option.textContent = subject.name;
+                        editSubjectSelect.appendChild(option);
+                    });
+            
+                    // Select the teacher's subjects
+                    Array.from(editSubjectSelect.options).forEach(option => {
+                        option.selected = teacherData.subjects_taught.includes(parseInt(option.value));
+                    });
+            
+                    // Set the teacher ID in the form's dataset
+                    editTeacherForm.dataset.teacherId = id;
+            
+                    // Show the form
+                    editTeacherForm.style.display = 'block';
+            
+                } catch (error) {
+                    console.error('Error fetching teacher data:', error);
+                    alert('Failed to fetch teacher data. Please try again.');
+                }
+            }
+
+            async function updateTeacher(id) {
+                try {
+                    const updatedData = {
+                        first_name: document.getElementById('edit-first-name').value,
+                        last_name: document.getElementById('edit-last-name').value,
+                        department: document.getElementById('edit-department').value,
+                        subjects_taught: Array.from(editSubjectSelect.selectedOptions).map(option => parseInt(option.value)),
+                    };
+            
+                    const response = await fetch(`http://127.0.0.1:8000/teachers/api/teachers/${id}/`, {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrftoken, // Add CSRF token
+                        },
+                        body: JSON.stringify(updatedData),
+                    });
+            
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+            
+                    const data = await response.json();
+                    console.log('Teacher updated:', data);
+                    fetchTeachers();
+            
+                    // Close the modal
+                    const editTeacherModal = document.getElementById('edit-teacher-modal');
+                    editTeacherModal.style.display = 'none';
+                } catch (error) {
+                    console.error('Error updating teacher:', error);
+                    alert('Failed to update teacher. Please try again.');
+                }
+            }
+
+            updateTeacherBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                const teacherId = document.getElementById('edit-teacher-form').dataset.teacherId;
+                if (teacherId) {
+                    updateTeacher(teacherId);
+                } else {
+                    console.error("teacherId is undefined. Cannot update teacher.");
+                    alert('An unexpected error has occurred. Please refresh the page and try again.');
+                }
+            });
+
+            function performSearch() {
+                searchTeachers(teacherSearch.value);
+            }
+
+            teacherSearch.addEventListener('input', performSearch);
+
+            fetchTeachers();
+            fetchSubjects();
+        });
+    </script>
+</body>
+</html>

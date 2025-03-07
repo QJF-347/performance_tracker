@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* General Styles (Consistent with Your Theme) */
+::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+    color: #e0e0e0;
+    display: flex;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+}
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #e0e0e0;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link i {
+    margin-right: 10px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: rgba(0, 188, 212, 0.2);
+}
+
+.dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the wrapper */
+}
+.teacher-details-wrapper {
+    width: 80%; /* Reduce size */
+    max-width: 1000px; /* Optional: set max width */
+}
+
+.teacher-info-container,
+.performance-container,
+.overall-performance-container,
+.teacher-schedule-container,
+.teacher-notes-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%; /* Make containers fill the wrapper width */
+}
+
+.teacher-info-container h1,
+.performance-container h2,
+.overall-performance-container h2,
+.teacher-schedule-container h2,
+.teacher-communication-container h2,
+.teacher-notes-container h2 {
+    color: #00BCD4;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Teacher Info Styles */
+#teacher-info {
+    /* Add specific styles for teacher info here */
+    padding: 10px;
+}
+
+#teacher-info p {
+    margin-bottom: 8px;
+}
+
+#class-performance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.class-link {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+    display: block;
+    width: calc(33.33% - 10px); /* Adjust for 3 columns with gap */
+}
+
+.class-item {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 20px; /* Increased padding */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Added transform animation */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px; /* Increased min-height for spacing */
+}
+
+.class-item:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.class-item strong {
+    font-size: 1.3em; /* Larger class name font */
+    margin-bottom: 10px; /* Increased spacing after class name */
+}
+
+.class-item br {
+    margin-bottom: 8px; /* Increased spacing after line breaks */
+}
+
+.view-class-button {
+    background-color: #00BCD4;
+    color: #0D1B2A;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    align-self: flex-start; /* Align button to the start */
+    margin-top: 15px; /* Add margin above the button */
+    transition: background-color 0.3s ease;
+}
+
+.view-class-button:hover {
+    background-color: #26C6DA;
+}
+#overall-performance {
+    /* Add specific styles for performance data here */
+    padding: 10px;
+}
+
+#class-performance ul,
+#overall-performance ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#class-performance li,
+#overall-performance li {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+/* Schedule Styles */
+#teacher-schedule {
+    /* Add specific styles for schedule data here */
+    padding: 10px;
+}
+
+#teacher-schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#teacher-schedule th,
+#teacher-schedule td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    text-align: left;
+}
+
+/* Communication Styles */
+#communication-logs {
+    /* Add specific styles for communication logs here */
+    padding: 10px;
+}
+
+#communication-logs div {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+/* Notes Styles */
+#teacher-notes {
+    /* Add specific styles for teacher notes here */
+    padding: 10px;
+}
+
+#teacher-notes p {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 15px;
+}
+</style>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <nav class="admin-nav">
+                <a href="{% url 'admindash' %}" class="nav-link active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="{% url 'teachers' %}" class="nav-link"><i class="fas fa-users"></i> Teacher Overview</a>
+                <a href="{% url 'students' %}" class="nav-link"><i class="fas fa-graduation-cap"></i> Student Overview</a>
+                <a href="#" class="nav-link"><i class="fas fa-comments"></i> Communication</a>
+                <a href="{% url 'events' %}"class="nav-link"><i class="fas fa-calendar-alt"></i> Event Management</a>
+                <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+                <a href="{% url 'logout' %}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <div class="dashboard-content">
+            <div class="teacher-details-wrapper">
+                <div class="teacher-info-container">
+                    <h1>Teacher Details</h1>
+                    <div id="teacher-info">
+                        <p><strong>First Name:</strong> {{ teacher.user.first_name }}</p>
+                        <p><strong>Last Name: </strong>{{ teacher.user.last_name }}</p>
+                        <p><strong>Username: </strong>{{ teacher.user.username }}</p>
+                        <p><strong>Email: </strong>{{ teacher.user.email }}</p>
+                        <p><strong>Department: </strong>{{ teacher.department }}</p>
+                    </div>
+                </div>
+
+                <div class="performance-container">
+                    <h2>Performance Per Class</h2>
+                    <div id="class-performance">
+                        <a href="#" class="class-link">
+                            <div class="class-item">
+                                <strong>Class A</strong><br>
+                                Teacher Attendance: 90%<br>
+                                Avg Student Performance: 85<br>
+                                Avg Student Attendance: 92%
+                                <button class="view-class-button">View Class</button>
+                            </div>
+                        </a>
+                        <a href="#" class="class-link">
+                            <div class="class-item">
+                                <strong>Class B</strong><br>
+                                Teacher Attendance: 80%<br>
+                                Avg Student Performance: 78<br>
+                                Avg Student Attendance: 88%
+                                <button class="view-class-button">View Class</button>
+                            </div>
+                        </a>
+                        <a href="#" class="class-link">
+                            <div class="class-item">
+                                <strong>Class C</strong><br>
+                                Teacher Attendance: 95%<br>
+                                Avg Student Performance: 92<br>
+                                Avg Student Attendance: 98%
+                                <button class="view-class-button">View Class</button>
+                            </div>
+                        </a>
+
+                        <a href="#" class="class-link">
+                            <div class="class-item">
+                                <strong>Class D</strong><br>
+                                Teacher Attendance: 95%<br>
+                                Avg Student Performance: 92<br>
+                                Avg Student Attendance: 98%
+                                <button class="view-class-button">View Class</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="overall-performance-container">
+                    <h2>Overall Performance</h2>
+                    <div id="overall-performance">
+                        <ul>
+                            <li><strong>Average Student Grade:</strong> 85</li>
+                            <li><strong>Overall Teacher Attendance:</strong> 88%</li>
+                            <li><strong>Overall Student Attendance:</strong> 88%</li>
+                            <li><strong>Overall Student Satisfaction:</strong> 90%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="teacher-notes-container">
+                    <h2>AI Insights and Recommendations</h2>
+                    <div id="teacher-notes">
+                        <p>
+                            <strong>Overall Performance Analysis:</strong> 
+                            John Doe consistently demonstrates strong performance
+                             across all classes, particularly in Math and Science
+                             . His average student performance is above the 
+                             school average, and his attendance rates are 
+                             consistently high.
+                        </p>
+                        <p>
+                            <strong>Areas of Strength:</strong> 
+                            John excels in creating engaging lesson plans
+                             and fostering a positive learning environment. 
+                             Students consistently rate his teaching style as 
+                             clear and effective. His ability to explain complex
+                              topics in a simplified manner is a notable strength
+                              .
+                        </p>
+                        <p>
+                            <strong>Areas for Potential Improvement:</strong> 
+                            While John's overall performance is commendable, 
+                            there is potential for improvement in integrating
+                             more technology into his lesson plans. Incorporating
+                              interactive digital tools and platforms could 
+                              enhance student engagement and provide more diverse
+                               learning experiences.
+                        </p>
+                        <p>
+                            <strong>Recommendations:</strong>
+                            <ul>
+                                <li><strong>Technology Integration:</strong> Explore and implement educational software and online resources to supplement traditional teaching methods. Consider attending workshops or training sessions on integrating technology in the classroom.</li>
+                                <li><strong>Personalized Learning:</strong> Utilize student performance data to identify areas where individual students may need additional support. Implement personalized learning strategies to address these needs.</li>
+                                <li><strong>Peer Collaboration:</strong> Encourage peer collaboration among students to foster a collaborative learning environment. Group projects and peer-to-peer tutoring can enhance student understanding and teamwork skills.</li>
+                                <li><strong>Feedback and Assessment:</strong> Regularly solicit feedback from students and colleagues to identify areas for improvement. Implement diverse assessment methods to evaluate student learning outcomes effectively.</li>
+                            </ul>
+                        </p>
+                        <p>
+                            <strong>Long-Term Development:</strong> Continue to stay updated with the latest pedagogical research and teaching methodologies. Consider pursuing advanced degrees or certifications in education to further enhance your professional development.
+                        </p>
+                    </div>
+                </div>
+                <div class="teacher-schedule-container">
+                    <h2>Teacher Schedule</h2>
+                    <div id="teacher-schedule">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Time</th>
+                                    <th>Class</th>
+                                    <th>Subject</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>9:00 AM</td>
+                                    <td>Class A</td>
+                                    <td>Math</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuesday</td>
+                                    <td>10:00 AM</td>
+                                    <td>Class B</td>
+                                    <td>Science</td>
+                                </tr>
+                                <tr>
+                                    <td>Wednesday</td>
+                                    <td>11:00 AM</td>
+                                    <td>Class C</td>
+                                    <td>Math</td>
+                                </tr>
+                                <tr>
+                                    <td>Thursday</td>
+                                    <td>1:00 PM</td>
+                                    <td>Class A</td>
+                                    <td>Science</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday</td>
+                                    <td>2:00 PM</td>
+                                    <td>Class B</td>
+                                    <td>Math</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script ></script>
+</body>
+</html>

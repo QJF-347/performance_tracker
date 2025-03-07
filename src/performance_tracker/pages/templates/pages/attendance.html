@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Records</title>
+    <script src="https://kit.fontawesome.com/4d99246f7d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+         /* For WebKit browsers (Chrome, Safari) */
+         ::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        /* For entire page */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            color: #00BCD4;
+        }
+
+        /* Student Overview */
+        .student-overview {
+            margin-bottom: 20px;
+        }
+
+        .student-overview p {
+            margin: 5px 0;
+        }
+
+        /* Filters */
+        .filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .filters select, .filters input {
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+
+        .filters button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .filters button:hover {
+            background-color: #26C6DA;
+        }
+
+        /* Attendance Table */
+        .attendance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .attendance-table th, .attendance-table td {
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: left;
+        }
+
+        .attendance-table th {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #00BCD4;
+        }
+
+        .attendance-table tr:hover {
+            background-color: rgba(0, 188, 212, 0.1);
+        }
+
+        /* Charts */
+        .charts {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        /* Attendance Percentage */
+        .attendance-percentage {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .attendance-percentage h3 {
+            color: #00BCD4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Attendance Records</h1>
+            <p><strong>Student:</strong> <span id="student-name">{{student.user.first_name}} {{student.user.last_name}}</span></p>
+            <p><strong>Year of Study:</strong> <span id="student-class">{{student.year_of_study}}</span></p>
+        </header>
+
+        <!-- Filters Section -->
+        <section class="filters">
+            <select id="classroom-filter">
+                <option value="">All Classrooms</option>
+            </select>
+            <input type="date" id="start-date" placeholder="Start Date">
+            <input type="date" id="end-date" placeholder="End Date">
+            <button id="filter-button">Apply Filters</button>
+        </section>
+
+        <!-- Attendance Table -->
+        <section class="attendance-section">
+            <table class="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Classroom</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="attendance-table-body"></tbody>
+            </table>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts">
+            <div class="chart-container">
+                <h3>Attendance Distribution</h3>
+                <canvas id="attendance-pie-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Attendance Trend Over Time</h3>
+                <canvas id="attendance-trend-chart"></canvas>
+            </div>
+        </section>
+
+        <!-- Attendance Percentage -->
+        <section class="attendance-percentage">
+            <h3>Attendance Percentage</h3>
+            <p id="attendance-percentage">0%</p>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const studentId = window.location.pathname.split('/')[2]; 
+            let attendanceRecords = [];
+
+            async function fetchAttendanceRecords() {
+                try {
+                    const response = await fetch(`/students/api/attendance-records/?student=${studentId}`);
+                    attendanceRecords = await response.json();
+                    renderTable(attendanceRecords);
+                    renderCharts(attendanceRecords);
+                    populateFilters(attendanceRecords);
+                    calculateAttendancePercentage(attendanceRecords);
+                } catch (error) {
+                    console.error('Error fetching attendance records:', error);
+                }
+            }
+
+            function renderTable(data) {
+                const tableBody = document.getElementById('attendance-table-body');
+                tableBody.innerHTML = '';
+                data.forEach(record => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${record.date}</td>
+                        <td>${record.classroom_name}</td>
+                        <td>${record.present ? 'Present' : 'Absent'}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            function populateFilters(data) {
+                const classroomFilter = document.getElementById('classroom-filter');
+                const classrooms = [...new Set(data.map(record => record.classroom_name))];
+                classroomFilter.innerHTML = '<option value="">All Classrooms</option>';
+                classrooms.forEach(classroom => {
+                    const option = document.createElement('option');
+                    option.value = classroom;
+                    option.textContent = classroom;
+                    classroomFilter.appendChild(option);
+                });
+            }
+
+            let attendancePieChart = null;
+            let attendanceTrendChart = null;
+
+            function renderCharts(data) {
+                const presentCount = data.filter(record => record.present).length;
+                const absentCount = data.length - presentCount;
+
+                // Destroy existing charts before creating new ones
+                if (attendancePieChart) {
+                    attendancePieChart.destroy();
+                }
+                if (attendanceTrendChart) {
+                    attendanceTrendChart.destroy();
+                }
+
+                // Pie Chart: Present vs Absent
+                const pieCanvas = document.getElementById('attendance-pie-chart');
+                if (pieCanvas) {
+                    attendancePieChart = new Chart(pieCanvas.getContext('2d'), {
+                        type: 'pie',
+                        data: {
+                            labels: ['Present', 'Absent'],
+                            datasets: [{
+                                data: [presentCount, absentCount],
+                                backgroundColor: ['#00BCD4', '#FF6B6B'],
+                            }]
+                        },
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Attendance Distribution',
+                                },
+                            },
+                        },
+                    });
+                }
+
+                // Line Chart: Attendance Trend
+                const attendanceTrend = {};
+                data.forEach(record => {
+                    const date = new Date(record.date).toLocaleDateString();
+                    if (!attendanceTrend[date]) {
+                        attendanceTrend[date] = 0;
+                    }
+                    attendanceTrend[date] += record.present ? 1 : 0;
+                });
+
+                const lineCanvas = document.getElementById('attendance-trend-chart');
+                if (lineCanvas) {
+                    attendanceTrendChart = new Chart(lineCanvas.getContext('2d'), {
+                        type: 'line',
+                        data: {
+                            labels: Object.keys(attendanceTrend),
+                            datasets: [{
+                                label: 'Attendance Trend',
+                                data: Object.values(attendanceTrend),
+                                borderColor: '#00BCD4',
+                                fill: false,
+                            }]
+                        },
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Attendance Trend Over Time',
+                                },
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: {
+                                        display: true,
+                                        text: 'Number of Classes Attended',
+                                    },
+                                },
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Date',
+                                    },
+                                },
+                            },
+                        },
+                    });
+                }
+            }
+
+
+            function calculateAttendancePercentage(data) {
+                const presentCount = data.filter(record => record.present).length;
+                const totalClasses = data.length;
+                const percentage = totalClasses > 0 ? ((presentCount / totalClasses) * 100).toFixed(2) : 0;
+                document.getElementById('attendance-percentage').textContent = `${percentage}%`;
+            }
+
+            function applyFilters() {
+                let filteredData = attendanceRecords;
+                const classroom = document.getElementById('classroom-filter').value;
+                const startDate = document.getElementById('start-date').value;
+                const endDate = document.getElementById('end-date').value;
+                
+                if (classroom) {
+                    filteredData = filteredData.filter(record => record.classroom_name === classroom);
+                }
+                if (startDate) {
+                    filteredData = filteredData.filter(record => new Date(record.date) >= new Date(startDate));
+                }
+                if (endDate) {
+                    filteredData = filteredData.filter(record => new Date(record.date) <= new Date(endDate));
+                }
+                
+                renderTable(filteredData);
+                renderCharts(filteredData);
+                calculateAttendancePercentage(filteredData);
+            }
+
+            document.getElementById('filter-button').addEventListener('click', applyFilters);
+            fetchAttendanceRecords();
+        });
+    </script>
+</body>
+</html>

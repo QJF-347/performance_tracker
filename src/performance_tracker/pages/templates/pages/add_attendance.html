@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Attendance</title>
+    <style>
+       /* Teacher Attendance CSS */
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html, body {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #e0e0e0;
+            text-align: center;
+        }
+
+        button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #26C6DA;
+        }
+
+        form {
+            width: 400px;
+            margin: 20px auto;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        label, select, input[type="checkbox"], button {
+            display: block;
+            margin-bottom: 10px;
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            box-sizing: border-box;
+        }
+
+        select, input[type="checkbox"] {
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+
+        select:focus, input[type="checkbox"]:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        select {
+            background-color: #222222;
+            color: #ffffff;
+            border: 1px solid #333333;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            overflow: hidden;
+        }
+
+        select:hover {
+            background-color: #333333;
+        }
+
+        input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        label[for="present"] {
+            display: inline-block;
+            vertical-align: middle;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teacher Attendance</h1>
+
+    <form id="attendance-form">
+        <label for="classroom">Classroom:</label>
+        <select id="classroom" name="classroom"></select>
+
+        <label for="present">Present:</label>
+        <input type="checkbox" id="present" name="present">
+
+        <button type="submit">Submit Attendance</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const classroomSelect = document.getElementById('classroom');
+            const attendanceForm = document.getElementById('attendance-form');
+
+            // Fetch classrooms
+            function fetchClassrooms() {
+                const token = localStorage.getItem('access_token');
+                if (!token) {
+                    console.error('No access token found.');
+                    return;
+                }
+                fetch('http://127.0.0.1:8000/students/api/classrooms/', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(classroom => {
+                        const option = document.createElement('option');
+                        option.value = classroom.id;
+                        option.textContent = classroom.name;
+                        classroomSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching classrooms:', error));
+            }
+
+            // Submit attendance
+            attendanceForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const classroomId = classroomSelect.value;
+                const present = document.getElementById('present').checked;
+
+                const token = localStorage.getItem('access_token');
+                if (!token) {
+                    console.error('No access token found.');
+                    return;
+                }
+
+                fetch('http://127.0.0.1:8000/teachers/api/attendance/', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        classroom: classroomId,
+                        present: present
+                    })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Attendance submitted successfully!');
+                        attendanceForm.reset();
+                    } else {
+                        alert('Failed to submit attendance.');
+                    }
+                })
+                .catch(error => console.error('Error submitting attendance:', error));
+            });
+
+            fetchClassrooms();
+        });
+    </script>
+</body>
+</html>

@@ -46,7 +46,3 @@ class UserSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("A user with that email already exists.")
         return value
 
-
-
-
-

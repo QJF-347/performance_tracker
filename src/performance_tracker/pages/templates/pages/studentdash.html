@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <script src="https://kit.fontawesome.com/4d99246f7d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>    
+<style>
+        /* For WebKit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        /* For entire page */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+            display: flex;
+        }
+        .progress-graphs canvas {
+            max-height: 200px; /* Adjust as needed */
+            width: 100% !important; /* Ensure responsiveness */
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+            position: sticky;
+            top: 0;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin: 0 auto 20px;
+        }
+
+        .navs {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 10px;
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link i {
+            margin-right: 10px;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(0, 188, 212, 0.2);
+        }
+
+        .logout-button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logout-button i {
+            margin-right: 5px;
+        }
+
+        .logout-button:hover {
+            background-color: #26C6DA;
+        }
+
+        /* Main Content Styles */
+        .dashboard-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .student-info, .performance-analysis, .recommendations, .upcoming-activities, .assignments {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .student-info h2, .performance-analysis h2, .recommendations h2, .upcoming-activities h2, .assignments h2 {
+            color: #00BCD4;
+            margin-bottom: 15px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .info-item {
+            width: 48%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .edit-profile-button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .edit-profile-button:hover {
+            background-color: #26C6DA;
+        }
+
+        /* Edit Profile Popup */
+        .edit-profile-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .edit-profile-popup h3 {
+            color: #00BCD4;
+            margin-bottom: 20px;
+        }
+
+        .edit-profile-popup input, .edit-profile-popup select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+
+        .edit-profile-popup button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        .edit-profile-popup button:hover {
+            background-color: #26C6DA;
+        }
+
+        /* Performance Analysis Styles */
+        .analysis-filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .filter-box {
+            width: 30%;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+
+        .progress-graphs {
+            margin-top: 20px;
+        }
+
+        .graph-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .graph-item {
+            width: 45%;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .graph-item:hover {
+            box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+        }
+
+
+        /* Recommendations Styles */
+        .recommendation-grid {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .teacher-remarks, .ai-insights {
+            width: 45%;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .remarks-list, .insights-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .remarks-list li, .insights-list li {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        /* Upcoming Activities and Assignments */
+        .upcoming-activities, .assignments {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .activities-list, .assignments-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .activities-list li, .assignments-list li {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        #closePopup{
+            max-width: 300px;
+            position: absolute;
+            align-self: center;
+        }
+        .achievements {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .badges-grid {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .badge {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .badge i {
+            font-size: 2em;
+            color: #00d423;
+        }
+        
+        .badge span {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+        .quests {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .quests-grid {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .quest {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+        }
+        
+        .quest-button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .quest-button:hover {
+            background-color: #26C6DA;
+        }
+        .personalized-goals {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .goals-grid {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .goal {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+        }
+        
+        .goal-button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .goal-button:hover {
+            background-color: #26C6DA;
+        }
+
+    </style>
+<body>
+    <div class="sidebar" id="sidebar">
+        <!-- Profile Picture -->
+        <div class="profile-picture" id="profilePicture"></div>
+
+        <!-- Navigation Links -->
+        <nav class="navs">
+            <a href="#" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="#" class="nav-link"><i class="fas fa-user"></i> My Info</a>
+            <a href="{%url 'performancerecords' student.id%}" class="nav-link"><i class="fas fa-chart-line"></i> Performance Records</a>
+            <a href="#" class="nav-link"><i class="fas fa-lightbulb"></i> Recommendations</a>
+            <a href="#" class="nav-link"><i class="fas fa-tasks"></i> Assignments</a>
+            <a href="#" class="nav-link"><i class="fas fa-users"></i> Study Groups</a>
+            <a href="#" class="nav-link"><i class="fas fa-book"></i> Resources</a>
+            <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#" class="nav-link"><i class="fas fa-question-circle"></i> Support</a>
+        </nav>
+
+        <!-- Logout Button -->
+        <button class="logout-button" id="logoutButton">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+    </div>
+
+
+    <main class="dashboard-content">
+        <header class="dashboard-header">
+            <h1>Student Dashboard</h1>
+            <p>Welcome Back, <strong>{{student.user.username}}!</strong></p>
+        </header>
+
+
+        <section class="student-info">
+            <h2>My Information</h2>
+            <div class="info-row">
+                <div class="info-item">
+                    <label>First Name</label>
+                    <p>{{student.user.first_name}}</p>
+                </div>
+                <div class="info-item">
+                    <label>Last Name</label>
+                    <p>{{student.user.last_name}}</p>
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-item">
+                    <label>Username</label>
+                    <p>{{student.user.username}}</p>
+                </div>
+                <div class="info-item">
+                    <label>Email</label>
+                    <p>{{student.user.email}}</p>
+                </div>
+            </div>
+            
+            <div class="info-row">
+                <div class="info-item">
+                    <label>Subjects</label>
+                    <ul>
+                        {% for subject in student.subjects.all %}
+                          <li>{{ subject.name }}</li> 
+                        {% endfor %}
+                      </ul>
+                </div>
+                <div class="info-item">
+                    <label>Parents</label>
+                    {% if student.parent %}
+                        <p>{{ student.parent.first_name }} {{ student.parent.last_name }}</p>
+                    {% else %}
+                        <p>No parent assigned</p>
+                    {% endif %}
+                </div>
+            </div>
+            <button class="edit-profile-button" id="editProfileButton">Edit Profile</button>
+        </section>
+
+        <section class="achievements">
+            <h2>Achievements</h2>
+            <div class="badges-grid">
+                <div class="badge">
+                    <i class="fas fa-trophy"></i>
+                    <span>On-Time Hero</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-star"></i>
+                    <span>Math Whiz</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Perfect Attendance</span>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="edit-profile-popup" id="editProfilePopup">
+            <h3>Edit Profile</h3>
+            <input type="text" id="editFirstName" value="{{student.user.first_name}}", placeholder="First Name">
+            <input type="text" id="editLastName" value="{{student.user.last_name}}", placeholder="Last Name">
+            <input type="text" id="editUsername" value="{{student.user.username}}", placeholder="Username">
+            <input type="email" id="editEmail" value="{{student.user.email}}", placeholder="Email">
+            <select id="editSubjects">
+                {% for subject in subjects %}
+                    <option value="{{subject.name}}">{{subject.name}}</option>
+                {% endfor %}
+            </select>
+            <select id="editParents">
+                {% for parent in parents %}
+                <option value="{{parent.user.id}}">{{parent.first_name}} {{parent.last_name}}</option>
+                {% endfor %}
+            </select>
+            <button id="saveProfileButton">Save</button>
+            <button id="closeProfileButton" style="margin-top: 20px;">close</button>
+        </div>
+
+        
+            <section class="performance-analysis">
+                <a href="{%url 'performancerecords' student.id%}" style="text-decoration: none;"><h2>Performance Analysis</h2></a>
+                
+                <div class="analysis-filters"></div>
+                <div class="progress-graphs">
+                    <h3>Scores by Assessment Component</h3>
+                    <canvas id="barChart" height="200"></canvas>
+            
+                    <h3>Performance Trend Over Time</h3>
+                    <canvas id="lineChart" height="200"></canvas>
+        
+                </div>
+            </section>
+        
+        
+
+        <!-- this too -->
+        <section class="quests">
+            <h2>Quests and Challenges</h2>
+            <div class="quests-grid">
+                <div class="quest">
+                    <h3>Daily Quest</h3>
+                    <p>Complete 2 assignments today.</p>
+                    <button class="quest-button">Start</button>
+                </div>
+                <div class="quest">
+                    <h3>Weekly Quest</h3>
+                    <p>Score above 90% in the next quiz.</p>
+                    <button class="quest-button">Start</button>
+                </div>
+                <div class="quest">
+                    <h3>Monthly Quest</h3>
+                    <p>Attend all classes this month.</p>
+                    <button class="quest-button">Start</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Recommendations -->
+        <section class="recommendations">
+            <h2>Recommendations</h2>
+            <div class="recommendation-grid">
+                <div class="teacher-remarks">
+                    <h3>Teacher Remarks</h3>
+                    <ul class="remarks-list">
+                        <li>"Denis, you've shown improvement in your participation."</li>
+                        <li>"Remember to submit assignments on time."</li>
+                        <li>"Practice more on complex math problems."</li>
+                    </ul>
+                </div>
+                <div class="ai-insights">
+                    <h3>AI Insights</h3>
+                    <ul class="insights-list">
+                        <li>"Based on your recent scores, focus on improving your understanding of algorithms."</li>
+                        <li>"Your study patterns suggest you learn best in the morning. Schedule more study time then."</li>
+                        <li>"Consider joining a study group for collaborative learning in physics."</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="upcoming-activities">
+            <h2>Upcoming Activities</h2>
+            <ul class="activities-list">
+                {% for event in events %}
+                  
+                <li>{{event.title}} - on :{{event.date}}  at: {{event.location}}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- Assignments -->
+        <section class="assignments">
+            <h2>Assignments</h2>
+            <ul class="assignments-list">
+                <li>Math Assignment - Due October 24, 2023</li>
+                <li>Science Project - Due October 26, 2023</li>
+                <li>English Essay - Due October 29, 2023</li>
+            </ul>
+        </section>
+
+        <section class="personalized-goals">
+            <h2>Personalized Goals</h2>
+            <div class="goals-grid">
+                <div class="goal">
+                    <h3>Math Goal</h3>
+                    <p>Score 90% in the next quiz.</p>
+                    <button class="goal-button">Set Goal</button>
+                </div>
+                <div class="goal">
+                    <h3>English Goal</h3>
+                    <p>Complete 5 assignments this week.</p>
+                    <button class="goal-button">Set Goal</button>
+                </div>
+                <div class="goal">
+                    <h3>Science Goal</h3>
+                    <p>Attend all classes this month.</p>
+                    <button class="goal-button">Set Goal</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+         
+        
+            const editProfileButton = document.getElementById('editProfileButton');
+            const editProfilePopup = document.getElementById('editProfilePopup');
+            const saveProfileButton = document.getElementById('saveProfileButton');
+            const closeProfileButton = document.getElementById('closeProfileButton');
+        
+            if (editProfileButton) {
+                editProfileButton.addEventListener('click', () => editProfilePopup.style.display = 'block');
+            }
+            if (saveProfileButton) {
+                saveProfileButton.addEventListener('click', () => editProfilePopup.style.display = 'none');
+            }
+            if (closeProfileButton) {
+                closeProfileButton.addEventListener('click', () => editProfilePopup.style.display = 'none');
+            }
+        
+            const studentId = 1; // Replace with the logged-in student's ID
+
+            // Fetch performance data
+            fetch(`/students/api/performance-records/?student=${studentId}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Fetched performance data:", data); // Debugging
+        
+                    // Transform the data for Chart.js
+                    const transformedData = transformPerformanceData(data);
+        
+                    // Draw the charts
+                    drawBarChart(transformedData.barData);
+                    drawLineChart(transformedData.lineData);
+                    drawRadarChart(transformedData.radarData);
+                })
+                .catch(error => console.error('Error fetching performance data:', error));
+        });
+        
+        const predefinedColors = [
+            '#FF6384', // Red
+            '#36A2EB', // Blue
+            '#FFCE56', // Yellow
+            '#4BC0C0', // Teal
+            '#9966FF', // Purple
+            '#FF9F40', // Orange
+        ];
+        
+        function transformPerformanceData(data) {
+            const barData = { labels: [], datasets: [] }; // For Bar Chart
+            const lineData = { labels: [], datasets: [] }; // For Line Chart
+            const radarData = { labels: [], datasets: [] }; // For Radar Chart
+        
+            const subjects = {};
+            const performanceOverTime = {};
+        
+            data.forEach(record => {
+                const subjectName = record.subject_name;
+                const componentName = record.component_name;
+                const score = record.score;
+                const date = record.date_recorded;
+        
+                // Bar Chart: Group by subject and component
+                if (!subjects[subjectName]) {
+                    subjects[subjectName] = {
+                        label: subjectName,
+                        data: [],
+                        backgroundColor: predefinedColors[Object.keys(subjects).length % predefinedColors.length],
+                    };
+                }
+                subjects[subjectName].data.push(score);
+        
+                // Line Chart: Group by date and subject
+                if (!performanceOverTime[date]) {
+                    performanceOverTime[date] = {};
+                }
+                performanceOverTime[date][subjectName] = score;
+        
+                // Radar Chart: Aggregate scores by subject
+                if (!radarData.labels.includes(subjectName)) {
+                    radarData.labels.push(subjectName);
+                }
+            });
+        
+            // Bar Chart: Prepare datasets
+            Object.values(subjects).forEach(subject => {
+                barData.labels.push(subject.label);
+                barData.datasets.push({
+                    label: subject.label,
+                    data: subject.data,
+                    backgroundColor: subject.backgroundColor,
+                });
+            });
+        
+            // Line Chart: Prepare datasets
+            const dates = Object.keys(performanceOverTime).sort();
+            lineData.labels = dates;
+            Object.keys(subjects).forEach(subject => {
+                const scores = dates.map(date => performanceOverTime[date][subject] || 0);
+                lineData.datasets.push({
+                    label: subject,
+                    data: scores,
+                    borderColor: predefinedColors[Object.keys(subjects).indexOf(subject) % predefinedColors.length],
+                    fill: false,
+                });
+            });
+        
+            // Radar Chart: Prepare datasets
+            const radarScores = radarData.labels.map(subject => {
+                const scores = data.filter(record => record.subject_name === subject).map(record => record.score);
+                return scores.reduce((sum, score) => sum + score, 0) / scores.length; // Average score
+            });
+            radarData.datasets.push({
+                label: 'Average Score',
+                data: radarScores,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: '#36A2EB',
+                borderWidth: 1,
+            });
+        
+            return { barData, lineData, radarData };
+        }
+        
+        function drawBarChart(data) {
+            const canvas = document.getElementById('barChart');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Scores by Assessment Component per Subject',
+                            },
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Score (%)',
+                                },
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Assessment Components',
+                                },
+                            },
+                        },
+                    },
+                });
+            }
+        }
+        
+        function drawLineChart(data) {
+            const canvas = document.getElementById('lineChart');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: data,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Performance Trend Over Time',
+                            },
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Score (%)',
+                                },
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Date',
+                                },
+                            },
+                        },
+                    },
+                });
+            }
+        }
+        
+
+        
+        
+    </script>
+</body>
+</html>

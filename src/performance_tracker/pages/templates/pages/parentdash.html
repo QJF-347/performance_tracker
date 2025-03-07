@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Dashboard</title>
+    <script src="https://kit.fontawesome.com/4d99246f7d.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    /* For WebKit browsers (Chrome, Safari) */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* For entire page */
+    html, body {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer and Edge */
+    }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+    color: #e0e0e0;
+    display: flex;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    min-width: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin: 0 auto 20px;
+}
+
+.navs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link i {
+    margin-right: 10px;
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 188, 212, 0.2);
+}
+
+.logout-button {
+    background-color: #00BCD4;
+    color: #0D1B2A;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-button i {
+    margin-right: 5px;
+}
+
+.logout-button:hover {
+    background-color: #26C6DA;
+}
+
+/* Dashboard Content Styles */
+.dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.children-overview, .child-details {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.children-overview h2, .child-details h2 {
+    color: #00BCD4;
+    margin-bottom: 15px;
+}
+
+.children-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Align children to the start */
+}
+
+.child-card {
+    width: 320px; /* Increased width */
+    min-height: 150px; /* Added minimum height */
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 20px; /* Increased padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.child-info h3 {
+    margin-bottom: 8px; /* Increased margin */
+    font-size: 1.2em; /* Slightly larger font */
+}
+
+.child-info p {
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.child-actions button {
+    background-color: #00BCD4;
+    color: #0D1B2A;
+    padding: 10px 15px; /* Increased padding */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+
+.performance-summary, .recent-assignments {
+    margin-top: 20px;
+}
+
+.summary-graphs {
+    display: flex;
+    gap: 20px;
+}
+
+.graph-item {
+    width: 48%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.main-graph, .subject-graph {
+    height: 200px;
+    background-color: #e0e0e0;
+    margin-top: 10px;
+}
+
+.assignment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.back-to-children {
+    background-color: #00BCD4;
+    color: #0D1B2A;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+</style>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="profile-picture"></div>
+            <nav class="navs">
+                <a href="#" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="#" class="nav-link"><i class="fas fa-user-graduate"></i> My Children</a>
+                <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#" class="nav-link"><i class="fas fa-question-circle"></i> Support</a>
+            </nav>
+            <button class="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </aside>
+
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+                <h1>Parent Dashboard</h1>
+                <p>Welcome, [Parent Name]!</p>
+            </header>
+
+            <section class="children-overview">
+                <h2>My Children</h2>
+                <div class="children-list">
+                    {% for child in children %}
+                    <div class="child-card" data-child-id="{{ child.id }}">
+                        <div class="child-info">
+                            <h3>{{ child.user.first_name }} {{ child.user.last_name }}</h3>
+                            <p>Year: {{ child.year_of_study }}</p>
+                            <p>Class: {{ child.classroom.name }}</p>
+                        </div>
+                        <div class="child-actions">
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>No children found.</p>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="child-details" style="display: none;">
+                <h2>Child Details: <span id="child-name-display"></span></h2>
+                <div class="performance-summary">
+                    <h3>Performance Summary</h3>
+                    <div class="summary-graphs">
+                        <div class="graph-item">
+                            <h4>Overall Performance</h4>
+                            <div class="main-graph"></div>
+                        </div>
+                        <div class="graph-item">
+                            <h4>Subject Performance</h4>
+                            <div class="subject-graph"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-assignments">
+                    <h3>Recent Assignments</h3>
+                    <ul class="assignment-list">
+                        <li>Assignment 1 - Math (Due: 2024-12-10) - Status: Completed</li>
+                        <li>Assignment 2 - English (Due: 2024-12-15) - Status: Pending</li>
+                    </ul>
+                </div>
+                <button class="back-to-children">Back to Children</button>
+            </section>
+        </main>
+    </div>
+</body>
+<script>
+    // parent-dashboard.js
+document.addEventListener('DOMContentLoaded', function() {
+    const childrenOverview = document.querySelector('.children-overview');
+    const childDetails = document.querySelector('.child-details');
+    const backButton = document.querySelector('.back-to-children');
+    const childNameDisplay = document.getElementById('child-name-display');
+    const childCards = document.querySelectorAll('.child-card');
+
+    childCards.forEach(card => {
+        card.querySelector('.view-details').addEventListener('click', function() {
+            const childId = card.dataset.childId;
+            const childName = card.querySelector('h3').textContent;
+
+            // Simulate fetching child details based on childId (replace with actual data fetching)
+            fetchChildDetails(childId, childName);
+        });
+    });
+
+    backButton.addEventListener('click', function() {
+        childrenOverview.style.display = 'block';
+        childDetails.style.display = 'none';
+    });
+
+    function fetchChildDetails(childId, childName) {
+        // Simulate fetching child details from a server or local storage
+        // Replace this with your actual data fetching logic
+        const details = getSimulatedChildDetails(childId);
+
+        if (details) {
+            childNameDisplay.textContent = childName;
+            updateChildDetails(details);
+            childrenOverview.style.display = 'none';
+            childDetails.style.display = 'block';
+        } else {
+            alert('Child details not found.');
+        }
+    }
+
+    function updateChildDetails(details) {
+        // Update the child details section with the fetched data
+        // Replace this with your data rendering logic
+        // Example: Update graphs, assignment lists, etc.
+        // For now, it's just a placeholder
+        const assignmentList = document.querySelector('.assignment-list');
+        assignmentList.innerHTML = ''; // Clear existing list
+
+        details.assignments.forEach(assignment => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${assignment.name} - ${assignment.subject} (Due: ${assignment.dueDate}) - Status: ${assignment.status}`;
+            assignmentList.appendChild(listItem);
+        });
+        // You would add logic to update the graphs here.
+    }
+
+    function getSimulatedChildDetails(childId) {
+        // Simulate fetching child details based on childId
+        // Replace this with your actual data fetching logic
+        const simulatedData = {
+            1: {
+                assignments: [
+                    { name: 'Assignment 1', subject: 'Math', dueDate: '2024-12-10', status: 'Completed' },
+                    { name: 'Assignment 2', subject: 'English', dueDate: '2024-12-15', status: 'Pending' }
+                ]
+            },
+            2: {
+                assignments: [
+                    { name: 'Lab Report', subject: 'Physics', dueDate: '2024-12-12', status: 'Submitted' },
+                    { name: 'Essay', subject: 'History', dueDate: '2024-12-18', status: 'In Progress' }
+                ]
+            }
+        };
+        return simulatedData[childId];
+    }
+});
+</script>
+</html>

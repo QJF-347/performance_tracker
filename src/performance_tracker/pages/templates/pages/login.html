@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Student Tracker - Login</title>
     <style>
+        /* For WebKit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* For entire page */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -90,10 +100,10 @@
     </style>
 </head>
 <body>
-
     <div class="login-container">
         <h2>Login</h2>
         <form id="loginForm">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -103,52 +113,40 @@
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
             <button type="submit" class="login-button">Login</button>
+            <p id="loginError" style="color: red;"></p>
         </form>
-        <a href="{% url 'register'%}" class="signup-link">Don't have an account? Sign up</a>
+        <a href="{% url 'register' %}" class="signup-link">Don't have an account? Sign up</a>
     </div>
 
-
     <script>
-        async function loginUser(event) {
-            event.preventDefault(); // Prevent form from submitting normally
-
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-
-            console.log("Logging in with:", { username, password });
-
-            try {
-                const response = await fetch("http://127.0.0.1:8000/users/api/login/", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        username: username,
-                        password: password
-                    })
-                });
-                
-                const data = await response.json();
-                if (response.ok) {
-                    localStorage.clear();
-                    localStorage.setItem("access_token", data.access);
-                    localStorage.setItem("refresh_token", data.refresh);
-                    localStorage.setItem("username", data.user.username);
-                    localStorage.setItem("role", data.user.role);
-        
-                    window.location.href = "/pages/profile/";
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); 
+    
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let csrfToken = document.querySelector("[name=csrfmiddlewaretoken]").value;  
+    
+            fetch("/users/api/login/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": csrfToken 
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    window.location.href = data.redirect_url;  
                 } else {
-                    document.getElementById("loginError").textContent = data.error || "Invalid credentials";
+                    document.getElementById("loginError").innerText = data.error;  
                 }
-            } catch (error) {
-                console.error("Fetch error:", error);
-                document.getElementById("loginError").textContent = "Server error. Please try again later.";
-            }
-        }
-
-        document.getElementById("loginForm").addEventListener("submit", loginUser);
+            })
+            .catch(error => console.error("Error:", error));
+        });
     </script>
-
 </body>
 </html>

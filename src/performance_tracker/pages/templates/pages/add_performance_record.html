@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Performance Records</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* For entire page */
+    html, body {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer and Edge */
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: #00BCD4; /* Or any color you prefer */
+    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+            position: sticky;
+            top: 0;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin: 0 auto 20px;
+        }
+        
+        .navs {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px;
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link i {
+            margin-right: 10px;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(0, 188, 212, 0.2);
+        }
+
+        .logout-button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logout-button i {
+            margin-right: 5px;
+        }
+        
+        .logout-button:hover {
+            background-color: #26C6DA;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 40px;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #415A77;
+            border-radius: 5px;
+            background-color: #1B263B;
+            color: #e0e0e0;
+        }
+
+        button[type="submit"] {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #26C6DA;
+        }
+
+        .multi-student-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #student-scores table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #student-scores th, #student-scores td {
+            border: 1px solid #415A77;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #student-scores th {
+            background-color: #1B263B;
+        }
+
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="profile-picture"></div>
+        <nav class="navs">
+            <a href="{%url 'teacherdash'}" class="nav-link active"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="{%url 'add-performance'}" class="nav-link"><i class="fas fa-chart-bar"></i> Add Performance</a>
+            <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#" class="nav-link"><i class="fas fa-question-circle"></i> Support</a>
+        </nav>
+        <button class="logout-button" href="{%url 'logout'%}"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </aside>
+    <div class="content">
+        <h1>Add Performance Record (Single Student)</h1>
+        <form class="single-student-form">
+            {% csrf_token %}
+        <label for="student">Student:</label>
+        <select name="student" id="student">
+            {% for student in students %}
+                <option value="{{ student.id }}">{{ student.first_name }} {{ student.last_name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="subject">Subject:</label>
+        <select name="subject" id="subject">
+            {% for subject in subjects %}
+                <option value="{{ subject.id }}">{{ subject.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="assessment_component">Assessment Component:</label>
+        <select name="assessment_component" id="assessment_component">
+            {% for component in assessment_components %}
+                <option value="{{ component.id }}">{{ component.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="classroom">Classroom:</label>
+        <select name="classroom" id="classroom">
+            {% for classroom in classrooms %}
+                <option value="{{ classroom.id }}">{{ classroom.name }}</option>
+            {% endfor %}
+        </select>
+
+            <button type="submit">Add Record</button>
+        </form>
+        <br>
+
+        <h1>Add Performance Records for Classroom</h1>
+        <form class="multi-student-form">
+            <label for="classroom">Classroom:</label>
+            <select name="classroom" id="classroom">
+                {% for classroom in classrooms %}
+                    <option value="{{ classroom.id }}">{{ classroom.name }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="subject">Subject:</label>
+            <select name="subject" id="subject">
+                {% for subject in subjects %}
+                    <option value="{{ subject.id }}">{{ classroom.name }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="assessment_component">Assessment Component:</label>
+            <select name="assessment_component" id="assessment_component">
+                {% for assessment_component in assessment_components %}
+                    <option value="{{ assessment_component.id }}">{{ classroom.name }}</option>
+                {% endfor %}
+            </select>
+
+            <table id="student-scores">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Score</th>
+                    </tr>
+                    {% for student in  students%}
+                      <tr>
+                        <td style="height: 20px;">{{student.first_name}} {{student.last_name}}</td>   
+                        <input type="number" name="" id={{student.id}}>
+                      </tr>
+                    {% endfor %}
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+
+            <button type="submit">Add Records</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('classroom').addEventListener('change', function () {
+            const classroomId = this.value;
+            
+            fetch(`/get_students/?classroom_id=${classroomId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const studentScoresTable = document.getElementById('student-scores').querySelector('tbody');
+                    studentScoresTable.innerHTML = '';
+        
+                    data.students.forEach(student => {
+                        const row = document.createElement('tr');
+        
+                        const studentCell = document.createElement('td');
+                        studentCell.textContent = `${student.first_name} ${student.last_name}`;
+                        row.appendChild(studentCell);
+        
+                        const scoreCell = document.createElement('td');
+                        const scoreInput = document.createElement('input');
+                        scoreInput.type = 'number';
+                        scoreInput.name = `score_${student.id}`;
+                        scoreInput.min = '0';
+                        scoreInput.max = '100';
+                        scoreInput.required = true;
+                        scoreCell.appendChild(scoreInput);
+                        row.appendChild(scoreCell);
+        
+                        studentScoresTable.appendChild(row);
+                    });
+                });
+        });
+        
+    </script>
+</body>
+</html>

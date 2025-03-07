@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Attendance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: linear-gradient(135deg, #0D1B2A, #1B263B, #415A77);
+            color: #e0e0e0;
+        }
+
+        #sidebar {
+            position: fixed;
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .admin-nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #e0e0e0;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link i {
+            margin-right: 10px;
+        }
+
+        #main-content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        h1, h2 {
+            color: #e0e0e0;
+            text-align: center;
+        }
+        
+        form {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        select, input[type="checkbox"], button {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+        }
+        
+        input[type="checkbox"]{
+            width: auto;
+        }
+        
+        select:focus, input:focus, button:focus {
+            outline: none;
+            border-color: #00BCD4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+        
+        button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: auto;
+            padding: 10px 20px;
+        }
+        
+        button:hover {
+            background-color: #26C6DA;
+        }
+        
+        #attendance-list {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        #records {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        #records li {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 15px;
+        }
+        input[type="checkbox"] {
+            transform: scale(1.5); /* Adjust the scale factor as needed */
+            margin-right: 10px; /* Optional: Adjust spacing */
+        }
+        #filter-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px auto; /* Add auto margins for horizontal centering */
+            width: 60%; /* Reduce the width (adjust as needed) */
+            max-width: 800px; /* Optional: Set a maximum width */
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+        }
+        
+        #filter-container input[type="text"],
+        #filter-container input[type="date"] {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 1em;
+            width: 180px; /* Adjust width as needed */
+            box-sizing: border-box;
+        }
+        
+        #filter-container label {
+            margin: 5px 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        #filter-container label input[type="checkbox"] {
+            margin-right: 5px;
+            width: auto;
+        }
+        
+        #filter-container button {
+            background-color: #00BCD4;
+            color: #0D1B2A;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+        
+        #filter-container button:hover {
+            background-color: #26C6DA;
+        }/* For WebKit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* For entire page */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+        }
+    </style>
+</head>
+<body>
+    <aside id="sidebar">
+        <nav class="admin-nav">
+            <a href="#" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#" class="nav-link active"><i class="fas fa-users"></i> Teacher Overview</a>
+            <a href="#" class="nav-link"><i class="fas fa-graduation-cap"></i> Student Overview</a>
+            <a href="#" class="nav-link"><i class="fas fa-comments"></i> Communication</a>
+            <a href="#" class="nav-link"><i class="fas fa-calendar-alt"></i> Event Management</a>
+            <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </aside>
+
+    <div id="main-content">
+        <h1>Teacher Attendance</h1>
+
+        <form id="attendance-form">
+            <label for="teacher">Teacher:</label>
+            <select id="teacher" name="teacher"></select>
+
+            <label for="classroom">Classroom:</label>
+            <select id="classroom" name="classroom"></select>
+
+            <label for="present">Present:</label>
+            <input type="checkbox" id="present" name="present"> 
+            <br><br>
+            <button type="submit">Submit Attendance</button>
+        </form>
+        <div id="filter-container">
+            <input type="text" id="teacher-search" placeholder="Search Teacher">
+            <input type="text" id="classroom-search" placeholder="Search Classroom">
+            <input type="date" id="date-filter">
+            <label><input type="checkbox" id="present-filter"> Present</label>
+            <label><input type="checkbox" id="absent-filter"> Absent</label>
+            <button id="apply-filters">Apply Filters</button>
+        </div>
+
+        <div id="attendance-list">
+            <h2>Attendance Records</h2>
+            <ul id="records"></ul>
+        </div>
+
+        
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const teacherSelect = document.getElementById('teacher');
+            const classroomSelect = document.getElementById('classroom');
+            const attendanceForm = document.getElementById('attendance-form');
+            const recordsList = document.getElementById('records');
+            const teacherSearch = document.getElementById('teacher-search');
+            const classroomSearch = document.getElementById('classroom-search');
+            const dateFilter = document.getElementById('date-filter');
+            const presentFilter = document.getElementById('present-filter');
+            const absentFilter = document.getElementById('absent-filter');
+            const applyFiltersBtn = document.getElementById('apply-filters');
+        
+            const API_BASE_URL = 'http://127.0.0.1:8000/teachers/api/'; // Ensure this is correct
+        
+            let attendanceRecords = []; // Store fetched attendance records here
+        
+            // Function to fetch teachers
+            async function fetchTeachers() {
+                try {
+                    const token = localStorage.getItem('access_token');
+                    if (!token) return console.error('No token');
+        
+                    const response = await fetch(`${API_BASE_URL}teachers/`, { headers: { 'Authorization': `Bearer ${token}` } });
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    teacherSelect.innerHTML = '';
+                    data.forEach(teacher => {
+                        const option = document.createElement('option');
+                        option.value = teacher.id;
+                        option.textContent = `${teacher.user.first_name} ${teacher.user.last_name}`;
+                        teacherSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Error fetching teachers:', error);
+                }
+            }
+        
+            // Function to fetch classrooms
+            async function fetchClassrooms() {
+                try {
+                    const token = localStorage.getItem('access_token');
+                    if (!token) return console.error('No token');
+                    const response = await fetch('http://127.0.0.1:8000/students/api/classrooms/', { headers: { 'Authorization': `Bearer ${token}` } });
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    classroomSelect.innerHTML = '';
+                    data.forEach(classroom => {
+                        const option = document.createElement('option');
+                        option.value = classroom.id;
+                        option.textContent = classroom.name;
+                        classroomSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Error fetching classrooms:', error);
+                }
+            }
+        
+            function performSearch() {
+                const teacherSearchVal = teacherSearch.value.toLowerCase();
+                const classroomSearchVal = classroomSearch.value.toLowerCase();
+                const dateFilterVal = dateFilter.value;
+                const presentFilterVal = presentFilter.checked;
+                const absentFilterVal = absentFilter.checked;
+        
+                let filteredRecords = attendanceRecords;
+        
+                if (teacherSearchVal) {
+                    filteredRecords = filteredRecords.filter(record =>
+                        record.teacher_name.toLowerCase().includes(teacherSearchVal)
+                    );
+                }
+        
+                if (classroomSearchVal) {
+                    filteredRecords = filteredRecords.filter(record =>
+                        record.classroom_name.toLowerCase().includes(classroomSearchVal)
+                    );
+                }
+        
+                if (dateFilterVal) {
+                    filteredRecords = filteredRecords.filter(record => record.date === dateFilterVal);
+                }
+        
+                if (presentFilterVal && !absentFilterVal) {
+                    filteredRecords = filteredRecords.filter(record => record.present);
+                } else if (absentFilterVal && !presentFilterVal) {
+                    filteredRecords = filteredRecords.filter(record => !record.present);
+                }
+        
+                displayFilteredRecords(filteredRecords);
+            }
+        
+            function displayFilteredRecords(records) {
+                recordsList.innerHTML = '';
+        
+                records.forEach(record => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${record.teacher_name} - ${record.classroom_name} - ${record.present ? 'Present' : 'Absent'} - ${record.date}`;
+                    recordsList.appendChild(listItem);
+                });
+            }
+        
+            // Function to fetch attendance records
+            async function fetchAttendanceRecords() {
+                try {
+                    const token = localStorage.getItem('access_token');
+                    if (!token) return console.error('No token');
+        
+                    let url = `${API_BASE_URL}attendance/?`;
+        
+                    const response = await fetch(url, { headers: { 'Authorization': `Bearer ${token}` } });
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    attendanceRecords = await response.json(); // Store fetched data
+                    performSearch(); // Apply initial search/filters
+                } catch (error) {
+                    console.error('Error fetching attendance records:', error);
+                }
+            }
+        
+            // Function to submit attendance
+            async function submitAttendance(event) {
+                event.preventDefault();
+                const token = localStorage.getItem('access_token');
+                if (!token) return console.error('No token');
+                const teacherId = teacherSelect.value;
+                const classroomId = classroomSelect.value;
+                const present = document.getElementById('present').checked;
+        
+                try {
+                    const response = await fetch(`${API_BASE_URL}attendance/`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({
+                            teacher: teacherId,
+                            classroom: classroomId,
+                            present: present
+                        })
+                    });
+        
+                    if (response.ok) {
+                        fetchAttendanceRecords();
+                        attendanceForm.reset();
+                    } else {
+                        const errorData = await response.json();
+                        console.error('Failed to submit attendance:', errorData);
+                    }
+                } catch (error) {
+                    console.error('Error submitting attendance:', error);
+                }
+            }
+        
+            if (applyFiltersBtn) {
+                applyFiltersBtn.addEventListener('click', performSearch);
+            } else {
+                console.error('Apply Filters button not found.');
+            }
+        
+            // Event listeners
+            attendanceForm.addEventListener('submit', submitAttendance);
+        
+            teacherSearch.addEventListener('input', performSearch);
+            classroomSearch.addEventListener('input', performSearch);
+            dateFilter.addEventListener('change', performSearch);
+            presentFilter.addEventListener('change', performSearch);
+            absentFilter.addEventListener('change', performSearch);
+        
+            // Initial data fetch
+            fetchTeachers();
+            fetchClassrooms();
+            fetchAttendanceRecords();
+        });
+    </script>
+</body>
+</html>
