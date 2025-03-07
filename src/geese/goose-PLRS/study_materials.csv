@@ -1,0 +1,116 @@
+Subject,Topic,Material Type,Difficulty Level,Resource Link
+Math,Algebra,Video,Beginner,https://example.com/math/algebra-video
+Math,Algebra,Video,Advanced,https://example.com/math/algebra-video
+Math,Algebra,Video,Intermediate,https://example.com/math/algebra-video
+Math,Algebra,Article,Advanced,https://example.com/math/algebra-article
+Math,Algebra,Quiz,Beginner,https://example.com/math/algebra-quiz
+Math,Geometry,Video,Beginner,https://example.com/math/geometry-video
+Math,Geometry,Quiz,Advanced,https://example.com/math/geometry-quiz
+Math,Geometry,Article,Beginner,https://example.com/math/geometry-article
+Math,Geometry,Video,Intermediate,https://example.com/math/geometry-video
+Math,Geometry,Article,Intermediate,https://example.com/math/geometry-article
+Math,Calculus,Article,Beginner,https://example.com/math/calculus-article
+Math,Calculus,Quiz,Beginner,https://example.com/math/calculus-quiz
+Math,Calculus,Article,Advanced,https://example.com/math/calculus-article
+Math,Calculus,Video,Intermediate,https://example.com/math/calculus-video
+Math,Calculus,Quiz,Advanced,https://example.com/math/calculus-quiz
+Math,Statistics,Quiz,Beginner,https://example.com/math/statistics-quiz
+Math,Statistics,Article,Beginner,https://example.com/math/statistics-article
+Math,Statistics,Video,Beginner,https://example.com/math/statistics-video
+Math,Statistics,Quiz,Intermediate,https://example.com/math/statistics-quiz
+Math,Statistics,Video,Intermediate,https://example.com/math/statistics-video
+Physics,Mechanics,Quiz,Beginner,https://example.com/physics/mechanics-quiz
+Physics,Mechanics,Article,Advanced,https://example.com/physics/mechanics-article
+Physics,Mechanics,Video,Beginner,https://example.com/physics/mechanics-video
+Physics,Mechanics,Article,Intermediate,https://example.com/physics/mechanics-article
+Physics,Mechanics,Video,Beginner,https://example.com/physics/mechanics-video
+Physics,Electricity,Quiz,Advanced,https://example.com/physics/electricity-quiz
+Physics,Electricity,Video,Intermediate,https://example.com/physics/electricity-video
+Physics,Electricity,Article,Beginner,https://example.com/physics/electricity-article
+Physics,Electricity,Quiz,Beginner,https://example.com/physics/electricity-quiz
+Physics,Electricity,Article,Beginner,https://example.com/physics/electricity-article
+Physics,Optics,Video,Advanced,https://example.com/physics/optics-video
+Physics,Optics,Article,Intermediate,https://example.com/physics/optics-article
+Physics,Optics,Video,Intermediate,https://example.com/physics/optics-video
+Physics,Optics,Article,Intermediate,https://example.com/physics/optics-article
+Physics,Optics,Article,Advanced,https://example.com/physics/optics-article
+Physics,Thermodynamics,Quiz,Advanced,https://example.com/physics/thermodynamics-quiz
+Physics,Thermodynamics,Quiz,Advanced,https://example.com/physics/thermodynamics-quiz
+Physics,Thermodynamics,Article,Beginner,https://example.com/physics/thermodynamics-article
+Physics,Thermodynamics,Video,Advanced,https://example.com/physics/thermodynamics-video
+Physics,Thermodynamics,Article,Advanced,https://example.com/physics/thermodynamics-article
+Chemistry,Organic Chemistry,Video,Intermediate,https://example.com/chemistry/organic chemistry-video
+Chemistry,Organic Chemistry,Article,Intermediate,https://example.com/chemistry/organic chemistry-article
+Chemistry,Organic Chemistry,Video,Beginner,https://example.com/chemistry/organic chemistry-video
+Chemistry,Organic Chemistry,Quiz,Advanced,https://example.com/chemistry/organic chemistry-quiz
+Chemistry,Organic Chemistry,Video,Advanced,https://example.com/chemistry/organic chemistry-video
+Chemistry,Inorganic Chemistry,Video,Intermediate,https://example.com/chemistry/inorganic chemistry-video
+Chemistry,Inorganic Chemistry,Quiz,Beginner,https://example.com/chemistry/inorganic chemistry-quiz
+Chemistry,Inorganic Chemistry,Video,Beginner,https://example.com/chemistry/inorganic chemistry-video
+Chemistry,Inorganic Chemistry,Quiz,Advanced,https://example.com/chemistry/inorganic chemistry-quiz
+Chemistry,Inorganic Chemistry,Article,Advanced,https://example.com/chemistry/inorganic chemistry-article
+Chemistry,Physical Chemistry,Quiz,Advanced,https://example.com/chemistry/physical chemistry-quiz
+Chemistry,Physical Chemistry,Article,Intermediate,https://example.com/chemistry/physical chemistry-article
+Chemistry,Physical Chemistry,Article,Advanced,https://example.com/chemistry/physical chemistry-article
+Chemistry,Physical Chemistry,Video,Advanced,https://example.com/chemistry/physical chemistry-video
+Chemistry,Physical Chemistry,Article,Advanced,https://example.com/chemistry/physical chemistry-article
+Biology,Genetics,Quiz,Beginner,https://example.com/biology/genetics-quiz
+Biology,Genetics,Video,Advanced,https://example.com/biology/genetics-video
+Biology,Genetics,Article,Advanced,https://example.com/biology/genetics-article
+Biology,Genetics,Quiz,Advanced,https://example.com/biology/genetics-quiz
+Biology,Genetics,Article,Intermediate,https://example.com/biology/genetics-article
+Biology,Anatomy,Article,Intermediate,https://example.com/biology/anatomy-article
+Biology,Anatomy,Article,Advanced,https://example.com/biology/anatomy-article
+Biology,Anatomy,Article,Advanced,https://example.com/biology/anatomy-article
+Biology,Anatomy,Quiz,Advanced,https://example.com/biology/anatomy-quiz
+Biology,Anatomy,Video,Intermediate,https://example.com/biology/anatomy-video
+Biology,Ecology,Article,Advanced,https://example.com/biology/ecology-article
+Biology,Ecology,Video,Intermediate,https://example.com/biology/ecology-video
+Biology,Ecology,Quiz,Beginner,https://example.com/biology/ecology-quiz
+Biology,Ecology,Quiz,Beginner,https://example.com/biology/ecology-quiz
+Biology,Ecology,Quiz,Intermediate,https://example.com/biology/ecology-quiz
+English,Grammar,Quiz,Advanced,https://example.com/english/grammar-quiz
+English,Grammar,Video,Beginner,https://example.com/english/grammar-video
+English,Grammar,Article,Advanced,https://example.com/english/grammar-article
+English,Grammar,Video,Intermediate,https://example.com/english/grammar-video
+English,Grammar,Article,Beginner,https://example.com/english/grammar-article
+English,Literature,Video,Advanced,https://example.com/english/literature-video
+English,Literature,Article,Beginner,https://example.com/english/literature-article
+English,Literature,Article,Advanced,https://example.com/english/literature-article
+English,Literature,Video,Intermediate,https://example.com/english/literature-video
+English,Literature,Video,Advanced,https://example.com/english/literature-video
+English,Writing Skills,Quiz,Advanced,https://example.com/english/writing skills-quiz
+English,Writing Skills,Quiz,Beginner,https://example.com/english/writing skills-quiz
+English,Writing Skills,Video,Intermediate,https://example.com/english/writing skills-video
+English,Writing Skills,Article,Beginner,https://example.com/english/writing skills-article
+English,Writing Skills,Video,Intermediate,https://example.com/english/writing skills-video
+History,Ancient History,Video,Advanced,https://example.com/history/ancient history-video
+History,Ancient History,Quiz,Advanced,https://example.com/history/ancient history-quiz
+History,Ancient History,Article,Beginner,https://example.com/history/ancient history-article
+History,Ancient History,Article,Intermediate,https://example.com/history/ancient history-article
+History,Ancient History,Video,Intermediate,https://example.com/history/ancient history-video
+History,Modern History,Quiz,Beginner,https://example.com/history/modern history-quiz
+History,Modern History,Quiz,Advanced,https://example.com/history/modern history-quiz
+History,Modern History,Video,Advanced,https://example.com/history/modern history-video
+History,Modern History,Quiz,Advanced,https://example.com/history/modern history-quiz
+History,Modern History,Video,Beginner,https://example.com/history/modern history-video
+History,World Wars,Video,Intermediate,https://example.com/history/world wars-video
+History,World Wars,Quiz,Intermediate,https://example.com/history/world wars-quiz
+History,World Wars,Article,Advanced,https://example.com/history/world wars-article
+History,World Wars,Video,Intermediate,https://example.com/history/world wars-video
+History,World Wars,Video,Beginner,https://example.com/history/world wars-video
+Computer Science,Programming,Quiz,Intermediate,https://example.com/computer science/programming-quiz
+Computer Science,Programming,Article,Beginner,https://example.com/computer science/programming-article
+Computer Science,Programming,Quiz,Intermediate,https://example.com/computer science/programming-quiz
+Computer Science,Programming,Video,Beginner,https://example.com/computer science/programming-video
+Computer Science,Programming,Video,Advanced,https://example.com/computer science/programming-video
+Computer Science,Data Structures,Quiz,Beginner,https://example.com/computer science/data structures-quiz
+Computer Science,Data Structures,Video,Advanced,https://example.com/computer science/data structures-video
+Computer Science,Data Structures,Video,Beginner,https://example.com/computer science/data structures-video
+Computer Science,Data Structures,Quiz,Beginner,https://example.com/computer science/data structures-quiz
+Computer Science,Data Structures,Video,Beginner,https://example.com/computer science/data structures-video
+Computer Science,Algorithms,Quiz,Advanced,https://example.com/computer science/algorithms-quiz
+Computer Science,Algorithms,Quiz,Intermediate,https://example.com/computer science/algorithms-quiz
+Computer Science,Algorithms,Article,Intermediate,https://example.com/computer science/algorithms-article
+Computer Science,Algorithms,Article,Advanced,https://example.com/computer science/algorithms-article
+Computer Science,Algorithms,Video,Advanced,https://example.com/computer science/algorithms-video

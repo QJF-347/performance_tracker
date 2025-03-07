@@ -1,0 +1,7001 @@
+Student ID,Subject,Exam Score,Assignment Score,Participation Score,Attendance Score
+1,Math,81,7,6,18
+1,Physics,53,2,1,11
+1,Chemistry,59,5,1,0
+1,Biology,87,5,11,16
+1,English,88,9,15,14
+1,History,91,2,11,19
+1,Computer Science,93,8,2,4
+2,Math,80,6,8,6
+2,Physics,47,3,13,17
+2,Chemistry,38,9,1,19
+2,Biology,89,6,11,7
+2,English,76,2,13,16
+2,History,65,1,7,3
+2,Computer Science,31,5,9,3
+3,Math,83,1,11,1
+3,Physics,91,3,13,15
+3,Chemistry,44,7,13,7
+3,Biology,82,7,12,8
+3,English,58,0,6,8
+3,History,30,7,10,18
+3,Computer Science,37,2,2,0
+4,Math,34,9,6,8
+4,Physics,57,6,8,7
+4,Chemistry,41,1,0,15
+4,Biology,52,7,4,2
+4,English,73,7,2,0
+4,History,76,2,0,4
+4,Computer Science,43,6,8,14
+5,Math,44,9,9,12
+5,Physics,80,6,16,19
+5,Chemistry,33,4,6,12
+5,Biology,44,3,12,6
+5,English,88,2,1,9
+5,History,74,8,5,11
+5,Computer Science,73,3,10,6
+6,Math,91,0,0,19
+6,Physics,32,6,5,7
+6,Chemistry,56,8,4,0
+6,Biology,80,9,11,14
+6,English,88,5,8,19
+6,History,91,0,19,11
+6,Computer Science,68,1,2,16
+7,Math,85,0,16,1
+7,Physics,31,5,4,0
+7,Chemistry,30,2,1,11
+7,Biology,61,5,3,10
+7,English,85,0,5,4
+7,History,99,5,10,15
+7,Computer Science,45,0,8,5
+8,Math,32,3,3,18
+8,Physics,96,2,19,6
+8,Chemistry,81,8,0,7
+8,Biology,68,1,7,0
+8,English,40,8,17,9
+8,History,36,9,15,19
+8,Computer Science,89,0,1,0
+9,Math,77,4,4,8
+9,Physics,48,2,19,0
+9,Chemistry,53,3,10,16
+9,Biology,65,5,7,19
+9,English,54,1,13,17
+9,History,95,5,2,15
+9,Computer Science,90,8,3,0
+10,Math,97,0,13,15
+10,Physics,49,7,7,6
+10,Chemistry,96,0,0,15
+10,Biology,88,2,13,5
+10,English,80,5,7,1
+10,History,50,0,14,0
+10,Computer Science,98,2,3,2
+11,Math,93,0,16,11
+11,Physics,59,4,5,2
+11,Chemistry,66,7,16,13
+11,Biology,82,2,0,19
+11,English,92,4,0,2
+11,History,47,8,9,2
+11,Computer Science,75,7,17,14
+12,Math,52,1,9,1
+12,Physics,46,7,0,8
+12,Chemistry,72,5,15,6
+12,Biology,71,6,2,17
+12,English,54,7,12,6
+12,History,86,3,12,19
+12,Computer Science,94,7,13,15
+13,Math,43,2,14,1
+13,Physics,95,6,18,16
+13,Chemistry,81,9,5,14
+13,Biology,83,4,0,7
+13,English,82,4,6,3
+13,History,35,3,14,2
+13,Computer Science,84,7,19,15
+14,Math,42,1,9,18
+14,Physics,46,7,18,4
+14,Chemistry,91,6,8,11
+14,Biology,30,9,0,14
+14,English,63,5,15,7
+14,History,30,6,4,2
+14,Computer Science,55,2,4,13
+15,Math,98,0,13,19
+15,Physics,98,9,15,6
+15,Chemistry,62,4,9,4
+15,Biology,63,3,9,18
+15,English,87,0,4,12
+15,History,33,7,15,1
+15,Computer Science,61,3,11,17
+16,Math,64,0,0,18
+16,Physics,72,4,11,2
+16,Chemistry,94,0,7,9
+16,Biology,72,1,18,17
+16,English,64,6,16,7
+16,History,55,9,1,18
+16,Computer Science,36,3,17,12
+17,Math,58,7,3,3
+17,Physics,39,4,8,2
+17,Chemistry,78,2,15,3
+17,Biology,53,6,4,11
+17,English,84,6,2,8
+17,History,59,0,16,19
+17,Computer Science,42,2,16,3
+18,Math,41,8,18,11
+18,Physics,38,6,13,19
+18,Chemistry,45,4,4,2
+18,Biology,41,8,19,3
+18,English,82,6,15,6
+18,History,82,9,6,13
+18,Computer Science,34,2,10,10
+19,Math,47,8,9,11
+19,Physics,46,5,6,13
+19,Chemistry,42,7,9,8
+19,Biology,79,9,1,4
+19,English,58,4,5,18
+19,History,37,0,19,16
+19,Computer Science,74,3,3,5
+20,Math,60,2,11,6
+20,Physics,48,6,2,12
+20,Chemistry,42,1,19,7
+20,Biology,90,8,6,0
+20,English,32,8,16,0
+20,History,67,4,5,11
+20,Computer Science,74,4,15,10
+21,Math,65,2,18,19
+21,Physics,86,1,14,8
+21,Chemistry,78,0,2,15
+21,Biology,86,9,15,7
+21,English,53,4,7,3
+21,History,37,9,17,4
+21,Computer Science,70,3,16,8
+22,Math,62,4,19,12
+22,Physics,58,2,5,17
+22,Chemistry,98,8,1,9
+22,Biology,85,1,12,4
+22,English,62,5,0,17
+22,History,78,4,16,12
+22,Computer Science,62,1,8,2
+23,Math,30,4,15,5
+23,Physics,98,4,5,2
+23,Chemistry,82,6,4,4
+23,Biology,46,4,13,8
+23,English,30,2,12,12
+23,History,33,0,16,7
+23,Computer Science,61,1,7,6
+24,Math,55,9,1,2
+24,Physics,79,0,11,4
+24,Chemistry,86,0,15,14
+24,Biology,52,4,13,1
+24,English,80,6,5,1
+24,History,67,1,1,17
+24,Computer Science,59,2,1,19
+25,Math,67,0,14,9
+25,Physics,80,0,4,3
+25,Chemistry,39,7,16,9
+25,Biology,46,3,4,1
+25,English,35,4,1,12
+25,History,72,2,14,15
+25,Computer Science,45,7,3,7
+26,Math,33,7,2,2
+26,Physics,56,1,18,18
+26,Chemistry,50,4,17,9
+26,Biology,90,5,5,0
+26,English,34,8,11,13
+26,History,63,0,13,12
+26,Computer Science,56,8,14,14
+27,Math,85,0,3,0
+27,Physics,37,0,2,19
+27,Chemistry,76,7,13,13
+27,Biology,31,9,13,18
+27,English,36,2,14,13
+27,History,47,9,5,2
+27,Computer Science,44,8,4,9
+28,Math,68,8,16,6
+28,Physics,73,8,16,12
+28,Chemistry,54,3,9,2
+28,Biology,47,3,14,1
+28,English,37,7,16,11
+28,History,71,8,4,5
+28,Computer Science,81,9,1,12
+29,Math,99,4,0,5
+29,Physics,99,6,15,3
+29,Chemistry,91,7,8,2
+29,Biology,60,7,4,3
+29,English,53,5,1,19
+29,History,33,5,16,5
+29,Computer Science,80,8,1,14
+30,Math,37,9,18,12
+30,Physics,73,4,5,3
+30,Chemistry,48,3,0,19
+30,Biology,41,0,13,5
+30,English,66,3,12,10
+30,History,32,0,5,17
+30,Computer Science,39,4,9,11
+31,Math,31,7,1,19
+31,Physics,94,4,8,16
+31,Chemistry,38,7,5,2
+31,Biology,78,4,11,17
+31,English,38,1,11,2
+31,History,64,0,7,7
+31,Computer Science,40,8,4,13
+32,Math,89,2,4,4
+32,Physics,55,3,12,9
+32,Chemistry,47,7,7,6
+32,Biology,43,2,5,0
+32,English,52,0,16,0
+32,History,95,4,7,7
+32,Computer Science,80,6,18,5
+33,Math,35,2,6,18
+33,Physics,71,3,14,14
+33,Chemistry,58,0,19,6
+33,Biology,56,3,5,0
+33,English,56,6,0,3
+33,History,95,9,4,9
+33,Computer Science,67,3,12,19
+34,Math,85,7,4,14
+34,Physics,97,1,18,18
+34,Chemistry,65,3,10,4
+34,Biology,49,9,7,5
+34,English,35,7,14,13
+34,History,41,9,12,7
+34,Computer Science,91,1,0,14
+35,Math,89,3,15,3
+35,Physics,34,7,4,7
+35,Chemistry,60,9,8,18
+35,Biology,58,7,8,10
+35,English,52,0,13,4
+35,History,50,9,13,3
+35,Computer Science,83,6,0,18
+36,Math,69,4,14,8
+36,Physics,82,8,9,19
+36,Chemistry,86,4,8,2
+36,Biology,92,3,10,5
+36,English,31,6,17,1
+36,History,46,2,6,19
+36,Computer Science,99,4,0,16
+37,Math,58,5,17,16
+37,Physics,78,3,7,16
+37,Chemistry,30,6,18,18
+37,Biology,91,0,12,15
+37,English,69,2,17,0
+37,History,76,1,1,16
+37,Computer Science,67,2,3,0
+38,Math,37,6,6,2
+38,Physics,61,9,9,18
+38,Chemistry,63,0,17,6
+38,Biology,37,0,2,7
+38,English,83,8,14,4
+38,History,96,2,0,14
+38,Computer Science,37,1,2,13
+39,Math,61,7,13,10
+39,Physics,45,3,19,4
+39,Chemistry,83,4,13,15
+39,Biology,36,9,6,0
+39,English,52,4,18,15
+39,History,48,3,17,1
+39,Computer Science,30,4,19,10
+40,Math,31,2,11,19
+40,Physics,34,4,5,8
+40,Chemistry,82,2,19,11
+40,Biology,53,0,9,13
+40,English,43,8,7,1
+40,History,54,6,8,10
+40,Computer Science,33,9,12,1
+41,Math,66,5,17,9
+41,Physics,70,5,1,16
+41,Chemistry,66,8,5,11
+41,Biology,56,8,5,7
+41,English,41,8,6,9
+41,History,74,0,13,1
+41,Computer Science,83,0,18,3
+42,Math,55,4,10,7
+42,Physics,40,3,16,6
+42,Chemistry,83,1,14,4
+42,Biology,85,0,3,14
+42,English,49,2,2,19
+42,History,91,1,8,1
+42,Computer Science,69,0,0,10
+43,Math,71,8,6,2
+43,Physics,32,1,4,11
+43,Chemistry,73,2,5,1
+43,Biology,41,2,4,11
+43,English,88,0,16,9
+43,History,86,6,16,14
+43,Computer Science,41,7,18,7
+44,Math,50,0,4,15
+44,Physics,99,7,17,11
+44,Chemistry,44,9,8,12
+44,Biology,55,9,15,6
+44,English,46,6,6,13
+44,History,36,8,18,15
+44,Computer Science,88,6,17,19
+45,Math,68,2,17,9
+45,Physics,46,7,2,11
+45,Chemistry,89,1,2,4
+45,Biology,72,7,11,6
+45,English,44,7,16,3
+45,History,54,1,0,15
+45,Computer Science,71,1,2,9
+46,Math,63,6,12,12
+46,Physics,47,2,6,13
+46,Chemistry,58,0,11,15
+46,Biology,85,8,9,6
+46,English,34,0,16,2
+46,History,74,7,17,3
+46,Computer Science,47,4,15,0
+47,Math,82,8,14,16
+47,Physics,97,9,4,4
+47,Chemistry,72,5,6,13
+47,Biology,40,1,6,19
+47,English,33,7,19,18
+47,History,86,9,8,16
+47,Computer Science,32,7,5,4
+48,Math,34,5,14,16
+48,Physics,38,2,19,16
+48,Chemistry,90,9,2,17
+48,Biology,91,0,2,2
+48,English,42,7,14,8
+48,History,97,4,1,10
+48,Computer Science,85,2,8,2
+49,Math,54,1,11,9
+49,Physics,38,7,4,10
+49,Chemistry,88,1,14,5
+49,Biology,34,9,17,5
+49,English,66,4,12,16
+49,History,69,2,2,7
+49,Computer Science,69,0,5,18
+50,Math,69,0,15,8
+50,Physics,42,8,9,3
+50,Chemistry,92,5,6,4
+50,Biology,74,9,18,9
+50,English,39,4,6,17
+50,History,31,6,1,12
+50,Computer Science,75,0,8,16
+51,Math,89,7,12,2
+51,Physics,99,2,6,9
+51,Chemistry,92,4,3,19
+51,Biology,97,0,11,16
+51,English,39,5,0,17
+51,History,79,3,2,19
+51,Computer Science,36,0,5,14
+52,Math,61,2,10,1
+52,Physics,75,1,3,16
+52,Chemistry,42,8,6,14
+52,Biology,58,3,1,14
+52,English,51,2,16,11
+52,History,85,4,14,15
+52,Computer Science,88,3,5,18
+53,Math,86,4,2,0
+53,Physics,87,5,14,1
+53,Chemistry,90,2,16,11
+53,Biology,47,7,13,16
+53,English,82,7,14,13
+53,History,79,3,6,2
+53,Computer Science,93,4,2,19
+54,Math,75,8,13,6
+54,Physics,46,3,3,8
+54,Chemistry,67,8,1,7
+54,Biology,40,0,7,17
+54,English,93,1,13,14
+54,History,67,8,0,5
+54,Computer Science,70,7,10,18
+55,Math,70,0,11,13
+55,Physics,61,5,19,0
+55,Chemistry,69,1,0,1
+55,Biology,62,8,12,0
+55,English,55,5,6,1
+55,History,67,6,13,17
+55,Computer Science,44,1,9,11
+56,Math,78,7,10,2
+56,Physics,35,8,5,8
+56,Chemistry,61,8,17,11
+56,Biology,37,7,17,19
+56,English,91,6,10,19
+56,History,33,5,2,8
+56,Computer Science,89,9,13,10
+57,Math,41,6,11,12
+57,Physics,54,2,18,13
+57,Chemistry,74,7,18,11
+57,Biology,99,1,18,4
+57,English,85,8,2,9
+57,History,64,5,14,0
+57,Computer Science,36,0,19,4
+58,Math,33,3,17,16
+58,Physics,80,8,3,1
+58,Chemistry,95,1,3,5
+58,Biology,68,9,18,18
+58,English,87,5,11,2
+58,History,47,7,14,0
+58,Computer Science,55,7,3,15
+59,Math,71,1,4,4
+59,Physics,67,8,14,13
+59,Chemistry,31,6,5,16
+59,Biology,57,1,2,4
+59,English,34,0,7,11
+59,History,85,3,12,14
+59,Computer Science,60,9,2,13
+60,Math,39,8,0,4
+60,Physics,49,7,10,11
+60,Chemistry,30,8,19,10
+60,Biology,66,4,11,4
+60,English,78,0,11,14
+60,History,35,3,17,13
+60,Computer Science,31,8,4,19
+61,Math,55,0,2,5
+61,Physics,88,4,0,16
+61,Chemistry,80,9,19,17
+61,Biology,72,1,17,6
+61,English,85,1,11,5
+61,History,52,3,15,17
+61,Computer Science,37,1,0,7
+62,Math,58,5,4,14
+62,Physics,76,1,0,10
+62,Chemistry,59,1,17,16
+62,Biology,55,7,14,7
+62,English,75,3,0,0
+62,History,48,4,15,4
+62,Computer Science,91,1,17,5
+63,Math,92,8,0,8
+63,Physics,77,8,12,8
+63,Chemistry,97,1,5,13
+63,Biology,33,5,18,5
+63,English,42,8,18,12
+63,History,30,7,6,14
+63,Computer Science,94,9,6,14
+64,Math,50,2,0,16
+64,Physics,64,5,10,2
+64,Chemistry,95,8,2,7
+64,Biology,77,1,5,11
+64,English,34,1,15,4
+64,History,73,3,14,10
+64,Computer Science,77,6,5,13
+65,Math,72,4,10,15
+65,Physics,76,4,14,3
+65,Chemistry,80,3,12,18
+65,Biology,63,3,15,19
+65,English,56,2,7,15
+65,History,65,1,1,16
+65,Computer Science,33,9,10,6
+66,Math,68,6,16,9
+66,Physics,90,9,3,19
+66,Chemistry,97,5,6,0
+66,Biology,73,7,12,9
+66,English,76,6,8,8
+66,History,44,9,9,7
+66,Computer Science,53,0,4,3
+67,Math,79,7,18,3
+67,Physics,89,6,9,17
+67,Chemistry,48,3,9,0
+67,Biology,84,1,4,14
+67,English,78,2,11,1
+67,History,62,6,16,15
+67,Computer Science,66,2,6,10
+68,Math,39,8,13,12
+68,Physics,86,8,1,2
+68,Chemistry,36,4,17,2
+68,Biology,71,5,6,8
+68,English,53,2,3,5
+68,History,71,6,12,13
+68,Computer Science,65,7,4,0
+69,Math,65,2,8,7
+69,Physics,99,8,6,3
+69,Chemistry,42,0,1,4
+69,Biology,73,4,7,5
+69,English,79,2,11,2
+69,History,99,1,11,1
+69,Computer Science,64,1,19,7
+70,Math,51,9,3,4
+70,Physics,60,8,15,9
+70,Chemistry,91,8,15,11
+70,Biology,46,7,19,2
+70,English,45,6,18,7
+70,History,34,3,7,11
+70,Computer Science,94,8,19,5
+71,Math,51,1,7,6
+71,Physics,61,0,15,11
+71,Chemistry,67,3,1,13
+71,Biology,65,0,17,12
+71,English,95,8,1,8
+71,History,94,2,19,3
+71,Computer Science,84,5,2,10
+72,Math,44,5,4,19
+72,Physics,41,0,9,5
+72,Chemistry,74,2,9,13
+72,Biology,35,2,15,6
+72,English,81,8,14,2
+72,History,95,1,2,17
+72,Computer Science,49,1,9,1
+73,Math,54,5,0,3
+73,Physics,43,0,13,15
+73,Chemistry,83,3,2,2
+73,Biology,70,5,12,1
+73,English,37,4,1,3
+73,History,54,3,12,11
+73,Computer Science,61,3,17,5
+74,Math,61,1,18,18
+74,Physics,34,2,1,9
+74,Chemistry,31,1,14,8
+74,Biology,38,2,8,13
+74,English,36,0,3,3
+74,History,69,0,4,6
+74,Computer Science,81,3,3,5
+75,Math,79,4,19,2
+75,Physics,36,5,13,6
+75,Chemistry,34,6,1,5
+75,Biology,50,9,6,4
+75,English,94,4,17,12
+75,History,82,1,4,12
+75,Computer Science,61,3,16,2
+76,Math,89,4,19,3
+76,Physics,63,3,15,17
+76,Chemistry,81,5,9,9
+76,Biology,42,0,8,16
+76,English,38,8,0,1
+76,History,89,0,9,17
+76,Computer Science,87,7,10,1
+77,Math,37,5,7,16
+77,Physics,46,6,12,18
+77,Chemistry,98,0,4,7
+77,Biology,72,0,12,18
+77,English,53,2,16,4
+77,History,49,4,7,13
+77,Computer Science,40,3,14,18
+78,Math,36,2,18,10
+78,Physics,87,4,4,7
+78,Chemistry,93,9,5,14
+78,Biology,37,7,8,1
+78,English,79,2,16,3
+78,History,97,8,8,17
+78,Computer Science,39,4,3,11
+79,Math,31,5,12,15
+79,Physics,61,1,10,9
+79,Chemistry,44,0,7,17
+79,Biology,84,8,7,13
+79,English,51,3,19,11
+79,History,61,2,13,16
+79,Computer Science,50,2,6,16
+80,Math,41,8,14,17
+80,Physics,50,4,7,13
+80,Chemistry,36,6,11,10
+80,Biology,51,8,12,17
+80,English,31,4,14,19
+80,History,56,1,14,18
+80,Computer Science,52,7,11,12
+81,Math,51,4,0,2
+81,Physics,92,5,18,6
+81,Chemistry,54,4,14,7
+81,Biology,87,7,0,11
+81,English,34,2,0,3
+81,History,93,9,1,10
+81,Computer Science,39,4,13,6
+82,Math,56,1,8,15
+82,Physics,42,8,19,3
+82,Chemistry,87,5,11,16
+82,Biology,43,8,1,19
+82,English,45,2,5,18
+82,History,87,3,14,3
+82,Computer Science,49,9,2,4
+83,Math,83,7,6,9
+83,Physics,67,3,12,19
+83,Chemistry,46,6,6,3
+83,Biology,43,2,4,15
+83,English,87,6,19,3
+83,History,53,1,17,18
+83,Computer Science,60,2,16,13
+84,Math,51,7,12,11
+84,Physics,59,9,5,3
+84,Chemistry,93,2,15,12
+84,Biology,84,0,0,17
+84,English,92,3,16,14
+84,History,86,5,12,0
+84,Computer Science,46,5,3,19
+85,Math,76,5,14,13
+85,Physics,38,9,15,4
+85,Chemistry,90,9,17,2
+85,Biology,99,0,12,18
+85,English,48,9,2,13
+85,History,55,2,4,4
+85,Computer Science,78,4,9,4
+86,Math,99,9,3,6
+86,Physics,68,1,2,0
+86,Chemistry,53,8,3,5
+86,Biology,70,5,13,11
+86,English,89,8,19,3
+86,History,59,7,11,9
+86,Computer Science,59,5,6,2
+87,Math,84,7,9,15
+87,Physics,45,5,9,12
+87,Chemistry,99,8,12,3
+87,Biology,85,3,17,10
+87,English,86,4,3,17
+87,History,62,6,5,14
+87,Computer Science,61,7,10,19
+88,Math,44,6,9,11
+88,Physics,43,8,4,17
+88,Chemistry,98,2,4,16
+88,Biology,48,2,11,8
+88,English,62,1,3,9
+88,History,62,0,1,10
+88,Computer Science,70,6,16,16
+89,Math,99,5,1,0
+89,Physics,34,1,15,1
+89,Chemistry,45,2,6,11
+89,Biology,69,5,9,2
+89,English,93,2,16,6
+89,History,50,3,3,13
+89,Computer Science,44,7,7,14
+90,Math,43,8,7,16
+90,Physics,92,1,2,7
+90,Chemistry,73,0,9,19
+90,Biology,35,6,19,17
+90,English,72,2,4,18
+90,History,40,7,11,9
+90,Computer Science,37,7,8,3
+91,Math,84,8,14,14
+91,Physics,77,7,17,9
+91,Chemistry,89,3,5,11
+91,Biology,31,6,15,2
+91,English,32,1,10,7
+91,History,62,0,7,4
+91,Computer Science,61,4,3,5
+92,Math,48,8,11,10
+92,Physics,75,6,15,0
+92,Chemistry,92,6,12,1
+92,Biology,33,5,4,2
+92,English,97,8,19,1
+92,History,55,4,2,8
+92,Computer Science,79,5,18,11
+93,Math,40,1,14,11
+93,Physics,32,9,15,0
+93,Chemistry,64,3,1,8
+93,Biology,80,1,10,15
+93,English,51,0,4,11
+93,History,40,2,0,19
+93,Computer Science,45,1,1,2
+94,Math,69,7,14,6
+94,Physics,99,8,19,0
+94,Chemistry,92,2,3,14
+94,Biology,67,4,2,13
+94,English,43,3,11,16
+94,History,68,8,2,12
+94,Computer Science,35,6,1,13
+95,Math,67,3,7,2
+95,Physics,48,3,16,7
+95,Chemistry,43,9,5,15
+95,Biology,80,2,9,18
+95,English,57,3,12,6
+95,History,92,8,18,14
+95,Computer Science,43,7,5,3
+96,Math,69,0,8,0
+96,Physics,81,8,13,10
+96,Chemistry,82,2,8,13
+96,Biology,70,3,3,7
+96,English,31,8,13,8
+96,History,84,0,15,11
+96,Computer Science,64,1,4,15
+97,Math,49,4,2,11
+97,Physics,62,4,8,8
+97,Chemistry,97,2,16,1
+97,Biology,94,7,12,14
+97,English,69,5,11,13
+97,History,76,8,18,19
+97,Computer Science,51,7,18,5
+98,Math,49,8,18,3
+98,Physics,84,6,3,11
+98,Chemistry,74,2,11,1
+98,Biology,63,6,8,0
+98,English,67,5,17,16
+98,History,90,5,7,18
+98,Computer Science,94,8,12,16
+99,Math,69,2,15,12
+99,Physics,85,0,12,5
+99,Chemistry,78,0,7,10
+99,Biology,49,0,6,16
+99,English,93,9,10,8
+99,History,38,7,4,16
+99,Computer Science,70,0,18,6
+100,Math,84,8,6,12
+100,Physics,93,2,10,12
+100,Chemistry,75,0,7,11
+100,Biology,48,7,7,12
+100,English,41,0,12,6
+100,History,98,7,13,12
+100,Computer Science,76,6,16,14
+101,Math,47,1,3,0
+101,Physics,65,1,4,18
+101,Chemistry,57,7,19,16
+101,Biology,44,8,6,1
+101,English,92,8,9,1
+101,History,80,9,13,17
+101,Computer Science,80,5,8,6
+102,Math,57,2,19,5
+102,Physics,56,4,1,5
+102,Chemistry,32,7,1,16
+102,Biology,70,2,10,0
+102,English,84,9,4,16
+102,History,54,6,5,10
+102,Computer Science,47,3,2,12
+103,Math,82,5,11,1
+103,Physics,61,2,2,11
+103,Chemistry,70,6,7,10
+103,Biology,77,9,3,0
+103,English,53,6,1,4
+103,History,36,3,4,0
+103,Computer Science,94,3,18,9
+104,Math,89,1,2,10
+104,Physics,40,0,16,5
+104,Chemistry,93,4,7,1
+104,Biology,77,3,11,5
+104,English,94,3,16,12
+104,History,79,4,2,10
+104,Computer Science,74,3,13,10
+105,Math,93,9,18,17
+105,Physics,35,4,9,4
+105,Chemistry,66,9,4,2
+105,Biology,35,3,17,8
+105,English,58,3,16,12
+105,History,51,3,4,4
+105,Computer Science,78,1,12,18
+106,Math,32,9,1,12
+106,Physics,80,9,16,13
+106,Chemistry,50,6,3,18
+106,Biology,30,7,2,12
+106,English,40,3,18,16
+106,History,53,9,18,4
+106,Computer Science,37,4,16,4
+107,Math,65,5,18,1
+107,Physics,40,5,12,14
+107,Chemistry,41,5,10,6
+107,Biology,34,0,19,8
+107,English,75,9,11,5
+107,History,46,2,18,15
+107,Computer Science,81,5,3,5
+108,Math,62,7,14,10
+108,Physics,93,8,18,17
+108,Chemistry,80,4,13,17
+108,Biology,80,3,6,12
+108,English,64,8,7,19
+108,History,74,0,16,16
+108,Computer Science,48,5,2,4
+109,Math,42,6,15,17
+109,Physics,51,5,10,2
+109,Chemistry,83,9,9,15
+109,Biology,95,8,2,14
+109,English,64,2,17,7
+109,History,55,0,7,6
+109,Computer Science,59,6,2,0
+110,Math,65,8,4,0
+110,Physics,44,4,12,7
+110,Chemistry,37,4,8,0
+110,Biology,65,2,1,7
+110,English,52,8,1,13
+110,History,33,5,10,2
+110,Computer Science,32,1,12,18
+111,Math,45,1,7,16
+111,Physics,63,9,15,5
+111,Chemistry,89,1,1,12
+111,Biology,85,1,6,2
+111,English,37,6,13,6
+111,History,82,6,0,16
+111,Computer Science,59,4,12,18
+112,Math,82,2,16,9
+112,Physics,39,3,7,19
+112,Chemistry,49,1,13,17
+112,Biology,57,3,14,3
+112,English,88,6,7,17
+112,History,41,6,13,1
+112,Computer Science,78,8,16,17
+113,Math,67,0,17,7
+113,Physics,70,5,4,11
+113,Chemistry,93,8,0,10
+113,Biology,48,8,1,11
+113,English,97,3,17,14
+113,History,80,2,16,5
+113,Computer Science,85,2,4,16
+114,Math,87,6,0,9
+114,Physics,76,6,10,12
+114,Chemistry,62,7,11,10
+114,Biology,46,3,14,8
+114,English,50,3,18,18
+114,History,41,4,9,16
+114,Computer Science,77,6,8,2
+115,Math,76,1,13,2
+115,Physics,42,1,4,12
+115,Chemistry,60,1,15,8
+115,Biology,67,5,0,3
+115,English,74,1,8,7
+115,History,36,3,17,2
+115,Computer Science,57,5,11,11
+116,Math,50,7,0,3
+116,Physics,50,2,12,16
+116,Chemistry,83,9,11,14
+116,Biology,82,9,13,12
+116,English,66,5,1,16
+116,History,43,9,2,2
+116,Computer Science,46,5,19,10
+117,Math,54,3,5,0
+117,Physics,57,0,7,11
+117,Chemistry,56,5,9,14
+117,Biology,63,4,5,6
+117,English,54,0,6,19
+117,History,86,4,3,12
+117,Computer Science,36,3,14,18
+118,Math,61,7,0,7
+118,Physics,74,5,3,7
+118,Chemistry,96,8,1,1
+118,Biology,57,6,11,3
+118,English,38,6,4,19
+118,History,79,5,8,16
+118,Computer Science,88,9,11,6
+119,Math,86,9,9,12
+119,Physics,40,4,7,7
+119,Chemistry,97,0,16,14
+119,Biology,81,5,14,8
+119,English,75,1,16,17
+119,History,34,3,19,8
+119,Computer Science,83,0,17,5
+120,Math,56,1,14,13
+120,Physics,98,5,5,17
+120,Chemistry,75,2,5,7
+120,Biology,73,0,16,15
+120,English,79,5,8,15
+120,History,97,2,15,11
+120,Computer Science,40,4,17,18
+121,Math,84,5,17,5
+121,Physics,33,2,1,16
+121,Chemistry,72,4,15,1
+121,Biology,63,6,7,12
+121,English,37,3,14,0
+121,History,72,6,16,19
+121,Computer Science,73,8,4,9
+122,Math,65,4,9,10
+122,Physics,71,7,1,7
+122,Chemistry,77,5,4,2
+122,Biology,42,9,3,8
+122,English,83,7,1,18
+122,History,30,8,6,16
+122,Computer Science,96,3,19,2
+123,Math,46,1,12,19
+123,Physics,82,1,3,0
+123,Chemistry,30,9,12,19
+123,Biology,39,8,8,4
+123,English,94,0,1,12
+123,History,70,3,4,10
+123,Computer Science,85,2,2,11
+124,Math,55,2,18,12
+124,Physics,89,6,14,6
+124,Chemistry,55,7,4,13
+124,Biology,33,6,9,19
+124,English,44,1,19,12
+124,History,37,8,15,18
+124,Computer Science,75,8,3,14
+125,Math,66,0,2,14
+125,Physics,53,7,3,1
+125,Chemistry,53,7,9,3
+125,Biology,96,1,16,19
+125,English,52,4,8,5
+125,History,86,9,7,6
+125,Computer Science,67,4,19,2
+126,Math,80,5,14,3
+126,Physics,67,2,3,14
+126,Chemistry,70,4,12,17
+126,Biology,59,4,15,18
+126,English,86,5,3,6
+126,History,45,7,7,16
+126,Computer Science,45,6,9,9
+127,Math,61,1,8,16
+127,Physics,40,9,16,3
+127,Chemistry,77,3,14,4
+127,Biology,94,8,18,3
+127,English,95,7,14,6
+127,History,99,0,14,6
+127,Computer Science,86,0,1,8
+128,Math,42,5,5,19
+128,Physics,81,4,2,16
+128,Chemistry,92,0,11,15
+128,Biology,76,6,0,16
+128,English,96,9,14,3
+128,History,61,3,17,16
+128,Computer Science,72,3,2,7
+129,Math,87,0,13,1
+129,Physics,90,6,3,18
+129,Chemistry,35,8,0,16
+129,Biology,69,2,0,4
+129,English,56,5,7,12
+129,History,93,2,18,11
+129,Computer Science,72,9,19,3
+130,Math,73,6,1,18
+130,Physics,86,4,7,6
+130,Chemistry,85,6,2,17
+130,Biology,45,6,18,18
+130,English,41,4,10,4
+130,History,56,0,5,0
+130,Computer Science,34,8,13,4
+131,Math,88,0,17,15
+131,Physics,48,5,4,1
+131,Chemistry,76,6,3,0
+131,Biology,42,3,6,14
+131,English,43,6,18,19
+131,History,58,7,17,9
+131,Computer Science,86,7,9,16
+132,Math,95,5,4,8
+132,Physics,98,1,19,8
+132,Chemistry,78,0,11,6
+132,Biology,32,9,1,2
+132,English,31,7,9,5
+132,History,51,9,10,6
+132,Computer Science,58,5,19,8
+133,Math,83,3,11,18
+133,Physics,95,4,1,2
+133,Chemistry,35,9,8,0
+133,Biology,77,5,8,3
+133,English,88,1,3,0
+133,History,55,8,9,14
+133,Computer Science,88,5,18,15
+134,Math,50,7,3,1
+134,Physics,59,8,12,0
+134,Chemistry,74,3,6,16
+134,Biology,38,3,18,0
+134,English,39,3,8,12
+134,History,75,9,5,15
+134,Computer Science,67,0,9,17
+135,Math,56,5,17,2
+135,Physics,54,3,8,18
+135,Chemistry,46,8,8,9
+135,Biology,79,3,12,7
+135,English,68,0,14,19
+135,History,76,0,13,4
+135,Computer Science,72,1,7,10
+136,Math,90,1,2,0
+136,Physics,45,1,15,9
+136,Chemistry,67,2,3,12
+136,Biology,75,2,9,5
+136,English,94,6,13,7
+136,History,80,9,16,8
+136,Computer Science,35,8,6,16
+137,Math,89,0,4,8
+137,Physics,85,4,1,10
+137,Chemistry,89,5,7,3
+137,Biology,66,1,1,10
+137,English,87,8,12,3
+137,History,36,5,3,14
+137,Computer Science,30,6,2,13
+138,Math,67,1,0,5
+138,Physics,67,4,15,4
+138,Chemistry,50,1,6,2
+138,Biology,76,3,18,2
+138,English,97,4,0,3
+138,History,41,7,9,19
+138,Computer Science,54,6,13,4
+139,Math,65,9,16,9
+139,Physics,87,6,15,0
+139,Chemistry,90,8,5,18
+139,Biology,64,6,8,4
+139,English,71,6,16,11
+139,History,96,8,8,14
+139,Computer Science,66,6,12,13
+140,Math,52,0,7,1
+140,Physics,35,1,0,16
+140,Chemistry,61,9,18,13
+140,Biology,39,2,3,1
+140,English,57,6,14,18
+140,History,44,7,7,10
+140,Computer Science,38,0,0,18
+141,Math,96,9,7,14
+141,Physics,94,1,1,18
+141,Chemistry,42,5,0,1
+141,Biology,77,0,6,16
+141,English,42,4,16,2
+141,History,36,9,16,6
+141,Computer Science,82,0,16,16
+142,Math,72,8,2,14
+142,Physics,58,4,10,15
+142,Chemistry,54,5,8,0
+142,Biology,70,2,11,18
+142,English,58,2,18,1
+142,History,70,2,10,13
+142,Computer Science,59,8,7,17
+143,Math,80,1,7,5
+143,Physics,86,7,3,14
+143,Chemistry,86,0,12,17
+143,Biology,95,5,14,19
+143,English,93,9,2,18
+143,History,32,5,13,7
+143,Computer Science,88,6,3,19
+144,Math,59,1,16,8
+144,Physics,60,1,14,15
+144,Chemistry,54,3,7,8
+144,Biology,87,4,15,12
+144,English,91,6,19,16
+144,History,93,6,8,5
+144,Computer Science,58,9,16,15
+145,Math,32,4,3,9
+145,Physics,91,9,11,9
+145,Chemistry,90,5,15,7
+145,Biology,88,8,7,12
+145,English,88,1,11,9
+145,History,73,0,1,17
+145,Computer Science,41,2,17,16
+146,Math,91,5,14,2
+146,Physics,67,2,0,12
+146,Chemistry,57,4,13,12
+146,Biology,56,3,6,9
+146,English,82,3,5,19
+146,History,62,7,0,4
+146,Computer Science,92,5,5,2
+147,Math,34,7,13,17
+147,Physics,77,5,13,7
+147,Chemistry,58,6,7,12
+147,Biology,47,1,7,10
+147,English,83,5,15,19
+147,History,41,9,2,12
+147,Computer Science,64,0,2,19
+148,Math,88,4,18,10
+148,Physics,59,4,2,5
+148,Chemistry,60,7,17,16
+148,Biology,61,6,14,10
+148,English,87,2,2,15
+148,History,98,4,9,18
+148,Computer Science,54,3,18,10
+149,Math,95,9,10,19
+149,Physics,77,2,10,13
+149,Chemistry,84,4,4,18
+149,Biology,50,1,3,16
+149,English,71,3,5,13
+149,History,61,1,17,10
+149,Computer Science,50,4,8,8
+150,Math,83,9,18,0
+150,Physics,93,6,3,0
+150,Chemistry,44,7,11,17
+150,Biology,76,0,13,13
+150,English,79,3,17,15
+150,History,62,6,10,14
+150,Computer Science,41,7,19,5
+151,Math,32,7,12,12
+151,Physics,95,4,16,5
+151,Chemistry,95,3,10,7
+151,Biology,69,5,19,7
+151,English,58,7,16,19
+151,History,84,6,15,12
+151,Computer Science,88,7,15,8
+152,Math,64,2,19,4
+152,Physics,86,7,14,13
+152,Chemistry,49,6,11,16
+152,Biology,46,9,18,13
+152,English,40,1,17,6
+152,History,87,1,19,17
+152,Computer Science,39,3,14,4
+153,Math,32,4,7,7
+153,Physics,69,7,7,10
+153,Chemistry,93,7,9,6
+153,Biology,57,0,3,12
+153,English,65,4,3,17
+153,History,93,5,1,10
+153,Computer Science,75,4,5,9
+154,Math,69,7,2,11
+154,Physics,89,6,16,0
+154,Chemistry,86,6,9,1
+154,Biology,38,5,12,15
+154,English,47,2,11,7
+154,History,46,9,14,14
+154,Computer Science,92,6,6,12
+155,Math,61,8,7,19
+155,Physics,92,5,18,6
+155,Chemistry,77,1,15,6
+155,Biology,97,8,7,12
+155,English,35,2,12,13
+155,History,83,3,6,7
+155,Computer Science,54,5,5,2
+156,Math,57,2,12,1
+156,Physics,51,5,7,7
+156,Chemistry,91,8,5,13
+156,Biology,61,2,9,2
+156,English,88,0,4,19
+156,History,70,4,19,6
+156,Computer Science,51,3,12,12
+157,Math,71,1,16,19
+157,Physics,83,3,0,0
+157,Chemistry,44,0,7,17
+157,Biology,52,7,7,14
+157,English,88,6,4,16
+157,History,57,8,15,1
+157,Computer Science,46,6,12,17
+158,Math,42,4,15,16
+158,Physics,69,2,19,14
+158,Chemistry,81,9,11,19
+158,Biology,59,0,19,8
+158,English,83,0,11,2
+158,History,38,0,12,13
+158,Computer Science,86,7,7,11
+159,Math,94,7,9,18
+159,Physics,40,6,10,16
+159,Chemistry,61,9,7,5
+159,Biology,79,5,4,12
+159,English,93,2,7,8
+159,History,78,2,18,10
+159,Computer Science,78,4,18,1
+160,Math,92,7,18,6
+160,Physics,57,0,5,18
+160,Chemistry,85,5,1,5
+160,Biology,66,2,19,3
+160,English,78,3,12,19
+160,History,87,0,8,3
+160,Computer Science,89,2,2,13
+161,Math,85,0,9,17
+161,Physics,77,7,0,11
+161,Chemistry,33,5,11,8
+161,Biology,45,7,11,13
+161,English,54,1,2,9
+161,History,55,3,7,9
+161,Computer Science,96,7,4,2
+162,Math,87,0,14,2
+162,Physics,82,9,14,1
+162,Chemistry,79,3,11,3
+162,Biology,77,6,15,0
+162,English,95,2,19,16
+162,History,91,0,19,5
+162,Computer Science,44,9,13,19
+163,Math,75,8,4,5
+163,Physics,76,6,3,17
+163,Chemistry,50,2,7,2
+163,Biology,69,1,9,19
+163,English,90,4,12,4
+163,History,85,5,4,8
+163,Computer Science,88,1,0,7
+164,Math,89,2,10,11
+164,Physics,68,9,12,7
+164,Chemistry,92,5,8,6
+164,Biology,87,4,14,1
+164,English,60,3,11,0
+164,History,84,5,7,4
+164,Computer Science,30,0,9,9
+165,Math,50,0,5,2
+165,Physics,37,0,16,12
+165,Chemistry,46,5,16,15
+165,Biology,74,5,2,13
+165,English,43,7,14,12
+165,History,60,4,2,5
+165,Computer Science,98,5,16,1
+166,Math,55,4,19,5
+166,Physics,99,1,17,3
+166,Chemistry,46,8,13,13
+166,Biology,42,6,11,14
+166,English,48,2,16,2
+166,History,48,3,3,2
+166,Computer Science,61,9,15,11
+167,Math,53,0,6,10
+167,Physics,79,0,2,3
+167,Chemistry,42,5,13,4
+167,Biology,97,7,15,15
+167,English,91,3,12,12
+167,History,95,2,7,14
+167,Computer Science,72,8,6,12
+168,Math,95,7,6,11
+168,Physics,86,2,9,5
+168,Chemistry,47,1,4,6
+168,Biology,89,1,10,12
+168,English,52,4,5,13
+168,History,33,6,5,9
+168,Computer Science,47,7,8,4
+169,Math,35,7,2,9
+169,Physics,40,0,3,3
+169,Chemistry,70,2,4,5
+169,Biology,64,5,0,19
+169,English,51,6,10,12
+169,History,32,8,11,13
+169,Computer Science,47,0,8,8
+170,Math,52,9,18,14
+170,Physics,98,3,1,12
+170,Chemistry,54,9,13,9
+170,Biology,87,6,8,13
+170,English,77,1,9,2
+170,History,40,4,12,6
+170,Computer Science,93,1,11,9
+171,Math,83,0,18,17
+171,Physics,88,9,15,5
+171,Chemistry,86,9,11,12
+171,Biology,33,6,1,14
+171,English,36,6,13,7
+171,History,41,0,16,3
+171,Computer Science,37,4,15,3
+172,Math,57,5,14,11
+172,Physics,59,6,15,13
+172,Chemistry,81,4,2,14
+172,Biology,76,3,18,12
+172,English,50,4,19,19
+172,History,54,5,3,1
+172,Computer Science,51,1,4,3
+173,Math,59,2,1,12
+173,Physics,72,5,3,19
+173,Chemistry,81,3,8,6
+173,Biology,48,5,5,19
+173,English,86,3,8,3
+173,History,79,1,4,19
+173,Computer Science,66,5,3,11
+174,Math,63,9,8,9
+174,Physics,36,3,18,9
+174,Chemistry,60,2,18,1
+174,Biology,88,3,9,1
+174,English,95,7,16,15
+174,History,45,6,10,0
+174,Computer Science,40,6,3,6
+175,Math,55,1,11,16
+175,Physics,94,4,9,6
+175,Chemistry,31,9,3,11
+175,Biology,48,9,10,7
+175,English,79,2,11,2
+175,History,56,0,1,16
+175,Computer Science,45,1,19,5
+176,Math,57,8,9,9
+176,Physics,69,0,12,8
+176,Chemistry,71,4,15,12
+176,Biology,51,8,19,17
+176,English,56,8,15,1
+176,History,61,9,1,11
+176,Computer Science,69,8,11,8
+177,Math,39,8,1,15
+177,Physics,49,6,1,0
+177,Chemistry,80,3,1,13
+177,Biology,95,4,19,6
+177,English,53,4,9,13
+177,History,47,7,13,1
+177,Computer Science,87,5,5,3
+178,Math,74,3,13,15
+178,Physics,90,3,0,12
+178,Chemistry,65,3,17,5
+178,Biology,96,6,12,15
+178,English,88,4,3,7
+178,History,99,0,12,13
+178,Computer Science,90,6,13,14
+179,Math,73,0,8,14
+179,Physics,73,1,4,12
+179,Chemistry,56,3,7,13
+179,Biology,72,0,2,16
+179,English,83,6,7,12
+179,History,64,4,8,5
+179,Computer Science,54,5,1,12
+180,Math,98,8,7,0
+180,Physics,73,6,10,6
+180,Chemistry,83,7,10,15
+180,Biology,49,2,0,14
+180,English,30,0,1,19
+180,History,99,7,15,18
+180,Computer Science,62,2,2,4
+181,Math,49,8,6,3
+181,Physics,48,5,12,10
+181,Chemistry,42,8,19,14
+181,Biology,82,5,10,18
+181,English,71,9,15,18
+181,History,55,6,10,12
+181,Computer Science,57,8,19,18
+182,Math,68,2,11,14
+182,Physics,84,9,9,10
+182,Chemistry,67,1,10,18
+182,Biology,93,5,13,19
+182,English,71,0,2,7
+182,History,88,3,14,6
+182,Computer Science,40,6,3,11
+183,Math,55,5,13,11
+183,Physics,72,2,4,13
+183,Chemistry,82,7,15,12
+183,Biology,83,8,19,3
+183,English,78,6,13,10
+183,History,83,8,12,17
+183,Computer Science,57,8,18,0
+184,Math,65,2,16,2
+184,Physics,59,3,12,14
+184,Chemistry,80,5,9,14
+184,Biology,82,5,19,5
+184,English,93,6,9,6
+184,History,51,0,17,16
+184,Computer Science,70,9,9,6
+185,Math,79,5,19,0
+185,Physics,30,4,1,3
+185,Chemistry,46,3,10,3
+185,Biology,30,6,17,8
+185,English,90,2,7,18
+185,History,65,1,19,10
+185,Computer Science,56,8,17,15
+186,Math,76,3,4,16
+186,Physics,68,9,15,6
+186,Chemistry,33,5,10,1
+186,Biology,41,3,17,6
+186,English,30,9,12,5
+186,History,99,7,18,4
+186,Computer Science,47,4,9,0
+187,Math,41,5,6,8
+187,Physics,50,6,0,10
+187,Chemistry,91,4,14,1
+187,Biology,81,6,11,17
+187,English,32,6,10,17
+187,History,67,4,0,11
+187,Computer Science,88,9,10,3
+188,Math,97,0,1,1
+188,Physics,73,5,9,15
+188,Chemistry,43,6,18,16
+188,Biology,38,9,12,4
+188,English,98,9,9,6
+188,History,44,6,14,2
+188,Computer Science,39,2,5,11
+189,Math,67,2,2,7
+189,Physics,37,6,19,14
+189,Chemistry,33,2,2,12
+189,Biology,37,6,15,12
+189,English,96,8,13,12
+189,History,44,6,5,1
+189,Computer Science,70,5,16,4
+190,Math,73,0,9,10
+190,Physics,85,0,17,11
+190,Chemistry,89,9,13,15
+190,Biology,70,3,10,5
+190,English,98,8,17,12
+190,History,72,1,18,14
+190,Computer Science,38,7,19,0
+191,Math,97,8,1,15
+191,Physics,96,9,7,5
+191,Chemistry,53,6,12,12
+191,Biology,98,8,19,17
+191,English,95,9,12,17
+191,History,76,1,14,10
+191,Computer Science,48,2,6,13
+192,Math,43,5,12,11
+192,Physics,94,2,10,18
+192,Chemistry,84,0,18,19
+192,Biology,78,4,2,1
+192,English,69,5,12,15
+192,History,57,2,12,13
+192,Computer Science,84,6,7,8
+193,Math,94,5,18,10
+193,Physics,52,1,14,0
+193,Chemistry,50,8,6,12
+193,Biology,73,1,18,14
+193,English,69,2,9,6
+193,History,79,3,5,8
+193,Computer Science,86,4,7,15
+194,Math,74,0,19,4
+194,Physics,46,8,1,17
+194,Chemistry,70,5,10,5
+194,Biology,35,1,7,2
+194,English,53,2,17,16
+194,History,64,0,3,12
+194,Computer Science,78,1,15,1
+195,Math,48,6,18,15
+195,Physics,83,2,8,0
+195,Chemistry,71,2,0,1
+195,Biology,84,1,1,12
+195,English,35,4,5,8
+195,History,77,6,9,9
+195,Computer Science,59,8,19,17
+196,Math,89,7,19,8
+196,Physics,44,3,7,8
+196,Chemistry,38,9,3,16
+196,Biology,45,2,19,4
+196,English,34,3,14,17
+196,History,31,3,9,12
+196,Computer Science,90,8,7,2
+197,Math,92,8,10,2
+197,Physics,71,3,12,11
+197,Chemistry,66,9,8,19
+197,Biology,31,5,6,7
+197,English,93,6,13,18
+197,History,98,6,17,19
+197,Computer Science,84,0,12,1
+198,Math,54,9,6,9
+198,Physics,99,2,2,17
+198,Chemistry,93,4,18,18
+198,Biology,91,7,8,3
+198,English,44,8,11,2
+198,History,84,0,18,5
+198,Computer Science,36,2,16,15
+199,Math,80,7,17,15
+199,Physics,71,0,12,12
+199,Chemistry,36,9,1,3
+199,Biology,54,5,17,5
+199,English,58,8,16,13
+199,History,53,9,18,1
+199,Computer Science,57,2,10,5
+200,Math,90,2,15,6
+200,Physics,88,7,18,19
+200,Chemistry,88,6,8,12
+200,Biology,30,7,3,2
+200,English,32,5,12,7
+200,History,36,0,15,5
+200,Computer Science,73,6,8,10
+201,Math,71,4,0,17
+201,Physics,92,3,4,8
+201,Chemistry,88,0,2,15
+201,Biology,34,2,19,14
+201,English,91,2,19,13
+201,History,92,0,19,17
+201,Computer Science,79,5,13,17
+202,Math,99,1,3,7
+202,Physics,32,8,1,7
+202,Chemistry,90,3,16,12
+202,Biology,30,1,14,11
+202,English,60,8,5,13
+202,History,37,5,1,16
+202,Computer Science,85,3,2,4
+203,Math,45,1,16,10
+203,Physics,46,9,1,3
+203,Chemistry,68,1,5,16
+203,Biology,98,4,19,15
+203,English,80,8,4,7
+203,History,98,9,1,8
+203,Computer Science,93,5,1,5
+204,Math,47,6,0,0
+204,Physics,30,7,3,3
+204,Chemistry,56,0,9,8
+204,Biology,84,3,5,15
+204,English,63,6,17,9
+204,History,85,0,12,17
+204,Computer Science,83,0,4,10
+205,Math,68,9,16,14
+205,Physics,47,6,18,1
+205,Chemistry,87,3,2,6
+205,Biology,47,9,6,7
+205,English,99,5,0,3
+205,History,78,3,17,10
+205,Computer Science,58,4,13,8
+206,Math,76,9,18,18
+206,Physics,99,3,5,7
+206,Chemistry,94,5,16,16
+206,Biology,53,6,18,2
+206,English,91,5,10,19
+206,History,58,2,8,9
+206,Computer Science,94,1,16,5
+207,Math,43,6,14,13
+207,Physics,85,5,2,18
+207,Chemistry,86,1,2,17
+207,Biology,30,3,5,4
+207,English,94,2,0,15
+207,History,90,5,7,15
+207,Computer Science,94,3,9,10
+208,Math,46,8,6,11
+208,Physics,82,6,11,14
+208,Chemistry,63,3,13,13
+208,Biology,45,6,18,1
+208,English,39,1,16,4
+208,History,41,5,8,19
+208,Computer Science,30,5,14,5
+209,Math,47,5,12,0
+209,Physics,52,6,12,6
+209,Chemistry,73,9,0,14
+209,Biology,65,6,4,1
+209,English,84,9,0,15
+209,History,67,6,15,13
+209,Computer Science,58,9,2,14
+210,Math,96,6,1,0
+210,Physics,70,8,6,2
+210,Chemistry,87,1,10,6
+210,Biology,30,3,5,6
+210,English,39,6,1,3
+210,History,50,0,0,9
+210,Computer Science,92,9,18,11
+211,Math,85,8,14,16
+211,Physics,93,1,1,3
+211,Chemistry,42,8,0,10
+211,Biology,54,4,15,10
+211,English,67,8,12,7
+211,History,46,7,4,1
+211,Computer Science,91,7,8,3
+212,Math,46,4,17,15
+212,Physics,69,9,10,17
+212,Chemistry,84,7,9,12
+212,Biology,46,1,9,15
+212,English,74,1,16,8
+212,History,43,0,3,17
+212,Computer Science,49,7,14,10
+213,Math,38,4,18,19
+213,Physics,55,8,13,16
+213,Chemistry,82,2,1,0
+213,Biology,71,2,16,11
+213,English,62,0,2,10
+213,History,78,6,2,7
+213,Computer Science,81,3,6,13
+214,Math,75,3,15,0
+214,Physics,78,8,9,15
+214,Chemistry,45,9,7,6
+214,Biology,35,3,15,6
+214,English,72,9,13,6
+214,History,62,9,12,19
+214,Computer Science,92,2,19,3
+215,Math,55,1,13,11
+215,Physics,59,0,11,11
+215,Chemistry,62,7,1,11
+215,Biology,55,4,15,3
+215,English,69,1,9,8
+215,History,52,0,15,1
+215,Computer Science,49,2,11,7
+216,Math,95,3,13,15
+216,Physics,63,5,12,3
+216,Chemistry,51,1,11,19
+216,Biology,80,7,6,15
+216,English,48,5,19,10
+216,History,77,6,4,10
+216,Computer Science,44,2,4,4
+217,Math,38,2,5,16
+217,Physics,55,4,7,10
+217,Chemistry,67,7,9,2
+217,Biology,43,6,13,9
+217,English,41,5,11,13
+217,History,63,8,9,16
+217,Computer Science,46,2,18,0
+218,Math,41,6,3,9
+218,Physics,42,1,9,3
+218,Chemistry,98,2,1,11
+218,Biology,35,7,18,10
+218,English,92,8,11,8
+218,History,31,7,10,3
+218,Computer Science,39,4,19,15
+219,Math,37,3,9,11
+219,Physics,43,5,17,11
+219,Chemistry,79,6,19,6
+219,Biology,38,0,5,5
+219,English,90,5,11,9
+219,History,91,9,5,16
+219,Computer Science,80,1,5,18
+220,Math,39,7,7,5
+220,Physics,86,6,0,17
+220,Chemistry,85,8,19,11
+220,Biology,77,9,9,13
+220,English,81,9,9,10
+220,History,52,1,19,7
+220,Computer Science,60,6,7,0
+221,Math,31,1,14,0
+221,Physics,64,2,17,17
+221,Chemistry,59,4,9,19
+221,Biology,78,1,3,0
+221,English,76,7,3,9
+221,History,48,1,4,18
+221,Computer Science,87,6,15,0
+222,Math,41,7,1,7
+222,Physics,47,8,15,4
+222,Chemistry,55,5,12,18
+222,Biology,58,2,7,11
+222,English,31,1,12,4
+222,History,31,4,6,11
+222,Computer Science,45,6,7,8
+223,Math,61,4,12,4
+223,Physics,81,8,13,17
+223,Chemistry,44,9,6,7
+223,Biology,57,2,14,15
+223,English,99,0,3,10
+223,History,55,4,15,12
+223,Computer Science,69,6,15,3
+224,Math,60,4,9,11
+224,Physics,41,9,4,15
+224,Chemistry,38,4,19,2
+224,Biology,98,1,13,1
+224,English,87,9,5,3
+224,History,82,0,6,8
+224,Computer Science,80,9,10,14
+225,Math,67,4,18,18
+225,Physics,39,5,3,17
+225,Chemistry,65,8,11,1
+225,Biology,65,4,2,8
+225,English,90,4,17,10
+225,History,64,8,1,8
+225,Computer Science,33,8,12,17
+226,Math,57,9,15,11
+226,Physics,98,1,9,0
+226,Chemistry,68,9,16,15
+226,Biology,64,9,6,16
+226,English,91,5,3,16
+226,History,88,8,3,6
+226,Computer Science,31,0,7,14
+227,Math,60,7,15,18
+227,Physics,72,1,16,15
+227,Chemistry,86,3,15,11
+227,Biology,59,3,2,16
+227,English,78,6,3,11
+227,History,60,9,19,14
+227,Computer Science,52,4,14,16
+228,Math,66,2,12,17
+228,Physics,91,3,3,19
+228,Chemistry,81,2,12,11
+228,Biology,36,8,11,3
+228,English,63,1,4,9
+228,History,71,8,12,6
+228,Computer Science,98,9,9,9
+229,Math,89,2,7,0
+229,Physics,59,4,16,8
+229,Chemistry,46,4,19,7
+229,Biology,67,2,3,17
+229,English,62,7,0,10
+229,History,78,3,11,9
+229,Computer Science,35,8,0,6
+230,Math,87,4,15,13
+230,Physics,49,5,4,17
+230,Chemistry,76,5,18,0
+230,Biology,94,2,9,2
+230,English,69,2,12,5
+230,History,84,3,19,11
+230,Computer Science,85,6,15,5
+231,Math,95,2,18,6
+231,Physics,92,9,9,19
+231,Chemistry,46,1,3,18
+231,Biology,46,4,6,17
+231,English,68,3,7,12
+231,History,33,5,4,11
+231,Computer Science,97,7,8,3
+232,Math,80,7,13,4
+232,Physics,47,9,18,11
+232,Chemistry,46,7,10,2
+232,Biology,52,0,0,14
+232,English,61,8,14,2
+232,History,56,2,12,11
+232,Computer Science,49,0,16,12
+233,Math,30,9,14,6
+233,Physics,47,1,6,16
+233,Chemistry,73,7,1,6
+233,Biology,65,1,5,8
+233,English,80,2,17,4
+233,History,43,3,6,19
+233,Computer Science,93,8,11,1
+234,Math,51,6,15,19
+234,Physics,67,6,3,14
+234,Chemistry,30,6,11,9
+234,Biology,34,1,9,5
+234,English,41,6,17,1
+234,History,46,3,6,8
+234,Computer Science,63,5,17,5
+235,Math,74,9,18,1
+235,Physics,73,5,17,4
+235,Chemistry,61,2,2,9
+235,Biology,80,2,11,15
+235,English,46,6,12,1
+235,History,33,9,6,16
+235,Computer Science,81,5,18,4
+236,Math,38,2,5,3
+236,Physics,53,2,2,3
+236,Chemistry,69,5,2,11
+236,Biology,69,3,13,13
+236,English,42,5,16,3
+236,History,31,8,12,19
+236,Computer Science,95,3,10,14
+237,Math,84,2,2,11
+237,Physics,98,3,6,6
+237,Chemistry,42,8,12,11
+237,Biology,42,7,9,0
+237,English,86,7,15,12
+237,History,64,2,4,10
+237,Computer Science,85,9,9,19
+238,Math,63,2,7,10
+238,Physics,95,5,8,19
+238,Chemistry,86,1,17,15
+238,Biology,54,6,6,16
+238,English,74,5,13,5
+238,History,67,1,19,14
+238,Computer Science,66,0,19,0
+239,Math,51,1,14,4
+239,Physics,47,5,4,18
+239,Chemistry,93,9,14,9
+239,Biology,77,1,0,15
+239,English,83,5,2,1
+239,History,57,1,12,8
+239,Computer Science,88,4,6,12
+240,Math,49,7,12,6
+240,Physics,71,4,5,4
+240,Chemistry,82,9,15,18
+240,Biology,38,5,18,6
+240,English,33,2,19,10
+240,History,87,0,6,5
+240,Computer Science,75,1,3,10
+241,Math,94,2,2,6
+241,Physics,30,8,10,5
+241,Chemistry,96,2,1,17
+241,Biology,93,9,4,8
+241,English,31,1,5,9
+241,History,65,5,16,14
+241,Computer Science,99,0,2,9
+242,Math,34,9,12,5
+242,Physics,55,7,4,14
+242,Chemistry,45,0,15,4
+242,Biology,32,3,14,12
+242,English,84,4,1,5
+242,History,87,5,13,10
+242,Computer Science,37,0,6,5
+243,Math,50,7,18,19
+243,Physics,37,9,13,17
+243,Chemistry,38,9,9,15
+243,Biology,65,3,12,4
+243,English,52,8,7,15
+243,History,57,5,13,0
+243,Computer Science,58,2,16,10
+244,Math,34,9,6,9
+244,Physics,65,8,13,1
+244,Chemistry,54,8,0,9
+244,Biology,71,3,2,5
+244,English,87,5,1,17
+244,History,31,5,4,19
+244,Computer Science,53,3,0,0
+245,Math,30,4,19,12
+245,Physics,32,6,10,11
+245,Chemistry,74,9,12,0
+245,Biology,53,9,2,3
+245,English,45,0,18,14
+245,History,45,8,1,10
+245,Computer Science,94,9,18,3
+246,Math,72,4,2,12
+246,Physics,39,1,1,6
+246,Chemistry,70,9,17,6
+246,Biology,88,6,2,11
+246,English,36,0,0,4
+246,History,77,1,8,6
+246,Computer Science,61,3,19,17
+247,Math,65,0,2,15
+247,Physics,59,5,3,15
+247,Chemistry,87,2,0,4
+247,Biology,80,5,10,12
+247,English,82,3,3,3
+247,History,65,3,17,17
+247,Computer Science,70,1,1,3
+248,Math,73,6,14,6
+248,Physics,58,5,16,15
+248,Chemistry,89,2,8,13
+248,Biology,78,4,1,19
+248,English,77,0,2,6
+248,History,87,2,19,1
+248,Computer Science,70,2,4,17
+249,Math,45,3,11,6
+249,Physics,43,6,11,2
+249,Chemistry,34,0,9,9
+249,Biology,72,0,4,12
+249,English,38,0,0,3
+249,History,47,8,17,13
+249,Computer Science,54,5,9,14
+250,Math,33,1,17,16
+250,Physics,73,6,15,10
+250,Chemistry,43,2,18,17
+250,Biology,91,9,5,12
+250,English,87,3,15,5
+250,History,97,6,13,0
+250,Computer Science,81,4,7,11
+251,Math,34,5,4,12
+251,Physics,38,9,0,2
+251,Chemistry,59,1,11,2
+251,Biology,86,8,1,2
+251,English,75,3,18,12
+251,History,73,2,8,1
+251,Computer Science,90,5,8,11
+252,Math,93,1,17,12
+252,Physics,98,9,9,11
+252,Chemistry,85,8,1,4
+252,Biology,59,6,5,2
+252,English,42,2,5,10
+252,History,89,9,16,9
+252,Computer Science,95,6,1,17
+253,Math,81,5,17,10
+253,Physics,59,7,1,14
+253,Chemistry,49,7,18,4
+253,Biology,56,7,18,17
+253,English,71,6,8,0
+253,History,45,6,6,11
+253,Computer Science,34,9,4,16
+254,Math,55,4,14,12
+254,Physics,57,0,10,0
+254,Chemistry,47,1,15,12
+254,Biology,68,0,15,0
+254,English,67,1,16,5
+254,History,75,1,5,9
+254,Computer Science,47,8,7,9
+255,Math,46,6,5,13
+255,Physics,51,5,5,6
+255,Chemistry,41,2,13,18
+255,Biology,52,6,7,17
+255,English,42,4,8,9
+255,History,84,8,14,19
+255,Computer Science,31,8,12,1
+256,Math,80,9,1,2
+256,Physics,32,9,5,15
+256,Chemistry,93,0,18,2
+256,Biology,34,2,10,3
+256,English,98,0,17,11
+256,History,70,1,4,12
+256,Computer Science,77,7,2,3
+257,Math,40,6,13,2
+257,Physics,44,9,8,10
+257,Chemistry,78,2,1,1
+257,Biology,67,2,7,2
+257,English,54,0,2,17
+257,History,38,5,0,9
+257,Computer Science,99,6,11,3
+258,Math,57,0,7,19
+258,Physics,32,6,11,1
+258,Chemistry,75,5,4,8
+258,Biology,40,4,2,16
+258,English,95,7,0,6
+258,History,75,4,18,10
+258,Computer Science,31,7,8,2
+259,Math,31,6,4,4
+259,Physics,81,4,19,5
+259,Chemistry,49,1,1,5
+259,Biology,70,8,2,0
+259,English,30,2,4,12
+259,History,48,8,18,2
+259,Computer Science,34,1,6,12
+260,Math,86,5,2,19
+260,Physics,60,4,7,0
+260,Chemistry,79,3,15,17
+260,Biology,68,8,13,15
+260,English,76,8,7,17
+260,History,79,1,14,3
+260,Computer Science,92,4,15,8
+261,Math,53,1,16,17
+261,Physics,36,3,4,15
+261,Chemistry,58,6,13,14
+261,Biology,78,0,16,10
+261,English,87,3,18,6
+261,History,85,1,13,0
+261,Computer Science,47,8,0,16
+262,Math,48,5,2,4
+262,Physics,63,3,3,9
+262,Chemistry,40,9,16,15
+262,Biology,36,2,15,7
+262,English,41,2,16,17
+262,History,72,3,15,16
+262,Computer Science,61,8,5,19
+263,Math,54,1,8,5
+263,Physics,32,3,5,6
+263,Chemistry,84,0,4,5
+263,Biology,74,1,14,14
+263,English,55,8,13,6
+263,History,75,9,9,16
+263,Computer Science,43,7,3,15
+264,Math,53,5,19,17
+264,Physics,47,4,8,2
+264,Chemistry,93,7,19,9
+264,Biology,59,4,2,10
+264,English,92,0,15,6
+264,History,48,4,4,14
+264,Computer Science,58,1,10,11
+265,Math,31,3,14,19
+265,Physics,33,5,17,5
+265,Chemistry,52,9,18,10
+265,Biology,57,7,1,7
+265,English,58,4,17,17
+265,History,43,5,9,2
+265,Computer Science,38,2,10,11
+266,Math,96,4,6,13
+266,Physics,85,6,9,10
+266,Chemistry,44,2,15,19
+266,Biology,79,6,12,4
+266,English,33,7,8,18
+266,History,64,4,17,0
+266,Computer Science,72,1,5,13
+267,Math,96,3,11,12
+267,Physics,95,1,14,16
+267,Chemistry,36,0,13,5
+267,Biology,35,1,4,5
+267,English,63,7,14,14
+267,History,53,0,17,11
+267,Computer Science,86,7,6,1
+268,Math,40,5,9,2
+268,Physics,71,1,13,17
+268,Chemistry,53,7,9,12
+268,Biology,82,7,3,3
+268,English,34,0,16,1
+268,History,59,7,6,14
+268,Computer Science,55,8,4,1
+269,Math,36,7,6,6
+269,Physics,82,1,5,3
+269,Chemistry,54,6,5,4
+269,Biology,96,9,19,18
+269,English,40,7,2,6
+269,History,52,6,13,1
+269,Computer Science,48,9,8,15
+270,Math,70,9,19,13
+270,Physics,54,2,6,14
+270,Chemistry,56,7,9,3
+270,Biology,48,4,14,13
+270,English,62,9,18,2
+270,History,77,1,11,5
+270,Computer Science,69,1,8,14
+271,Math,31,0,9,1
+271,Physics,84,7,4,0
+271,Chemistry,35,7,12,18
+271,Biology,56,0,10,19
+271,English,62,7,4,16
+271,History,37,8,9,1
+271,Computer Science,38,7,2,17
+272,Math,82,5,19,17
+272,Physics,54,2,13,1
+272,Chemistry,75,5,10,15
+272,Biology,37,6,10,2
+272,English,78,5,7,4
+272,History,69,1,14,11
+272,Computer Science,46,0,14,13
+273,Math,81,5,15,8
+273,Physics,62,0,12,4
+273,Chemistry,39,5,18,12
+273,Biology,94,3,14,13
+273,English,37,9,8,16
+273,History,96,9,16,16
+273,Computer Science,40,5,3,6
+274,Math,82,9,13,6
+274,Physics,85,7,0,3
+274,Chemistry,59,7,2,12
+274,Biology,81,5,10,3
+274,English,81,6,10,0
+274,History,87,6,11,6
+274,Computer Science,84,6,9,15
+275,Math,84,6,3,11
+275,Physics,46,1,12,17
+275,Chemistry,57,7,14,0
+275,Biology,49,9,11,4
+275,English,52,7,15,13
+275,History,54,6,12,4
+275,Computer Science,83,4,12,10
+276,Math,76,6,6,5
+276,Physics,96,6,4,17
+276,Chemistry,37,0,19,0
+276,Biology,71,7,9,16
+276,English,93,1,19,15
+276,History,46,2,7,5
+276,Computer Science,67,4,8,3
+277,Math,60,6,16,14
+277,Physics,68,9,15,11
+277,Chemistry,47,5,11,10
+277,Biology,64,1,5,4
+277,English,45,7,19,10
+277,History,39,7,11,5
+277,Computer Science,49,4,8,15
+278,Math,83,5,7,19
+278,Physics,80,6,4,17
+278,Chemistry,63,5,7,0
+278,Biology,60,5,11,1
+278,English,91,6,13,6
+278,History,90,2,5,19
+278,Computer Science,63,0,11,11
+279,Math,59,0,9,2
+279,Physics,47,0,3,9
+279,Chemistry,40,5,5,8
+279,Biology,91,1,3,4
+279,English,46,7,7,11
+279,History,69,2,2,17
+279,Computer Science,82,2,18,14
+280,Math,35,7,15,17
+280,Physics,81,6,16,16
+280,Chemistry,41,9,6,13
+280,Biology,84,0,16,3
+280,English,50,4,19,6
+280,History,53,8,11,2
+280,Computer Science,92,3,3,12
+281,Math,52,2,9,4
+281,Physics,68,7,15,0
+281,Chemistry,41,1,6,10
+281,Biology,60,1,6,14
+281,English,86,1,6,3
+281,History,58,1,15,6
+281,Computer Science,66,0,11,18
+282,Math,37,4,1,8
+282,Physics,99,9,6,6
+282,Chemistry,99,6,1,18
+282,Biology,97,9,5,16
+282,English,86,4,6,8
+282,History,54,0,0,18
+282,Computer Science,35,1,9,10
+283,Math,94,4,19,0
+283,Physics,81,2,17,8
+283,Chemistry,60,0,13,3
+283,Biology,55,4,16,1
+283,English,34,3,3,5
+283,History,50,5,4,6
+283,Computer Science,62,7,3,16
+284,Math,50,7,19,7
+284,Physics,32,8,18,0
+284,Chemistry,95,5,9,17
+284,Biology,51,0,12,0
+284,English,34,9,12,13
+284,History,53,2,14,18
+284,Computer Science,92,0,2,15
+285,Math,92,0,7,16
+285,Physics,86,6,19,10
+285,Chemistry,86,8,1,9
+285,Biology,99,3,11,10
+285,English,52,9,12,4
+285,History,35,0,5,17
+285,Computer Science,51,8,14,7
+286,Math,80,7,15,5
+286,Physics,99,5,2,9
+286,Chemistry,94,3,11,5
+286,Biology,40,9,17,6
+286,English,40,3,19,0
+286,History,42,1,8,8
+286,Computer Science,60,6,8,9
+287,Math,89,1,5,14
+287,Physics,32,5,2,10
+287,Chemistry,44,3,9,5
+287,Biology,76,8,17,17
+287,English,44,1,17,19
+287,History,31,7,19,1
+287,Computer Science,72,9,6,5
+288,Math,71,4,10,0
+288,Physics,63,7,0,18
+288,Chemistry,31,4,19,3
+288,Biology,41,5,19,17
+288,English,30,0,13,3
+288,History,98,7,12,15
+288,Computer Science,53,7,1,15
+289,Math,67,0,16,10
+289,Physics,80,2,10,4
+289,Chemistry,87,5,6,9
+289,Biology,57,2,19,9
+289,English,88,9,13,11
+289,History,76,9,9,18
+289,Computer Science,30,7,9,1
+290,Math,59,7,6,6
+290,Physics,81,8,1,13
+290,Chemistry,78,0,8,19
+290,Biology,82,2,3,7
+290,English,74,3,8,8
+290,History,51,1,11,9
+290,Computer Science,72,6,8,5
+291,Math,77,6,15,4
+291,Physics,45,0,18,4
+291,Chemistry,66,0,7,0
+291,Biology,95,3,17,10
+291,English,53,7,3,4
+291,History,33,8,12,17
+291,Computer Science,95,0,18,8
+292,Math,57,2,6,9
+292,Physics,94,9,8,14
+292,Chemistry,44,2,4,8
+292,Biology,51,8,6,11
+292,English,54,8,5,1
+292,History,92,8,16,0
+292,Computer Science,80,5,4,1
+293,Math,70,9,13,3
+293,Physics,65,4,14,7
+293,Chemistry,55,3,15,3
+293,Biology,91,5,11,15
+293,English,80,7,5,9
+293,History,58,1,9,9
+293,Computer Science,68,1,0,6
+294,Math,50,0,14,3
+294,Physics,89,3,9,8
+294,Chemistry,63,0,1,6
+294,Biology,90,9,19,0
+294,English,30,4,15,14
+294,History,57,6,15,12
+294,Computer Science,46,0,1,12
+295,Math,43,9,2,16
+295,Physics,39,7,12,17
+295,Chemistry,98,5,16,10
+295,Biology,49,8,1,4
+295,English,30,3,3,2
+295,History,38,5,11,9
+295,Computer Science,63,9,5,17
+296,Math,31,1,9,15
+296,Physics,30,4,7,15
+296,Chemistry,79,4,11,7
+296,Biology,75,4,17,18
+296,English,67,4,10,19
+296,History,49,4,17,17
+296,Computer Science,55,8,13,18
+297,Math,60,9,3,5
+297,Physics,97,9,14,15
+297,Chemistry,46,2,18,16
+297,Biology,99,8,7,10
+297,English,55,7,18,9
+297,History,70,3,14,12
+297,Computer Science,95,1,15,8
+298,Math,57,2,8,12
+298,Physics,60,4,1,7
+298,Chemistry,88,8,15,1
+298,Biology,83,7,4,8
+298,English,94,8,9,3
+298,History,39,5,11,12
+298,Computer Science,46,2,1,10
+299,Math,70,2,17,19
+299,Physics,43,1,16,7
+299,Chemistry,71,9,17,18
+299,Biology,37,2,2,11
+299,English,46,2,8,11
+299,History,66,3,2,14
+299,Computer Science,81,7,3,11
+300,Math,69,5,14,11
+300,Physics,77,4,19,19
+300,Chemistry,97,8,3,11
+300,Biology,77,9,5,9
+300,English,68,9,18,18
+300,History,87,4,1,9
+300,Computer Science,87,8,0,13
+301,Math,44,0,16,12
+301,Physics,91,1,16,10
+301,Chemistry,37,3,2,11
+301,Biology,45,4,16,10
+301,English,78,2,0,11
+301,History,44,1,13,0
+301,Computer Science,74,6,14,19
+302,Math,75,5,13,11
+302,Physics,58,8,19,18
+302,Chemistry,95,5,19,0
+302,Biology,54,8,1,4
+302,English,84,8,7,15
+302,History,77,3,14,0
+302,Computer Science,51,2,5,13
+303,Math,65,1,14,8
+303,Physics,96,9,16,6
+303,Chemistry,94,8,10,16
+303,Biology,34,6,18,14
+303,English,59,3,4,2
+303,History,70,6,1,15
+303,Computer Science,38,2,19,16
+304,Math,67,3,0,17
+304,Physics,92,2,8,12
+304,Chemistry,69,6,12,14
+304,Biology,72,3,0,3
+304,English,39,3,19,8
+304,History,41,1,11,15
+304,Computer Science,92,3,11,10
+305,Math,93,8,17,2
+305,Physics,78,0,16,7
+305,Chemistry,98,4,8,2
+305,Biology,48,6,8,17
+305,English,45,0,1,13
+305,History,30,9,15,14
+305,Computer Science,76,7,14,14
+306,Math,63,1,9,2
+306,Physics,52,3,13,9
+306,Chemistry,94,3,0,16
+306,Biology,93,3,14,12
+306,English,95,2,12,10
+306,History,88,5,14,9
+306,Computer Science,70,8,19,0
+307,Math,46,9,4,17
+307,Physics,76,5,6,16
+307,Chemistry,99,7,11,13
+307,Biology,73,6,9,19
+307,English,60,6,8,9
+307,History,39,6,4,2
+307,Computer Science,72,4,19,4
+308,Math,85,3,14,8
+308,Physics,52,7,11,18
+308,Chemistry,87,9,0,15
+308,Biology,51,0,17,10
+308,English,99,6,9,10
+308,History,86,8,6,8
+308,Computer Science,42,9,2,2
+309,Math,50,3,1,2
+309,Physics,44,7,5,12
+309,Chemistry,61,3,18,0
+309,Biology,57,4,1,14
+309,English,48,5,19,8
+309,History,67,9,17,18
+309,Computer Science,82,7,5,13
+310,Math,87,7,12,10
+310,Physics,80,2,18,12
+310,Chemistry,57,7,17,11
+310,Biology,58,0,3,11
+310,English,90,3,9,2
+310,History,31,8,16,5
+310,Computer Science,55,7,2,17
+311,Math,83,0,15,6
+311,Physics,32,6,3,8
+311,Chemistry,66,2,14,7
+311,Biology,67,1,18,14
+311,English,39,5,13,16
+311,History,70,2,4,6
+311,Computer Science,60,3,6,1
+312,Math,52,7,5,5
+312,Physics,70,3,10,4
+312,Chemistry,86,0,19,6
+312,Biology,76,8,14,13
+312,English,42,9,8,9
+312,History,33,0,13,17
+312,Computer Science,72,0,6,9
+313,Math,88,8,2,13
+313,Physics,87,8,14,1
+313,Chemistry,53,6,3,17
+313,Biology,53,4,5,6
+313,English,92,9,0,3
+313,History,58,8,0,10
+313,Computer Science,79,5,10,9
+314,Math,88,0,3,14
+314,Physics,50,8,10,10
+314,Chemistry,99,0,5,12
+314,Biology,85,5,4,14
+314,English,76,9,4,3
+314,History,61,1,6,9
+314,Computer Science,77,9,17,16
+315,Math,59,4,12,0
+315,Physics,94,0,5,12
+315,Chemistry,88,0,4,8
+315,Biology,59,8,16,15
+315,English,78,7,0,11
+315,History,98,7,5,0
+315,Computer Science,54,0,9,9
+316,Math,32,0,18,10
+316,Physics,58,1,1,8
+316,Chemistry,85,0,13,3
+316,Biology,90,0,16,11
+316,English,89,3,17,2
+316,History,72,8,17,3
+316,Computer Science,79,4,13,9
+317,Math,44,0,15,10
+317,Physics,49,5,15,1
+317,Chemistry,94,7,8,11
+317,Biology,46,8,14,18
+317,English,56,5,9,11
+317,History,75,8,12,2
+317,Computer Science,82,4,9,15
+318,Math,36,3,19,10
+318,Physics,65,5,16,12
+318,Chemistry,59,2,8,5
+318,Biology,51,4,10,15
+318,English,56,4,13,16
+318,History,64,3,15,15
+318,Computer Science,55,8,3,18
+319,Math,74,9,0,11
+319,Physics,72,4,1,16
+319,Chemistry,69,5,8,12
+319,Biology,90,1,9,11
+319,English,72,9,12,16
+319,History,96,3,12,18
+319,Computer Science,36,8,18,12
+320,Math,83,7,17,1
+320,Physics,79,1,10,0
+320,Chemistry,40,0,6,15
+320,Biology,76,4,10,15
+320,English,48,0,5,10
+320,History,78,8,17,16
+320,Computer Science,41,6,4,10
+321,Math,88,3,2,16
+321,Physics,68,9,3,12
+321,Chemistry,30,4,18,19
+321,Biology,72,3,2,16
+321,English,73,9,7,14
+321,History,98,3,19,18
+321,Computer Science,82,3,14,16
+322,Math,96,9,14,9
+322,Physics,85,6,17,0
+322,Chemistry,64,4,11,0
+322,Biology,32,2,4,18
+322,English,58,8,0,3
+322,History,90,9,3,16
+322,Computer Science,43,1,0,15
+323,Math,32,6,8,3
+323,Physics,50,4,10,8
+323,Chemistry,67,7,10,8
+323,Biology,58,6,2,0
+323,English,90,5,18,13
+323,History,78,5,13,16
+323,Computer Science,86,0,12,5
+324,Math,41,6,18,5
+324,Physics,68,0,0,4
+324,Chemistry,99,8,15,13
+324,Biology,81,9,9,8
+324,English,32,1,19,1
+324,History,78,2,12,12
+324,Computer Science,98,7,2,6
+325,Math,53,5,12,17
+325,Physics,85,4,6,0
+325,Chemistry,98,0,7,14
+325,Biology,81,3,1,4
+325,English,62,8,4,5
+325,History,55,0,3,6
+325,Computer Science,83,9,0,0
+326,Math,49,4,12,17
+326,Physics,91,3,9,11
+326,Chemistry,94,9,8,2
+326,Biology,38,9,18,15
+326,English,32,1,0,17
+326,History,53,8,12,1
+326,Computer Science,50,2,14,10
+327,Math,62,4,6,19
+327,Physics,71,4,8,0
+327,Chemistry,31,2,13,19
+327,Biology,99,0,5,3
+327,English,32,6,18,17
+327,History,55,7,3,7
+327,Computer Science,66,8,0,12
+328,Math,33,5,13,2
+328,Physics,66,6,0,11
+328,Chemistry,40,7,7,5
+328,Biology,89,5,1,18
+328,English,85,0,9,15
+328,History,93,3,10,15
+328,Computer Science,88,3,0,15
+329,Math,48,4,8,8
+329,Physics,56,0,11,12
+329,Chemistry,37,1,0,0
+329,Biology,35,8,4,15
+329,English,47,0,17,0
+329,History,83,7,2,4
+329,Computer Science,84,7,18,17
+330,Math,79,4,0,14
+330,Physics,47,8,6,15
+330,Chemistry,67,8,6,13
+330,Biology,82,8,5,15
+330,English,81,0,4,12
+330,History,85,4,11,8
+330,Computer Science,32,2,0,17
+331,Math,85,8,8,17
+331,Physics,79,6,3,12
+331,Chemistry,46,7,1,13
+331,Biology,96,4,13,2
+331,English,52,6,17,12
+331,History,90,6,9,12
+331,Computer Science,45,8,1,4
+332,Math,90,5,16,3
+332,Physics,78,8,19,1
+332,Chemistry,79,4,10,12
+332,Biology,37,0,16,11
+332,English,33,4,12,8
+332,History,36,6,4,4
+332,Computer Science,59,8,5,18
+333,Math,95,9,15,4
+333,Physics,61,7,10,17
+333,Chemistry,65,9,9,0
+333,Biology,58,4,12,0
+333,English,32,2,6,3
+333,History,64,7,2,6
+333,Computer Science,72,0,5,7
+334,Math,94,9,18,2
+334,Physics,65,0,8,10
+334,Chemistry,65,0,19,12
+334,Biology,62,4,4,13
+334,English,43,7,3,6
+334,History,76,5,3,18
+334,Computer Science,38,4,12,13
+335,Math,89,5,9,15
+335,Physics,66,6,5,1
+335,Chemistry,90,2,17,18
+335,Biology,30,7,15,1
+335,English,69,5,15,10
+335,History,84,2,10,7
+335,Computer Science,97,7,8,1
+336,Math,99,4,18,7
+336,Physics,43,7,15,11
+336,Chemistry,85,9,18,17
+336,Biology,70,1,19,11
+336,English,90,1,9,0
+336,History,65,8,11,8
+336,Computer Science,65,8,5,0
+337,Math,71,5,17,5
+337,Physics,44,7,12,10
+337,Chemistry,89,8,6,16
+337,Biology,79,5,18,12
+337,English,76,6,0,15
+337,History,34,9,2,9
+337,Computer Science,75,2,12,12
+338,Math,39,1,5,7
+338,Physics,54,7,6,13
+338,Chemistry,52,2,13,12
+338,Biology,50,0,18,0
+338,English,33,9,2,19
+338,History,57,5,5,11
+338,Computer Science,45,7,4,8
+339,Math,76,4,4,17
+339,Physics,73,2,6,16
+339,Chemistry,89,1,0,4
+339,Biology,88,1,0,6
+339,English,90,1,16,1
+339,History,68,6,9,2
+339,Computer Science,64,8,3,15
+340,Math,61,3,17,3
+340,Physics,67,4,14,0
+340,Chemistry,32,4,16,13
+340,Biology,91,2,12,2
+340,English,72,1,14,12
+340,History,80,5,15,17
+340,Computer Science,36,3,8,9
+341,Math,36,7,18,10
+341,Physics,66,1,9,15
+341,Chemistry,84,7,8,10
+341,Biology,85,8,5,11
+341,English,47,3,8,6
+341,History,37,6,8,7
+341,Computer Science,32,0,1,14
+342,Math,81,5,3,19
+342,Physics,35,5,10,16
+342,Chemistry,60,5,2,15
+342,Biology,47,4,15,15
+342,English,56,6,2,19
+342,History,74,5,2,6
+342,Computer Science,38,4,19,2
+343,Math,80,2,12,11
+343,Physics,94,2,15,14
+343,Chemistry,85,5,10,2
+343,Biology,44,0,6,0
+343,English,78,8,12,10
+343,History,41,5,19,18
+343,Computer Science,65,2,0,17
+344,Math,56,4,14,7
+344,Physics,43,3,4,12
+344,Chemistry,35,0,18,12
+344,Biology,58,5,14,15
+344,English,53,6,15,9
+344,History,83,8,8,16
+344,Computer Science,46,0,11,12
+345,Math,59,9,18,1
+345,Physics,65,2,6,14
+345,Chemistry,67,2,5,15
+345,Biology,95,6,10,6
+345,English,53,3,6,3
+345,History,73,4,18,4
+345,Computer Science,82,2,10,6
+346,Math,78,8,8,8
+346,Physics,83,4,2,7
+346,Chemistry,61,3,9,12
+346,Biology,92,2,7,8
+346,English,59,5,11,10
+346,History,31,1,8,1
+346,Computer Science,32,2,3,17
+347,Math,54,1,9,10
+347,Physics,46,9,19,15
+347,Chemistry,49,1,1,13
+347,Biology,33,0,12,3
+347,English,64,5,7,1
+347,History,35,5,9,11
+347,Computer Science,50,9,9,2
+348,Math,61,3,9,8
+348,Physics,81,2,13,1
+348,Chemistry,90,7,6,5
+348,Biology,40,1,18,9
+348,English,92,4,13,2
+348,History,39,6,16,0
+348,Computer Science,93,9,17,14
+349,Math,62,4,14,2
+349,Physics,94,7,11,18
+349,Chemistry,54,8,11,12
+349,Biology,30,2,5,7
+349,English,97,4,6,3
+349,History,81,3,14,4
+349,Computer Science,85,8,1,6
+350,Math,78,0,19,1
+350,Physics,63,0,1,8
+350,Chemistry,87,1,14,9
+350,Biology,44,9,16,8
+350,English,65,8,15,3
+350,History,77,2,0,5
+350,Computer Science,97,5,12,15
+351,Math,35,9,10,2
+351,Physics,81,9,0,19
+351,Chemistry,43,8,7,10
+351,Biology,97,6,9,18
+351,English,86,9,3,1
+351,History,79,9,15,10
+351,Computer Science,71,0,13,3
+352,Math,48,1,6,8
+352,Physics,48,5,15,17
+352,Chemistry,52,4,10,6
+352,Biology,97,8,12,3
+352,English,80,1,8,11
+352,History,31,5,4,4
+352,Computer Science,81,5,4,3
+353,Math,38,5,9,15
+353,Physics,90,2,9,5
+353,Chemistry,91,0,4,5
+353,Biology,92,7,14,18
+353,English,79,3,7,15
+353,History,61,7,18,19
+353,Computer Science,63,3,5,10
+354,Math,45,4,18,1
+354,Physics,70,0,14,6
+354,Chemistry,83,6,18,2
+354,Biology,88,0,3,17
+354,English,55,7,18,5
+354,History,30,7,0,18
+354,Computer Science,54,6,10,18
+355,Math,39,7,11,0
+355,Physics,46,9,9,5
+355,Chemistry,46,1,4,17
+355,Biology,91,9,16,15
+355,English,58,7,15,10
+355,History,35,2,0,17
+355,Computer Science,66,9,4,13
+356,Math,93,0,1,6
+356,Physics,39,3,6,15
+356,Chemistry,66,0,15,19
+356,Biology,55,2,14,11
+356,English,50,9,1,6
+356,History,64,0,2,9
+356,Computer Science,88,5,5,19
+357,Math,50,6,4,3
+357,Physics,47,2,16,17
+357,Chemistry,85,7,1,12
+357,Biology,91,5,14,4
+357,English,32,4,4,4
+357,History,32,2,19,17
+357,Computer Science,65,0,15,7
+358,Math,46,7,6,7
+358,Physics,85,9,11,15
+358,Chemistry,60,2,9,6
+358,Biology,49,4,15,8
+358,English,83,9,13,10
+358,History,58,9,8,3
+358,Computer Science,77,9,18,16
+359,Math,38,0,1,12
+359,Physics,38,6,15,18
+359,Chemistry,35,1,18,10
+359,Biology,90,9,9,12
+359,English,41,4,9,19
+359,History,79,3,4,4
+359,Computer Science,41,9,2,7
+360,Math,83,1,17,8
+360,Physics,74,6,9,8
+360,Chemistry,91,5,14,4
+360,Biology,30,5,5,18
+360,English,48,2,2,9
+360,History,55,9,17,2
+360,Computer Science,32,6,11,19
+361,Math,53,7,8,13
+361,Physics,66,4,18,15
+361,Chemistry,53,4,3,7
+361,Biology,91,5,4,13
+361,English,71,1,3,7
+361,History,46,1,10,15
+361,Computer Science,73,6,0,15
+362,Math,76,5,11,7
+362,Physics,63,4,13,15
+362,Chemistry,72,3,8,9
+362,Biology,41,5,18,10
+362,English,70,4,5,15
+362,History,81,5,4,3
+362,Computer Science,67,8,16,13
+363,Math,80,0,19,14
+363,Physics,59,1,9,10
+363,Chemistry,56,7,2,6
+363,Biology,47,7,18,11
+363,English,78,5,11,12
+363,History,54,2,13,6
+363,Computer Science,35,7,18,18
+364,Math,38,3,5,7
+364,Physics,53,4,9,12
+364,Chemistry,43,6,19,5
+364,Biology,36,4,17,11
+364,English,67,0,3,18
+364,History,73,2,19,7
+364,Computer Science,70,2,4,19
+365,Math,43,9,14,5
+365,Physics,87,3,7,18
+365,Chemistry,34,0,12,10
+365,Biology,82,7,7,13
+365,English,32,3,19,14
+365,History,91,4,12,8
+365,Computer Science,54,9,11,13
+366,Math,75,7,15,13
+366,Physics,94,1,6,14
+366,Chemistry,78,2,12,8
+366,Biology,85,7,14,2
+366,English,45,7,12,7
+366,History,83,6,13,6
+366,Computer Science,56,2,5,0
+367,Math,73,1,15,11
+367,Physics,49,7,0,6
+367,Chemistry,76,5,12,12
+367,Biology,38,7,14,3
+367,English,42,4,6,7
+367,History,65,3,7,16
+367,Computer Science,69,4,0,19
+368,Math,63,3,0,6
+368,Physics,94,8,2,11
+368,Chemistry,80,5,15,9
+368,Biology,88,5,16,16
+368,English,80,1,10,6
+368,History,71,6,4,11
+368,Computer Science,77,8,17,2
+369,Math,49,4,12,18
+369,Physics,91,6,4,5
+369,Chemistry,55,9,15,7
+369,Biology,33,4,7,6
+369,English,44,4,2,16
+369,History,72,8,4,9
+369,Computer Science,76,3,19,1
+370,Math,53,3,4,5
+370,Physics,59,7,10,7
+370,Chemistry,36,3,5,15
+370,Biology,81,6,11,11
+370,English,44,0,14,13
+370,History,71,9,3,8
+370,Computer Science,82,3,8,19
+371,Math,72,6,9,3
+371,Physics,98,4,10,8
+371,Chemistry,70,5,3,1
+371,Biology,96,1,5,10
+371,English,98,8,19,17
+371,History,32,8,3,16
+371,Computer Science,46,6,1,8
+372,Math,98,2,18,2
+372,Physics,33,7,12,12
+372,Chemistry,66,0,8,16
+372,Biology,94,2,14,9
+372,English,93,5,14,8
+372,History,85,8,9,19
+372,Computer Science,76,6,0,1
+373,Math,87,2,13,7
+373,Physics,41,9,14,13
+373,Chemistry,30,8,2,18
+373,Biology,47,3,1,6
+373,English,48,5,14,9
+373,History,51,0,5,12
+373,Computer Science,64,2,18,9
+374,Math,44,9,12,4
+374,Physics,33,8,16,1
+374,Chemistry,66,6,0,11
+374,Biology,50,2,11,11
+374,English,63,8,3,19
+374,History,45,9,12,1
+374,Computer Science,64,2,5,18
+375,Math,88,4,19,18
+375,Physics,37,9,2,5
+375,Chemistry,58,6,17,13
+375,Biology,57,9,9,14
+375,English,33,6,1,2
+375,History,36,6,15,9
+375,Computer Science,48,0,18,4
+376,Math,49,0,17,18
+376,Physics,33,5,4,6
+376,Chemistry,63,0,11,9
+376,Biology,69,0,11,1
+376,English,57,9,16,2
+376,History,39,5,5,0
+376,Computer Science,66,5,10,7
+377,Math,89,1,15,2
+377,Physics,48,7,6,0
+377,Chemistry,73,4,15,3
+377,Biology,50,1,11,0
+377,English,59,2,16,19
+377,History,53,7,10,12
+377,Computer Science,93,3,7,8
+378,Math,57,1,10,7
+378,Physics,42,4,14,2
+378,Chemistry,52,1,18,11
+378,Biology,93,8,19,3
+378,English,96,4,2,14
+378,History,31,4,16,13
+378,Computer Science,57,5,9,2
+379,Math,65,5,15,6
+379,Physics,76,4,19,10
+379,Chemistry,51,4,0,4
+379,Biology,75,8,16,14
+379,English,88,5,11,5
+379,History,82,9,4,8
+379,Computer Science,75,7,13,11
+380,Math,92,9,19,19
+380,Physics,55,4,12,18
+380,Chemistry,76,7,9,2
+380,Biology,82,2,4,15
+380,English,46,5,19,19
+380,History,95,3,14,17
+380,Computer Science,30,9,18,11
+381,Math,35,6,17,13
+381,Physics,49,5,13,4
+381,Chemistry,70,7,1,15
+381,Biology,74,6,15,6
+381,English,56,0,0,11
+381,History,49,4,14,3
+381,Computer Science,36,2,6,5
+382,Math,83,5,9,15
+382,Physics,61,5,0,18
+382,Chemistry,85,5,17,12
+382,Biology,93,6,12,7
+382,English,59,4,16,8
+382,History,42,1,3,1
+382,Computer Science,47,4,18,9
+383,Math,47,8,9,4
+383,Physics,78,5,12,16
+383,Chemistry,38,7,11,13
+383,Biology,75,7,4,18
+383,English,92,8,6,7
+383,History,75,5,13,10
+383,Computer Science,43,4,7,2
+384,Math,57,6,17,2
+384,Physics,76,1,4,6
+384,Chemistry,88,9,14,12
+384,Biology,62,0,14,15
+384,English,73,9,5,5
+384,History,44,3,3,1
+384,Computer Science,85,6,19,8
+385,Math,92,8,7,13
+385,Physics,62,6,11,1
+385,Chemistry,42,3,19,17
+385,Biology,77,7,11,8
+385,English,55,1,1,7
+385,History,85,5,9,7
+385,Computer Science,90,0,12,18
+386,Math,73,8,4,15
+386,Physics,67,0,13,5
+386,Chemistry,52,3,6,1
+386,Biology,35,5,17,19
+386,English,69,7,7,7
+386,History,63,3,2,13
+386,Computer Science,51,6,7,12
+387,Math,84,2,4,12
+387,Physics,57,9,19,0
+387,Chemistry,91,6,1,6
+387,Biology,67,4,3,1
+387,English,71,5,4,17
+387,History,44,8,10,16
+387,Computer Science,38,6,15,5
+388,Math,51,6,16,3
+388,Physics,44,0,19,0
+388,Chemistry,36,7,12,10
+388,Biology,40,2,11,17
+388,English,46,2,0,18
+388,History,93,3,15,11
+388,Computer Science,82,4,12,16
+389,Math,69,3,4,17
+389,Physics,90,0,14,1
+389,Chemistry,99,0,15,16
+389,Biology,49,8,4,0
+389,English,46,8,18,0
+389,History,30,5,5,0
+389,Computer Science,52,9,18,18
+390,Math,80,6,3,19
+390,Physics,71,8,1,3
+390,Chemistry,67,6,15,6
+390,Biology,79,3,18,8
+390,English,90,3,9,12
+390,History,79,5,16,12
+390,Computer Science,41,9,0,7
+391,Math,50,5,17,1
+391,Physics,77,8,2,3
+391,Chemistry,55,1,7,9
+391,Biology,77,6,10,17
+391,English,83,7,14,16
+391,History,47,5,13,2
+391,Computer Science,68,4,15,15
+392,Math,99,1,12,11
+392,Physics,76,8,1,16
+392,Chemistry,58,4,10,18
+392,Biology,93,7,6,1
+392,English,77,6,14,0
+392,History,42,6,5,12
+392,Computer Science,94,9,12,4
+393,Math,34,2,17,9
+393,Physics,53,7,14,19
+393,Chemistry,89,8,3,1
+393,Biology,99,2,6,9
+393,English,52,5,15,1
+393,History,53,0,12,0
+393,Computer Science,99,4,12,17
+394,Math,41,6,14,2
+394,Physics,94,7,11,18
+394,Chemistry,88,7,11,14
+394,Biology,31,0,6,12
+394,English,61,0,5,12
+394,History,40,9,15,19
+394,Computer Science,46,3,4,13
+395,Math,81,9,13,0
+395,Physics,72,9,17,15
+395,Chemistry,58,1,7,9
+395,Biology,98,9,17,5
+395,English,32,7,8,4
+395,History,31,1,6,16
+395,Computer Science,71,1,9,19
+396,Math,97,9,14,4
+396,Physics,78,4,1,8
+396,Chemistry,99,1,13,18
+396,Biology,69,0,2,9
+396,English,94,4,3,6
+396,History,34,7,10,16
+396,Computer Science,49,2,4,14
+397,Math,80,7,12,15
+397,Physics,32,0,8,8
+397,Chemistry,55,0,1,8
+397,Biology,91,7,18,12
+397,English,98,8,12,0
+397,History,76,3,3,19
+397,Computer Science,39,8,5,11
+398,Math,91,3,15,2
+398,Physics,75,0,9,14
+398,Chemistry,65,7,15,13
+398,Biology,32,0,13,17
+398,English,96,5,18,2
+398,History,83,4,9,8
+398,Computer Science,62,2,18,10
+399,Math,53,2,18,5
+399,Physics,69,5,12,11
+399,Chemistry,91,9,2,3
+399,Biology,62,7,3,10
+399,English,48,5,11,8
+399,History,54,9,2,2
+399,Computer Science,57,6,15,2
+400,Math,71,7,10,7
+400,Physics,35,3,10,11
+400,Chemistry,42,5,2,14
+400,Biology,57,4,13,17
+400,English,60,4,13,7
+400,History,89,6,14,14
+400,Computer Science,59,2,19,5
+401,Math,56,8,7,5
+401,Physics,44,2,9,14
+401,Chemistry,46,2,10,15
+401,Biology,34,4,13,17
+401,English,55,7,4,6
+401,History,45,6,13,4
+401,Computer Science,85,8,3,3
+402,Math,77,7,16,14
+402,Physics,65,5,15,3
+402,Chemistry,67,4,15,15
+402,Biology,39,8,3,13
+402,English,33,7,9,3
+402,History,42,1,0,15
+402,Computer Science,86,4,5,5
+403,Math,96,3,0,3
+403,Physics,62,4,7,4
+403,Chemistry,91,9,1,11
+403,Biology,51,0,6,10
+403,English,97,4,5,10
+403,History,30,8,9,19
+403,Computer Science,53,4,10,16
+404,Math,37,3,17,15
+404,Physics,95,4,17,2
+404,Chemistry,99,2,6,17
+404,Biology,43,5,7,14
+404,English,76,0,10,4
+404,History,34,4,5,1
+404,Computer Science,99,3,8,2
+405,Math,77,3,0,15
+405,Physics,80,9,7,0
+405,Chemistry,57,4,8,11
+405,Biology,51,7,16,9
+405,English,56,6,18,5
+405,History,53,7,18,17
+405,Computer Science,95,4,9,15
+406,Math,68,7,9,14
+406,Physics,37,9,11,10
+406,Chemistry,80,1,12,3
+406,Biology,92,0,18,8
+406,English,68,0,6,6
+406,History,36,7,15,2
+406,Computer Science,39,1,6,4
+407,Math,86,7,6,16
+407,Physics,33,7,15,18
+407,Chemistry,71,2,2,16
+407,Biology,60,9,16,16
+407,English,50,3,5,11
+407,History,83,8,19,16
+407,Computer Science,78,9,6,15
+408,Math,42,2,1,15
+408,Physics,35,6,4,6
+408,Chemistry,61,0,12,15
+408,Biology,87,3,1,4
+408,English,89,6,10,10
+408,History,83,0,15,12
+408,Computer Science,66,3,15,15
+409,Math,35,1,13,15
+409,Physics,52,3,12,14
+409,Chemistry,73,8,17,13
+409,Biology,81,8,3,7
+409,English,69,5,15,9
+409,History,54,4,16,0
+409,Computer Science,60,1,9,3
+410,Math,94,3,3,3
+410,Physics,38,2,12,3
+410,Chemistry,98,6,15,4
+410,Biology,77,0,5,10
+410,English,34,6,18,0
+410,History,38,1,12,14
+410,Computer Science,96,7,9,8
+411,Math,77,2,14,16
+411,Physics,45,4,7,3
+411,Chemistry,49,7,14,4
+411,Biology,74,5,4,16
+411,English,68,5,1,10
+411,History,68,5,7,4
+411,Computer Science,83,0,4,13
+412,Math,67,6,13,17
+412,Physics,94,5,2,4
+412,Chemistry,73,1,16,16
+412,Biology,90,3,9,15
+412,English,91,3,9,12
+412,History,73,6,12,11
+412,Computer Science,73,1,4,1
+413,Math,87,3,12,2
+413,Physics,77,0,18,10
+413,Chemistry,38,6,15,2
+413,Biology,65,6,11,17
+413,English,89,4,9,11
+413,History,69,2,14,0
+413,Computer Science,96,1,17,1
+414,Math,34,0,9,19
+414,Physics,34,1,14,19
+414,Chemistry,37,0,11,11
+414,Biology,62,9,3,7
+414,English,94,1,0,10
+414,History,84,1,0,11
+414,Computer Science,45,5,9,17
+415,Math,76,0,9,2
+415,Physics,87,4,15,5
+415,Chemistry,96,8,10,12
+415,Biology,47,9,3,7
+415,English,95,7,5,15
+415,History,47,0,5,12
+415,Computer Science,59,9,9,10
+416,Math,42,8,3,6
+416,Physics,53,5,1,6
+416,Chemistry,90,8,4,14
+416,Biology,79,3,18,19
+416,English,68,9,7,16
+416,History,74,7,10,0
+416,Computer Science,63,0,4,5
+417,Math,55,8,6,14
+417,Physics,77,8,12,4
+417,Chemistry,32,2,18,13
+417,Biology,77,5,16,3
+417,English,74,7,18,4
+417,History,95,1,10,12
+417,Computer Science,96,4,2,5
+418,Math,71,2,7,17
+418,Physics,64,7,16,7
+418,Chemistry,95,6,5,1
+418,Biology,50,6,2,16
+418,English,58,6,4,0
+418,History,37,9,14,14
+418,Computer Science,82,6,2,1
+419,Math,35,4,8,9
+419,Physics,65,2,8,16
+419,Chemistry,71,0,18,18
+419,Biology,99,2,12,3
+419,English,31,6,19,17
+419,History,52,0,3,13
+419,Computer Science,49,2,17,13
+420,Math,76,2,0,16
+420,Physics,64,2,12,14
+420,Chemistry,79,4,2,18
+420,Biology,69,3,3,18
+420,English,30,7,14,0
+420,History,36,4,19,19
+420,Computer Science,40,5,15,13
+421,Math,39,7,13,17
+421,Physics,38,0,5,7
+421,Chemistry,87,1,4,5
+421,Biology,80,3,6,3
+421,English,54,9,17,15
+421,History,34,7,13,4
+421,Computer Science,86,9,5,15
+422,Math,89,3,11,10
+422,Physics,32,4,5,18
+422,Chemistry,47,6,10,4
+422,Biology,32,7,5,3
+422,English,73,8,15,9
+422,History,93,5,13,12
+422,Computer Science,66,1,3,1
+423,Math,73,2,3,5
+423,Physics,91,0,16,15
+423,Chemistry,38,8,8,8
+423,Biology,41,6,8,14
+423,English,95,7,5,19
+423,History,68,2,7,17
+423,Computer Science,63,8,18,6
+424,Math,60,1,7,13
+424,Physics,66,8,19,12
+424,Chemistry,79,3,8,3
+424,Biology,56,7,0,16
+424,English,38,3,12,1
+424,History,61,8,19,5
+424,Computer Science,89,0,4,2
+425,Math,65,0,13,8
+425,Physics,53,3,17,13
+425,Chemistry,97,8,9,2
+425,Biology,36,9,12,3
+425,English,72,8,3,13
+425,History,56,9,4,6
+425,Computer Science,54,2,3,9
+426,Math,45,2,19,18
+426,Physics,47,9,11,15
+426,Chemistry,94,1,14,6
+426,Biology,57,0,4,9
+426,English,51,4,3,13
+426,History,42,0,15,8
+426,Computer Science,93,2,14,13
+427,Math,81,9,11,0
+427,Physics,84,2,17,6
+427,Chemistry,55,4,11,6
+427,Biology,75,5,13,1
+427,English,99,4,4,0
+427,History,35,3,6,8
+427,Computer Science,66,4,7,6
+428,Math,42,7,10,17
+428,Physics,86,2,5,1
+428,Chemistry,54,9,10,0
+428,Biology,95,0,7,1
+428,English,98,7,18,15
+428,History,42,9,19,6
+428,Computer Science,92,6,15,11
+429,Math,85,1,17,15
+429,Physics,81,9,8,8
+429,Chemistry,65,8,14,13
+429,Biology,80,4,5,2
+429,English,86,5,19,15
+429,History,91,3,16,15
+429,Computer Science,67,7,18,1
+430,Math,51,0,14,17
+430,Physics,77,4,16,7
+430,Chemistry,86,9,2,15
+430,Biology,57,1,14,0
+430,English,70,3,11,0
+430,History,62,6,17,14
+430,Computer Science,59,8,12,15
+431,Math,68,0,11,19
+431,Physics,42,7,19,14
+431,Chemistry,85,4,3,1
+431,Biology,57,1,1,14
+431,English,55,2,14,19
+431,History,90,6,4,8
+431,Computer Science,81,2,12,17
+432,Math,78,5,9,1
+432,Physics,53,5,12,17
+432,Chemistry,95,4,17,10
+432,Biology,72,1,14,6
+432,English,66,6,19,1
+432,History,64,1,18,3
+432,Computer Science,53,3,6,6
+433,Math,46,2,15,2
+433,Physics,61,6,2,16
+433,Chemistry,71,5,16,16
+433,Biology,43,7,17,4
+433,English,90,7,6,3
+433,History,66,2,13,8
+433,Computer Science,73,3,15,10
+434,Math,51,3,16,7
+434,Physics,75,1,10,10
+434,Chemistry,85,5,13,9
+434,Biology,55,7,6,7
+434,English,89,7,1,15
+434,History,42,6,11,16
+434,Computer Science,56,1,12,0
+435,Math,55,2,10,4
+435,Physics,59,7,5,16
+435,Chemistry,94,2,13,7
+435,Biology,72,7,2,6
+435,English,80,3,15,12
+435,History,80,4,4,19
+435,Computer Science,53,3,1,12
+436,Math,83,1,18,16
+436,Physics,34,8,17,17
+436,Chemistry,74,5,19,12
+436,Biology,49,1,2,14
+436,English,48,4,5,13
+436,History,33,5,18,6
+436,Computer Science,63,6,2,14
+437,Math,31,9,15,14
+437,Physics,53,5,13,5
+437,Chemistry,47,3,18,16
+437,Biology,69,6,19,11
+437,English,56,3,0,9
+437,History,92,0,16,16
+437,Computer Science,52,1,7,12
+438,Math,52,8,19,14
+438,Physics,81,6,8,2
+438,Chemistry,96,1,0,13
+438,Biology,74,2,14,13
+438,English,95,6,16,17
+438,History,99,4,7,1
+438,Computer Science,68,5,10,14
+439,Math,42,7,1,13
+439,Physics,85,5,8,6
+439,Chemistry,93,7,8,3
+439,Biology,70,3,11,3
+439,English,86,7,19,13
+439,History,85,7,6,12
+439,Computer Science,83,7,4,11
+440,Math,42,3,13,17
+440,Physics,56,7,19,3
+440,Chemistry,50,1,6,14
+440,Biology,82,5,15,19
+440,English,57,4,15,15
+440,History,64,0,8,2
+440,Computer Science,81,6,17,11
+441,Math,77,5,16,19
+441,Physics,30,1,7,1
+441,Chemistry,99,2,14,17
+441,Biology,67,7,1,18
+441,English,68,9,11,16
+441,History,36,5,7,6
+441,Computer Science,97,2,18,14
+442,Math,65,8,8,12
+442,Physics,47,4,15,0
+442,Chemistry,37,3,15,10
+442,Biology,82,4,18,18
+442,English,79,2,10,2
+442,History,80,9,15,4
+442,Computer Science,70,7,10,15
+443,Math,81,6,16,5
+443,Physics,76,7,6,1
+443,Chemistry,91,6,5,4
+443,Biology,62,1,14,9
+443,English,32,4,12,7
+443,History,58,1,8,16
+443,Computer Science,79,0,11,19
+444,Math,81,4,4,7
+444,Physics,56,2,5,12
+444,Chemistry,73,2,17,0
+444,Biology,54,6,11,9
+444,English,58,3,18,5
+444,History,54,8,19,9
+444,Computer Science,66,8,1,17
+445,Math,53,4,11,9
+445,Physics,89,8,1,13
+445,Chemistry,42,6,15,0
+445,Biology,74,0,10,5
+445,English,49,2,11,4
+445,History,41,9,18,4
+445,Computer Science,87,4,8,19
+446,Math,78,9,0,15
+446,Physics,87,6,16,19
+446,Chemistry,54,0,7,4
+446,Biology,35,6,19,13
+446,English,83,6,10,5
+446,History,40,5,1,2
+446,Computer Science,65,0,5,6
+447,Math,44,7,2,5
+447,Physics,95,8,17,18
+447,Chemistry,73,9,11,11
+447,Biology,38,0,15,16
+447,English,82,7,7,10
+447,History,53,1,7,11
+447,Computer Science,62,6,12,16
+448,Math,78,5,6,0
+448,Physics,61,8,14,19
+448,Chemistry,50,1,12,1
+448,Biology,54,1,13,5
+448,English,59,5,8,3
+448,History,93,0,1,15
+448,Computer Science,43,1,15,3
+449,Math,94,6,19,13
+449,Physics,69,8,2,4
+449,Chemistry,55,7,5,5
+449,Biology,97,6,18,6
+449,English,64,7,0,0
+449,History,67,9,13,3
+449,Computer Science,67,4,0,5
+450,Math,70,2,10,14
+450,Physics,43,1,3,18
+450,Chemistry,41,1,16,2
+450,Biology,39,5,8,10
+450,English,50,2,15,11
+450,History,34,6,8,17
+450,Computer Science,50,7,11,19
+451,Math,80,8,7,0
+451,Physics,67,8,18,16
+451,Chemistry,63,1,10,17
+451,Biology,69,8,14,6
+451,English,49,0,19,3
+451,History,53,3,3,12
+451,Computer Science,31,9,14,3
+452,Math,35,2,6,5
+452,Physics,64,3,9,8
+452,Chemistry,67,3,10,6
+452,Biology,33,4,3,3
+452,English,74,8,13,10
+452,History,58,1,13,6
+452,Computer Science,55,3,6,15
+453,Math,88,5,1,7
+453,Physics,56,6,13,8
+453,Chemistry,54,5,17,11
+453,Biology,80,6,9,9
+453,English,83,5,8,12
+453,History,38,4,13,4
+453,Computer Science,68,7,2,14
+454,Math,62,6,18,1
+454,Physics,79,7,18,18
+454,Chemistry,83,9,16,18
+454,Biology,56,3,18,0
+454,English,80,6,10,4
+454,History,87,7,9,11
+454,Computer Science,71,9,17,9
+455,Math,80,3,16,19
+455,Physics,45,4,2,14
+455,Chemistry,74,5,7,16
+455,Biology,97,2,8,14
+455,English,89,8,8,13
+455,History,84,4,15,16
+455,Computer Science,92,8,14,6
+456,Math,94,4,8,11
+456,Physics,99,9,7,14
+456,Chemistry,35,5,3,10
+456,Biology,93,1,2,2
+456,English,91,4,5,5
+456,History,44,1,19,15
+456,Computer Science,89,4,16,8
+457,Math,47,8,4,5
+457,Physics,41,3,16,19
+457,Chemistry,30,9,2,8
+457,Biology,84,3,18,6
+457,English,56,1,0,17
+457,History,49,7,2,5
+457,Computer Science,74,8,8,19
+458,Math,38,5,15,1
+458,Physics,43,5,1,7
+458,Chemistry,50,7,13,10
+458,Biology,75,5,19,0
+458,English,73,6,7,8
+458,History,31,0,19,12
+458,Computer Science,66,9,11,16
+459,Math,67,2,14,6
+459,Physics,35,3,18,4
+459,Chemistry,64,9,8,5
+459,Biology,42,5,19,3
+459,English,31,9,3,7
+459,History,74,9,17,8
+459,Computer Science,94,1,14,1
+460,Math,72,5,14,13
+460,Physics,77,6,14,18
+460,Chemistry,38,4,4,10
+460,Biology,81,8,3,19
+460,English,93,1,2,3
+460,History,68,9,7,15
+460,Computer Science,44,6,16,11
+461,Math,85,4,15,4
+461,Physics,31,3,8,8
+461,Chemistry,65,0,17,0
+461,Biology,86,9,17,8
+461,English,48,8,17,4
+461,History,63,6,9,14
+461,Computer Science,36,4,14,19
+462,Math,89,3,14,9
+462,Physics,53,9,13,9
+462,Chemistry,46,4,13,1
+462,Biology,56,8,6,15
+462,English,38,5,6,15
+462,History,56,7,16,19
+462,Computer Science,72,7,6,18
+463,Math,92,3,11,6
+463,Physics,69,6,5,8
+463,Chemistry,88,6,7,16
+463,Biology,91,7,16,12
+463,English,47,7,9,1
+463,History,95,6,11,13
+463,Computer Science,33,9,3,17
+464,Math,32,0,16,6
+464,Physics,91,4,18,6
+464,Chemistry,63,2,16,15
+464,Biology,76,6,8,5
+464,English,79,8,13,13
+464,History,54,3,3,14
+464,Computer Science,61,1,13,0
+465,Math,90,3,9,9
+465,Physics,63,7,0,0
+465,Chemistry,97,6,8,15
+465,Biology,34,1,10,17
+465,English,86,2,12,10
+465,History,81,2,16,4
+465,Computer Science,42,3,0,9
+466,Math,37,7,7,18
+466,Physics,99,6,15,8
+466,Chemistry,50,8,9,9
+466,Biology,58,0,16,13
+466,English,48,4,16,13
+466,History,82,8,7,12
+466,Computer Science,78,2,6,16
+467,Math,94,4,5,1
+467,Physics,88,8,15,4
+467,Chemistry,66,2,15,5
+467,Biology,44,3,12,11
+467,English,71,1,2,8
+467,History,54,5,9,13
+467,Computer Science,88,4,9,8
+468,Math,90,4,7,10
+468,Physics,30,4,9,0
+468,Chemistry,91,5,6,13
+468,Biology,34,0,5,15
+468,English,40,9,14,6
+468,History,60,2,11,15
+468,Computer Science,67,2,1,19
+469,Math,34,9,2,2
+469,Physics,51,4,10,2
+469,Chemistry,93,3,9,1
+469,Biology,33,1,18,3
+469,English,49,9,8,15
+469,History,55,5,3,8
+469,Computer Science,88,8,5,18
+470,Math,43,4,14,2
+470,Physics,66,4,17,13
+470,Chemistry,45,8,14,6
+470,Biology,43,5,14,19
+470,English,63,7,0,16
+470,History,98,5,19,15
+470,Computer Science,36,6,17,17
+471,Math,31,1,8,13
+471,Physics,34,7,4,10
+471,Chemistry,34,0,3,14
+471,Biology,48,5,1,16
+471,English,85,0,9,17
+471,History,47,7,15,17
+471,Computer Science,87,1,15,16
+472,Math,36,1,9,4
+472,Physics,32,2,12,11
+472,Chemistry,99,3,12,18
+472,Biology,47,2,19,5
+472,English,49,7,2,11
+472,History,80,2,3,0
+472,Computer Science,95,9,12,1
+473,Math,59,2,15,11
+473,Physics,62,8,16,9
+473,Chemistry,48,6,18,14
+473,Biology,70,9,19,19
+473,English,33,5,3,4
+473,History,70,6,7,4
+473,Computer Science,90,6,10,12
+474,Math,43,7,17,18
+474,Physics,73,1,9,6
+474,Chemistry,79,1,17,11
+474,Biology,49,0,17,2
+474,English,52,9,0,5
+474,History,90,3,2,7
+474,Computer Science,69,6,1,5
+475,Math,65,9,13,8
+475,Physics,78,1,2,10
+475,Chemistry,79,2,14,10
+475,Biology,60,8,19,10
+475,English,30,4,9,9
+475,History,63,3,1,17
+475,Computer Science,34,3,1,10
+476,Math,91,9,17,5
+476,Physics,84,9,16,10
+476,Chemistry,65,9,13,19
+476,Biology,65,9,3,5
+476,English,38,4,11,7
+476,History,85,3,4,5
+476,Computer Science,34,2,7,8
+477,Math,44,3,8,6
+477,Physics,44,4,18,6
+477,Chemistry,35,2,16,9
+477,Biology,48,9,10,2
+477,English,91,2,17,10
+477,History,49,9,17,14
+477,Computer Science,39,4,19,9
+478,Math,42,6,17,3
+478,Physics,96,4,1,3
+478,Chemistry,94,8,0,5
+478,Biology,36,2,11,0
+478,English,68,2,12,11
+478,History,41,5,12,13
+478,Computer Science,59,3,11,5
+479,Math,88,9,19,8
+479,Physics,63,6,8,11
+479,Chemistry,66,0,14,7
+479,Biology,47,0,4,17
+479,English,65,0,7,4
+479,History,63,7,16,6
+479,Computer Science,51,4,14,17
+480,Math,54,4,5,1
+480,Physics,61,4,3,11
+480,Chemistry,95,9,1,13
+480,Biology,44,3,1,3
+480,English,38,6,12,11
+480,History,64,7,8,12
+480,Computer Science,65,4,7,2
+481,Math,48,6,7,16
+481,Physics,36,8,11,13
+481,Chemistry,75,2,14,18
+481,Biology,37,4,18,3
+481,English,45,3,5,5
+481,History,58,2,10,2
+481,Computer Science,57,9,17,0
+482,Math,77,9,0,3
+482,Physics,96,4,11,11
+482,Chemistry,42,7,11,15
+482,Biology,50,2,18,10
+482,English,35,8,0,11
+482,History,87,5,0,1
+482,Computer Science,85,2,9,5
+483,Math,35,3,1,9
+483,Physics,99,6,16,13
+483,Chemistry,66,6,16,1
+483,Biology,73,2,6,8
+483,English,50,3,10,11
+483,History,76,1,18,15
+483,Computer Science,98,1,12,3
+484,Math,65,6,14,13
+484,Physics,73,2,9,7
+484,Chemistry,43,0,18,15
+484,Biology,87,0,11,9
+484,English,71,3,10,15
+484,History,48,8,3,6
+484,Computer Science,37,7,7,18
+485,Math,77,9,8,11
+485,Physics,77,3,4,7
+485,Chemistry,30,5,14,3
+485,Biology,34,1,14,17
+485,English,57,4,0,17
+485,History,75,4,5,15
+485,Computer Science,83,4,11,19
+486,Math,63,6,12,16
+486,Physics,46,4,17,7
+486,Chemistry,32,0,17,5
+486,Biology,57,7,12,7
+486,English,48,5,14,9
+486,History,78,0,6,12
+486,Computer Science,96,2,14,4
+487,Math,40,5,17,2
+487,Physics,35,2,4,8
+487,Chemistry,57,2,12,5
+487,Biology,72,4,13,5
+487,English,67,0,10,14
+487,History,68,6,0,7
+487,Computer Science,98,2,7,16
+488,Math,48,6,14,3
+488,Physics,84,4,15,6
+488,Chemistry,42,9,15,11
+488,Biology,56,6,2,14
+488,English,57,2,6,17
+488,History,80,3,5,7
+488,Computer Science,61,9,6,19
+489,Math,79,3,18,1
+489,Physics,72,1,12,8
+489,Chemistry,38,0,6,8
+489,Biology,83,0,1,3
+489,English,61,3,1,7
+489,History,93,3,9,16
+489,Computer Science,37,4,7,4
+490,Math,45,7,9,7
+490,Physics,47,2,16,19
+490,Chemistry,44,4,16,7
+490,Biology,95,0,17,4
+490,English,63,2,2,16
+490,History,75,5,2,0
+490,Computer Science,58,3,0,16
+491,Math,57,1,7,1
+491,Physics,88,1,15,9
+491,Chemistry,51,3,18,0
+491,Biology,56,2,11,8
+491,English,82,5,4,0
+491,History,71,0,3,14
+491,Computer Science,80,7,14,6
+492,Math,87,6,9,17
+492,Physics,33,5,2,14
+492,Chemistry,76,5,0,13
+492,Biology,77,0,16,7
+492,English,79,5,9,9
+492,History,66,9,11,19
+492,Computer Science,78,2,11,19
+493,Math,73,1,1,16
+493,Physics,39,1,18,0
+493,Chemistry,90,3,3,1
+493,Biology,48,4,11,9
+493,English,51,6,19,14
+493,History,55,2,19,12
+493,Computer Science,69,8,6,7
+494,Math,47,8,5,3
+494,Physics,44,4,4,6
+494,Chemistry,36,8,19,9
+494,Biology,91,9,3,5
+494,English,53,8,0,16
+494,History,53,6,8,10
+494,Computer Science,41,4,2,14
+495,Math,39,0,13,19
+495,Physics,35,1,7,0
+495,Chemistry,90,3,3,4
+495,Biology,91,3,8,12
+495,English,94,5,14,1
+495,History,77,3,4,18
+495,Computer Science,34,1,6,2
+496,Math,91,7,2,12
+496,Physics,96,1,9,6
+496,Chemistry,38,4,19,7
+496,Biology,43,3,19,13
+496,English,73,1,12,0
+496,History,68,8,8,16
+496,Computer Science,84,9,15,5
+497,Math,77,9,19,2
+497,Physics,70,9,19,12
+497,Chemistry,57,5,12,16
+497,Biology,44,3,14,13
+497,English,85,3,2,1
+497,History,81,9,12,19
+497,Computer Science,58,9,17,15
+498,Math,72,9,8,11
+498,Physics,59,2,0,17
+498,Chemistry,51,4,0,16
+498,Biology,44,3,14,13
+498,English,83,0,8,6
+498,History,52,6,1,1
+498,Computer Science,67,6,18,19
+499,Math,96,6,6,3
+499,Physics,58,6,4,16
+499,Chemistry,74,1,17,0
+499,Biology,91,7,10,14
+499,English,77,0,16,11
+499,History,39,3,5,7
+499,Computer Science,74,1,18,9
+500,Math,33,1,6,19
+500,Physics,53,7,3,6
+500,Chemistry,87,0,19,17
+500,Biology,54,4,18,3
+500,English,35,9,16,6
+500,History,84,6,8,12
+500,Computer Science,43,6,8,14
+501,Math,66,1,19,7
+501,Physics,50,8,8,18
+501,Chemistry,87,5,5,3
+501,Biology,72,9,2,0
+501,English,84,4,13,6
+501,History,68,2,2,17
+501,Computer Science,91,3,13,2
+502,Math,57,9,6,6
+502,Physics,98,2,17,14
+502,Chemistry,81,3,7,12
+502,Biology,51,7,14,16
+502,English,98,3,3,10
+502,History,47,9,16,14
+502,Computer Science,99,6,15,14
+503,Math,63,3,8,4
+503,Physics,60,2,2,5
+503,Chemistry,61,9,4,2
+503,Biology,68,5,17,7
+503,English,62,8,3,6
+503,History,75,9,17,0
+503,Computer Science,65,1,7,9
+504,Math,99,0,11,5
+504,Physics,74,9,16,0
+504,Chemistry,61,7,7,10
+504,Biology,65,8,17,9
+504,English,74,1,3,17
+504,History,58,0,9,8
+504,Computer Science,44,4,8,13
+505,Math,74,9,5,18
+505,Physics,65,3,16,18
+505,Chemistry,32,0,12,8
+505,Biology,30,8,16,15
+505,English,79,1,13,16
+505,History,32,1,7,1
+505,Computer Science,63,9,8,19
+506,Math,50,8,5,11
+506,Physics,54,8,6,11
+506,Chemistry,55,8,4,15
+506,Biology,66,7,19,8
+506,English,58,2,19,10
+506,History,56,4,11,2
+506,Computer Science,51,9,14,1
+507,Math,42,3,17,0
+507,Physics,63,3,2,16
+507,Chemistry,57,1,15,10
+507,Biology,86,0,1,1
+507,English,66,3,11,2
+507,History,81,1,9,0
+507,Computer Science,35,1,6,19
+508,Math,92,4,17,18
+508,Physics,33,1,19,12
+508,Chemistry,92,2,16,0
+508,Biology,67,2,19,0
+508,English,69,0,14,17
+508,History,77,6,16,3
+508,Computer Science,74,3,0,0
+509,Math,94,1,14,5
+509,Physics,95,8,3,12
+509,Chemistry,52,5,10,12
+509,Biology,72,2,7,6
+509,English,54,2,16,17
+509,History,56,0,10,4
+509,Computer Science,44,9,13,1
+510,Math,77,2,7,14
+510,Physics,39,4,19,15
+510,Chemistry,55,5,11,12
+510,Biology,38,0,19,11
+510,English,86,4,11,0
+510,History,49,8,12,16
+510,Computer Science,46,3,13,18
+511,Math,88,2,0,11
+511,Physics,61,9,1,3
+511,Chemistry,46,0,7,13
+511,Biology,33,5,18,3
+511,English,64,3,5,6
+511,History,75,3,7,1
+511,Computer Science,69,8,19,15
+512,Math,90,3,5,3
+512,Physics,84,4,12,4
+512,Chemistry,76,9,7,6
+512,Biology,51,6,17,9
+512,English,47,9,6,6
+512,History,36,4,0,13
+512,Computer Science,47,8,7,7
+513,Math,61,0,5,14
+513,Physics,77,7,18,19
+513,Chemistry,44,2,5,7
+513,Biology,61,9,19,14
+513,English,42,7,7,13
+513,History,99,7,0,1
+513,Computer Science,61,0,3,1
+514,Math,50,9,19,15
+514,Physics,96,0,4,7
+514,Chemistry,73,8,11,0
+514,Biology,44,0,1,16
+514,English,81,9,8,11
+514,History,33,3,6,13
+514,Computer Science,38,6,0,0
+515,Math,33,0,9,1
+515,Physics,93,8,8,16
+515,Chemistry,50,2,3,3
+515,Biology,36,9,10,10
+515,English,39,4,12,11
+515,History,68,2,18,18
+515,Computer Science,81,5,14,4
+516,Math,59,4,10,4
+516,Physics,77,9,17,11
+516,Chemistry,88,4,15,11
+516,Biology,63,5,3,12
+516,English,71,0,13,14
+516,History,37,6,17,2
+516,Computer Science,61,7,6,12
+517,Math,98,3,9,12
+517,Physics,60,9,13,11
+517,Chemistry,61,0,19,19
+517,Biology,69,7,17,15
+517,English,72,2,1,2
+517,History,97,5,4,9
+517,Computer Science,81,1,11,4
+518,Math,66,6,0,3
+518,Physics,88,4,11,11
+518,Chemistry,78,4,9,16
+518,Biology,95,8,3,18
+518,English,40,0,11,1
+518,History,99,8,4,19
+518,Computer Science,58,4,8,7
+519,Math,49,7,5,2
+519,Physics,98,8,6,3
+519,Chemistry,34,1,12,15
+519,Biology,36,7,5,6
+519,English,79,5,19,6
+519,History,96,4,0,14
+519,Computer Science,96,7,8,14
+520,Math,98,2,12,10
+520,Physics,30,5,14,17
+520,Chemistry,77,8,0,10
+520,Biology,38,6,10,12
+520,English,31,5,7,17
+520,History,45,4,11,10
+520,Computer Science,35,2,13,1
+521,Math,96,1,0,0
+521,Physics,73,4,5,15
+521,Chemistry,56,2,1,6
+521,Biology,63,4,6,10
+521,English,72,2,13,10
+521,History,32,8,9,14
+521,Computer Science,69,1,2,6
+522,Math,91,9,19,8
+522,Physics,75,6,13,10
+522,Chemistry,89,0,3,5
+522,Biology,51,9,4,2
+522,English,95,2,8,18
+522,History,80,0,17,10
+522,Computer Science,41,2,17,5
+523,Math,36,0,5,17
+523,Physics,74,5,18,6
+523,Chemistry,80,8,2,11
+523,Biology,91,1,7,8
+523,English,69,5,9,16
+523,History,36,0,17,1
+523,Computer Science,62,4,9,13
+524,Math,74,8,5,5
+524,Physics,80,4,9,2
+524,Chemistry,82,2,4,10
+524,Biology,46,3,17,17
+524,English,30,7,1,18
+524,History,89,1,3,0
+524,Computer Science,71,0,19,14
+525,Math,68,6,17,12
+525,Physics,39,3,10,5
+525,Chemistry,50,0,18,6
+525,Biology,91,4,18,1
+525,English,51,3,9,1
+525,History,37,0,5,10
+525,Computer Science,91,9,12,0
+526,Math,96,8,4,9
+526,Physics,39,1,0,2
+526,Chemistry,98,8,16,7
+526,Biology,46,8,5,16
+526,English,50,6,6,14
+526,History,56,7,8,14
+526,Computer Science,95,6,14,17
+527,Math,39,5,17,0
+527,Physics,36,2,13,11
+527,Chemistry,75,3,12,15
+527,Biology,34,3,5,5
+527,English,79,5,6,15
+527,History,88,2,0,7
+527,Computer Science,33,4,18,4
+528,Math,78,2,18,0
+528,Physics,58,6,0,19
+528,Chemistry,70,6,4,6
+528,Biology,86,9,5,16
+528,English,51,0,12,11
+528,History,33,7,4,4
+528,Computer Science,74,9,10,7
+529,Math,69,0,12,4
+529,Physics,57,4,7,16
+529,Chemistry,38,1,18,19
+529,Biology,60,6,2,18
+529,English,85,8,9,13
+529,History,79,9,14,0
+529,Computer Science,86,5,14,5
+530,Math,94,7,2,16
+530,Physics,37,0,7,16
+530,Chemistry,91,8,11,18
+530,Biology,83,8,10,3
+530,English,75,5,16,1
+530,History,65,9,6,3
+530,Computer Science,45,8,8,3
+531,Math,58,7,5,0
+531,Physics,68,0,18,7
+531,Chemistry,92,8,2,0
+531,Biology,94,6,12,0
+531,English,77,5,13,3
+531,History,84,8,11,16
+531,Computer Science,81,0,0,9
+532,Math,47,1,16,7
+532,Physics,51,5,8,19
+532,Chemistry,92,5,13,0
+532,Biology,53,8,10,15
+532,English,80,1,14,2
+532,History,65,3,6,11
+532,Computer Science,33,9,5,13
+533,Math,96,7,14,16
+533,Physics,47,2,18,11
+533,Chemistry,98,7,15,14
+533,Biology,76,5,11,1
+533,English,56,3,8,3
+533,History,34,4,7,9
+533,Computer Science,36,5,13,4
+534,Math,45,4,2,9
+534,Physics,34,6,14,17
+534,Chemistry,54,7,1,7
+534,Biology,97,2,17,0
+534,English,81,1,11,0
+534,History,36,2,0,6
+534,Computer Science,68,2,12,4
+535,Math,94,0,17,0
+535,Physics,61,4,8,11
+535,Chemistry,40,0,18,9
+535,Biology,60,3,1,18
+535,English,67,9,8,7
+535,History,49,3,8,7
+535,Computer Science,44,1,0,8
+536,Math,92,7,4,2
+536,Physics,97,0,15,15
+536,Chemistry,91,3,2,5
+536,Biology,50,6,1,9
+536,English,44,5,1,16
+536,History,30,0,3,19
+536,Computer Science,77,7,0,18
+537,Math,72,0,9,11
+537,Physics,70,6,11,14
+537,Chemistry,98,1,15,16
+537,Biology,64,6,0,17
+537,English,65,2,18,9
+537,History,98,2,10,6
+537,Computer Science,98,3,11,18
+538,Math,76,3,11,17
+538,Physics,80,1,15,0
+538,Chemistry,78,1,12,4
+538,Biology,53,5,0,9
+538,English,66,0,10,6
+538,History,50,3,9,14
+538,Computer Science,76,7,7,17
+539,Math,91,5,4,1
+539,Physics,33,6,12,16
+539,Chemistry,60,8,0,14
+539,Biology,41,4,17,19
+539,English,95,3,14,5
+539,History,51,1,19,3
+539,Computer Science,44,1,13,2
+540,Math,34,7,2,6
+540,Physics,99,9,0,18
+540,Chemistry,36,3,11,19
+540,Biology,54,1,8,18
+540,English,33,0,8,14
+540,History,83,7,14,14
+540,Computer Science,79,6,17,15
+541,Math,31,3,19,15
+541,Physics,96,7,1,2
+541,Chemistry,55,8,4,1
+541,Biology,85,3,1,1
+541,English,85,6,19,17
+541,History,54,3,13,14
+541,Computer Science,72,6,11,15
+542,Math,98,1,15,14
+542,Physics,72,5,12,18
+542,Chemistry,71,7,18,4
+542,Biology,82,6,10,13
+542,English,52,4,15,17
+542,History,84,6,3,0
+542,Computer Science,83,2,4,3
+543,Math,47,6,14,8
+543,Physics,97,4,8,12
+543,Chemistry,59,3,12,7
+543,Biology,74,3,19,12
+543,English,84,4,5,4
+543,History,42,4,12,19
+543,Computer Science,89,8,18,19
+544,Math,55,5,9,10
+544,Physics,66,8,10,18
+544,Chemistry,63,5,0,2
+544,Biology,96,3,4,16
+544,English,44,5,13,13
+544,History,86,0,7,7
+544,Computer Science,48,8,10,12
+545,Math,42,7,18,18
+545,Physics,66,8,19,2
+545,Chemistry,98,7,13,2
+545,Biology,53,7,18,9
+545,English,60,9,17,17
+545,History,86,6,15,5
+545,Computer Science,77,6,0,18
+546,Math,32,5,3,3
+546,Physics,33,9,8,7
+546,Chemistry,80,0,16,0
+546,Biology,49,5,19,10
+546,English,32,7,7,9
+546,History,58,7,0,19
+546,Computer Science,50,6,8,11
+547,Math,55,8,19,2
+547,Physics,65,9,3,8
+547,Chemistry,51,0,4,8
+547,Biology,66,5,18,7
+547,English,42,3,3,10
+547,History,66,9,6,8
+547,Computer Science,71,9,1,3
+548,Math,37,0,12,17
+548,Physics,74,7,11,0
+548,Chemistry,81,1,2,11
+548,Biology,80,8,12,9
+548,English,81,1,18,2
+548,History,68,7,10,19
+548,Computer Science,99,0,9,16
+549,Math,60,4,1,5
+549,Physics,86,4,3,1
+549,Chemistry,41,2,5,13
+549,Biology,50,4,13,2
+549,English,77,6,14,12
+549,History,35,0,3,13
+549,Computer Science,44,2,9,5
+550,Math,38,1,3,8
+550,Physics,44,3,7,18
+550,Chemistry,48,8,15,10
+550,Biology,37,0,9,17
+550,English,64,1,2,7
+550,History,88,5,14,13
+550,Computer Science,36,9,14,9
+551,Math,80,0,11,14
+551,Physics,54,8,4,3
+551,Chemistry,86,2,2,17
+551,Biology,46,9,1,10
+551,English,53,2,1,8
+551,History,48,1,18,1
+551,Computer Science,44,7,2,4
+552,Math,56,7,6,5
+552,Physics,62,9,16,16
+552,Chemistry,71,7,7,13
+552,Biology,99,3,0,14
+552,English,81,2,4,4
+552,History,46,4,19,13
+552,Computer Science,58,7,1,7
+553,Math,30,3,18,4
+553,Physics,98,4,19,18
+553,Chemistry,41,3,0,6
+553,Biology,46,1,10,6
+553,English,46,2,5,10
+553,History,79,5,9,4
+553,Computer Science,59,6,14,19
+554,Math,52,3,0,14
+554,Physics,46,2,13,18
+554,Chemistry,79,1,5,12
+554,Biology,78,5,4,6
+554,English,80,5,0,12
+554,History,72,6,19,2
+554,Computer Science,87,8,0,7
+555,Math,46,4,5,5
+555,Physics,74,1,3,16
+555,Chemistry,90,4,2,3
+555,Biology,34,3,16,5
+555,English,39,5,15,16
+555,History,73,8,14,11
+555,Computer Science,87,5,17,19
+556,Math,99,3,11,12
+556,Physics,73,3,2,2
+556,Chemistry,47,2,9,16
+556,Biology,44,2,8,3
+556,English,44,2,15,7
+556,History,30,6,17,11
+556,Computer Science,77,0,14,6
+557,Math,32,5,5,14
+557,Physics,72,0,17,18
+557,Chemistry,69,7,19,7
+557,Biology,50,4,2,13
+557,English,56,8,0,0
+557,History,73,4,0,19
+557,Computer Science,46,1,17,15
+558,Math,33,7,1,13
+558,Physics,57,8,1,16
+558,Chemistry,87,9,8,1
+558,Biology,91,2,16,10
+558,English,84,5,15,17
+558,History,79,0,2,14
+558,Computer Science,81,9,4,14
+559,Math,38,6,4,9
+559,Physics,93,7,19,15
+559,Chemistry,38,9,15,9
+559,Biology,91,9,2,18
+559,English,67,5,14,14
+559,History,74,5,4,13
+559,Computer Science,82,1,11,19
+560,Math,75,2,19,14
+560,Physics,81,7,16,13
+560,Chemistry,93,6,17,4
+560,Biology,83,9,7,5
+560,English,86,8,5,11
+560,History,44,8,18,1
+560,Computer Science,37,3,5,5
+561,Math,50,0,6,14
+561,Physics,85,0,9,19
+561,Chemistry,82,7,15,4
+561,Biology,47,3,13,1
+561,English,92,2,13,6
+561,History,78,0,8,13
+561,Computer Science,74,5,0,3
+562,Math,32,0,1,18
+562,Physics,49,6,7,14
+562,Chemistry,67,6,19,1
+562,Biology,86,8,14,19
+562,English,64,9,13,13
+562,History,62,3,0,1
+562,Computer Science,48,7,9,3
+563,Math,65,9,8,6
+563,Physics,96,3,19,9
+563,Chemistry,91,9,15,2
+563,Biology,77,7,8,14
+563,English,61,4,2,3
+563,History,59,4,8,13
+563,Computer Science,48,6,15,19
+564,Math,93,4,9,17
+564,Physics,49,1,10,11
+564,Chemistry,93,9,1,0
+564,Biology,84,9,0,5
+564,English,38,6,16,2
+564,History,81,1,0,3
+564,Computer Science,81,8,7,7
+565,Math,34,0,14,17
+565,Physics,67,9,13,7
+565,Chemistry,96,5,18,11
+565,Biology,89,6,3,8
+565,English,77,9,12,3
+565,History,53,8,17,14
+565,Computer Science,35,7,16,16
+566,Math,87,1,3,14
+566,Physics,63,1,9,2
+566,Chemistry,81,6,11,18
+566,Biology,44,2,17,5
+566,English,78,6,13,13
+566,History,49,2,12,1
+566,Computer Science,74,7,15,2
+567,Math,97,1,1,19
+567,Physics,83,4,14,16
+567,Chemistry,61,9,0,5
+567,Biology,64,2,6,12
+567,English,94,9,2,13
+567,History,53,0,15,9
+567,Computer Science,42,3,8,13
+568,Math,39,7,2,6
+568,Physics,71,2,1,14
+568,Chemistry,76,0,6,19
+568,Biology,47,1,11,7
+568,English,63,1,4,0
+568,History,97,5,12,18
+568,Computer Science,42,0,5,6
+569,Math,56,3,1,15
+569,Physics,97,4,16,5
+569,Chemistry,39,5,17,9
+569,Biology,35,7,5,19
+569,English,44,3,15,7
+569,History,36,2,16,12
+569,Computer Science,55,9,1,9
+570,Math,42,1,10,12
+570,Physics,53,8,4,2
+570,Chemistry,48,6,12,4
+570,Biology,73,5,8,16
+570,English,69,9,12,4
+570,History,83,5,16,2
+570,Computer Science,67,8,5,14
+571,Math,73,5,0,15
+571,Physics,44,1,16,2
+571,Chemistry,96,4,16,16
+571,Biology,67,0,6,14
+571,English,48,3,10,13
+571,History,42,3,8,8
+571,Computer Science,77,9,5,17
+572,Math,63,3,8,18
+572,Physics,35,1,14,16
+572,Chemistry,45,4,7,9
+572,Biology,39,1,9,8
+572,English,57,7,18,0
+572,History,97,7,2,9
+572,Computer Science,41,1,19,5
+573,Math,82,1,9,1
+573,Physics,59,8,9,1
+573,Chemistry,69,7,16,16
+573,Biology,58,3,17,11
+573,English,78,8,18,13
+573,History,75,0,1,7
+573,Computer Science,34,6,15,15
+574,Math,36,3,7,7
+574,Physics,67,5,11,14
+574,Chemistry,79,7,19,8
+574,Biology,37,2,18,7
+574,English,86,3,5,2
+574,History,72,9,11,13
+574,Computer Science,59,1,8,14
+575,Math,92,9,2,10
+575,Physics,79,3,12,5
+575,Chemistry,34,3,13,12
+575,Biology,43,7,15,12
+575,English,53,2,0,1
+575,History,80,7,2,13
+575,Computer Science,87,8,7,16
+576,Math,84,6,15,9
+576,Physics,50,9,5,16
+576,Chemistry,90,5,13,3
+576,Biology,33,1,10,3
+576,English,33,0,18,1
+576,History,38,6,12,17
+576,Computer Science,77,8,9,8
+577,Math,87,3,9,2
+577,Physics,67,2,8,2
+577,Chemistry,79,7,7,14
+577,Biology,74,6,18,7
+577,English,46,0,12,12
+577,History,85,8,9,5
+577,Computer Science,98,1,10,8
+578,Math,69,8,8,7
+578,Physics,73,9,7,2
+578,Chemistry,42,2,1,16
+578,Biology,59,1,12,19
+578,English,60,8,19,4
+578,History,36,1,10,17
+578,Computer Science,74,1,1,19
+579,Math,97,7,15,5
+579,Physics,77,6,3,1
+579,Chemistry,47,0,7,14
+579,Biology,46,6,1,5
+579,English,56,4,16,1
+579,History,47,9,9,5
+579,Computer Science,73,0,12,19
+580,Math,89,9,1,1
+580,Physics,93,0,11,12
+580,Chemistry,48,8,9,16
+580,Biology,79,7,6,8
+580,English,39,3,3,0
+580,History,76,0,6,5
+580,Computer Science,73,2,0,13
+581,Math,65,4,0,0
+581,Physics,82,5,4,1
+581,Chemistry,98,9,8,18
+581,Biology,76,4,1,3
+581,English,88,1,9,12
+581,History,31,9,14,13
+581,Computer Science,86,9,7,14
+582,Math,37,4,13,0
+582,Physics,74,7,17,8
+582,Chemistry,74,2,17,9
+582,Biology,34,8,5,7
+582,English,47,9,11,6
+582,History,57,6,10,12
+582,Computer Science,47,6,5,10
+583,Math,61,7,19,0
+583,Physics,69,7,18,2
+583,Chemistry,98,2,14,13
+583,Biology,50,7,16,17
+583,English,41,3,1,13
+583,History,60,8,6,9
+583,Computer Science,53,0,3,17
+584,Math,35,1,2,13
+584,Physics,77,2,17,5
+584,Chemistry,96,0,11,13
+584,Biology,48,5,18,8
+584,English,79,8,6,8
+584,History,33,8,16,11
+584,Computer Science,35,1,7,14
+585,Math,96,1,8,7
+585,Physics,97,1,13,1
+585,Chemistry,63,5,6,11
+585,Biology,65,2,12,19
+585,English,50,6,1,7
+585,History,48,8,3,15
+585,Computer Science,80,9,5,15
+586,Math,39,8,6,3
+586,Physics,48,2,11,12
+586,Chemistry,54,3,9,6
+586,Biology,59,4,16,17
+586,English,50,5,6,17
+586,History,35,1,15,1
+586,Computer Science,30,8,10,19
+587,Math,66,6,0,18
+587,Physics,75,2,1,4
+587,Chemistry,46,1,0,14
+587,Biology,51,8,4,12
+587,English,57,7,9,19
+587,History,54,4,13,11
+587,Computer Science,46,1,6,19
+588,Math,67,9,15,18
+588,Physics,56,2,10,15
+588,Chemistry,89,7,2,1
+588,Biology,77,3,14,13
+588,English,31,0,19,1
+588,History,70,8,15,10
+588,Computer Science,52,5,11,2
+589,Math,91,6,0,8
+589,Physics,49,5,5,10
+589,Chemistry,33,9,18,5
+589,Biology,30,7,7,5
+589,English,92,0,14,12
+589,History,60,4,2,1
+589,Computer Science,64,8,15,12
+590,Math,88,1,11,11
+590,Physics,62,3,7,16
+590,Chemistry,50,3,6,8
+590,Biology,78,9,3,6
+590,English,36,7,7,15
+590,History,76,7,8,2
+590,Computer Science,83,4,15,14
+591,Math,97,3,15,9
+591,Physics,34,5,15,14
+591,Chemistry,63,1,11,15
+591,Biology,48,1,16,13
+591,English,57,4,9,16
+591,History,77,8,3,15
+591,Computer Science,52,6,16,12
+592,Math,97,9,9,9
+592,Physics,88,1,8,4
+592,Chemistry,37,4,13,6
+592,Biology,36,8,2,13
+592,English,46,1,11,13
+592,History,87,8,18,1
+592,Computer Science,63,2,6,17
+593,Math,42,4,17,15
+593,Physics,55,8,0,16
+593,Chemistry,91,9,1,5
+593,Biology,78,4,4,14
+593,English,44,3,10,4
+593,History,40,5,7,1
+593,Computer Science,76,7,15,13
+594,Math,76,3,12,8
+594,Physics,94,5,7,19
+594,Chemistry,47,1,16,15
+594,Biology,74,5,3,3
+594,English,75,4,15,13
+594,History,75,8,13,18
+594,Computer Science,91,2,16,13
+595,Math,71,5,3,10
+595,Physics,76,7,1,10
+595,Chemistry,63,6,4,12
+595,Biology,36,9,5,19
+595,English,73,7,10,17
+595,History,30,1,9,17
+595,Computer Science,89,0,18,15
+596,Math,68,0,8,1
+596,Physics,46,8,9,5
+596,Chemistry,60,4,7,7
+596,Biology,59,4,11,6
+596,English,42,0,3,17
+596,History,32,0,10,17
+596,Computer Science,46,7,19,18
+597,Math,46,1,2,2
+597,Physics,53,5,17,17
+597,Chemistry,75,6,0,16
+597,Biology,56,0,16,9
+597,English,54,3,1,15
+597,History,44,1,19,13
+597,Computer Science,95,1,2,4
+598,Math,54,5,14,11
+598,Physics,38,9,13,15
+598,Chemistry,72,5,9,7
+598,Biology,77,2,1,15
+598,English,45,5,3,9
+598,History,80,1,14,3
+598,Computer Science,38,3,15,14
+599,Math,95,2,3,0
+599,Physics,89,8,16,13
+599,Chemistry,78,0,9,15
+599,Biology,56,8,18,2
+599,English,89,2,14,16
+599,History,61,6,18,6
+599,Computer Science,98,9,7,15
+600,Math,77,2,14,6
+600,Physics,66,6,10,9
+600,Chemistry,84,8,0,19
+600,Biology,62,7,2,1
+600,English,91,3,18,10
+600,History,98,7,9,7
+600,Computer Science,42,4,11,12
+601,Math,44,0,5,10
+601,Physics,82,3,0,10
+601,Chemistry,87,7,2,18
+601,Biology,73,5,7,4
+601,English,83,0,5,8
+601,History,43,9,16,15
+601,Computer Science,65,1,15,0
+602,Math,32,6,10,15
+602,Physics,87,1,14,8
+602,Chemistry,73,1,4,7
+602,Biology,96,1,18,7
+602,English,31,2,0,12
+602,History,78,2,8,4
+602,Computer Science,67,3,16,15
+603,Math,60,5,10,1
+603,Physics,44,1,9,5
+603,Chemistry,82,4,11,5
+603,Biology,43,9,15,6
+603,English,95,5,8,6
+603,History,69,8,3,15
+603,Computer Science,88,4,1,10
+604,Math,30,4,17,13
+604,Physics,42,6,7,17
+604,Chemistry,60,2,0,7
+604,Biology,62,8,18,8
+604,English,71,7,10,0
+604,History,49,8,7,19
+604,Computer Science,41,0,9,3
+605,Math,44,2,5,4
+605,Physics,98,1,2,1
+605,Chemistry,92,3,17,8
+605,Biology,55,9,14,0
+605,English,90,9,18,15
+605,History,60,1,6,18
+605,Computer Science,36,7,13,0
+606,Math,32,4,5,18
+606,Physics,44,3,2,3
+606,Chemistry,34,1,9,7
+606,Biology,41,5,2,17
+606,English,52,7,0,13
+606,History,47,4,12,14
+606,Computer Science,30,5,8,9
+607,Math,38,6,13,10
+607,Physics,60,7,1,13
+607,Chemistry,98,4,18,18
+607,Biology,67,9,9,13
+607,English,59,2,0,9
+607,History,32,4,18,9
+607,Computer Science,91,9,15,0
+608,Math,89,4,13,9
+608,Physics,63,4,0,9
+608,Chemistry,58,9,8,2
+608,Biology,44,3,12,5
+608,English,49,0,4,14
+608,History,37,8,4,12
+608,Computer Science,62,6,4,13
+609,Math,44,4,16,17
+609,Physics,36,5,17,18
+609,Chemistry,36,7,12,17
+609,Biology,84,0,7,11
+609,English,92,1,14,17
+609,History,81,3,8,2
+609,Computer Science,49,2,17,19
+610,Math,59,7,0,14
+610,Physics,73,5,12,3
+610,Chemistry,46,0,4,16
+610,Biology,79,6,15,7
+610,English,75,2,10,11
+610,History,42,7,0,8
+610,Computer Science,31,1,3,11
+611,Math,77,9,2,3
+611,Physics,35,6,4,17
+611,Chemistry,32,9,10,18
+611,Biology,43,4,10,3
+611,English,53,5,5,16
+611,History,51,2,12,9
+611,Computer Science,90,5,1,0
+612,Math,72,2,4,14
+612,Physics,52,3,7,6
+612,Chemistry,44,4,12,3
+612,Biology,51,0,16,13
+612,English,46,7,1,12
+612,History,67,5,3,2
+612,Computer Science,35,3,17,5
+613,Math,55,4,8,10
+613,Physics,67,2,10,14
+613,Chemistry,85,8,18,18
+613,Biology,53,9,8,3
+613,English,39,8,18,14
+613,History,92,2,16,19
+613,Computer Science,85,4,1,18
+614,Math,46,1,16,1
+614,Physics,80,0,10,9
+614,Chemistry,66,7,4,11
+614,Biology,65,6,5,18
+614,English,44,8,6,19
+614,History,33,7,5,9
+614,Computer Science,36,3,2,6
+615,Math,65,3,16,6
+615,Physics,78,9,3,10
+615,Chemistry,72,2,11,0
+615,Biology,74,7,14,16
+615,English,41,5,13,11
+615,History,97,2,12,17
+615,Computer Science,57,5,8,11
+616,Math,48,5,13,2
+616,Physics,49,8,10,16
+616,Chemistry,90,0,2,13
+616,Biology,88,6,18,2
+616,English,63,9,16,8
+616,History,51,5,8,4
+616,Computer Science,95,5,14,8
+617,Math,71,3,9,7
+617,Physics,83,6,6,3
+617,Chemistry,44,5,8,2
+617,Biology,97,9,12,18
+617,English,91,6,9,11
+617,History,87,8,11,18
+617,Computer Science,69,3,5,9
+618,Math,95,7,12,6
+618,Physics,40,9,3,16
+618,Chemistry,77,2,10,6
+618,Biology,80,0,12,11
+618,English,30,0,19,13
+618,History,93,7,8,16
+618,Computer Science,97,3,18,6
+619,Math,30,8,12,1
+619,Physics,42,6,8,11
+619,Chemistry,92,2,14,6
+619,Biology,55,0,13,18
+619,English,94,4,2,16
+619,History,79,9,18,17
+619,Computer Science,45,1,14,12
+620,Math,74,7,10,7
+620,Physics,83,9,0,11
+620,Chemistry,38,4,8,15
+620,Biology,47,7,10,19
+620,English,48,3,19,9
+620,History,53,3,13,1
+620,Computer Science,58,3,6,18
+621,Math,46,7,17,11
+621,Physics,30,2,5,13
+621,Chemistry,84,5,0,19
+621,Biology,37,9,14,13
+621,English,49,6,15,18
+621,History,85,0,3,9
+621,Computer Science,81,1,1,3
+622,Math,90,3,15,14
+622,Physics,47,6,14,10
+622,Chemistry,69,7,0,2
+622,Biology,98,1,11,11
+622,English,87,2,8,10
+622,History,78,3,9,14
+622,Computer Science,61,2,4,10
+623,Math,67,9,12,1
+623,Physics,80,3,4,8
+623,Chemistry,78,2,7,6
+623,Biology,34,9,15,8
+623,English,36,8,16,8
+623,History,32,5,7,18
+623,Computer Science,61,6,6,19
+624,Math,64,7,7,12
+624,Physics,81,6,3,11
+624,Chemistry,94,0,1,5
+624,Biology,72,1,7,6
+624,English,57,8,19,15
+624,History,80,8,12,4
+624,Computer Science,51,2,9,6
+625,Math,44,9,13,11
+625,Physics,90,2,5,11
+625,Chemistry,95,5,6,11
+625,Biology,68,2,13,8
+625,English,77,2,10,17
+625,History,54,3,17,18
+625,Computer Science,42,3,9,4
+626,Math,96,9,7,6
+626,Physics,48,0,0,5
+626,Chemistry,56,6,14,11
+626,Biology,95,4,8,19
+626,English,92,5,7,1
+626,History,59,1,15,4
+626,Computer Science,58,4,10,13
+627,Math,86,2,2,9
+627,Physics,89,5,2,1
+627,Chemistry,74,1,1,14
+627,Biology,66,4,16,1
+627,English,81,6,2,4
+627,History,70,4,0,13
+627,Computer Science,66,7,13,15
+628,Math,48,8,4,4
+628,Physics,55,2,3,15
+628,Chemistry,45,6,17,0
+628,Biology,32,8,7,0
+628,English,91,6,6,7
+628,History,48,0,10,14
+628,Computer Science,78,5,8,17
+629,Math,81,1,3,17
+629,Physics,96,7,4,19
+629,Chemistry,51,5,4,10
+629,Biology,73,5,8,12
+629,English,90,2,12,10
+629,History,40,4,19,6
+629,Computer Science,46,0,10,12
+630,Math,94,1,8,12
+630,Physics,66,8,12,4
+630,Chemistry,76,6,13,15
+630,Biology,35,1,15,18
+630,English,75,5,7,2
+630,History,33,0,1,12
+630,Computer Science,38,9,9,17
+631,Math,73,5,15,5
+631,Physics,53,4,9,14
+631,Chemistry,87,8,1,17
+631,Biology,41,2,6,8
+631,English,35,0,13,15
+631,History,89,3,5,14
+631,Computer Science,51,7,0,12
+632,Math,56,1,17,12
+632,Physics,91,6,17,3
+632,Chemistry,46,2,13,9
+632,Biology,86,5,17,3
+632,English,40,7,9,10
+632,History,37,3,17,0
+632,Computer Science,53,7,2,0
+633,Math,86,8,16,15
+633,Physics,52,5,6,15
+633,Chemistry,41,3,19,12
+633,Biology,56,9,11,12
+633,English,91,2,12,11
+633,History,90,1,0,7
+633,Computer Science,91,8,7,16
+634,Math,61,5,14,12
+634,Physics,83,6,17,13
+634,Chemistry,43,0,1,18
+634,Biology,39,5,7,4
+634,English,36,9,12,15
+634,History,59,4,15,14
+634,Computer Science,51,6,11,7
+635,Math,66,3,11,14
+635,Physics,73,9,8,0
+635,Chemistry,73,3,12,5
+635,Biology,62,3,5,18
+635,English,60,1,17,9
+635,History,57,3,0,14
+635,Computer Science,74,9,14,1
+636,Math,81,3,0,6
+636,Physics,30,7,9,13
+636,Chemistry,52,5,3,1
+636,Biology,68,2,13,18
+636,English,91,6,11,2
+636,History,92,4,7,13
+636,Computer Science,90,3,6,6
+637,Math,79,7,11,9
+637,Physics,43,8,5,4
+637,Chemistry,94,0,19,16
+637,Biology,55,2,5,10
+637,English,74,7,9,1
+637,History,75,0,10,1
+637,Computer Science,34,9,1,15
+638,Math,54,4,7,19
+638,Physics,75,8,9,1
+638,Chemistry,96,1,1,8
+638,Biology,95,8,6,6
+638,English,98,7,17,5
+638,History,78,8,12,15
+638,Computer Science,50,9,9,3
+639,Math,73,7,14,18
+639,Physics,93,7,7,18
+639,Chemistry,38,7,16,7
+639,Biology,73,3,5,15
+639,English,52,0,19,4
+639,History,68,2,12,13
+639,Computer Science,95,3,6,4
+640,Math,43,8,9,6
+640,Physics,57,8,13,1
+640,Chemistry,46,3,3,12
+640,Biology,32,2,4,0
+640,English,53,7,2,1
+640,History,62,5,12,9
+640,Computer Science,91,4,8,12
+641,Math,89,3,10,3
+641,Physics,50,8,6,15
+641,Chemistry,52,9,4,5
+641,Biology,94,1,12,0
+641,English,39,6,4,12
+641,History,45,7,19,13
+641,Computer Science,40,2,1,7
+642,Math,42,6,11,7
+642,Physics,45,1,18,3
+642,Chemistry,89,4,16,3
+642,Biology,91,3,8,4
+642,English,78,1,1,6
+642,History,49,9,2,1
+642,Computer Science,32,7,14,16
+643,Math,81,6,15,4
+643,Physics,83,4,2,14
+643,Chemistry,77,8,18,17
+643,Biology,70,7,18,4
+643,English,46,4,13,6
+643,History,70,0,2,7
+643,Computer Science,51,4,9,17
+644,Math,78,6,18,7
+644,Physics,50,9,6,0
+644,Chemistry,69,2,19,19
+644,Biology,41,7,0,3
+644,English,33,8,14,14
+644,History,61,2,19,8
+644,Computer Science,42,7,11,0
+645,Math,59,9,1,17
+645,Physics,42,7,5,11
+645,Chemistry,89,5,3,0
+645,Biology,72,6,7,1
+645,English,63,0,3,5
+645,History,59,4,19,13
+645,Computer Science,58,6,1,19
+646,Math,44,0,16,19
+646,Physics,90,8,12,11
+646,Chemistry,66,6,7,13
+646,Biology,97,4,13,9
+646,English,58,8,13,13
+646,History,95,5,12,2
+646,Computer Science,59,1,3,18
+647,Math,45,3,18,14
+647,Physics,93,0,15,14
+647,Chemistry,45,5,19,0
+647,Biology,98,4,6,12
+647,English,65,8,3,5
+647,History,53,4,18,5
+647,Computer Science,79,7,14,18
+648,Math,69,8,4,4
+648,Physics,35,6,2,4
+648,Chemistry,62,9,19,0
+648,Biology,46,7,1,12
+648,English,42,5,14,10
+648,History,97,0,14,11
+648,Computer Science,61,4,6,7
+649,Math,30,2,7,10
+649,Physics,75,0,5,5
+649,Chemistry,64,9,11,9
+649,Biology,83,1,12,15
+649,English,42,3,3,10
+649,History,61,2,18,0
+649,Computer Science,98,0,0,18
+650,Math,48,3,18,5
+650,Physics,44,3,0,16
+650,Chemistry,52,0,8,13
+650,Biology,85,0,1,17
+650,English,35,3,7,0
+650,History,71,3,9,10
+650,Computer Science,98,8,4,10
+651,Math,97,9,6,0
+651,Physics,37,0,6,0
+651,Chemistry,48,1,10,2
+651,Biology,46,9,2,2
+651,English,95,0,6,19
+651,History,72,6,5,3
+651,Computer Science,50,2,13,2
+652,Math,37,1,3,10
+652,Physics,45,2,6,1
+652,Chemistry,30,9,0,5
+652,Biology,36,7,4,17
+652,English,61,0,9,8
+652,History,78,0,0,6
+652,Computer Science,97,6,11,15
+653,Math,84,9,13,6
+653,Physics,65,1,17,15
+653,Chemistry,66,8,7,19
+653,Biology,47,3,15,3
+653,English,99,2,17,14
+653,History,47,7,2,5
+653,Computer Science,55,4,14,11
+654,Math,34,6,14,6
+654,Physics,74,8,2,12
+654,Chemistry,32,1,3,16
+654,Biology,35,5,1,16
+654,English,96,1,4,9
+654,History,38,4,12,9
+654,Computer Science,97,9,13,16
+655,Math,81,1,9,2
+655,Physics,62,7,0,7
+655,Chemistry,75,1,7,18
+655,Biology,83,4,14,10
+655,English,43,1,1,11
+655,History,46,8,15,7
+655,Computer Science,85,0,4,11
+656,Math,67,1,4,5
+656,Physics,70,9,16,18
+656,Chemistry,70,0,16,0
+656,Biology,84,4,12,7
+656,English,59,1,12,17
+656,History,74,2,12,18
+656,Computer Science,97,2,17,5
+657,Math,65,3,6,6
+657,Physics,87,4,14,3
+657,Chemistry,54,2,6,11
+657,Biology,87,8,16,1
+657,English,68,1,6,0
+657,History,92,2,10,14
+657,Computer Science,86,8,2,12
+658,Math,65,6,7,3
+658,Physics,79,6,10,3
+658,Chemistry,96,8,11,10
+658,Biology,40,0,13,15
+658,English,39,3,9,19
+658,History,73,8,14,8
+658,Computer Science,53,3,13,15
+659,Math,58,2,2,10
+659,Physics,82,3,18,7
+659,Chemistry,37,9,2,9
+659,Biology,99,4,12,18
+659,English,35,0,14,14
+659,History,43,6,4,19
+659,Computer Science,81,2,5,12
+660,Math,82,1,1,14
+660,Physics,88,1,8,2
+660,Chemistry,76,4,19,19
+660,Biology,34,9,15,11
+660,English,54,5,10,18
+660,History,71,3,2,14
+660,Computer Science,40,5,1,5
+661,Math,46,1,3,8
+661,Physics,39,4,1,10
+661,Chemistry,72,0,13,0
+661,Biology,50,6,8,0
+661,English,50,5,3,0
+661,History,80,9,14,19
+661,Computer Science,65,3,13,4
+662,Math,58,8,15,15
+662,Physics,70,0,4,8
+662,Chemistry,49,4,3,15
+662,Biology,87,1,1,15
+662,English,58,0,15,2
+662,History,91,9,16,3
+662,Computer Science,97,2,0,13
+663,Math,53,8,6,16
+663,Physics,65,9,16,3
+663,Chemistry,47,0,5,6
+663,Biology,41,8,17,1
+663,English,54,0,0,8
+663,History,35,1,5,8
+663,Computer Science,96,8,14,11
+664,Math,84,7,5,2
+664,Physics,97,9,13,14
+664,Chemistry,71,2,18,1
+664,Biology,76,0,9,5
+664,English,42,9,11,5
+664,History,67,0,11,9
+664,Computer Science,86,6,3,0
+665,Math,32,0,1,14
+665,Physics,99,4,13,18
+665,Chemistry,58,2,17,7
+665,Biology,77,4,14,15
+665,English,86,0,9,18
+665,History,96,3,3,10
+665,Computer Science,62,8,15,8
+666,Math,35,0,11,7
+666,Physics,77,4,0,16
+666,Chemistry,85,4,7,9
+666,Biology,47,3,12,9
+666,English,74,2,2,0
+666,History,31,9,6,0
+666,Computer Science,87,6,14,10
+667,Math,67,5,6,6
+667,Physics,30,9,14,7
+667,Chemistry,32,6,14,3
+667,Biology,35,8,9,17
+667,English,47,5,18,16
+667,History,79,6,19,11
+667,Computer Science,88,7,3,3
+668,Math,77,0,16,2
+668,Physics,38,4,8,7
+668,Chemistry,45,2,15,13
+668,Biology,81,5,19,12
+668,English,77,8,1,2
+668,History,95,7,9,7
+668,Computer Science,46,9,0,5
+669,Math,68,1,8,7
+669,Physics,71,3,19,7
+669,Chemistry,94,7,11,14
+669,Biology,42,9,17,0
+669,English,45,6,4,19
+669,History,39,9,5,11
+669,Computer Science,83,0,1,18
+670,Math,81,5,12,8
+670,Physics,41,1,7,17
+670,Chemistry,86,5,1,7
+670,Biology,92,8,17,7
+670,English,32,8,12,8
+670,History,81,6,12,7
+670,Computer Science,74,4,12,16
+671,Math,86,5,18,2
+671,Physics,75,9,16,7
+671,Chemistry,47,0,10,8
+671,Biology,85,7,14,8
+671,English,41,0,5,7
+671,History,76,3,17,10
+671,Computer Science,38,8,7,2
+672,Math,82,1,13,2
+672,Physics,46,3,17,14
+672,Chemistry,48,5,5,14
+672,Biology,77,8,19,4
+672,English,31,5,15,3
+672,History,34,6,5,9
+672,Computer Science,75,7,13,13
+673,Math,57,6,2,0
+673,Physics,58,8,8,1
+673,Chemistry,87,5,12,0
+673,Biology,48,0,9,0
+673,English,89,0,3,6
+673,History,73,4,5,1
+673,Computer Science,36,8,13,9
+674,Math,33,2,13,5
+674,Physics,61,6,14,7
+674,Chemistry,66,2,2,12
+674,Biology,63,7,0,11
+674,English,37,2,8,13
+674,History,47,9,8,5
+674,Computer Science,62,4,9,12
+675,Math,83,6,3,0
+675,Physics,85,3,16,9
+675,Chemistry,73,1,2,13
+675,Biology,70,1,18,15
+675,English,30,1,15,1
+675,History,80,9,18,9
+675,Computer Science,42,1,7,17
+676,Math,74,8,6,17
+676,Physics,70,5,17,16
+676,Chemistry,73,2,4,6
+676,Biology,80,8,3,9
+676,English,79,2,2,4
+676,History,49,9,12,18
+676,Computer Science,85,3,4,18
+677,Math,66,4,13,3
+677,Physics,73,5,18,9
+677,Chemistry,30,6,15,3
+677,Biology,70,1,16,14
+677,English,68,8,17,5
+677,History,82,8,2,0
+677,Computer Science,34,0,7,6
+678,Math,72,1,13,8
+678,Physics,34,6,3,11
+678,Chemistry,30,7,12,0
+678,Biology,32,5,7,17
+678,English,54,3,19,15
+678,History,95,0,9,6
+678,Computer Science,88,9,18,19
+679,Math,38,5,16,8
+679,Physics,38,4,6,10
+679,Chemistry,37,8,13,1
+679,Biology,39,4,15,15
+679,English,88,5,5,6
+679,History,77,2,8,2
+679,Computer Science,67,8,16,2
+680,Math,63,7,5,9
+680,Physics,40,7,17,8
+680,Chemistry,50,2,1,0
+680,Biology,87,5,17,2
+680,English,53,0,5,18
+680,History,72,7,4,19
+680,Computer Science,76,4,13,3
+681,Math,37,3,16,1
+681,Physics,49,9,1,10
+681,Chemistry,39,2,13,10
+681,Biology,76,3,16,2
+681,English,75,7,3,9
+681,History,63,7,9,17
+681,Computer Science,74,1,1,12
+682,Math,91,9,3,14
+682,Physics,44,4,8,19
+682,Chemistry,87,7,16,15
+682,Biology,37,2,18,13
+682,English,96,3,3,10
+682,History,80,6,16,9
+682,Computer Science,53,0,15,19
+683,Math,99,6,13,10
+683,Physics,41,4,4,19
+683,Chemistry,83,6,14,0
+683,Biology,59,7,8,2
+683,English,77,6,13,15
+683,History,58,1,15,15
+683,Computer Science,39,6,14,8
+684,Math,55,2,16,7
+684,Physics,31,8,19,2
+684,Chemistry,37,1,18,16
+684,Biology,49,0,9,8
+684,English,51,5,10,1
+684,History,60,6,11,11
+684,Computer Science,92,8,11,17
+685,Math,74,3,11,16
+685,Physics,62,5,17,15
+685,Chemistry,56,9,18,15
+685,Biology,54,1,5,4
+685,English,65,5,3,4
+685,History,68,5,12,3
+685,Computer Science,33,9,19,0
+686,Math,69,6,4,2
+686,Physics,60,0,12,14
+686,Chemistry,56,2,19,13
+686,Biology,42,7,8,2
+686,English,39,0,16,12
+686,History,31,1,6,8
+686,Computer Science,60,3,1,18
+687,Math,66,8,12,11
+687,Physics,70,9,18,9
+687,Chemistry,69,0,19,3
+687,Biology,89,1,6,4
+687,English,35,5,13,11
+687,History,91,5,11,7
+687,Computer Science,45,3,7,8
+688,Math,74,3,16,18
+688,Physics,46,6,0,19
+688,Chemistry,58,0,12,1
+688,Biology,92,0,4,6
+688,English,75,7,13,14
+688,History,34,4,1,17
+688,Computer Science,59,7,8,9
+689,Math,55,1,3,7
+689,Physics,47,3,16,15
+689,Chemistry,94,0,17,3
+689,Biology,65,8,5,2
+689,English,35,6,6,3
+689,History,94,5,4,12
+689,Computer Science,80,3,5,12
+690,Math,92,4,12,9
+690,Physics,64,6,12,11
+690,Chemistry,33,9,2,16
+690,Biology,94,1,8,19
+690,English,86,8,1,18
+690,History,57,2,15,12
+690,Computer Science,71,5,17,5
+691,Math,99,1,5,5
+691,Physics,83,4,6,12
+691,Chemistry,76,4,0,2
+691,Biology,55,5,7,1
+691,English,97,1,12,14
+691,History,31,9,1,11
+691,Computer Science,73,6,0,1
+692,Math,88,5,1,15
+692,Physics,49,9,15,5
+692,Chemistry,52,9,4,7
+692,Biology,35,4,19,5
+692,English,61,0,5,16
+692,History,66,6,16,16
+692,Computer Science,90,5,6,5
+693,Math,90,2,8,14
+693,Physics,71,9,2,0
+693,Chemistry,96,8,4,6
+693,Biology,32,3,16,2
+693,English,84,3,1,13
+693,History,93,4,1,14
+693,Computer Science,51,9,19,0
+694,Math,75,8,13,0
+694,Physics,54,8,16,13
+694,Chemistry,74,5,6,1
+694,Biology,61,9,7,5
+694,English,96,1,17,5
+694,History,32,4,1,14
+694,Computer Science,68,7,3,15
+695,Math,78,1,15,3
+695,Physics,36,1,5,17
+695,Chemistry,63,2,8,3
+695,Biology,43,4,6,7
+695,English,44,2,10,19
+695,History,84,3,17,13
+695,Computer Science,87,5,15,17
+696,Math,30,7,0,0
+696,Physics,89,8,9,17
+696,Chemistry,41,0,0,7
+696,Biology,55,9,17,8
+696,English,86,1,2,1
+696,History,99,6,11,18
+696,Computer Science,57,2,11,17
+697,Math,77,1,10,11
+697,Physics,88,7,5,10
+697,Chemistry,50,9,3,8
+697,Biology,41,9,13,4
+697,English,62,4,15,4
+697,History,58,1,5,17
+697,Computer Science,61,9,14,10
+698,Math,55,2,12,19
+698,Physics,32,6,11,14
+698,Chemistry,59,7,16,0
+698,Biology,58,4,7,13
+698,English,61,9,18,7
+698,History,80,3,9,2
+698,Computer Science,65,7,3,19
+699,Math,90,3,12,16
+699,Physics,54,8,16,5
+699,Chemistry,81,7,3,7
+699,Biology,49,8,0,12
+699,English,39,6,18,16
+699,History,53,9,13,10
+699,Computer Science,39,6,9,0
+700,Math,43,2,12,1
+700,Physics,46,4,2,14
+700,Chemistry,37,5,8,10
+700,Biology,63,8,17,18
+700,English,83,1,4,17
+700,History,41,3,14,10
+700,Computer Science,56,2,4,5
+701,Math,85,8,13,3
+701,Physics,73,9,9,10
+701,Chemistry,40,1,12,7
+701,Biology,50,4,7,0
+701,English,87,8,5,14
+701,History,87,0,8,11
+701,Computer Science,81,9,11,5
+702,Math,81,4,2,1
+702,Physics,37,9,14,8
+702,Chemistry,93,9,10,8
+702,Biology,43,4,8,3
+702,English,31,2,0,0
+702,History,94,6,1,14
+702,Computer Science,76,9,7,9
+703,Math,80,2,19,13
+703,Physics,70,4,5,7
+703,Chemistry,37,9,3,15
+703,Biology,81,5,8,4
+703,English,99,0,16,12
+703,History,46,1,18,2
+703,Computer Science,31,1,6,3
+704,Math,67,6,19,5
+704,Physics,81,9,3,4
+704,Chemistry,47,8,0,4
+704,Biology,66,7,19,14
+704,English,46,2,12,9
+704,History,98,1,16,3
+704,Computer Science,36,8,4,7
+705,Math,69,8,18,18
+705,Physics,52,3,16,15
+705,Chemistry,87,5,2,18
+705,Biology,66,9,5,1
+705,English,85,8,18,12
+705,History,92,5,5,1
+705,Computer Science,34,7,13,12
+706,Math,73,2,4,5
+706,Physics,31,7,4,16
+706,Chemistry,65,8,5,1
+706,Biology,87,4,11,12
+706,English,61,0,3,9
+706,History,62,8,1,6
+706,Computer Science,80,1,19,6
+707,Math,52,8,11,2
+707,Physics,52,5,15,6
+707,Chemistry,87,4,6,18
+707,Biology,91,4,18,17
+707,English,65,9,0,3
+707,History,97,8,7,1
+707,Computer Science,52,5,10,3
+708,Math,50,5,8,1
+708,Physics,88,8,0,3
+708,Chemistry,34,8,3,15
+708,Biology,95,4,10,0
+708,English,93,7,3,17
+708,History,74,3,19,9
+708,Computer Science,94,1,16,2
+709,Math,53,3,9,6
+709,Physics,79,5,5,6
+709,Chemistry,89,0,11,16
+709,Biology,75,1,0,10
+709,English,83,2,19,0
+709,History,80,9,0,4
+709,Computer Science,59,0,10,8
+710,Math,34,1,12,17
+710,Physics,54,4,9,19
+710,Chemistry,95,3,11,10
+710,Biology,97,8,9,5
+710,English,44,9,5,0
+710,History,58,4,19,3
+710,Computer Science,84,9,13,19
+711,Math,51,3,7,10
+711,Physics,76,2,7,12
+711,Chemistry,47,5,16,5
+711,Biology,54,9,17,10
+711,English,42,0,17,4
+711,History,67,0,6,3
+711,Computer Science,61,8,14,5
+712,Math,81,1,3,8
+712,Physics,75,2,0,10
+712,Chemistry,30,8,8,4
+712,Biology,38,7,12,9
+712,English,71,5,6,4
+712,History,68,3,9,9
+712,Computer Science,82,7,12,14
+713,Math,89,5,19,11
+713,Physics,48,5,0,1
+713,Chemistry,84,3,4,14
+713,Biology,72,9,16,1
+713,English,53,9,19,2
+713,History,80,4,2,7
+713,Computer Science,34,6,10,7
+714,Math,44,2,15,13
+714,Physics,57,6,7,6
+714,Chemistry,35,9,18,3
+714,Biology,84,2,16,18
+714,English,88,9,5,11
+714,History,80,5,10,19
+714,Computer Science,49,9,15,17
+715,Math,43,3,11,19
+715,Physics,52,4,7,6
+715,Chemistry,38,7,16,9
+715,Biology,58,2,7,13
+715,English,68,1,10,5
+715,History,49,4,13,12
+715,Computer Science,33,3,19,10
+716,Math,94,1,6,11
+716,Physics,47,2,6,5
+716,Chemistry,76,5,7,7
+716,Biology,94,9,12,12
+716,English,72,3,6,11
+716,History,88,5,11,15
+716,Computer Science,35,2,15,3
+717,Math,70,7,2,9
+717,Physics,59,6,6,17
+717,Chemistry,68,9,19,9
+717,Biology,34,1,8,15
+717,English,68,8,9,4
+717,History,36,4,14,18
+717,Computer Science,37,7,8,10
+718,Math,51,1,2,12
+718,Physics,40,9,14,5
+718,Chemistry,30,1,10,7
+718,Biology,51,2,13,1
+718,English,90,5,0,13
+718,History,71,5,8,6
+718,Computer Science,54,1,10,13
+719,Math,70,6,13,15
+719,Physics,77,6,9,5
+719,Chemistry,94,1,13,3
+719,Biology,56,8,5,16
+719,English,82,3,8,15
+719,History,64,3,2,12
+719,Computer Science,48,8,0,5
+720,Math,51,2,2,15
+720,Physics,88,8,16,6
+720,Chemistry,68,7,5,0
+720,Biology,86,3,2,5
+720,English,74,8,10,19
+720,History,54,4,12,18
+720,Computer Science,96,2,7,13
+721,Math,83,8,16,5
+721,Physics,65,2,11,1
+721,Chemistry,59,9,2,19
+721,Biology,65,5,0,0
+721,English,33,6,14,9
+721,History,54,0,11,19
+721,Computer Science,45,4,15,16
+722,Math,84,7,1,7
+722,Physics,39,8,3,10
+722,Chemistry,92,2,17,18
+722,Biology,85,7,1,1
+722,English,31,9,14,11
+722,History,46,1,13,16
+722,Computer Science,45,6,5,1
+723,Math,45,1,7,6
+723,Physics,62,3,10,19
+723,Chemistry,47,3,16,10
+723,Biology,49,0,1,17
+723,English,57,2,7,1
+723,History,93,0,13,3
+723,Computer Science,32,4,0,18
+724,Math,83,9,1,15
+724,Physics,75,1,3,2
+724,Chemistry,48,6,3,5
+724,Biology,62,5,3,17
+724,English,52,9,4,5
+724,History,91,8,1,11
+724,Computer Science,51,8,19,11
+725,Math,56,5,16,4
+725,Physics,81,9,14,14
+725,Chemistry,47,1,1,10
+725,Biology,42,3,14,10
+725,English,79,9,11,12
+725,History,38,4,12,5
+725,Computer Science,99,2,10,9
+726,Math,52,6,7,4
+726,Physics,63,2,8,14
+726,Chemistry,61,5,7,13
+726,Biology,98,0,6,8
+726,English,77,1,12,17
+726,History,30,4,17,18
+726,Computer Science,88,3,10,2
+727,Math,70,9,1,6
+727,Physics,85,3,13,3
+727,Chemistry,32,6,16,6
+727,Biology,55,1,13,13
+727,English,99,8,2,16
+727,History,89,3,19,15
+727,Computer Science,90,7,9,6
+728,Math,39,6,17,8
+728,Physics,94,0,3,3
+728,Chemistry,75,8,12,15
+728,Biology,32,2,7,17
+728,English,99,3,5,4
+728,History,41,8,8,16
+728,Computer Science,46,5,15,11
+729,Math,61,2,13,16
+729,Physics,83,4,11,1
+729,Chemistry,37,4,15,7
+729,Biology,57,9,19,14
+729,English,33,9,14,3
+729,History,91,5,3,8
+729,Computer Science,84,4,14,8
+730,Math,31,2,11,15
+730,Physics,98,9,14,13
+730,Chemistry,75,6,12,15
+730,Biology,69,7,16,16
+730,English,94,0,15,16
+730,History,31,8,13,6
+730,Computer Science,46,9,5,6
+731,Math,66,1,17,16
+731,Physics,85,9,6,18
+731,Chemistry,52,6,15,11
+731,Biology,76,1,2,18
+731,English,57,8,14,15
+731,History,76,6,6,10
+731,Computer Science,58,0,2,15
+732,Math,98,1,6,9
+732,Physics,98,9,16,19
+732,Chemistry,49,7,14,1
+732,Biology,78,6,5,12
+732,English,58,7,10,14
+732,History,74,1,17,16
+732,Computer Science,51,2,6,11
+733,Math,65,7,10,13
+733,Physics,34,5,2,15
+733,Chemistry,71,6,1,15
+733,Biology,39,1,11,7
+733,English,55,2,19,2
+733,History,67,1,2,16
+733,Computer Science,65,5,1,8
+734,Math,31,4,1,4
+734,Physics,51,3,13,1
+734,Chemistry,52,9,0,18
+734,Biology,90,4,14,6
+734,English,79,7,11,14
+734,History,44,0,1,11
+734,Computer Science,64,6,5,13
+735,Math,84,4,3,14
+735,Physics,64,9,1,11
+735,Chemistry,89,7,11,18
+735,Biology,80,4,2,5
+735,English,61,1,12,8
+735,History,43,2,10,13
+735,Computer Science,39,3,15,1
+736,Math,82,1,5,6
+736,Physics,74,1,14,16
+736,Chemistry,74,6,0,2
+736,Biology,81,1,6,16
+736,English,57,7,9,15
+736,History,81,1,14,10
+736,Computer Science,79,5,0,6
+737,Math,41,3,3,9
+737,Physics,82,1,8,9
+737,Chemistry,81,8,13,2
+737,Biology,86,0,6,3
+737,English,68,9,14,15
+737,History,67,3,3,3
+737,Computer Science,56,5,16,12
+738,Math,99,5,0,7
+738,Physics,82,3,4,4
+738,Chemistry,76,9,7,6
+738,Biology,41,8,10,12
+738,English,76,0,17,7
+738,History,35,9,8,4
+738,Computer Science,51,4,3,18
+739,Math,30,5,13,8
+739,Physics,70,7,13,8
+739,Chemistry,81,8,1,0
+739,Biology,42,8,9,7
+739,English,90,7,11,16
+739,History,91,8,11,15
+739,Computer Science,88,8,11,10
+740,Math,54,5,19,12
+740,Physics,63,3,6,0
+740,Chemistry,91,8,2,19
+740,Biology,34,2,19,4
+740,English,89,0,15,8
+740,History,71,9,12,15
+740,Computer Science,91,3,3,13
+741,Math,57,4,12,2
+741,Physics,66,2,18,16
+741,Chemistry,69,1,8,18
+741,Biology,71,1,16,12
+741,English,60,3,6,2
+741,History,80,3,15,1
+741,Computer Science,43,9,19,9
+742,Math,80,7,10,17
+742,Physics,72,8,18,19
+742,Chemistry,90,9,2,2
+742,Biology,85,7,5,19
+742,English,30,3,5,1
+742,History,36,3,19,15
+742,Computer Science,92,4,6,15
+743,Math,51,8,4,5
+743,Physics,64,5,7,5
+743,Chemistry,61,4,2,16
+743,Biology,59,5,18,19
+743,English,48,1,7,6
+743,History,83,6,16,4
+743,Computer Science,39,2,17,9
+744,Math,95,5,2,18
+744,Physics,56,9,0,10
+744,Chemistry,84,6,5,5
+744,Biology,77,1,18,18
+744,English,90,2,17,5
+744,History,31,2,5,19
+744,Computer Science,52,5,14,5
+745,Math,64,7,17,16
+745,Physics,50,0,3,6
+745,Chemistry,98,9,15,5
+745,Biology,81,1,17,17
+745,English,47,0,12,11
+745,History,64,5,6,0
+745,Computer Science,66,4,0,3
+746,Math,87,0,12,13
+746,Physics,76,0,11,6
+746,Chemistry,80,6,2,17
+746,Biology,55,3,2,11
+746,English,84,0,5,14
+746,History,59,1,7,13
+746,Computer Science,91,1,4,10
+747,Math,69,0,14,0
+747,Physics,45,2,12,3
+747,Chemistry,72,1,17,9
+747,Biology,42,8,13,6
+747,English,39,2,1,18
+747,History,68,4,2,1
+747,Computer Science,67,6,1,10
+748,Math,82,2,8,7
+748,Physics,92,0,14,3
+748,Chemistry,97,9,10,17
+748,Biology,52,2,6,6
+748,English,46,5,19,15
+748,History,32,3,14,0
+748,Computer Science,71,1,6,13
+749,Math,77,6,12,9
+749,Physics,38,8,5,11
+749,Chemistry,59,6,19,19
+749,Biology,83,3,6,7
+749,English,31,9,17,17
+749,History,47,3,4,19
+749,Computer Science,60,4,19,9
+750,Math,91,0,17,12
+750,Physics,44,9,11,9
+750,Chemistry,74,2,9,10
+750,Biology,67,0,5,4
+750,English,36,5,11,11
+750,History,36,1,0,17
+750,Computer Science,36,2,2,9
+751,Math,90,4,1,7
+751,Physics,84,5,0,0
+751,Chemistry,39,3,15,4
+751,Biology,45,7,11,5
+751,English,59,4,0,18
+751,History,75,8,2,5
+751,Computer Science,98,0,17,11
+752,Math,98,8,11,19
+752,Physics,38,2,0,14
+752,Chemistry,39,6,3,4
+752,Biology,81,2,16,12
+752,English,35,9,4,15
+752,History,61,0,4,5
+752,Computer Science,50,9,16,2
+753,Math,89,1,16,3
+753,Physics,63,4,9,0
+753,Chemistry,89,9,0,3
+753,Biology,43,1,1,0
+753,English,82,5,15,17
+753,History,45,6,5,9
+753,Computer Science,95,6,16,2
+754,Math,49,1,6,16
+754,Physics,38,1,3,18
+754,Chemistry,78,1,16,18
+754,Biology,49,5,11,17
+754,English,61,2,9,2
+754,History,55,7,4,10
+754,Computer Science,71,2,8,11
+755,Math,48,4,13,3
+755,Physics,47,9,17,11
+755,Chemistry,75,6,5,13
+755,Biology,31,8,11,4
+755,English,48,6,6,9
+755,History,46,9,13,10
+755,Computer Science,49,5,7,18
+756,Math,61,2,16,17
+756,Physics,41,8,15,17
+756,Chemistry,93,3,6,0
+756,Biology,53,6,19,0
+756,English,69,9,7,9
+756,History,30,4,13,13
+756,Computer Science,89,2,15,8
+757,Math,77,3,7,6
+757,Physics,48,5,9,13
+757,Chemistry,86,2,7,2
+757,Biology,95,4,13,19
+757,English,82,5,14,2
+757,History,94,3,1,17
+757,Computer Science,62,8,2,1
+758,Math,33,5,0,8
+758,Physics,86,7,5,19
+758,Chemistry,45,7,3,2
+758,Biology,44,5,0,17
+758,English,52,2,12,16
+758,History,87,9,13,6
+758,Computer Science,68,9,14,11
+759,Math,41,7,15,8
+759,Physics,63,7,15,4
+759,Chemistry,34,3,17,17
+759,Biology,34,2,16,17
+759,English,43,9,17,19
+759,History,63,6,14,9
+759,Computer Science,40,1,17,3
+760,Math,70,0,16,16
+760,Physics,91,3,7,14
+760,Chemistry,62,2,14,8
+760,Biology,98,5,10,12
+760,English,67,9,19,16
+760,History,34,0,0,4
+760,Computer Science,77,1,5,1
+761,Math,71,4,19,10
+761,Physics,55,4,1,7
+761,Chemistry,85,5,18,19
+761,Biology,86,9,4,13
+761,English,53,2,3,19
+761,History,77,7,14,8
+761,Computer Science,32,6,8,17
+762,Math,53,3,8,0
+762,Physics,30,3,18,2
+762,Chemistry,41,1,13,9
+762,Biology,47,7,0,14
+762,English,45,4,14,4
+762,History,74,5,19,6
+762,Computer Science,36,8,15,12
+763,Math,46,8,11,12
+763,Physics,34,6,0,3
+763,Chemistry,55,3,15,4
+763,Biology,51,3,5,2
+763,English,54,7,16,17
+763,History,87,8,11,0
+763,Computer Science,92,2,7,2
+764,Math,74,9,16,2
+764,Physics,51,5,13,9
+764,Chemistry,49,1,12,9
+764,Biology,99,9,4,5
+764,English,68,8,11,11
+764,History,84,3,4,15
+764,Computer Science,99,8,4,15
+765,Math,47,2,11,1
+765,Physics,87,9,11,13
+765,Chemistry,48,5,4,15
+765,Biology,74,4,1,1
+765,English,73,0,18,15
+765,History,36,4,6,15
+765,Computer Science,47,0,0,13
+766,Math,67,5,3,11
+766,Physics,91,1,9,2
+766,Chemistry,52,8,0,17
+766,Biology,54,4,19,16
+766,English,86,8,19,9
+766,History,74,0,0,19
+766,Computer Science,50,2,1,5
+767,Math,72,2,0,10
+767,Physics,74,4,17,14
+767,Chemistry,81,3,6,16
+767,Biology,69,9,15,9
+767,English,58,5,19,6
+767,History,88,0,7,11
+767,Computer Science,87,8,3,9
+768,Math,35,6,7,2
+768,Physics,76,4,0,12
+768,Chemistry,83,1,14,6
+768,Biology,92,8,2,13
+768,English,97,3,2,4
+768,History,54,7,1,15
+768,Computer Science,89,9,17,6
+769,Math,66,6,5,0
+769,Physics,74,0,14,0
+769,Chemistry,96,9,14,8
+769,Biology,43,6,7,3
+769,English,81,5,0,17
+769,History,67,0,8,6
+769,Computer Science,75,0,7,15
+770,Math,73,4,4,13
+770,Physics,99,6,16,8
+770,Chemistry,51,8,15,3
+770,Biology,42,2,11,3
+770,English,39,7,18,7
+770,History,35,3,6,13
+770,Computer Science,56,4,4,8
+771,Math,90,2,9,14
+771,Physics,50,0,5,2
+771,Chemistry,79,4,12,0
+771,Biology,78,9,2,18
+771,English,82,3,11,7
+771,History,76,3,0,15
+771,Computer Science,36,5,3,7
+772,Math,83,2,2,3
+772,Physics,82,1,10,15
+772,Chemistry,71,9,1,5
+772,Biology,75,1,9,16
+772,English,69,9,15,13
+772,History,62,9,11,16
+772,Computer Science,34,2,4,14
+773,Math,61,0,0,13
+773,Physics,97,8,8,16
+773,Chemistry,96,3,17,2
+773,Biology,80,5,3,16
+773,English,63,4,15,7
+773,History,69,9,13,10
+773,Computer Science,67,6,14,15
+774,Math,58,1,13,1
+774,Physics,83,1,2,7
+774,Chemistry,40,3,8,16
+774,Biology,85,0,14,19
+774,English,39,3,13,13
+774,History,51,3,17,14
+774,Computer Science,52,9,18,12
+775,Math,48,3,1,2
+775,Physics,34,6,8,1
+775,Chemistry,39,5,11,5
+775,Biology,64,9,8,19
+775,English,64,4,7,7
+775,History,83,0,10,15
+775,Computer Science,57,5,10,9
+776,Math,52,8,14,6
+776,Physics,62,1,1,9
+776,Chemistry,81,9,18,12
+776,Biology,63,4,12,0
+776,English,87,4,6,12
+776,History,81,6,5,19
+776,Computer Science,69,8,17,10
+777,Math,85,8,2,16
+777,Physics,54,0,2,18
+777,Chemistry,60,0,17,14
+777,Biology,30,9,9,7
+777,English,55,1,18,13
+777,History,30,8,14,19
+777,Computer Science,98,2,16,9
+778,Math,98,5,3,6
+778,Physics,48,6,13,16
+778,Chemistry,46,0,1,17
+778,Biology,95,3,15,3
+778,English,86,8,16,19
+778,History,31,2,14,6
+778,Computer Science,73,0,16,3
+779,Math,33,5,8,9
+779,Physics,56,2,18,14
+779,Chemistry,98,6,6,15
+779,Biology,38,0,2,7
+779,English,79,7,17,18
+779,History,68,8,19,5
+779,Computer Science,54,4,11,0
+780,Math,48,8,15,2
+780,Physics,40,9,1,19
+780,Chemistry,98,6,7,12
+780,Biology,63,7,7,18
+780,English,52,0,7,9
+780,History,98,5,8,9
+780,Computer Science,92,7,10,13
+781,Math,96,4,15,19
+781,Physics,36,0,19,10
+781,Chemistry,54,7,1,18
+781,Biology,87,4,10,18
+781,English,68,4,5,10
+781,History,43,3,7,8
+781,Computer Science,31,8,10,19
+782,Math,51,6,3,13
+782,Physics,87,7,0,11
+782,Chemistry,48,4,7,10
+782,Biology,97,3,11,19
+782,English,90,4,9,15
+782,History,84,7,19,7
+782,Computer Science,67,2,7,9
+783,Math,98,3,16,2
+783,Physics,79,7,11,15
+783,Chemistry,77,3,0,0
+783,Biology,51,3,19,2
+783,English,43,8,18,7
+783,History,33,0,10,4
+783,Computer Science,95,0,16,17
+784,Math,92,8,5,19
+784,Physics,96,7,2,0
+784,Chemistry,88,4,4,15
+784,Biology,77,7,11,12
+784,English,33,8,15,0
+784,History,66,4,4,18
+784,Computer Science,70,7,18,17
+785,Math,65,1,19,4
+785,Physics,47,7,0,18
+785,Chemistry,55,0,1,18
+785,Biology,91,1,1,5
+785,English,99,5,8,7
+785,History,85,5,8,11
+785,Computer Science,47,6,5,3
+786,Math,54,6,17,19
+786,Physics,34,1,9,7
+786,Chemistry,62,2,14,13
+786,Biology,94,4,7,6
+786,English,70,1,11,7
+786,History,59,5,2,1
+786,Computer Science,75,7,5,3
+787,Math,66,4,12,8
+787,Physics,74,8,15,11
+787,Chemistry,95,2,15,12
+787,Biology,98,6,5,16
+787,English,78,0,2,12
+787,History,67,5,12,13
+787,Computer Science,68,4,13,17
+788,Math,97,0,6,19
+788,Physics,97,2,7,19
+788,Chemistry,69,8,16,14
+788,Biology,65,5,5,9
+788,English,45,6,13,5
+788,History,47,5,14,0
+788,Computer Science,44,4,0,2
+789,Math,41,6,4,0
+789,Physics,40,8,12,18
+789,Chemistry,83,2,3,3
+789,Biology,32,9,5,4
+789,English,70,2,8,11
+789,History,79,3,9,17
+789,Computer Science,59,7,8,18
+790,Math,99,5,6,5
+790,Physics,80,8,11,12
+790,Chemistry,79,6,4,15
+790,Biology,51,3,0,3
+790,English,32,3,0,11
+790,History,42,1,8,6
+790,Computer Science,42,5,1,0
+791,Math,79,6,17,18
+791,Physics,37,6,11,10
+791,Chemistry,88,8,3,6
+791,Biology,40,1,17,11
+791,English,61,8,10,4
+791,History,62,7,4,5
+791,Computer Science,40,7,19,1
+792,Math,71,7,1,14
+792,Physics,99,4,2,10
+792,Chemistry,72,2,8,2
+792,Biology,72,1,6,9
+792,English,49,0,5,13
+792,History,95,5,0,2
+792,Computer Science,64,5,10,3
+793,Math,46,4,7,9
+793,Physics,36,0,6,18
+793,Chemistry,70,7,1,19
+793,Biology,35,9,12,1
+793,English,39,9,4,3
+793,History,79,0,10,17
+793,Computer Science,37,7,0,19
+794,Math,91,8,11,5
+794,Physics,73,0,14,5
+794,Chemistry,73,1,3,19
+794,Biology,86,4,11,2
+794,English,67,7,16,16
+794,History,92,6,6,1
+794,Computer Science,95,5,12,15
+795,Math,60,0,10,8
+795,Physics,56,7,8,13
+795,Chemistry,74,8,10,11
+795,Biology,51,2,0,7
+795,English,55,2,12,6
+795,History,74,9,5,2
+795,Computer Science,35,2,12,12
+796,Math,30,7,4,19
+796,Physics,46,8,12,12
+796,Chemistry,66,8,13,6
+796,Biology,71,9,14,19
+796,English,73,8,2,14
+796,History,30,4,6,11
+796,Computer Science,67,5,2,9
+797,Math,82,9,3,12
+797,Physics,80,4,17,0
+797,Chemistry,50,5,18,15
+797,Biology,30,3,19,9
+797,English,99,2,15,16
+797,History,73,2,19,2
+797,Computer Science,42,3,15,19
+798,Math,31,3,3,16
+798,Physics,30,0,4,11
+798,Chemistry,61,5,16,12
+798,Biology,69,7,11,14
+798,English,48,4,19,16
+798,History,50,1,1,10
+798,Computer Science,49,0,17,14
+799,Math,92,8,0,17
+799,Physics,88,5,7,6
+799,Chemistry,73,8,19,10
+799,Biology,44,2,12,12
+799,English,63,5,5,11
+799,History,97,4,7,5
+799,Computer Science,50,2,7,18
+800,Math,79,9,19,11
+800,Physics,82,4,17,8
+800,Chemistry,33,8,1,8
+800,Biology,38,1,10,12
+800,English,38,3,1,6
+800,History,44,8,5,10
+800,Computer Science,81,0,3,18
+801,Math,36,9,2,13
+801,Physics,31,1,4,12
+801,Chemistry,74,7,13,11
+801,Biology,82,1,12,3
+801,English,52,5,9,4
+801,History,69,1,7,15
+801,Computer Science,96,3,6,3
+802,Math,38,6,16,16
+802,Physics,92,3,13,13
+802,Chemistry,42,3,12,16
+802,Biology,76,1,10,3
+802,English,57,8,0,0
+802,History,65,3,0,11
+802,Computer Science,48,4,9,0
+803,Math,96,0,9,0
+803,Physics,76,2,19,11
+803,Chemistry,80,7,13,17
+803,Biology,84,0,1,11
+803,English,78,1,16,6
+803,History,35,5,7,4
+803,Computer Science,44,9,6,2
+804,Math,86,9,2,13
+804,Physics,51,2,0,0
+804,Chemistry,48,3,1,10
+804,Biology,42,2,19,19
+804,English,70,6,12,3
+804,History,72,0,13,12
+804,Computer Science,76,5,8,2
+805,Math,42,8,17,4
+805,Physics,72,1,16,19
+805,Chemistry,65,5,17,19
+805,Biology,48,4,2,11
+805,English,45,6,14,2
+805,History,60,7,11,17
+805,Computer Science,64,6,1,13
+806,Math,33,0,14,15
+806,Physics,98,7,16,6
+806,Chemistry,52,0,11,10
+806,Biology,58,4,15,3
+806,English,95,3,15,6
+806,History,86,8,11,2
+806,Computer Science,61,7,5,14
+807,Math,84,8,5,14
+807,Physics,59,9,18,12
+807,Chemistry,96,3,13,13
+807,Biology,69,9,8,13
+807,English,71,1,3,3
+807,History,79,7,2,17
+807,Computer Science,36,0,12,2
+808,Math,64,4,18,3
+808,Physics,42,2,15,6
+808,Chemistry,96,9,19,1
+808,Biology,54,0,15,16
+808,English,77,9,16,2
+808,History,48,4,1,11
+808,Computer Science,35,2,12,6
+809,Math,93,6,12,12
+809,Physics,94,2,18,14
+809,Chemistry,75,2,19,3
+809,Biology,90,6,0,18
+809,English,92,2,19,14
+809,History,51,6,0,12
+809,Computer Science,73,6,1,16
+810,Math,94,9,13,0
+810,Physics,55,2,10,6
+810,Chemistry,57,8,8,2
+810,Biology,80,9,1,4
+810,English,93,0,18,4
+810,History,82,6,7,7
+810,Computer Science,48,1,16,5
+811,Math,58,8,18,4
+811,Physics,70,8,6,3
+811,Chemistry,56,1,17,19
+811,Biology,78,3,15,4
+811,English,38,1,1,3
+811,History,49,0,19,18
+811,Computer Science,92,2,4,9
+812,Math,99,2,16,9
+812,Physics,53,0,17,18
+812,Chemistry,83,3,3,14
+812,Biology,67,1,14,18
+812,English,70,5,12,15
+812,History,51,2,16,4
+812,Computer Science,90,8,5,16
+813,Math,46,0,6,15
+813,Physics,66,3,10,13
+813,Chemistry,56,7,7,19
+813,Biology,76,1,6,18
+813,English,86,8,10,9
+813,History,77,7,0,11
+813,Computer Science,64,1,15,3
+814,Math,95,7,16,19
+814,Physics,37,1,17,17
+814,Chemistry,31,9,7,18
+814,Biology,39,9,14,9
+814,English,33,6,10,2
+814,History,66,9,1,11
+814,Computer Science,50,4,6,3
+815,Math,72,5,8,3
+815,Physics,91,5,8,11
+815,Chemistry,30,7,0,19
+815,Biology,97,6,13,8
+815,English,55,0,14,9
+815,History,46,8,3,13
+815,Computer Science,32,8,11,0
+816,Math,30,6,9,14
+816,Physics,69,7,13,12
+816,Chemistry,42,8,16,17
+816,Biology,90,2,12,11
+816,English,58,4,19,19
+816,History,60,7,10,6
+816,Computer Science,62,9,14,3
+817,Math,94,4,18,18
+817,Physics,63,6,12,19
+817,Chemistry,82,1,8,15
+817,Biology,69,7,17,3
+817,English,72,0,7,18
+817,History,84,1,14,0
+817,Computer Science,99,2,3,12
+818,Math,64,1,15,17
+818,Physics,47,5,17,10
+818,Chemistry,61,6,13,17
+818,Biology,69,7,13,17
+818,English,34,5,9,14
+818,History,67,8,9,16
+818,Computer Science,30,3,1,2
+819,Math,89,6,13,11
+819,Physics,90,0,2,14
+819,Chemistry,92,3,14,9
+819,Biology,74,6,0,10
+819,English,66,2,18,12
+819,History,36,7,13,18
+819,Computer Science,52,9,11,8
+820,Math,75,5,14,12
+820,Physics,36,9,0,6
+820,Chemistry,79,6,2,8
+820,Biology,58,4,12,15
+820,English,45,1,10,16
+820,History,35,1,18,19
+820,Computer Science,80,1,2,13
+821,Math,83,0,5,18
+821,Physics,70,3,6,3
+821,Chemistry,95,9,5,7
+821,Biology,92,5,1,19
+821,English,62,6,17,9
+821,History,66,7,10,7
+821,Computer Science,92,4,7,5
+822,Math,66,3,11,19
+822,Physics,62,2,7,11
+822,Chemistry,64,8,7,18
+822,Biology,91,5,17,10
+822,English,41,6,1,4
+822,History,33,8,12,12
+822,Computer Science,63,6,12,6
+823,Math,61,6,16,7
+823,Physics,76,4,1,15
+823,Chemistry,58,4,5,11
+823,Biology,34,3,7,10
+823,English,31,2,12,16
+823,History,64,9,7,3
+823,Computer Science,68,4,16,9
+824,Math,33,6,13,4
+824,Physics,95,7,17,10
+824,Chemistry,47,4,3,0
+824,Biology,71,2,3,19
+824,English,96,8,3,14
+824,History,88,3,5,7
+824,Computer Science,52,3,3,4
+825,Math,71,4,11,0
+825,Physics,71,4,18,18
+825,Chemistry,61,6,15,4
+825,Biology,75,4,13,4
+825,English,51,6,4,17
+825,History,81,0,6,16
+825,Computer Science,32,9,6,11
+826,Math,83,6,15,7
+826,Physics,99,3,10,16
+826,Chemistry,63,5,3,2
+826,Biology,68,1,7,14
+826,English,92,0,9,6
+826,History,41,2,18,13
+826,Computer Science,90,4,19,5
+827,Math,75,3,0,12
+827,Physics,96,0,17,9
+827,Chemistry,45,4,12,19
+827,Biology,65,7,11,18
+827,English,76,3,17,11
+827,History,54,3,10,19
+827,Computer Science,63,5,11,6
+828,Math,65,6,12,10
+828,Physics,60,1,17,9
+828,Chemistry,60,5,3,18
+828,Biology,43,1,16,17
+828,English,79,4,8,0
+828,History,97,9,6,10
+828,Computer Science,43,9,18,7
+829,Math,32,7,17,4
+829,Physics,72,8,18,11
+829,Chemistry,56,4,15,12
+829,Biology,77,1,16,11
+829,English,88,0,6,13
+829,History,57,1,0,19
+829,Computer Science,44,3,14,15
+830,Math,44,0,10,17
+830,Physics,89,1,7,8
+830,Chemistry,40,0,0,10
+830,Biology,37,2,3,3
+830,English,48,7,8,16
+830,History,75,3,9,13
+830,Computer Science,36,5,15,4
+831,Math,65,7,6,10
+831,Physics,72,9,16,13
+831,Chemistry,63,3,7,1
+831,Biology,50,4,5,16
+831,English,48,4,18,13
+831,History,39,5,4,6
+831,Computer Science,39,2,12,1
+832,Math,65,2,14,3
+832,Physics,84,4,3,14
+832,Chemistry,35,6,4,11
+832,Biology,68,2,6,11
+832,English,44,2,5,7
+832,History,58,5,2,4
+832,Computer Science,70,7,15,15
+833,Math,47,8,9,9
+833,Physics,35,8,11,3
+833,Chemistry,63,2,0,3
+833,Biology,73,1,11,15
+833,English,95,0,1,3
+833,History,99,6,6,14
+833,Computer Science,75,2,16,6
+834,Math,70,9,19,11
+834,Physics,44,4,12,8
+834,Chemistry,94,9,5,14
+834,Biology,44,8,12,0
+834,English,38,2,8,19
+834,History,54,7,6,3
+834,Computer Science,49,0,3,18
+835,Math,89,4,15,2
+835,Physics,48,4,13,15
+835,Chemistry,85,5,4,16
+835,Biology,63,3,5,6
+835,English,78,7,0,14
+835,History,73,6,14,8
+835,Computer Science,77,1,14,14
+836,Math,56,6,12,16
+836,Physics,88,9,0,13
+836,Chemistry,66,7,0,6
+836,Biology,63,6,6,8
+836,English,84,6,19,17
+836,History,72,8,13,7
+836,Computer Science,82,4,16,13
+837,Math,55,7,4,9
+837,Physics,72,9,5,9
+837,Chemistry,96,6,1,6
+837,Biology,87,4,8,12
+837,English,76,0,7,8
+837,History,69,3,6,16
+837,Computer Science,34,0,7,0
+838,Math,60,2,12,7
+838,Physics,59,6,14,1
+838,Chemistry,85,1,9,4
+838,Biology,97,0,0,17
+838,English,66,6,1,6
+838,History,38,1,3,1
+838,Computer Science,62,8,11,12
+839,Math,66,2,3,16
+839,Physics,80,7,11,17
+839,Chemistry,70,4,16,12
+839,Biology,67,7,13,14
+839,English,84,3,17,0
+839,History,93,5,8,9
+839,Computer Science,89,1,16,18
+840,Math,65,6,8,7
+840,Physics,54,6,9,7
+840,Chemistry,60,8,1,11
+840,Biology,56,6,12,3
+840,English,94,0,2,16
+840,History,96,9,1,3
+840,Computer Science,58,3,1,1
+841,Math,34,8,19,16
+841,Physics,41,1,2,4
+841,Chemistry,89,4,19,13
+841,Biology,77,9,18,8
+841,English,46,5,6,9
+841,History,97,9,2,8
+841,Computer Science,42,0,14,14
+842,Math,60,9,6,0
+842,Physics,36,4,15,7
+842,Chemistry,69,3,14,6
+842,Biology,69,1,8,5
+842,English,94,2,9,4
+842,History,62,8,12,18
+842,Computer Science,55,7,18,6
+843,Math,84,3,9,0
+843,Physics,74,8,4,0
+843,Chemistry,95,3,8,4
+843,Biology,37,1,6,16
+843,English,87,8,2,12
+843,History,81,3,2,1
+843,Computer Science,98,7,15,17
+844,Math,54,9,15,0
+844,Physics,37,4,1,4
+844,Chemistry,58,2,6,3
+844,Biology,40,9,11,14
+844,English,67,9,0,17
+844,History,75,7,6,9
+844,Computer Science,95,7,0,19
+845,Math,60,1,6,15
+845,Physics,51,3,16,3
+845,Chemistry,90,9,2,8
+845,Biology,81,2,11,14
+845,English,90,3,7,11
+845,History,50,0,11,19
+845,Computer Science,59,1,15,2
+846,Math,91,8,6,18
+846,Physics,39,3,11,7
+846,Chemistry,91,2,18,10
+846,Biology,37,9,12,9
+846,English,47,6,10,9
+846,History,32,6,3,7
+846,Computer Science,37,5,12,11
+847,Math,64,5,18,10
+847,Physics,95,0,1,6
+847,Chemistry,55,4,15,18
+847,Biology,33,1,9,4
+847,English,47,3,0,17
+847,History,99,3,19,13
+847,Computer Science,56,9,9,17
+848,Math,41,9,18,5
+848,Physics,75,8,7,13
+848,Chemistry,60,7,15,19
+848,Biology,67,4,11,1
+848,English,48,4,8,12
+848,History,61,8,13,4
+848,Computer Science,95,6,15,10
+849,Math,60,7,15,0
+849,Physics,40,3,3,14
+849,Chemistry,88,2,18,1
+849,Biology,35,5,7,16
+849,English,34,1,11,4
+849,History,89,8,19,7
+849,Computer Science,30,7,5,10
+850,Math,32,7,4,15
+850,Physics,60,6,5,8
+850,Chemistry,68,2,10,11
+850,Biology,62,7,1,13
+850,English,42,7,4,1
+850,History,48,0,10,15
+850,Computer Science,81,1,19,7
+851,Math,78,2,6,11
+851,Physics,83,5,2,18
+851,Chemistry,39,7,15,15
+851,Biology,58,6,4,19
+851,English,67,8,5,7
+851,History,46,5,13,1
+851,Computer Science,48,5,17,3
+852,Math,66,5,14,5
+852,Physics,69,8,5,1
+852,Chemistry,81,0,15,0
+852,Biology,30,6,15,16
+852,English,51,5,2,7
+852,History,56,3,3,16
+852,Computer Science,98,8,13,14
+853,Math,41,7,17,13
+853,Physics,85,2,6,5
+853,Chemistry,98,3,17,13
+853,Biology,52,6,19,13
+853,English,98,5,10,11
+853,History,47,3,12,19
+853,Computer Science,65,6,6,1
+854,Math,50,5,15,2
+854,Physics,76,4,19,9
+854,Chemistry,70,7,11,6
+854,Biology,46,8,8,12
+854,English,77,2,4,16
+854,History,57,0,8,16
+854,Computer Science,90,4,7,7
+855,Math,54,2,0,12
+855,Physics,97,6,0,1
+855,Chemistry,75,4,13,16
+855,Biology,81,2,1,14
+855,English,52,5,1,6
+855,History,36,7,6,13
+855,Computer Science,58,8,1,1
+856,Math,76,9,2,16
+856,Physics,61,2,16,19
+856,Chemistry,59,0,15,19
+856,Biology,37,6,11,0
+856,English,87,8,5,15
+856,History,84,2,2,4
+856,Computer Science,64,2,4,13
+857,Math,45,8,0,16
+857,Physics,72,8,3,1
+857,Chemistry,89,8,4,3
+857,Biology,98,7,17,12
+857,English,66,9,18,2
+857,History,92,5,17,5
+857,Computer Science,35,7,4,0
+858,Math,92,7,0,5
+858,Physics,81,1,3,12
+858,Chemistry,36,5,2,8
+858,Biology,92,4,13,18
+858,English,37,6,6,2
+858,History,96,1,12,0
+858,Computer Science,65,1,16,13
+859,Math,75,2,5,12
+859,Physics,79,9,14,6
+859,Chemistry,70,4,1,14
+859,Biology,85,9,9,19
+859,English,39,6,13,12
+859,History,98,2,9,7
+859,Computer Science,79,0,4,10
+860,Math,77,9,14,6
+860,Physics,76,8,15,5
+860,Chemistry,40,0,14,15
+860,Biology,85,1,3,18
+860,English,67,1,10,8
+860,History,32,1,17,14
+860,Computer Science,83,1,18,14
+861,Math,46,1,17,10
+861,Physics,42,3,17,4
+861,Chemistry,43,8,11,6
+861,Biology,41,7,2,0
+861,English,32,1,6,8
+861,History,65,6,9,17
+861,Computer Science,84,2,2,7
+862,Math,56,2,8,18
+862,Physics,93,0,12,1
+862,Chemistry,65,1,3,3
+862,Biology,93,0,10,1
+862,English,69,6,19,3
+862,History,66,4,14,16
+862,Computer Science,96,1,10,5
+863,Math,73,5,16,13
+863,Physics,71,1,19,5
+863,Chemistry,64,2,15,3
+863,Biology,81,3,3,6
+863,English,50,1,15,6
+863,History,38,4,16,0
+863,Computer Science,41,8,12,10
+864,Math,42,5,5,19
+864,Physics,39,2,2,6
+864,Chemistry,66,7,4,11
+864,Biology,96,6,7,14
+864,English,78,2,3,15
+864,History,55,3,11,16
+864,Computer Science,87,8,11,14
+865,Math,58,8,13,3
+865,Physics,33,5,4,16
+865,Chemistry,42,3,16,18
+865,Biology,84,0,16,2
+865,English,41,5,19,1
+865,History,33,6,16,5
+865,Computer Science,80,7,0,9
+866,Math,48,2,8,7
+866,Physics,40,5,1,0
+866,Chemistry,93,6,17,13
+866,Biology,95,2,8,7
+866,English,71,8,7,6
+866,History,51,7,5,1
+866,Computer Science,70,8,18,8
+867,Math,31,2,15,13
+867,Physics,85,0,12,1
+867,Chemistry,75,0,14,17
+867,Biology,51,7,6,8
+867,English,70,3,6,6
+867,History,33,9,16,19
+867,Computer Science,55,2,8,4
+868,Math,81,7,15,18
+868,Physics,45,1,14,17
+868,Chemistry,85,4,7,15
+868,Biology,94,1,18,4
+868,English,32,9,7,3
+868,History,58,8,13,0
+868,Computer Science,52,5,14,14
+869,Math,69,1,13,15
+869,Physics,39,6,3,11
+869,Chemistry,71,1,3,19
+869,Biology,35,6,2,14
+869,English,87,0,18,0
+869,History,42,7,17,2
+869,Computer Science,55,8,5,19
+870,Math,95,9,3,17
+870,Physics,36,4,7,10
+870,Chemistry,59,3,19,14
+870,Biology,85,2,6,7
+870,English,72,9,19,8
+870,History,76,9,19,4
+870,Computer Science,44,3,4,14
+871,Math,78,6,7,18
+871,Physics,39,4,9,0
+871,Chemistry,86,5,3,4
+871,Biology,84,4,19,7
+871,English,30,5,17,11
+871,History,64,3,13,15
+871,Computer Science,62,2,1,12
+872,Math,54,7,2,18
+872,Physics,75,5,17,9
+872,Chemistry,77,7,5,18
+872,Biology,74,0,1,12
+872,English,95,8,10,12
+872,History,60,9,14,0
+872,Computer Science,60,9,17,10
+873,Math,76,2,1,7
+873,Physics,60,7,10,15
+873,Chemistry,31,5,4,6
+873,Biology,49,1,2,8
+873,English,71,7,12,12
+873,History,46,4,6,1
+873,Computer Science,79,9,0,13
+874,Math,88,2,15,18
+874,Physics,32,6,2,16
+874,Chemistry,44,2,18,10
+874,Biology,88,4,19,1
+874,English,36,9,11,17
+874,History,52,5,19,7
+874,Computer Science,96,1,5,6
+875,Math,65,7,11,16
+875,Physics,51,5,18,8
+875,Chemistry,52,9,18,10
+875,Biology,49,5,12,3
+875,English,76,8,9,6
+875,History,53,1,6,7
+875,Computer Science,67,4,7,19
+876,Math,70,4,5,18
+876,Physics,66,4,17,5
+876,Chemistry,38,6,13,1
+876,Biology,58,8,18,9
+876,English,98,6,3,6
+876,History,85,9,9,3
+876,Computer Science,44,4,10,18
+877,Math,64,4,16,17
+877,Physics,80,0,8,13
+877,Chemistry,49,4,10,1
+877,Biology,53,6,4,14
+877,English,41,4,8,19
+877,History,73,2,14,7
+877,Computer Science,92,9,6,16
+878,Math,41,3,17,17
+878,Physics,89,2,18,14
+878,Chemistry,45,5,16,0
+878,Biology,35,6,8,19
+878,English,91,9,5,11
+878,History,48,3,8,13
+878,Computer Science,78,4,18,1
+879,Math,74,1,0,2
+879,Physics,73,6,0,8
+879,Chemistry,59,1,19,5
+879,Biology,60,7,17,14
+879,English,30,1,18,18
+879,History,93,3,5,16
+879,Computer Science,75,7,9,8
+880,Math,84,3,5,5
+880,Physics,97,5,7,4
+880,Chemistry,95,8,10,19
+880,Biology,72,6,13,5
+880,English,65,5,2,5
+880,History,32,0,17,3
+880,Computer Science,99,0,17,5
+881,Math,63,3,15,19
+881,Physics,71,8,9,6
+881,Chemistry,68,0,10,2
+881,Biology,51,3,7,13
+881,English,43,3,18,4
+881,History,41,4,9,16
+881,Computer Science,39,3,12,15
+882,Math,45,9,2,13
+882,Physics,74,3,3,5
+882,Chemistry,53,2,10,7
+882,Biology,75,7,13,6
+882,English,47,1,11,9
+882,History,41,7,5,18
+882,Computer Science,62,5,15,17
+883,Math,41,8,4,12
+883,Physics,32,8,19,3
+883,Chemistry,74,1,18,3
+883,Biology,52,2,7,7
+883,English,45,9,10,17
+883,History,65,7,0,0
+883,Computer Science,93,3,10,17
+884,Math,45,0,1,3
+884,Physics,31,7,18,8
+884,Chemistry,39,4,18,4
+884,Biology,43,9,15,5
+884,English,95,1,19,7
+884,History,78,9,4,16
+884,Computer Science,97,0,5,0
+885,Math,57,7,3,1
+885,Physics,78,2,6,9
+885,Chemistry,98,6,1,14
+885,Biology,61,3,15,11
+885,English,89,4,15,15
+885,History,73,1,13,10
+885,Computer Science,83,6,11,16
+886,Math,38,5,11,19
+886,Physics,41,0,1,18
+886,Chemistry,62,1,17,12
+886,Biology,83,8,4,8
+886,English,42,9,15,13
+886,History,31,8,18,10
+886,Computer Science,48,8,6,14
+887,Math,60,7,7,3
+887,Physics,79,4,17,3
+887,Chemistry,63,4,5,10
+887,Biology,79,4,10,18
+887,English,30,0,7,15
+887,History,55,9,10,18
+887,Computer Science,44,7,13,0
+888,Math,36,1,11,1
+888,Physics,79,4,6,19
+888,Chemistry,41,3,13,9
+888,Biology,52,9,19,9
+888,English,48,2,11,11
+888,History,88,3,3,0
+888,Computer Science,94,2,11,8
+889,Math,65,1,8,19
+889,Physics,43,2,17,8
+889,Chemistry,88,7,9,16
+889,Biology,74,0,10,4
+889,English,38,6,6,1
+889,History,49,1,9,4
+889,Computer Science,84,8,4,14
+890,Math,77,3,13,16
+890,Physics,50,9,8,1
+890,Chemistry,64,7,15,18
+890,Biology,66,5,17,17
+890,English,80,1,16,0
+890,History,38,3,4,17
+890,Computer Science,57,9,3,12
+891,Math,46,7,3,2
+891,Physics,38,4,4,18
+891,Chemistry,56,8,11,8
+891,Biology,56,9,8,9
+891,English,48,5,6,14
+891,History,83,2,13,15
+891,Computer Science,75,8,19,1
+892,Math,64,5,4,13
+892,Physics,90,1,16,8
+892,Chemistry,48,6,8,15
+892,Biology,55,5,7,2
+892,English,98,6,0,3
+892,History,87,0,3,9
+892,Computer Science,33,0,0,16
+893,Math,56,9,4,6
+893,Physics,93,8,7,1
+893,Chemistry,33,9,10,4
+893,Biology,88,4,3,12
+893,English,51,0,17,3
+893,History,81,5,3,3
+893,Computer Science,72,8,13,3
+894,Math,42,5,12,2
+894,Physics,84,6,0,10
+894,Chemistry,31,4,13,12
+894,Biology,60,2,5,8
+894,English,64,5,6,4
+894,History,58,7,7,6
+894,Computer Science,52,3,9,12
+895,Math,97,2,9,6
+895,Physics,34,2,1,10
+895,Chemistry,71,6,12,6
+895,Biology,97,5,19,15
+895,English,35,8,12,6
+895,History,79,5,4,12
+895,Computer Science,44,2,8,5
+896,Math,52,8,13,9
+896,Physics,61,0,18,12
+896,Chemistry,70,0,0,4
+896,Biology,69,1,3,0
+896,English,81,3,8,19
+896,History,85,2,1,4
+896,Computer Science,85,0,10,11
+897,Math,87,2,15,13
+897,Physics,41,3,15,7
+897,Chemistry,78,0,6,14
+897,Biology,65,7,9,14
+897,English,91,1,13,4
+897,History,90,8,18,10
+897,Computer Science,73,2,1,14
+898,Math,68,3,4,15
+898,Physics,44,8,3,5
+898,Chemistry,54,5,4,1
+898,Biology,45,5,14,17
+898,English,42,7,12,0
+898,History,65,0,17,15
+898,Computer Science,72,5,16,3
+899,Math,43,3,7,1
+899,Physics,33,9,19,2
+899,Chemistry,44,3,0,14
+899,Biology,51,1,15,8
+899,English,80,0,9,18
+899,History,80,4,1,14
+899,Computer Science,78,9,1,8
+900,Math,79,4,19,5
+900,Physics,79,3,11,8
+900,Chemistry,60,1,15,0
+900,Biology,33,3,0,19
+900,English,76,2,12,17
+900,History,74,9,19,6
+900,Computer Science,86,7,0,17
+901,Math,73,1,11,19
+901,Physics,63,3,14,16
+901,Chemistry,38,0,14,4
+901,Biology,57,1,3,1
+901,English,48,4,3,4
+901,History,80,8,15,13
+901,Computer Science,83,0,19,3
+902,Math,75,5,11,3
+902,Physics,94,5,12,15
+902,Chemistry,36,8,15,8
+902,Biology,91,7,6,11
+902,English,96,2,10,4
+902,History,84,9,6,16
+902,Computer Science,61,7,16,12
+903,Math,91,3,17,4
+903,Physics,35,3,13,11
+903,Chemistry,58,3,6,10
+903,Biology,63,3,6,0
+903,English,44,3,7,4
+903,History,79,2,1,15
+903,Computer Science,75,0,2,4
+904,Math,93,2,14,4
+904,Physics,83,2,5,13
+904,Chemistry,85,1,17,5
+904,Biology,85,4,13,16
+904,English,40,0,9,8
+904,History,73,9,0,17
+904,Computer Science,41,1,0,0
+905,Math,62,5,11,6
+905,Physics,65,4,19,3
+905,Chemistry,55,0,5,13
+905,Biology,75,9,6,11
+905,English,92,7,18,8
+905,History,33,9,13,5
+905,Computer Science,57,7,18,9
+906,Math,98,4,4,8
+906,Physics,90,6,8,14
+906,Chemistry,38,5,19,7
+906,Biology,63,4,16,9
+906,English,43,1,0,1
+906,History,46,4,14,3
+906,Computer Science,68,9,3,19
+907,Math,87,4,4,10
+907,Physics,93,2,4,7
+907,Chemistry,69,4,17,8
+907,Biology,31,0,5,2
+907,English,46,5,7,5
+907,History,89,5,16,2
+907,Computer Science,52,8,5,6
+908,Math,70,4,14,3
+908,Physics,98,6,2,3
+908,Chemistry,44,1,4,6
+908,Biology,61,7,8,9
+908,English,94,7,18,11
+908,History,67,9,4,6
+908,Computer Science,84,8,8,14
+909,Math,67,6,14,1
+909,Physics,90,7,11,10
+909,Chemistry,35,3,12,15
+909,Biology,42,3,19,9
+909,English,93,8,19,15
+909,History,90,0,7,10
+909,Computer Science,98,4,15,7
+910,Math,97,5,7,8
+910,Physics,74,0,8,12
+910,Chemistry,38,5,9,4
+910,Biology,53,8,9,10
+910,English,64,7,16,6
+910,History,41,4,12,17
+910,Computer Science,53,4,13,10
+911,Math,88,6,11,2
+911,Physics,89,1,3,17
+911,Chemistry,49,4,13,7
+911,Biology,31,9,18,9
+911,English,57,4,10,8
+911,History,34,8,19,4
+911,Computer Science,44,8,3,3
+912,Math,56,4,6,14
+912,Physics,83,0,17,6
+912,Chemistry,57,9,12,1
+912,Biology,89,4,5,2
+912,English,94,2,2,3
+912,History,44,1,11,3
+912,Computer Science,40,5,18,17
+913,Math,96,0,0,1
+913,Physics,59,2,8,7
+913,Chemistry,73,8,6,15
+913,Biology,82,0,10,3
+913,English,48,1,1,16
+913,History,83,0,9,14
+913,Computer Science,44,8,1,13
+914,Math,38,1,1,17
+914,Physics,46,8,7,1
+914,Chemistry,63,4,11,15
+914,Biology,81,1,7,3
+914,English,81,8,19,18
+914,History,77,7,11,2
+914,Computer Science,74,1,12,7
+915,Math,76,7,8,10
+915,Physics,51,4,2,6
+915,Chemistry,43,8,19,10
+915,Biology,48,1,12,10
+915,English,30,5,1,12
+915,History,80,6,0,7
+915,Computer Science,84,9,13,15
+916,Math,97,1,13,8
+916,Physics,32,3,17,13
+916,Chemistry,70,7,16,8
+916,Biology,74,4,8,15
+916,English,53,6,6,11
+916,History,87,1,17,17
+916,Computer Science,58,1,13,3
+917,Math,68,8,7,8
+917,Physics,51,1,16,15
+917,Chemistry,97,3,10,7
+917,Biology,71,6,8,2
+917,English,86,1,8,12
+917,History,99,3,13,10
+917,Computer Science,90,9,2,4
+918,Math,86,6,10,11
+918,Physics,72,2,12,3
+918,Chemistry,88,1,7,18
+918,Biology,50,4,0,4
+918,English,66,2,4,8
+918,History,41,2,14,16
+918,Computer Science,44,2,16,12
+919,Math,88,8,12,15
+919,Physics,48,8,2,17
+919,Chemistry,43,7,16,19
+919,Biology,61,3,13,4
+919,English,65,0,13,6
+919,History,95,9,2,7
+919,Computer Science,71,7,13,17
+920,Math,70,3,2,13
+920,Physics,43,4,15,4
+920,Chemistry,58,6,14,8
+920,Biology,90,6,7,11
+920,English,45,9,5,4
+920,History,62,8,17,5
+920,Computer Science,45,7,18,4
+921,Math,43,6,3,0
+921,Physics,65,6,15,6
+921,Chemistry,71,9,3,11
+921,Biology,42,4,0,7
+921,English,61,4,6,2
+921,History,53,4,1,1
+921,Computer Science,71,3,8,17
+922,Math,49,5,9,8
+922,Physics,70,2,11,10
+922,Chemistry,75,8,18,9
+922,Biology,80,4,8,0
+922,English,44,7,3,6
+922,History,99,5,6,19
+922,Computer Science,32,4,12,1
+923,Math,74,8,18,17
+923,Physics,39,4,16,2
+923,Chemistry,36,8,4,3
+923,Biology,96,9,12,8
+923,English,59,6,6,7
+923,History,62,3,0,18
+923,Computer Science,63,6,12,13
+924,Math,66,2,16,0
+924,Physics,35,0,3,5
+924,Chemistry,30,8,3,8
+924,Biology,83,6,16,2
+924,English,87,9,5,19
+924,History,90,8,14,13
+924,Computer Science,60,3,10,1
+925,Math,45,2,15,6
+925,Physics,72,3,15,15
+925,Chemistry,98,0,4,13
+925,Biology,63,7,17,14
+925,English,54,1,18,7
+925,History,44,3,13,2
+925,Computer Science,78,2,12,17
+926,Math,30,6,4,1
+926,Physics,46,4,9,3
+926,Chemistry,93,4,10,11
+926,Biology,41,1,3,8
+926,English,80,7,12,1
+926,History,34,9,9,16
+926,Computer Science,81,0,0,14
+927,Math,78,5,4,3
+927,Physics,50,7,8,15
+927,Chemistry,47,5,2,14
+927,Biology,73,0,3,7
+927,English,80,4,4,10
+927,History,60,7,16,16
+927,Computer Science,53,9,0,3
+928,Math,38,1,2,5
+928,Physics,74,9,2,19
+928,Chemistry,70,8,9,11
+928,Biology,82,4,16,4
+928,English,37,1,10,9
+928,History,99,2,16,9
+928,Computer Science,66,9,4,0
+929,Math,31,4,18,14
+929,Physics,30,1,2,8
+929,Chemistry,53,3,12,8
+929,Biology,96,5,7,6
+929,English,54,4,17,15
+929,History,76,1,19,3
+929,Computer Science,56,0,9,19
+930,Math,77,7,2,8
+930,Physics,69,6,6,16
+930,Chemistry,66,6,12,17
+930,Biology,51,1,2,16
+930,English,48,6,3,14
+930,History,92,7,7,15
+930,Computer Science,62,8,15,1
+931,Math,95,7,11,10
+931,Physics,67,2,17,4
+931,Chemistry,69,5,11,18
+931,Biology,41,8,9,16
+931,English,79,3,17,2
+931,History,45,7,8,5
+931,Computer Science,97,1,9,10
+932,Math,55,3,5,1
+932,Physics,95,8,12,6
+932,Chemistry,54,9,4,16
+932,Biology,44,2,3,14
+932,English,79,2,6,7
+932,History,72,8,8,19
+932,Computer Science,98,0,13,2
+933,Math,90,9,9,2
+933,Physics,58,5,4,18
+933,Chemistry,75,0,11,8
+933,Biology,55,8,2,17
+933,English,65,7,5,14
+933,History,78,7,4,5
+933,Computer Science,82,9,4,18
+934,Math,65,4,10,1
+934,Physics,51,1,19,11
+934,Chemistry,46,3,13,6
+934,Biology,45,7,1,18
+934,English,30,6,3,10
+934,History,78,8,16,2
+934,Computer Science,89,1,14,14
+935,Math,92,3,0,0
+935,Physics,65,3,7,12
+935,Chemistry,69,8,0,8
+935,Biology,55,7,0,6
+935,English,90,8,15,16
+935,History,70,5,19,11
+935,Computer Science,45,4,14,6
+936,Math,71,3,2,17
+936,Physics,30,5,17,7
+936,Chemistry,40,9,3,3
+936,Biology,65,7,12,7
+936,English,64,1,14,13
+936,History,70,4,14,7
+936,Computer Science,32,4,8,19
+937,Math,96,6,7,12
+937,Physics,37,4,6,4
+937,Chemistry,34,7,11,3
+937,Biology,70,5,13,18
+937,English,97,0,0,10
+937,History,45,3,6,11
+937,Computer Science,38,9,7,13
+938,Math,91,5,4,14
+938,Physics,35,0,19,8
+938,Chemistry,65,1,5,1
+938,Biology,32,6,19,16
+938,English,93,8,8,18
+938,History,34,8,5,17
+938,Computer Science,92,0,16,13
+939,Math,44,4,16,10
+939,Physics,39,0,0,4
+939,Chemistry,36,7,17,0
+939,Biology,49,3,11,0
+939,English,30,2,11,12
+939,History,90,4,8,17
+939,Computer Science,62,5,4,3
+940,Math,64,0,10,3
+940,Physics,54,3,0,3
+940,Chemistry,52,2,9,0
+940,Biology,88,3,18,0
+940,English,77,2,19,17
+940,History,95,5,0,18
+940,Computer Science,66,1,0,15
+941,Math,50,1,3,2
+941,Physics,52,0,14,9
+941,Chemistry,73,3,6,9
+941,Biology,90,4,19,19
+941,English,91,1,15,11
+941,History,45,3,1,9
+941,Computer Science,60,2,14,0
+942,Math,81,3,19,8
+942,Physics,67,2,1,17
+942,Chemistry,36,2,17,19
+942,Biology,89,5,12,4
+942,English,68,4,3,4
+942,History,45,3,7,15
+942,Computer Science,37,0,13,11
+943,Math,96,3,1,12
+943,Physics,50,7,11,17
+943,Chemistry,70,6,5,13
+943,Biology,79,4,19,12
+943,English,30,2,9,4
+943,History,99,4,2,13
+943,Computer Science,82,3,16,16
+944,Math,44,6,3,16
+944,Physics,40,0,7,11
+944,Chemistry,72,2,6,2
+944,Biology,77,9,6,19
+944,English,44,4,9,11
+944,History,47,6,8,8
+944,Computer Science,98,6,6,10
+945,Math,40,7,17,11
+945,Physics,45,3,16,16
+945,Chemistry,60,2,16,10
+945,Biology,30,1,16,8
+945,English,49,6,4,15
+945,History,68,6,16,16
+945,Computer Science,48,9,1,13
+946,Math,96,6,10,16
+946,Physics,44,2,10,14
+946,Chemistry,34,2,4,12
+946,Biology,79,3,16,14
+946,English,58,3,16,19
+946,History,35,5,7,8
+946,Computer Science,61,7,0,12
+947,Math,99,0,7,5
+947,Physics,45,0,9,17
+947,Chemistry,43,7,4,16
+947,Biology,79,3,19,1
+947,English,74,2,5,19
+947,History,78,8,17,0
+947,Computer Science,88,6,12,18
+948,Math,42,9,13,8
+948,Physics,40,2,7,11
+948,Chemistry,64,6,13,6
+948,Biology,61,6,13,11
+948,English,94,4,10,0
+948,History,84,7,16,2
+948,Computer Science,61,2,6,19
+949,Math,57,2,11,9
+949,Physics,44,5,18,4
+949,Chemistry,86,3,1,18
+949,Biology,89,2,3,19
+949,English,68,3,10,2
+949,History,66,3,14,17
+949,Computer Science,71,0,10,16
+950,Math,53,8,6,5
+950,Physics,76,6,2,13
+950,Chemistry,91,8,2,5
+950,Biology,49,8,0,8
+950,English,73,3,15,4
+950,History,88,0,16,5
+950,Computer Science,87,0,12,15
+951,Math,63,2,1,11
+951,Physics,41,9,7,11
+951,Chemistry,53,1,0,3
+951,Biology,88,6,9,19
+951,English,98,5,16,14
+951,History,68,7,1,17
+951,Computer Science,56,4,6,19
+952,Math,77,2,8,11
+952,Physics,31,0,10,17
+952,Chemistry,32,4,13,14
+952,Biology,80,9,8,9
+952,English,84,3,18,9
+952,History,46,8,0,10
+952,Computer Science,42,0,0,15
+953,Math,77,0,8,5
+953,Physics,76,3,14,9
+953,Chemistry,86,2,19,3
+953,Biology,58,6,10,2
+953,English,85,7,16,4
+953,History,37,7,11,15
+953,Computer Science,63,2,17,16
+954,Math,31,9,11,16
+954,Physics,78,1,7,13
+954,Chemistry,99,8,0,4
+954,Biology,38,8,3,19
+954,English,32,7,13,8
+954,History,59,2,5,2
+954,Computer Science,79,2,1,1
+955,Math,56,6,9,14
+955,Physics,69,1,10,6
+955,Chemistry,48,8,6,1
+955,Biology,67,4,13,17
+955,English,65,3,12,0
+955,History,49,4,2,18
+955,Computer Science,36,9,2,1
+956,Math,83,9,18,12
+956,Physics,71,4,14,2
+956,Chemistry,37,5,18,16
+956,Biology,39,0,12,9
+956,English,41,1,9,0
+956,History,81,9,14,0
+956,Computer Science,55,4,8,6
+957,Math,45,9,17,8
+957,Physics,53,9,9,8
+957,Chemistry,32,6,15,11
+957,Biology,59,8,2,4
+957,English,89,7,5,8
+957,History,90,2,6,12
+957,Computer Science,92,4,15,3
+958,Math,34,3,18,5
+958,Physics,65,8,0,16
+958,Chemistry,70,6,1,10
+958,Biology,55,4,12,19
+958,English,46,8,14,11
+958,History,49,1,14,14
+958,Computer Science,80,6,13,6
+959,Math,43,4,14,14
+959,Physics,30,1,9,17
+959,Chemistry,87,8,13,12
+959,Biology,81,3,13,10
+959,English,42,0,2,0
+959,History,82,4,12,4
+959,Computer Science,63,6,15,16
+960,Math,91,4,11,14
+960,Physics,57,5,12,10
+960,Chemistry,59,9,16,8
+960,Biology,86,0,19,17
+960,English,42,7,12,11
+960,History,75,8,8,13
+960,Computer Science,30,8,3,11
+961,Math,64,5,2,0
+961,Physics,87,5,2,13
+961,Chemistry,95,9,9,12
+961,Biology,59,3,3,18
+961,English,51,0,10,15
+961,History,48,2,11,2
+961,Computer Science,85,1,16,4
+962,Math,53,2,5,2
+962,Physics,99,3,10,6
+962,Chemistry,88,9,0,15
+962,Biology,77,0,14,8
+962,English,34,3,7,0
+962,History,92,3,12,12
+962,Computer Science,92,0,11,2
+963,Math,87,0,3,5
+963,Physics,66,3,12,10
+963,Chemistry,88,5,18,14
+963,Biology,62,5,19,11
+963,English,46,1,7,13
+963,History,66,5,1,10
+963,Computer Science,87,2,15,15
+964,Math,78,8,16,9
+964,Physics,69,6,13,17
+964,Chemistry,50,2,17,13
+964,Biology,38,1,12,16
+964,English,54,5,15,10
+964,History,52,8,6,0
+964,Computer Science,71,4,17,13
+965,Math,40,7,3,18
+965,Physics,82,2,14,19
+965,Chemistry,86,6,4,9
+965,Biology,47,6,0,2
+965,English,57,0,16,14
+965,History,66,5,15,11
+965,Computer Science,48,2,18,0
+966,Math,94,9,9,2
+966,Physics,99,5,2,15
+966,Chemistry,88,2,4,13
+966,Biology,66,4,19,19
+966,English,95,8,6,0
+966,History,82,1,9,5
+966,Computer Science,36,1,10,18
+967,Math,54,3,18,12
+967,Physics,61,2,1,8
+967,Chemistry,59,8,12,17
+967,Biology,93,5,2,9
+967,English,91,9,9,8
+967,History,73,7,7,8
+967,Computer Science,79,3,16,5
+968,Math,71,0,0,8
+968,Physics,81,2,5,6
+968,Chemistry,38,4,15,1
+968,Biology,64,2,19,9
+968,English,83,2,14,13
+968,History,33,9,10,10
+968,Computer Science,69,6,8,7
+969,Math,52,2,19,5
+969,Physics,34,7,17,14
+969,Chemistry,32,9,14,12
+969,Biology,82,3,8,16
+969,English,80,8,3,19
+969,History,39,5,2,18
+969,Computer Science,38,4,13,6
+970,Math,67,7,7,1
+970,Physics,88,8,13,6
+970,Chemistry,96,3,5,13
+970,Biology,47,6,4,11
+970,English,58,3,13,11
+970,History,47,6,0,12
+970,Computer Science,45,4,18,8
+971,Math,84,8,11,17
+971,Physics,85,9,9,16
+971,Chemistry,80,7,10,15
+971,Biology,37,9,14,10
+971,English,68,1,18,8
+971,History,79,6,0,18
+971,Computer Science,42,0,19,0
+972,Math,34,3,13,17
+972,Physics,33,8,2,10
+972,Chemistry,59,6,6,8
+972,Biology,60,0,12,8
+972,English,70,3,11,18
+972,History,54,5,5,2
+972,Computer Science,32,1,4,19
+973,Math,67,4,5,3
+973,Physics,75,2,16,4
+973,Chemistry,83,4,5,19
+973,Biology,89,3,12,7
+973,English,40,7,18,4
+973,History,66,2,1,2
+973,Computer Science,96,1,19,11
+974,Math,71,2,10,19
+974,Physics,59,4,14,5
+974,Chemistry,79,2,14,0
+974,Biology,47,9,7,11
+974,English,34,0,7,4
+974,History,65,0,12,1
+974,Computer Science,65,8,1,11
+975,Math,48,1,9,4
+975,Physics,30,2,16,14
+975,Chemistry,75,7,14,15
+975,Biology,97,2,7,5
+975,English,92,2,7,4
+975,History,66,8,0,6
+975,Computer Science,40,9,2,7
+976,Math,94,7,19,10
+976,Physics,87,6,12,9
+976,Chemistry,89,0,2,6
+976,Biology,54,6,18,14
+976,English,34,9,4,0
+976,History,83,7,19,2
+976,Computer Science,93,2,1,16
+977,Math,60,4,9,15
+977,Physics,32,2,1,3
+977,Chemistry,93,5,17,1
+977,Biology,85,5,2,2
+977,English,95,2,16,13
+977,History,68,5,5,7
+977,Computer Science,48,2,11,4
+978,Math,98,0,15,3
+978,Physics,86,7,2,4
+978,Chemistry,68,1,7,10
+978,Biology,79,5,12,0
+978,English,72,6,9,1
+978,History,92,4,15,15
+978,Computer Science,56,8,0,8
+979,Math,40,4,5,7
+979,Physics,44,1,11,3
+979,Chemistry,86,5,15,10
+979,Biology,83,7,6,14
+979,English,57,3,16,3
+979,History,51,3,11,9
+979,Computer Science,61,1,5,4
+980,Math,63,8,12,13
+980,Physics,96,6,10,3
+980,Chemistry,58,7,7,12
+980,Biology,39,7,16,5
+980,English,31,0,11,5
+980,History,66,4,8,2
+980,Computer Science,84,3,4,6
+981,Math,92,6,9,7
+981,Physics,46,4,14,8
+981,Chemistry,61,6,10,12
+981,Biology,85,8,9,4
+981,English,91,5,14,1
+981,History,81,7,13,4
+981,Computer Science,56,7,5,14
+982,Math,58,3,9,18
+982,Physics,50,9,9,3
+982,Chemistry,91,3,5,7
+982,Biology,45,5,16,0
+982,English,79,0,16,11
+982,History,41,5,6,7
+982,Computer Science,32,0,7,10
+983,Math,49,1,15,12
+983,Physics,38,2,6,16
+983,Chemistry,69,7,2,15
+983,Biology,44,4,3,6
+983,English,66,4,7,16
+983,History,80,1,9,4
+983,Computer Science,85,8,0,16
+984,Math,84,5,8,3
+984,Physics,45,5,8,8
+984,Chemistry,82,3,9,2
+984,Biology,38,2,15,15
+984,English,78,1,9,18
+984,History,83,7,15,9
+984,Computer Science,76,5,4,19
+985,Math,51,1,15,4
+985,Physics,94,2,9,12
+985,Chemistry,84,7,10,14
+985,Biology,31,5,10,14
+985,English,41,9,3,13
+985,History,83,2,16,12
+985,Computer Science,73,1,9,8
+986,Math,30,3,13,15
+986,Physics,47,1,5,2
+986,Chemistry,49,2,12,16
+986,Biology,59,5,10,15
+986,English,72,1,1,7
+986,History,63,9,7,6
+986,Computer Science,42,9,18,14
+987,Math,83,1,4,18
+987,Physics,62,0,6,16
+987,Chemistry,86,5,19,11
+987,Biology,76,4,1,17
+987,English,57,3,9,10
+987,History,35,5,8,19
+987,Computer Science,67,3,5,17
+988,Math,89,6,2,9
+988,Physics,97,8,14,11
+988,Chemistry,93,4,9,11
+988,Biology,51,7,2,6
+988,English,56,2,14,1
+988,History,44,7,19,9
+988,Computer Science,53,7,7,15
+989,Math,86,1,8,7
+989,Physics,40,9,0,10
+989,Chemistry,55,4,14,8
+989,Biology,38,0,6,11
+989,English,88,7,9,18
+989,History,45,5,10,18
+989,Computer Science,54,2,17,14
+990,Math,88,7,7,1
+990,Physics,35,4,11,1
+990,Chemistry,50,3,11,16
+990,Biology,35,6,5,3
+990,English,38,4,9,14
+990,History,33,9,4,6
+990,Computer Science,35,2,9,14
+991,Math,79,2,10,9
+991,Physics,90,0,12,1
+991,Chemistry,89,2,4,15
+991,Biology,61,3,12,15
+991,English,83,4,0,8
+991,History,77,2,14,17
+991,Computer Science,75,2,3,5
+992,Math,42,5,11,1
+992,Physics,42,8,1,18
+992,Chemistry,38,3,0,12
+992,Biology,31,2,15,10
+992,English,35,5,18,4
+992,History,33,9,8,8
+992,Computer Science,69,8,4,3
+993,Math,81,1,8,2
+993,Physics,83,8,8,3
+993,Chemistry,68,6,7,0
+993,Biology,70,8,11,5
+993,English,74,4,18,0
+993,History,83,7,17,7
+993,Computer Science,69,9,14,18
+994,Math,39,7,15,10
+994,Physics,60,3,2,8
+994,Chemistry,39,1,12,12
+994,Biology,44,7,18,9
+994,English,73,5,8,6
+994,History,35,5,0,13
+994,Computer Science,67,0,4,10
+995,Math,34,2,8,5
+995,Physics,83,1,1,11
+995,Chemistry,69,1,8,15
+995,Biology,86,3,3,3
+995,English,53,1,4,1
+995,History,44,7,16,15
+995,Computer Science,64,3,14,18
+996,Math,89,6,11,16
+996,Physics,70,5,18,12
+996,Chemistry,50,7,7,11
+996,Biology,38,5,3,12
+996,English,32,4,17,13
+996,History,44,7,15,2
+996,Computer Science,81,6,4,3
+997,Math,84,2,14,12
+997,Physics,66,2,1,6
+997,Chemistry,84,4,19,10
+997,Biology,68,9,19,13
+997,English,40,1,12,12
+997,History,70,0,14,15
+997,Computer Science,71,3,11,4
+998,Math,81,0,9,5
+998,Physics,82,3,5,11
+998,Chemistry,82,2,1,12
+998,Biology,83,3,10,14
+998,English,64,7,8,14
+998,History,84,1,7,10
+998,Computer Science,58,4,14,14
+999,Math,36,4,17,11
+999,Physics,41,3,10,5
+999,Chemistry,76,0,16,2
+999,Biology,72,1,9,8
+999,English,68,7,1,4
+999,History,70,0,16,9
+999,Computer Science,69,1,9,8
+1000,Math,65,1,18,9
+1000,Physics,78,2,18,18
+1000,Chemistry,55,5,18,18
+1000,Biology,54,1,16,9
+1000,English,90,2,17,10
+1000,History,40,7,15,7
+1000,Computer Science,43,6,17,3

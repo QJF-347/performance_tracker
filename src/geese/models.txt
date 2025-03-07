@@ -1,0 +1,36 @@
+🚀 AI Components & Their Functions
+1️⃣ AI-Powered Chatbot (Self-Hosted)
+Purpose: Provides real-time support for students, teachers, parents, and admins.
+Functions:
+Answers student queries about performance, subjects, and learning strategies.
+Helps teachers analyze student performance trends.
+Guides parents on their child's progress.
+Assists admins in managing student insights.
+Tech Stack: Self-hosted Phi-2 (efficient, cost-effective LLM).
+
+
+2️⃣ Performance Prediction AI (Student Insights)
+Purpose: Predicts a student's future performance based on historical data.
+Functions:
+Uses attendance, homework scores, exam scores, participation, and year of study to make predictions.
+Helps teachers identify at-risk students.
+Recommends study strategies to improve performance.
+Tech Stack: PyTorch + XGBoost
+
+
+3️⃣ Personalized Learning Recommender System
+Purpose: Suggests personalized learning content based on a student's weak areas.
+Functions:
+Analyzes past performance to determine struggling subjects.
+Recommends practice exercises, study materials, and additional reading.
+Adapts over time based on student engagement.
+Tech Stack: Collaborative Filtering + NLP
+
+
+4️⃣ Teacher Impact & Effectiveness Analyzer
+Purpose: Evaluates teacher effectiveness based on student performance trends.
+Functions:
+Measures student improvement under different teachers.
+Identifies teaching strategies that yield the best results.
+Helps administrators make data-driven decisions.
+Tech Stack: Statistical & ML-based Metrics Calculation
